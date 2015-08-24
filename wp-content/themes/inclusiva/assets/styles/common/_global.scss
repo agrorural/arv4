@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
+
+/* Mozilla based browsers */
+::-moz-selection {
+       background-color: $yellow;
+       color: $black;
+}
+
+/* Works in Safari */
+::selection {
+       background-color: $yellow;
+       color: $black;
+}
+
+html{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+body{
+	@include opensans(300);
+}
+
+.section{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
