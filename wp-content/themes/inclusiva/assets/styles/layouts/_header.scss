@@ -121,6 +121,15 @@ header{
   						color: $purple;
   						font-size: 12px;
   					}
+  					&.dropdown{
+  						ul.dropdown-menu{
+  							li{
+  								a{
+  									text-transform: none;
+  								}
+  							}
+  						}
+  					}
   				}
   			}
   		}
