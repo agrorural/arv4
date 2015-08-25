@@ -1,0 +1,157 @@
+.home{
+	.section{
+		&.multimedia__banner{
+			background-color: $gray--text; 
+			.multimedia{
+				@include make-lg-column(9);
+				.page-header{
+					margin: 0;
+					border-bottom: 1px solid $gray--text--dark;
+					h3{
+						margin-top: 0;
+						color: $cream;
+					}
+				}
+				.tabbable.tabs-left{
+					@include make-row();
+					.nav.nav-tabs{
+						@include make-lg-column(2);
+						@include make-sm-column(2);
+						@include make-xs-column(2); 
+						margin-right: 0;
+						border-right: 1px solid $gray--text--dark;
+						padding-right: 0;
+						li{
+							a{
+								color: $gray--light;
+								@include border-radius(0);
+								border: 1px solid transparent;
+								margin-bottom: 2px;
+								&:hover{
+									background-color: $gray--text--dark;
+								}
+							}
+							&.active{
+								a{
+									color: $white;
+									background-color: $gray--text--dark;
+									border: 1px solid transparent;
+									@include border-radius(0);
+								}
+							}
+						}
+					}
+					.tab-content{
+						@include make-lg-column(10); 
+						@include make-sm-column(10);
+						@include make-xs-column(10);
+						.tab-pane{		
+						padding-top: 20px;					
+							p{ color: $white; }
+							a{ color: $orange; }
+
+							.multimedia--1{
+								@include make-lg-column(6);
+								/*@include make-sm-column(12);*/
+								@include make-xs-column(4); 
+								figure{ 
+									@include make-lg-column(12);
+									
+									a.tab-icon{
+										i{
+											font-size: 18px;
+										}
+									}
+									figcaption{
+										h3, time{
+											margin: 0;
+											color: $white;
+											a{ color: $yellow; }
+										}
+										h3{
+											font-size: 14px;
+										}
+										time{
+											font-size: 11px;
+										}
+									}
+								}
+							}
+							.multimedia--2{
+								@include make-lg-column(6);
+								/*@include make-sm-column(12);*/
+								@include make-xs-column(8);
+								figure{ 
+									@include make-lg-column(6);
+									@include make-xs-column(6);
+									a.tab-icon{
+										i{
+											font-size: 18px;
+										}
+									}
+									figcaption{
+										h3, time{
+											margin: 0;
+											color: $white;
+											a{ color: $yellow; }
+										}
+										h3{
+											font-size: 14px;
+										}
+										time{
+											font-size: 11px;
+										}
+									}
+								}
+							}
+							figure{
+								padding-left: 5px !important;
+								padding-right: 5px !important;
+							}
+							.multimedia--1, .multimedia--2{
+								padding-left: 0px !important;
+								padding-right: 0px !important;
+								figure{
+									a.tab-icon{
+										position: absolute;
+										top: 0;
+										padding: 15px;
+										color: $yellow;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.banner{
+				@include make-lg-column(3); 
+			}
+		}
+	}	
+}
+
+@media(min-width: $screen-lg-min){
+	.multimedia--1{
+		figure{ 
+			a.tab-icon{
+				i{
+					font-size: 24px;
+				}
+			}
+			figcaption{
+				position: absolute;
+				bottom: 0; 
+				padding: 15px;
+				h3{
+					font-size: 24px !important;
+				}
+				h3, time{
+					margin: 0;
+					color: $white;
+					a{ color: $white; }
+				}
+			}
+		}
+	}
+}

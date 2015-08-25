@@ -27,6 +27,7 @@ build/Release
 node_modules
 
 # WordPress One!
+.htaccess
 wp-config.php
 wp-content/themes/inclusiva/bower_components
 wp-content/themes/inclusiva/node_modules
