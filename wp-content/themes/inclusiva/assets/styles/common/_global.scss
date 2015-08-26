@@ -19,6 +19,18 @@ html{
 
 body{
 	@include opensans(300);
+  font-size: 13px;
+}
+
+a{
+  color: $red;
+  &:hover, &:active{
+    color: $red--google;
+  }
+}
+
+p{
+  text-align: justify;
 }
 
 .section{

@@ -1,64 +1,110 @@
-.masshead{
-	background-color: $brown;
+body{
+	&.page{
+		background-color: $white--smoke;
+		.wrap{
+			background-color: $white;
+			-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+			-o-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+			box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+			margin-bottom: 30px;
+			margin-top: -115px;
+			padding-left: 30px;
+			padding-right: 30px;
+			.content{
+
+				.main{
+					
+				}
+			}
+		}
+	}
+}
+
+
+.page-template-template-noticias{
+	.masshead{
+		background-color: $brown;
+		background-image: url('../images/agrorural__mh.jpg');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		height: 300px;
+	}
+
 	.page-header{
-		border: 0 none;
+		border-bottom: 2px solid $brown--light;
 		h1{
-			margin: 0;
-			padding: 0;
-			@include opensans(400);
-			@include text-shadow();
-			text-transform: uppercase;
+			@include opensans(400); 
 			font-size: 36px;	
-			color: $white;
+			color: $brown;
 			small{
 				font-size: 13px;
 				@include opensans(400); 
 				a{
-					color: $white;
+					color: $red--google;
 				} 
 			}
 		}
 	}
 }
 
-.page-template-template-noticias{
-	.masshead{
-		background-image: url('../images/agrorural__mh.jpg');
-		background-position: center bottom;
-		background-repeat: no-repeat;
-	}
-}
-
 article{
 	&.post{
-		border-bottom: 1px solid $brown--light;
 		padding-top: 20px;
 		padding-bottom: 20px;
+		border-bottom: 1px solid $brown--lighter;
 		figure{}
 		header{
 			.entry-title{
-				font-size: 24px;
+				font-size: 20px;
+				@include opensans(300); 
 				margin-top: 0;
 				a{ 
-					color: $brown;
+					/*color: $brown; */
 				}
 			}
 		}
 		.entry-summary{
 			p{
-				font-size: 16px;
+				font-size: 14px;
 				@include opensans(400);
+				a.read-more{
+					display: block;
+					padding-top: 10px;
+				}
 			}
 		}
-
-			@include clearfix();
-	
+		
+		@include clearfix();
+		
+		&:last-of-type{
+			border-bottom: 3px solid $brown--lighter;
+		}
 	}
 }
 
+.wp-pagenavi{
+	padding: 30px 0;
+	@include opensans(400);
+	span{
+		border: 0 none;
+		padding: 5px 10px;
+		margin: 0 10px;
+		&.current{
+			background-color: $brown;
+			@include border-radius(4px);
+			@include opensans(400);
+			color: $white;
+		}
+	}
+	a{
+		border: 0 none;
+		margin: 0 10px;
+	}
+}
 
 @media(max-width: $screen-sm-max){
-	.masshead{
+	.page{
 		.page-header{
 			h1{
 				small{
@@ -73,9 +119,8 @@ article{
 }
 
 @media(min-width: $screen-sm-min){
-	.masshead{
+	.page{
 		.page-header{
-			margin: 140px 0 10px;
 			h1{
 				small{
 					float: right;

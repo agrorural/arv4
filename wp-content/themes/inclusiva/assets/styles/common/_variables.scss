@@ -7,10 +7,13 @@ $sidebar-sm-columns:    3;
 
 // Colors
 $brand-primary:         #27ae60;
+
 $white: 				#ffffff;
 $white--smoke:			#fafafa;
-$brown:					#4c3327;
+$white--smoke--darK:	#f1f1f1;
+$brown:					#543022;
 $brown--light:			#c6baa2;
+$brown--lighter:		lighten($brown--light, 15%);
 
 $black:					#000;
 $green:					#007739;
@@ -23,6 +26,7 @@ $orange:				#b5733c;
 $yellow:				#f1cf00;
 
 $gray--light:			#999;
+$gray--lighter:			#eee;
 $gray--text:			#515151;
 $gray--text--dark:		#414141;
 $blue--fb:				#3b5998;
@@ -30,5 +34,6 @@ $blue--fb--hover:		#4264aa;
 $blue--tw:				#55acee;
 $blue--tw--hover:		#6cb7f0;
 $blue--sky:				#ccf1f6;
+$red:					#7C2202;
 $red--google:			#dd4b39;
 $red--google--hover:	#e15f4f;

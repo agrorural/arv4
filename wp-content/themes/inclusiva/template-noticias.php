@@ -17,4 +17,5 @@
   <?php get_template_part('templates/content', 'noticias'); ?>
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<?php /*the_posts_navigation(); */ ?>
+<?php wp_pagenavi(); ?>
