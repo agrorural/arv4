@@ -1,0 +1,87 @@
+.masshead{
+	background-color: $brown;
+	.page-header{
+		border: 0 none;
+		h1{
+			margin: 0;
+			padding: 0;
+			@include opensans(400);
+			@include text-shadow();
+			text-transform: uppercase;
+			font-size: 36px;	
+			color: $white;
+			small{
+				font-size: 13px;
+				@include opensans(400); 
+				a{
+					color: $white;
+				} 
+			}
+		}
+	}
+}
+
+.page-template-template-noticias{
+	.masshead{
+		background-image: url('../images/agrorural__mh.jpg');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+	}
+}
+
+article{
+	&.post{
+		border-bottom: 1px solid $brown--light;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		figure{}
+		header{
+			.entry-title{
+				font-size: 24px;
+				margin-top: 0;
+				a{ 
+					color: $brown;
+				}
+			}
+		}
+		.entry-summary{
+			p{
+				font-size: 16px;
+				@include opensans(400);
+			}
+		}
+
+			@include clearfix();
+	
+	}
+}
+
+
+@media(max-width: $screen-sm-max){
+	.masshead{
+		.page-header{
+			h1{
+				small{
+					float: none;
+					display: block;
+					padding-top: 3px;
+					font-size: 11px; 
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: $screen-sm-min){
+	.masshead{
+		.page-header{
+			margin: 140px 0 10px;
+			h1{
+				small{
+					float: right;
+					padding-top: 15px;
+				}
+			}
+		}
+	}
+}

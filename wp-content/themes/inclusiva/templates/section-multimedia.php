@@ -26,7 +26,7 @@
 							<div class="multimedia--2">
 								<figure>
 									<a href="#" class="tab-icon"><i class="fa fa-file-image-o"></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/300/200/sports/2/" />
+									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/2/" />
 									<figcaption>
 										<time>Lunes, 3 de mayo de 2015</time>
 										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
@@ -34,7 +34,7 @@
 								</figure>
 								<figure>
 									<a href="#" class="tab-icon"><i class="fa fa-file-image-o"></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/300/200/sports/3/" />
+									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/3/" />
 									<figcaption>
 										<time>Lunes, 3 de mayo de 2015</time>
 										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
@@ -58,7 +58,7 @@
 							<div class="multimedia--2">
 								<figure>
 									<a href="#" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/300/200/sports/5/" />
+									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/5/" />
 									<figcaption>
 										<time>Lunes, 3 de mayo de 2015</time>
 										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
@@ -66,7 +66,7 @@
 								</figure>
 								<figure>
 									<a href="#" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/300/200/sports/6/" />
+									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/6/" />
 									<figcaption>
 										<time>Lunes, 3 de mayo de 2015</time>
 										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
@@ -79,7 +79,7 @@
 				<!-- /tabs -->
 			</main>
 			<aside class="banner">
-				Hola	
+				<img class="img-responsive" src="http://lorempixel.com/600/600/sports/6/" />	
 			</aside>
 		</div>
 	</div>

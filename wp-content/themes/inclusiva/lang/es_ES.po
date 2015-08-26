@@ -50,7 +50,7 @@ msgstr "Pie de página"
 
 #: lib/titles.php:13
 msgid "Latest Posts"
-msgstr "Entradas más recientes"
+msgstr "Noticias"
 
 #: lib/titles.php:18
 msgid "Search Results for %s"
