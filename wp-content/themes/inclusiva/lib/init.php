@@ -30,6 +30,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
   add_image_size( 'thumb-noticias', 330, 220, true );
+  add_image_size( 'thumb-videos', 400, 230, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

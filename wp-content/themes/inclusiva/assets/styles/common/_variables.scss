@@ -16,6 +16,7 @@ $brown--light:			#c6baa2;
 $brown--lighter:		lighten($brown--light, 15%);
 
 $black:					#000;
+$black--light:			lighten($black, 15%);
 $green:					#007739;
 $green--light:			lighten($green, 10%);
 $green--dark:			darken($green, 10%);

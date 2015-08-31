@@ -1,5 +1,5 @@
 body{
-	&.page{
+	&.page, &.archive{
 		background-color: $white--smoke;
 		.wrap{
 			background-color: $white;
@@ -13,7 +13,7 @@ body{
 			padding-right: 30px;
 			.content{
 
-				.main{
+				.main{ 
 					
 				}
 			}
@@ -21,8 +21,18 @@ body{
 	}
 }
 
+/*body{
+	&.archive{
+		.wrap{
+			width: 970px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+}*/
 
-.page-template-template-noticias{
+
+.page-template-template-noticias, .archive{
 	.masshead{
 		background-color: $brown;
 		background-image: url('../images/agrorural__mh.jpg');
@@ -84,6 +94,9 @@ article{
 }
 
 .wp-pagenavi{
+	position: relative;
+	display: block;
+	clear: both;
 	padding: 30px 0;
 	@include opensans(400);
 	span{
@@ -91,7 +104,7 @@ article{
 		padding: 5px 10px;
 		margin: 0 10px;
 		&.current{
-			background-color: $brown;
+			background-color: $red;
 			@include border-radius(4px);
 			@include opensans(400);
 			color: $white;
@@ -104,7 +117,7 @@ article{
 }
 
 @media(max-width: $screen-sm-max){
-	.page{
+	.page, .archive{
 		.page-header{
 			h1{
 				small{
@@ -119,7 +132,7 @@ article{
 }
 
 @media(min-width: $screen-sm-min){
-	.page{
+	.page, .archive{
 		.page-header{
 			h1{
 				small{
