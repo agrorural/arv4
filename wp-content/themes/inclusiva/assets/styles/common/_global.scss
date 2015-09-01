@@ -20,6 +20,42 @@ html{
 body{
 	@include opensans(300);
   font-size: 13px;
+  &.page, &.archive, &.single{
+    background-color: $white--smoke;
+    .wrap{
+      background-color: $white;
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+      -o-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+      margin-bottom: 30px;
+      margin-top: -130px;
+      padding-left: 30px;
+      padding-right: 30px;
+      .page-header{
+        margin: 70px 0 20px;
+        border-bottom: 2px solid $brown--light;
+        h1{
+          @include opensans(400); 
+          font-size: 36px;  
+          small{
+            font-size: 13px;
+            @include opensans(400); 
+            a{
+              color: $red--google;
+            } 
+          }
+        }
+      }
+    }
+  }
+
+  .masshead{
+    background-color: $brown--lighter;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 300px;
+  }
 }
 
 a{
@@ -146,3 +182,31 @@ p{
 }
 
 /* Termina Tabs */
+
+@media(max-width: $screen-sm-max){
+  .page, .archive, .single{
+    .page-header{
+      h1{
+        small{
+          float: none;
+          display: block;
+          padding-top: 3px;
+          font-size: 11px; 
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: $screen-sm-min){
+  .page, .archive, .single{
+    .page-header{
+      h1{
+        small{
+          float: right;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}

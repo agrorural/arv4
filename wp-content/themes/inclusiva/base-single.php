@@ -20,6 +20,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="masshead"></div>
     <div class="wrap container" role="document">
+    <?php get_template_part('templates/page-header', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
       <div class="content row">
         <main class="main" role="main">
           <?php include Wrapper\template_path(); ?>

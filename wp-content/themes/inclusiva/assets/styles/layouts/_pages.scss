@@ -1,60 +1,13 @@
-body{
-	&.page, &.archive{
-		background-color: $white--smoke;
-		.wrap{
-			background-color: $white;
-			-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
-			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
-			-o-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
-			box-shadow: 0 1px 2px rgba(0,0,0,0.075);
-			margin-bottom: 30px;
-			margin-top: -115px;
-			padding-left: 30px;
-			padding-right: 30px;
-			.content{
+.page-template-template-noticias, .archive{
 
-				.main{ 
-					
-				}
-			}
-		}
+	.page-header{
+		
 	}
 }
 
-/*body{
-	&.archive{
-		.wrap{
-			width: 970px;
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-	}
-}*/
-
-
-.page-template-template-noticias, .archive{
+.archive{
 	.masshead{
-		background-color: $brown;
-		background-image: url('../images/agrorural__mh.jpg');
-		background-position: center bottom;
-		background-repeat: no-repeat;
-		height: 300px;
-	}
-
-	.page-header{
-		border-bottom: 2px solid $brown--light;
-		h1{
-			@include opensans(400); 
-			font-size: 36px;	
-			color: $brown;
-			small{
-				font-size: 13px;
-				@include opensans(400); 
-				a{
-					color: $red--google;
-				} 
-			}
-		}
+		background-image: url('../images/masshead--1.jpg');
 	}
 }
 
@@ -113,33 +66,5 @@ article{
 	a{
 		border: 0 none;
 		margin: 0 10px;
-	}
-}
-
-@media(max-width: $screen-sm-max){
-	.page, .archive{
-		.page-header{
-			h1{
-				small{
-					float: none;
-					display: block;
-					padding-top: 3px;
-					font-size: 11px; 
-				}
-			}
-		}
-	}
-}
-
-@media(min-width: $screen-sm-min){
-	.page, .archive{
-		.page-header{
-			h1{
-				small{
-					float: right;
-					padding-top: 15px;
-				}
-			}
-		}
 	}
 }

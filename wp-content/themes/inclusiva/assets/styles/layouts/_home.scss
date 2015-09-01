@@ -132,34 +132,36 @@
 }
 
 @media(min-width: $screen-lg-min){
-	.multimedia--1{
-		figure{ 
-			a.tab-icon{
-				i{
-					font-size: 24px;
+	.home{
+		.multimedia--1{
+			figure{ 
+				a.tab-icon{
+					i{
+						font-size: 24px;
+					}
 				}
-			}
-			figcaption{
-				position: absolute;
-				bottom: 0;
-				left: 5px;
-				right: 5px; 
-				padding: 15px;
-				 opacity: 0.8;
-				background: -moz-linear-gradient(top, rgba(0,0,0,0.001) 0%, rgba(0,0,0,1) 100%);
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.001)), color-stop(100%,rgba(0,0,0,1)));
-				background: -webkit-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-				background: -o-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-				background: -ms-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-				background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
-				h3{
-					font-size: 24px !important;
-				}
-				h3, time{
-					margin: 0;
-					color: $white;
-					a{ color: $white; }
+				figcaption{
+					position: absolute;
+					bottom: 0;
+					left: 5px;
+					right: 5px; 
+					padding: 15px;
+					 opacity: 0.8;
+					background: -moz-linear-gradient(top, rgba(0,0,0,0.001) 0%, rgba(0,0,0,1) 100%);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.001)), color-stop(100%,rgba(0,0,0,1)));
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+					background: -o-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+					background: -ms-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+					background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+					h3{
+						font-size: 24px !important;
+					}
+					h3, time{
+						margin: 0;
+						color: $white;
+						a{ color: $white; }
+					}
 				}
 			}
 		}
