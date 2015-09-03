@@ -3,7 +3,7 @@
 		&.multimedia__banner{
 			background-color: $gray--text; 
 			.multimedia{
-				@include make-lg-column(9);
+				@include make-lg-column(12);
 				.page-header{
 					margin: 0;
 					border-bottom: 1px solid $gray--text--dark;
@@ -51,7 +51,7 @@
 							a{ color: $orange; }
 
 							.multimedia--1{
-								@include make-lg-column(6);
+								@include make-lg-column(5);
 								/*@include make-sm-column(12);*/
 								@include make-xs-column(4); 
 								figure{ 
@@ -78,11 +78,11 @@
 								}
 							}
 							.multimedia--2{
-								@include make-lg-column(6);
+								@include make-lg-column(7);
 								/*@include make-sm-column(12);*/
 								@include make-xs-column(8);
 								figure{ 
-									@include make-lg-column(6);
+									@include make-lg-column(4);
 									@include make-xs-column(6);
 									a.tab-icon{
 										i{
@@ -123,9 +123,6 @@
 						}
 					}
 				}
-			}
-			.banner{
-				@include make-lg-column(3); 
 			}
 		}
 	}	

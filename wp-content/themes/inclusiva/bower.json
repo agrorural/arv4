@@ -9,9 +9,9 @@
   "dependencies": {
     "modernizr": "2.8.2",
     "bootstrap-sass-official": "3.3.5",
-    "OwlCarousel2": "~2.0.0-beta.3",
-    "animate.css": "~3.4.0",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "owl-carousel2": "~2.0.0-beta.3",
+    "animate-css": "~3.4.0"
   },
   "overrides": {
     "modernizr": {

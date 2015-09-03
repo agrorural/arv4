@@ -1,0 +1,53 @@
+.category{
+	.wrap{
+		background-color: transparent !important;
+		margin-top: 30px !important;
+	} 
+
+	.masshead{
+		position: relative;
+		z-index: 0;
+		.page-header{
+			position: relative;
+			z-index: 10;
+			border-bottom: 1px solid transparent !important;
+			margin: 150px 0 20px;
+			h1{
+				font-size: 36px;
+				a{
+					color: $white;
+					@include text-shadow();
+				}
+				small{
+					font-size: 13px;
+					a{
+						color: $red--google;
+					}
+				}
+			}
+			p{
+				color: $white;
+				@include text-shadow();
+			}
+		}
+	}
+	&.category-amazonas{
+		.masshead{
+			background-image: url(../images/masshead--amazonas.jpg) !important;
+		}
+	}
+}
+
+@media(min-width: $screen-sm-min){
+	.category{
+		.wrap{}
+		.masshead{
+			.page-header{
+			margin: 180px 0 20px;
+				h1{
+				font-size: 48px;
+				}
+			}
+		}
+	}
+}

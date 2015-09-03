@@ -50,9 +50,6 @@
 				</div>
 				<!-- /tabs -->
 			</main>
-			<aside class="banner">
-				
-			</aside>
 		</div>
 	</div>
 </section>

@@ -50,7 +50,7 @@ footer{
 	.widget{
 		h3{
 			font-size: 11px;
-			@include opensans(300);
+			@include opensans(light);
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
 			margin: 0 0 16px;

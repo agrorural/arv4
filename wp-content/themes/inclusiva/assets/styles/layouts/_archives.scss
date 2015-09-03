@@ -11,6 +11,7 @@
 			.multimedia--1__caption{
 				@include make-sm-column(4);
 				.multimedia--1__caption__title{
+					@include opensans();
 					a{
 						color: $gray--lighter;
 						@include text-shadow();
@@ -19,7 +20,7 @@
 				time{
 					display: block;
 					padding-bottom: 15px;
-					@include opensans(600);
+					@include opensans(semibold);
 					color: $gray--light;
 					@include text-shadow();
 				}
@@ -61,15 +62,15 @@
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0 );
 				.multimedia--2__caption__title{
 					margin: 0;
-					font-size: 13px;
-					@include opensans(800);
+					font-size: 14px;
+					@include opensans(bold);
 					a{
 						color: $white;
 						@include text-shadow();
 					}
 				}
 				time{
-					@include opensans(400);
+					@include opensans();
 					font-size: 11px;
 					color: $white; 
 					@include text-shadow();
@@ -77,7 +78,18 @@
 			}
 		}
 	}
+	&.term-post-format-gallery{
+		.multimedia--2{
+			figure{
+				.thumbnail{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
+
+
 
 @media(min-width: $screen-sm-min){
 	.archive{

@@ -116,7 +116,7 @@ header{
   			#menu-navegacion-primaria{
   				li{
   					a{
-  						@include opensans(600);
+  						@include opensans(semibold);
   						text-transform: uppercase;
   						color: $purple;
   						font-size: 12px;
@@ -192,7 +192,7 @@ h1{
   								.sl__home__hashtag{
   									a{	
   										color: $white;
-  										@include opensans(600);
+  										@include opensans(semibold);
   										text-transform: uppercase;
   										font-size: 10px;
   									}
@@ -200,7 +200,7 @@ h1{
   								.sl__home__title{
   									h3{
   										text-transform: uppercase; 
-  										@include opensans(400);
+  										@include opensans();
   										color: $white;
   										font-size: 18px;                                                                                                                                                                        
   										margin-top: 0px;
@@ -224,7 +224,7 @@ h1{
   										a{
   											@include button-variant( $green--accent, transparent, transparent );
   											text-transform: uppercase;
-  											@include opensans(800);
+  											@include opensans(bold);
   											font-size: 11px;
   										}
   									}
@@ -268,7 +268,7 @@ h1{
 									.sl__home__hashtag{
 										a{	
 											color: $white;
-											@include opensans(600);
+											@include opensans(semibold);
 											text-transform: uppercase;
 											font-size: 10px;
 										}
@@ -276,7 +276,7 @@ h1{
 									.sl__home__title{
 										h3{
 											text-transform: uppercase; 
-											@include opensans(400);
+											@include opensans();
 											color: $white;                                                                                                                                                                        
 											margin-top: 0px;
 											margin-bottom: 0;
@@ -300,7 +300,7 @@ h1{
 											a{
 												@include button-variant( $green--accent, transparent, transparent );
 												text-transform: uppercase;
-												@include opensans(800);
+												@include opensans(bold);
 												font-size: 11px;
 											}
 										}
@@ -427,13 +427,13 @@ h1{
   										padding-top: 5px;
   										padding-bottom: 5px;
   										color: $white;
-  										@include opensans(600);
+  										@include opensans(semibold);
   									}
   								}
   								.sl__home__title{
   									h3{
   										text-transform: uppercase; 
-  										@include opensans(400);
+  										@include opensans();
   										color: $white;                                                                                                                                                                        
   										margin-top: 3px;
   										margin-bottom: 0;
@@ -465,7 +465,7 @@ h1{
   										a{
   											@include button-variant( $green--accent, transparent, transparent );
   											text-transform: uppercase;
-  											@include opensans(800);
+  											@include opensans(bold);
   										}
   									}
   								}
