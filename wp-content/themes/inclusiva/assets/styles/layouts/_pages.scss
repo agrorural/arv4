@@ -1,3 +1,27 @@
+.page{
+	&.servicios-en-linea{
+		.wrapper{
+			@include make-row();
+			.inner{
+				@include make-lg-column(3);
+				@include make-xs-column(6);
+				.thumbnail{
+					.caption{
+						h3{
+							font-size: 24px;
+						}
+						p{
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
 .page-template-template-noticias, .archive{
 
 	.page-header{

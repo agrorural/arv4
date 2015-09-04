@@ -39,11 +39,11 @@ footer{
 		}
 	} 
 	&.content-info{
-		@include gradient-vertical($white, $blue--sky, $start-percent: 0%, $end-percent: 100%);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@include gradient-vertical($brown--lighter, $brown--light, $start-percent: 0%, $end-percent: 100%);
 		.container{
-			background-image: url('../images/footer__bg.png');
-			background-position: bottom center;
-			background-repeat: no-repeat;
+
 		}
 	}
 
