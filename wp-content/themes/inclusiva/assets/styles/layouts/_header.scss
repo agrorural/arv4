@@ -113,25 +113,6 @@ header{
   		.container{
   			padding-top: 15px;
   			padding-bottom: 15px;
-  			#menu-navegacion-primaria{
-  				li{
-  					a{
-  						@include opensans(semibold);
-  						text-transform: uppercase;
-  						color: $purple;
-  						font-size: 12px;
-  					}
-  					&.dropdown{
-  						ul.dropdown-menu{
-  							li{
-  								a{
-  									text-transform: none;
-  								}
-  							}
-  						}
-  					}
-  				}
-  			}
   		}
 	}
 }
@@ -158,6 +139,14 @@ h1{
 			  	margin: 0;
 			  	padding: 0;
   			}
+		}
+		&:hover{
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: pulse;
+			animation-name: pulse;
 		}
 	}
 }

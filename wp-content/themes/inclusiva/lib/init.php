@@ -21,7 +21,10 @@ function setup() {
   register_nav_menus([
     'primary_navigation' => __('Primary Navigation', 'sage'),
     'links_navigation' => __('Links Navigation', 'sage'),
-    'social_navigation' => __('Social Navigation', 'sage')
+    'social_navigation' => __('Social Navigation', 'sage'),
+    'quienes_somos_navigation' => __('Quiénes Somos Navigation', 'sage'),
+    'gobierno_abierto_navigation' => __('Gobierno Abierto Navigation', 'sage')
+
   ]);
 
   // Add post thumbnails

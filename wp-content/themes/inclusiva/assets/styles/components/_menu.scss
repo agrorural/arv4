@@ -1,11 +1,79 @@
 ul#menu-navegacion-primaria{
 	li{
-		&.dropdown{
+		&.active, &.current-page-ancestor, &.current-menu-ancestor{
+			a, a:hover{
+				color: $red--google;
+				background-color: transparent;
+			}
+		}
+
+		a{
+			@include opensans(bold);
+			text-transform: uppercase;
+			color: $purple;
+			font-size: 12px;
 			&:hover{
-				ul.dropdown-menu{ display: block; }
+				color: $red--google--hover; 
+			}
+		}
+
+		&.dropdown{
+			ul.dropdown-menu{
+				display: none;
+				li{
+					a{
+						@include opensans(light);
+						font-size: 13px;
+						text-transform: none;
+						color: $gray;
+						padding: 5px 20px; 
+						&:hover{
+							background-color: $red--google--light;
+						}
+					}
+					&.dropdown-header{
+						font-size: 10px;
+						text-transform: uppercase;
+						@include title-xs();
+						color: $gray--light;
+					}
+					&.active{
+						a, a:hover{
+							background-color: $red--google;
+							color: $white;
+						}
+					}
+				}
+
+				&:hover{
+					li{
+						&.dropdown-header{
+							color: $black;
+						}
+					}
+				}
+			}
+			&:hover{
+				ul.dropdown-menu{ 
+					display: block; 
+					-webkit-animation-duration: 1s;
+					animation-duration: 1s;
+					-webkit-animation-fill-mode: both;
+					animation-fill-mode: both;
+					-webkit-animation-name: flipInX;
+					animation-name: flipInX;
+				}
+			}
+			li{
+				&.dropdown{
+					ul.dropdown-menu{
+						display: none;
+					}
+					&:hover{
+						ul.dropdown-menu{ display: block; }
+					}
+				}
 			}
 		}
 	}
 }
-
-.nav .dropdown-toggle .caret { display:none; }

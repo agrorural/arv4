@@ -65,6 +65,7 @@ html{
 
 body{
 	@include opensans();
+  font-size: 13px;
   &.page, &.archive, &.single{
     background-color: $white--smoke;
     .wrap{

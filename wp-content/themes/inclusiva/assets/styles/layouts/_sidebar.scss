@@ -10,7 +10,7 @@
 			font-size: 11px;
 			text-transform: uppercase;
 			box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
-			@include opensans(600);
+			@include opensans(bold);
 			letter-spacing: 1.5px;
 			-webkit-font-smoothing: antialiased;
 			background-color: $white--smoke;
@@ -28,6 +28,12 @@
 					border-bottom: 1px solid rgba(0,0,0,0.06);
 					&:hover{
 						background-color: $white--smoke;
+					}
+				}
+				&.current-menu-item{
+					a{
+						background-color: $red--google--hover;
+						color: $white;
 					}
 				}
 			}
