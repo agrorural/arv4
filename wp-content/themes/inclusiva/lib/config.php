@@ -54,6 +54,7 @@ function display_sidebar() {
       [
         'is_404',
         'is_front_page',
+        ['is_page', ['sala-de-prensa', 'servicios-en-linea']],
         ['is_page_template', ['template-custom.php']]
       ]
     );

@@ -21,7 +21,8 @@ use Roots\Sage\Wrapper;
     <?php 
 	    $cat = get_query_var('cat'); $get_cat = get_category ($cat); 
 	    $category_id = get_cat_ID( $get_cat->name );
-		$category_link = get_category_link( $category_id );
+		  $category_link = get_category_link( $category_id );
+      $category_name = $get_cat->name;
 	?>
 
     <div class="masshead">
@@ -30,8 +31,8 @@ use Roots\Sage\Wrapper;
 		  		<h1>
 		  			<a href="<?php echo $category_link; ?>">
 		  			<?php if ( ! is_category( 'agrorural' ) ) { echo 'Dirección Zonal'; } ?>
-		  				<?php echo $get_cat->name; ?>
-		  					<small><a href="<?php echo $category_link; ?>/feed"><i class="fa fa-rss-square"></i> RSS de las noticias</a>
+		  				<?php echo $category_name; ?>
+		  					<?php /*<small><a href="<?php echo $category_link; ?>/feed"><i class="fa fa-rss-square"></i> RSS de las noticias</a>*/ ?>
 		  					</small>
 		  			</a>
 		  		</h1>
@@ -45,11 +46,9 @@ use Roots\Sage\Wrapper;
         <main class="main" role="main">
           <?php get_template_part('templates/section', 'category'); ?>
         </main><!-- /.main -->
-        <?php if (Config\display_sidebar()) : ?>
-          <aside class="sidebar" role="complementary">
-            <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
-        <?php endif; ?>
+        <aside class="sidebar" role="complementary">
+          <?php get_template_part('templates/sidebar', 'category' ); ?>
+        </aside><!-- /.sidebar -->
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php

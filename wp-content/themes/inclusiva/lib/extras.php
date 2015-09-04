@@ -31,3 +31,11 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+/**
+ * Quitando estilos de plugins
+ */
+function remove_unwanted_plugins() {
+  wp_dequeue_style('contact-form-7');
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\remove_unwanted_plugins');

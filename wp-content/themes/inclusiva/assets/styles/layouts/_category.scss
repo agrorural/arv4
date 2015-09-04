@@ -12,8 +12,10 @@
 			z-index: 10;
 			border-bottom: 1px solid transparent !important;
 			margin: 150px 0 20px;
+			text-align: center;
 			h1{
-				font-size: 36px;
+				@include opensans(bold);
+				font-size: 30px;
 				a{
 					color: $white;
 					@include text-shadow();
@@ -26,14 +28,17 @@
 				}
 			}
 			p{
+				@include opensans();
 				color: $white;
 				@include text-shadow();
+				text-align: center;
 			}
 		}
 	}
 	&.category-amazonas{
 		.masshead{
 			background-image: url(../images/masshead--amazonas.jpg) !important;
+			@include photo-credit('Andrew Tonn');
 		}
 	}
 }

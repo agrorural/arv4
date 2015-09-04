@@ -37,3 +37,16 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
 	}
 }
+@mixin photo-credit( $photo: 'AGRO RURAL' ){ 
+	&:before{
+		position: absolute;
+		content: 'Foto: #{$photo}';
+		@include opensans();
+		top: 15px;
+		right: 15px;
+		z-index: 15;
+		color: $white;
+		font-size: 8px;
+		@include opacity(.5);
+	}
+}

@@ -1,6 +1,6 @@
 <article <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ){ ?>
-		<figure class="pull-left">
+		<figure>
 			<?php the_post_thumbnail('thumbnail', array('class'=>'img-responsive')); ?>
 		</figure>
 	<?php } ?>

@@ -64,7 +64,7 @@ html{
 }
 
 body{
-	@include opensans(light);
+	@include opensans();
   &.page, &.archive, &.single{
     background-color: $white--smoke;
     .wrap{
