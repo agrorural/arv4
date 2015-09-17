@@ -20,6 +20,7 @@ ul#menu-navegacion-primaria{
 		&.dropdown{
 			ul.dropdown-menu{
 				display: none;
+				@include border-radius(0);
 				li{
 					a{
 						@include opensans(light);
@@ -60,17 +61,40 @@ ul#menu-navegacion-primaria{
 					animation-duration: 1s;
 					-webkit-animation-fill-mode: both;
 					animation-fill-mode: both;
-					-webkit-animation-name: flipInX;
-					animation-name: flipInX;
+					-webkit-animation-name: fadeIn;
+					animation-name: fadeIn;
 				}
 			}
 			li{
 				&.dropdown{
+					a:first-of-type {
+						&:before{
+							@include fa();
+							content : '\f105';
+							position: absolute;
+							right: 10px;
+						}
+					}
+
 					ul.dropdown-menu{
 						display: none;
 					}
+
 					&:hover{
-						ul.dropdown-menu{ display: block; }
+						ul.dropdown-menu{ 
+							display: block; 
+							top: 0;
+							left: 100%;
+							right: auto;
+							li{
+
+								a{
+									&:before{
+										display: none;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

@@ -2,8 +2,8 @@
 <section class="widget">
 	<h3>Gobierno Abierto</h3>
     <?php
-	if (has_nav_menu('gobierno_abierto_navigation')) :
-		wp_nav_menu(['theme_location' => 'gobierno_abierto_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']);
+	if (has_nav_menu('transparencia_navigation')) :
+		wp_nav_menu(['theme_location' => 'transparencia_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']);
 	endif;
 	?>
 </section>
