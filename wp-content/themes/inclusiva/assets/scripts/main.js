@@ -37,6 +37,12 @@
               }
           }
         });
+
+        $('.sb__category').owlCarousel({
+        loop: true,
+        margin: 0,     
+        items: 1
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

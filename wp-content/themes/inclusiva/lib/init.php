@@ -26,7 +26,8 @@ function setup() {
     'transparencia_navigation' => __('Transparencia Navigation', 'sage'),
     'participa_navigation' => __('Participa Navigation', 'sage'),
     'colabora_navigation' => __('Colabora Navigation', 'sage'),
-    'desarrolla_navigation' => __('Desarrolla Navigation', 'sage')
+    'desarrolla_navigation' => __('Desarrolla Navigation', 'sage'),
+    'sede_amazonas_navigation' => __('Sede Amazonas Navigation', 'sage')
 
   ]);
 
@@ -37,6 +38,7 @@ function setup() {
   add_theme_support('post-thumbnails');
   add_image_size( 'thumb-noticias', 330, 220, true );
   add_image_size( 'thumb-videos', 400, 230, true );
+  add_image_size( 'thumb-category-bn', 750, 825, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

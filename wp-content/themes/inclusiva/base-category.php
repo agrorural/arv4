@@ -23,7 +23,8 @@ use Roots\Sage\Wrapper;
 	    $category_id = get_cat_ID( $get_cat->name );
 		  $category_link = get_category_link( $category_id );
       $category_name = $get_cat->name;
-	?>
+      $category_slug = $get_cat->slug;
+	   ?>
 
     <div class="masshead">
 	    <div class="container">
