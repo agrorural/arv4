@@ -1,5 +1,33 @@
 .home{
 	.section{
+		&.newsfeed{
+			main{
+				@include make-sm-column(6);
+				article.post{
+					padding-bottom: 7px;
+					padding-top: 7px;
+					figure{
+						float: left;
+						margin-right: 10px;
+					}
+					header{
+						time{
+							font-size: 10px;
+							color: $gray--light;
+						}
+						h2{
+							@include opensans(semibold);
+							font-size: 12px;
+							margin-top: 3px;
+						}
+					}
+				}
+			}
+			aside{
+				@include make-sm-column(3);
+			}
+		}
+
 		&.multimedia__banner{
 			background-color: $gray--text; 
 			.multimedia{

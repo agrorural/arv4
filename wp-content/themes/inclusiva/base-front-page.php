@@ -19,6 +19,7 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <?php get_template_part('templates/slider', 'home'); ?>
+    <?php get_template_part('templates/section', 'newsfeed'); ?>
     <?php get_template_part('templates/section', 'multimedia'); ?>
     <div class="wrap container" role="document">
       <div class="content row">

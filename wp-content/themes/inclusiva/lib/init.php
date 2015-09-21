@@ -39,6 +39,7 @@ function setup() {
   add_image_size( 'thumb-noticias', 330, 220, true );
   add_image_size( 'thumb-videos', 400, 230, true );
   add_image_size( 'thumb-category-bn', 750, 825, true );
+  add_image_size( 'thumb-news-list', 50, 50, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
