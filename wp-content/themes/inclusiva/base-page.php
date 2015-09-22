@@ -18,7 +18,7 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <?php global $post; ?>
+    <?php  global $post; ?>
     <?php if (has_post_thumbnail( $post->ID ) ){ ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); ?>
       	<div class="masshead" style="background: url('<?php echo $image[0]; ?>')  no-repeat top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
@@ -28,14 +28,24 @@ use Roots\Sage\Wrapper;
       </div>
 
     <div class="wrap container" role="document">
+    <?php if ( is_post_type_archive('tribe_events') || is_singular('tribe_events') ){ ?>
+      <?php get_template_part('templates/page', 'header-events'); ?>
+    <?php } else { ?>
       <?php get_template_part('templates/page', 'header'); ?>
+    <?php } ?>
       <div class="content row">
         <main class="main" role="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
           <aside class="sidebar" role="complementary">
+          <?php if ( is_singular('tribe_events') ) { ?>
+            <?php get_template_part('templates/sidebar', 'singular'); ?>
+          <?php }else{ ?>
             <?php get_template_part('templates/sidebar', 'page'); ?>
+          <?php } ?>
+
+            
           </aside><!-- /.sidebar -->
         <?php endif; ?>
       </div><!-- /.content -->

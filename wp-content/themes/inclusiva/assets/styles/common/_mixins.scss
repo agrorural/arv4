@@ -72,3 +72,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin cta-link(){
+	@include opensans(bold);
+	text-transform: uppercase;
+	&:after{
+		@include fa();
+		content: "\f105";
+		margin-left: 5px;
+		@include opacity (.75);
+	}
+}

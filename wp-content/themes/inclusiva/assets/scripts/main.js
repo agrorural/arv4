@@ -58,6 +58,8 @@
             center: true,
             margin: 0,
             nav: true,
+            animateIn: 'slideInRight',
+            animateOut: 'slideOutLeft',
             navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"],
             responsive:{
                 678:{

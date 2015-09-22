@@ -1,5 +1,12 @@
 .home{
 	.section{
+		.page-header{
+			margin: 0;
+			h3{
+				margin-top: 0;
+			}
+		}
+
 		&.newsfeed{
 			main{
 				@include make-sm-column(6);
@@ -12,19 +19,77 @@
 					}
 					header{
 						time{
-							font-size: 10px;
+							font-size: 11px;
 							color: $gray--light;
 						}
 						h2{
 							@include opensans(semibold);
-							font-size: 12px;
+							font-size: 13px;
 							margin-top: 3px;
 						}
 					}
 				}
+				a.cta__link{
+					position: relative;
+					display: block;
+					font-size: 11px;
+					margin-top: 15px;
+				}
 			}
 			aside{
 				@include make-sm-column(3);
+				&.eventos{
+					.widget{
+						&.tribe-events-list-widget{
+							
+							h3{
+								background-color: $green;
+								color: $white;
+								&:before{
+									@include fa();
+									content: "\f073";
+									margin-right: 5px;
+								}
+							}
+
+							background-color: $green;
+							ol.vcalendar{
+								padding-left: 15px;
+								padding-right: 15px;
+								padding-top: 15px;
+								li{
+									margin-bottom: 10px;
+									padding-bottom: 10px;
+									border-bottom: 1px solid rgba(0,0,0,.06);
+									h4{
+										font-size: 13px;
+										margin: 0;
+										@include opensans(semibold);
+										a{
+											color: $yellow;
+										}
+									}
+									.duration{
+										font-weight: normal;
+										font-size: 11px;
+										color: $white;
+										@include opacity(.75);
+									}
+								}
+							}
+							p.tribe-events-widget-link{
+								padding-left: 15px;
+								padding-right: 15px;
+								a{
+									text-transform: uppercase;
+									font-size: 11px;
+									@include opensans(bold);
+									color: $yellow;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 

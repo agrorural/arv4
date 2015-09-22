@@ -118,6 +118,9 @@ a{
     color: $red--google;
     text-decoration: none;
   }
+  &.cta__link{
+    @include cta-link();
+  }
 }
 
 p{

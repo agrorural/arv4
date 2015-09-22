@@ -8,7 +8,7 @@
 				<?php get_template_part('templates/view', 'news-list'); ?>
 			</main>
 			<aside class="sidebar eventos">
-				
+				<?php dynamic_sidebar('sidebar-events'); ?>
 			</aside>
 			<aside class="sidebar banner">
 				
