@@ -81,7 +81,7 @@ article{
 		header{
 			.entry-title{
 				font-size: 20px;
-				@include opensans(300); 
+				@include opensans(light); 
 				margin-top: 0;
 				a{ 
 					/*color: $brown; */
@@ -90,8 +90,7 @@ article{
 		}
 		.entry-summary{
 			p{
-				font-size: 14px;
-				@include opensans(400);
+				@include opensans();
 				a.read-more{
 					display: block;
 					padding-top: 10px;
@@ -112,7 +111,7 @@ article{
 	display: block;
 	clear: both;
 	padding: 30px 0;
-	@include opensans(400);
+	@include opensans();
 	span{
 		border: 0 none;
 		padding: 5px 10px;
@@ -120,7 +119,7 @@ article{
 		&.current{
 			background-color: $red;
 			@include border-radius(4px);
-			@include opensans(400);
+			@include opensans();
 			color: $white;
 		}
 	}
