@@ -19,6 +19,8 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        $('.tip').tooltip();
+
         $('.sl__footer').owlCarousel({
         loop: true,
         margin: 0,

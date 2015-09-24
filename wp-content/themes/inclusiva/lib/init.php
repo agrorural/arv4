@@ -27,7 +27,10 @@ function setup() {
     'participa_navigation' => __('Participa Navigation', 'sage'),
     'colabora_navigation' => __('Colabora Navigation', 'sage'),
     'desarrolla_navigation' => __('Desarrolla Navigation', 'sage'),
-    'sede_amazonas_navigation' => __('Sede Amazonas Navigation', 'sage')
+    'sede_amazonas_navigation' => __('Sede Amazonas Navigation', 'sage'),
+    // Proyectos
+    'pry_pssa_navigation' => __('Proyecto PSSA Navigation', 'sage'), //PSSA
+    'pry_pssa_cmp_navigation' => __('Componentes Proyecto PSSA Navigation', 'sage') //PSSA - COmponentes
 
   ]);
 

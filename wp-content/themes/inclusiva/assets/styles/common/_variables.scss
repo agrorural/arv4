@@ -39,3 +39,15 @@ $red:					#7C2202;
 $red--google:			#dd4b39;
 $red--google--light:	lighten($red--google, 35%);
 $red--google--hover:	#e15f4f;
+
+.fa-video{
+	&:before{
+		content: "\f04b";
+	}
+}
+
+.fa-gallery{
+	&:before{
+		content: "\f1c5";
+	}
+}

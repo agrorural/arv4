@@ -27,7 +27,7 @@
 		right: 0;
 		height: 100%;
 		z-index: 2;
-		opacity: 0.35;
+		opacity: 0.75;
 		background: -moz-linear-gradient(top, rgba(0,0,0,0.001) 0%, rgba(0,0,0,1) 100%); 
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.001)), color-stop(100%,rgba(0,0,0,1)));
 		background: -webkit-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
@@ -82,4 +82,11 @@
 		margin-left: 5px;
 		@include opacity (.75);
 	}
+}
+
+@mixin full-bg(){
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

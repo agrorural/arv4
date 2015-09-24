@@ -102,6 +102,7 @@ body{
     background-color: $brown--lighter;
     background-position: center bottom;
     background-repeat: no-repeat;
+    @include full-bg();
     height: 300px;
     position: relative;
     overflow: hidden;
@@ -127,6 +128,66 @@ p{
   text-align: justify;
 }
 
+/* Páginas Especiales */
+.special-header{
+  .masshead{
+    position: relative;
+    z-index: 0;
+    .page-header{
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid transparent !important;
+      @include center-block();
+      figure{
+        @include center-block();
+        img{
+          @include center-block();
+          text-align: center;
+        }
+      }
+
+      h1{
+        @include opensans(bold);
+        font-size: 150%;
+        @include make-sm-column(8);
+        @include center-block();
+        @include text-on-focus();
+        float: none !important;
+        text-align: center;
+        a{
+          @include text-on-focus();
+        }
+      }
+      @media(min-width: $screen-sm-min){
+        h1{
+          font-size: 225%;
+        }
+      }
+      p, p a{
+        float: none !important;
+        @include opensans();
+        @include text-on-focus();
+        text-align: center;
+        @include make-sm-column(8);
+        @include center-block();
+      }
+
+      p a{
+        font-size: 11px;
+        color: $yellow;
+      }
+    }
+  }
+  .wrap{
+    margin-top: 30px !important;
+    main{}
+    aside{
+      margin-top: 30px;
+    }
+  }
+}
+/* Páginas Especiales */
+
 .section{
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -142,11 +203,11 @@ article.article-list{
       position: absolute;
       top: 0px;
       right: 0px;
-      padding:5px 10px; 
+      padding:3px 7px; 
       background-color: $yellow;
       color: $black; 
       i{
-        font-size: 10px;
+        font-size: 9px;
       }
     }
   }

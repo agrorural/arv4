@@ -16,6 +16,21 @@
 	endif;
 	?>
 </section>
+
+<?php } elseif ( is_page( array ( 
+									'objetivos', 
+									'el-proyecto',
+									'ambito-de-intervencion-y-grupo-objetivo', 
+									'componentes',
+									'componente-1',
+									'componente-2',
+									'componente-3',
+									'componente-4'
+								) 
+						) 
+				) 
+{?>
+    <?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
 <?php } else {?>
 	<?php dynamic_sidebar('sidebar-primary'); ?>
 <?php } ?>

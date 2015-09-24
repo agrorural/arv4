@@ -62,7 +62,7 @@ if ( $posts ) : ?>
 	</ol><!-- .hfeed -->
 
 	<p class="tribe-events-widget-link">
-		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( __( 'View All %s', 'the-events-calendar' ), '' ); ?> <i class="fa fa-angle-right"></i></a>
+		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( __( 'Ver Agenda Institucional' ), '' ); ?> <i class="fa fa-angle-right"></i></a>
 	</p>
 
 <?php

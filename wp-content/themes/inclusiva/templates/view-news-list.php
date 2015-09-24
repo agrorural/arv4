@@ -12,7 +12,7 @@ $the_query = new WP_Query( $args ); ?>
 
 	<!-- the loop -->
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<?php get_template_part('templates/content', 'news-list'); ?>
+		<?php get_template_part('templates/content', 'home-news-list'); ?>
 	<?php endwhile; ?>
 	<!-- end of the loop -->
 	<p><a href="<?php echo bloginfo( 'url' ); ?>/noticias" class="cta__link">Ver todo</a></p>
