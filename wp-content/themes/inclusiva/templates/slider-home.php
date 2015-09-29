@@ -24,7 +24,7 @@ $the_query = new WP_Query( $args ); ?>
 		?>
 		<div class="item">
 			<figure>
-				<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('full', array('class' => 'img-responsive' )); } ?>
 				<figcaption>
 					<div class="sl__home__hashtag">
 	    				<a href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank"><?php if ($banner__ht) { echo '#'.$banner__ht; } else { echo bloginfo( 'url' ); } ?></a>

@@ -3,101 +3,105 @@ header{
 	&.super-header{
 		@include gradient-horizontal( $green, $green--light, 0%, 100%); 
 		border-bottom: 1px solid transparent;
-		.nav{
-			li{
-				font-size: 13px;
-				font-weight: normal;
-				.navbar-brand{
-					font-size: 13px;
-					height: 100%;
-					padding-top: 10px;
-					padding-bottom: 10px;
-					margin-bottom: 0;
-					color: $white;
-				}
-			}
-			&.navbar-right{ 
-				background-color: $green; 
+		.collapse{
+			display: block;
+			height: 100% !important;
+			.nav{
 				li{
-					a{
-  						text-transform: uppercase;
-  						font-size: 11px;
-  						color: $white;
-  						padding-top: 10px;
+					font-size: 13px;
+					font-weight: normal;
+					.navbar-brand{
+						font-size: 13px;
+						height: 100%;
+						padding-top: 10px;
 						padding-bottom: 10px;
+						margin-bottom: 0;
+						color: $white;
 					}
 				}
-				&.navbar-social{
-					li{
-						&.menu-item-11086{
-							a{
-								background-color: $blue--fb;
-								&:hover{
-									background-color: $blue--fb--hover;
-								}
-							}
-						}
-						&.menu-item-11085{
-							a{
-								background-color: $blue--tw;  
-								&:hover{
-									background-color: $blue--tw--hover;
-								}
-							}
-						}
-						&.menu-item-11084{
-							a{
-								background-color: $red--google;  
-								&:hover{
-									background-color: $red--google--hover;
-								}
-							}
-						}
-					}
-				} /*  Fin .navbar-social */			
-				&.navbar-links{
+				&.navbar-right{ 
+					background-color: $green; 
 					li{
 						a{
-							background-color: transparent;
-							&:hover{
-								color: $yellow;
+	  						text-transform: uppercase;
+	  						font-size: 11px;
+	  						color: $white;
+	  						padding-top: 10px;
+							padding-bottom: 10px;
+						}
+					}
+					&.navbar-social{
+						li{
+							&.menu-item-11086{
+								a{
+									background-color: $blue--fb;
+									&:hover{
+										background-color: $blue--fb--hover;
+									}
+								}
+							}
+							&.menu-item-11085{
+								a{
+									background-color: $blue--tw;  
+									&:hover{
+										background-color: $blue--tw--hover;
+									}
+								}
+							}
+							&.menu-item-11084{
+								a{
+									background-color: $red--google;  
+									&:hover{
+										background-color: $red--google--hover;
+									}
+								}
+							}
+						}
+					} /*  Fin .navbar-social */			
+					&.navbar-links{
+						li{
+							a{
+								background-color: transparent;
+								&:hover{
+									color: $yellow;
+								}
 							}
 						}
 					}
 				}
 			}
-		}
 
-		.navbar-form{
-			margin-top: 0;
-			margin-bottom: 0;
-  			padding-top: 8px;
-  			padding-bottom: 8px;
-  			background-color: $green; 
-			.search-form{
-				.input-group{
-					.form-control{
-						height: 24px;
-						padding: 3px 7px;
-						font-size: 13px;
-						border: 1px solid transparent;
-						@include border-radius(0px);
-						&:focus{
-							color: $black;
-							background-color: $white--smoke;
-						}
-					}
-					.input-group-btn{
-						.search-submit{
-							@include border-radius(0px);
-							padding: 2px 7px;
-							font-size: 12.5px;
+			.navbar-form{
+				margin-top: 0;
+				margin-bottom: 0;
+	  			padding-top: 8px;
+	  			padding-bottom: 8px;
+	  			background-color: $green; 
+				.search-form{
+					.input-group{
+						.form-control{
+							height: 24px;
+							padding: 3px 7px;
+							font-size: 13px;
 							border: 1px solid transparent;
-							background-color: $white;
-							color: $gray--light;
-							&:hover{
+							@include border-radius(0px);
+							&:focus{
+								color: $black;
+								background-color: $white--smoke;
+							}
+						}
+						.input-group-btn{
+							.search-submit{
+								@include border-radius(0px);
+								padding: 2px 7px;
+								font-size: 12.5px;
 								border: 1px solid transparent;
 								background-color: $white;
+								color: $gray--light;
+								&:hover{
+									border: 1px solid transparent;
+									background-color: $white;
+								}
 							}
 						}
 					}

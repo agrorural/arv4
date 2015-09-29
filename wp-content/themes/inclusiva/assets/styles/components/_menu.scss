@@ -57,6 +57,7 @@ ul#menu-navegacion-primaria{
 			&:hover{
 				ul.dropdown-menu{ 
 					display: block; 
+					width: 100%;
 					-webkit-animation-duration: 1s;
 					animation-duration: 1s;
 					-webkit-animation-fill-mode: both;
@@ -95,6 +96,69 @@ ul#menu-navegacion-primaria{
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ul#menu-super-navegacion{
+	li{
+		&.active, &.current-page-ancestor, &.current-menu-ancestor{
+			a, a:hover{
+				color: $yellow;
+			}
+		}
+		&.dropdown{
+			ul.dropdown-menu{
+				z-index: 1001;
+				display: none;
+				@include border-radius(0);
+				li{
+					a{
+						@include opensans(light);
+						font-size: 13px;
+						text-transform: none;
+						color: $gray;
+						padding: 5px 20px; 
+						&:hover{
+							background-color: $yellow--light; 
+						}
+					}
+					&.dropdown-header{
+						font-size: 10px;
+						text-transform: uppercase;
+						@include title-xs();
+						color: $gray--light;
+					}
+					&.active{
+						a, a:hover{
+							background-color: $red--google;
+							color: $white;
+						}
+					}
+				}
+
+				&:hover{
+					li{
+						&.dropdown-header{
+							color: $black;
+						}
+					}
+				}
+			}
+			&:hover{
+				ul.dropdown-menu{ 
+					display: block; 
+					-webkit-animation-duration: 1s;
+					animation-duration: 1s;
+					-webkit-animation-fill-mode: both;
+					animation-fill-mode: both;
+					-webkit-animation-name: fadeIn;
+					animation-name: fadeIn;
+					li{
+						display: block;
 					}
 				}
 			}

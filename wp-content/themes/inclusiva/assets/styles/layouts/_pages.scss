@@ -62,6 +62,14 @@
 			}
 		}
 	}
+
+	&.contacto{
+		.masshead{
+			&:after{
+				content: none;
+			}
+		}
+	}
 }
 
 
