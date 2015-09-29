@@ -41,34 +41,86 @@ footer{
 	&.content-info{
 		padding-top: 30px;
 		padding-bottom: 30px;
-		@include gradient-vertical($brown--lighter, $brown--light, $start-percent: 0%, $end-percent: 100%);
+		@include gradient-vertical($brown--lighter, $brown--light, 0%, 100%);
 		.container{
-
-		}
-	}
-
-	.widget{
-		h3{
-			font-size: 11px;
-			@include opensans(light);
-			text-transform: uppercase;
-			letter-spacing: 0.1em;
-			margin: 0 0 16px;
-		}
-		ul{
-			margin: 0;
-			padding: 0;
-			list-style-type: none;
-			li{
-				padding: 0  0 8px 0; 
-				a{
-					display: block;
-					padding: 0px; 
+			.widget{
+				margin-bottom: 30px;
+				address{
+					margin-bottom: 10px;
+				}
+				h3{
+					font-size: 11px;
+					@include opensans(light);
+					text-transform: uppercase;
+					letter-spacing: 0.1em;
+					margin: 0 0 16px;
+				}
+				ul{
+					margin: 0;
+					padding: 0;
+					list-style-type: none;
+					li{
+						padding: 0  0 8px 0; 
+						a{
+							display: block;
+							padding: 0px; 
+							@include opensans(semibold);
+							font-size: 12px;
+						}
+						ul.sub-menu{
+							padding-top: 3px;
+							padding-bottom: 3px;
+							li{
+								padding-bottom: 3px;
+								a{
+									@include opensans();
+									color: $brown;
+									font-size: 11px;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 	}
-
+	&.post-footer{
+		background-color: $brown--light;
+		background-image: url('../images/post-footer__bg.png');
+		background-position: center bottom;
+		background-repeat: repeat-x;
+		padding-top: 15px;
+		padding-bottom: 30px;
+		.container{
+			
+			.footer__logo{
+				&.minagri, &.peru{
+					a{
+						@include img-replace();
+						span{
+							@include img-replace-span();
+						}
+					}
+				}
+				&.minagri{
+					float: left;
+					a{
+						width: 253px;
+						height: 46px;
+						background-image: url('../images/logo__minagri.png');
+					}	
+				}
+				&.peru{
+					float: right;
+					a{
+						width: 126px;
+						height: 46px;
+						background-image: url('../images/logo__peru--color.png');
+					}
+				}
+			}
+		}
+	}
 }
 
 

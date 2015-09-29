@@ -23,6 +23,7 @@ function setup() {
     'links_navigation' => __('Links Navigation', 'sage'),
     'social_navigation' => __('Social Navigation', 'sage'),
     'quienes_somos_navigation' => __('Quiénes Somos Navigation', 'sage'),
+    'sp_navigation' => __('Sala de Prensa Navigation', 'sage'),
     'transparencia_navigation' => __('Transparencia Navigation', 'sage'),
     'participa_navigation' => __('Participa Navigation', 'sage'),
     'colabora_navigation' => __('Colabora Navigation', 'sage'),

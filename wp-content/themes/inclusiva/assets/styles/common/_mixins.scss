@@ -90,3 +90,19 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+@mixin img-replace( $width: 100%, $height: 100% ){
+	display: block;
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+}
+@mixin img-replace-span(){
+	position: relative;
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
