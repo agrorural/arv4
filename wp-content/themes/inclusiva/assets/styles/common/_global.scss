@@ -266,12 +266,56 @@ article.article-list{
 
 /* Comienza .panel */
 .panel{
+  @include border-radius(0);
   .panel-heading{
     @include opensans();
     font-size: 18px;
+    .label{
+      @include title-xs();
+      padding: 5px 10px;
+      letter-spacing: 0;
+      line-height: 15px;
+    }
+  }
+  .progress{
+    height: 2px;
+    margin-bottom: 0px;
+    @include border-radius(0);
+    @include opacity(.7);
+    .progress-bar{
+      &.progress-bar-default{
+        background-color: $gray;
+      }
+    }
+  }
+  .table{
+    tr{
+      th, td{
+        padding: 5px 15px 5px;
+      }
+      th{
+        font-weight: normal;
+      }
+      td{
+        font-size: 12px;
+        p{
+          color: $gray--light;
+        }
+      }
+    }
+  }
+
+  .panel-footer{
+    background-color: $white--smoke;
+    padding: 5px 15px;
   }
   .cta__link{
     font-size: 10.5px;
+  }
+  &:hover{
+    .progress{
+      @include opacity(1);
+    }
   }
 }
 /* Termina .panel */
@@ -449,12 +493,12 @@ article.article-list{
 }
 
 @media(min-width: $screen-md-min){
-  .sharing-list{
+  .sharing-list, .panel-heading .label{
     display: none;
   }
   article{
     &:hover{
-      .sharing-list{
+      .sharing-list, .panel-heading .label{
         display: block;
       }
     }

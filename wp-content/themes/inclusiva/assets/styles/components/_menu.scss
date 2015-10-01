@@ -151,6 +151,7 @@ ul#menu-super-navegacion{
 			&:hover{
 				ul.dropdown-menu{ 
 					display: block; 
+					width: 100%;
 					-webkit-animation-duration: 1s;
 					animation-duration: 1s;
 					-webkit-animation-fill-mode: both;
@@ -160,6 +161,19 @@ ul#menu-super-navegacion{
 					li{
 						display: block;
 					}
+				}
+			}
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-sm-min) {
+	ul#menu-navegacion-primaria, ul#menu-super-navegacion{
+		li.dropdown{
+			&:hover{
+				ul.dropdown-menu{ 
+					width: auto;
 				}
 			}
 		}

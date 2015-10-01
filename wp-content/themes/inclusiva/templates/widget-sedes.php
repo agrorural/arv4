@@ -1,3 +1,6 @@
+	<?php 
+		$category_id_agro_rural = get_cat_ID('AGRO RURAL');
+	?>
 	<section class="widget">
 		<?php $category_list_args = array(
 			'show_option_all'    => 'Seleccionar',

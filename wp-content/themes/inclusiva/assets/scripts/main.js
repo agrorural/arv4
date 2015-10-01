@@ -20,6 +20,11 @@
       init: function() {
         // JavaScript to be fired on all pages
         $('.tip').tooltip();
+        $('[data-toggle="popover"]').popover({
+          html: true
+        });
+
+        $('body').scrollspy({ target: '#navbar-example2' });
 
         $('.sl__footer').owlCarousel({
         loop: true,
