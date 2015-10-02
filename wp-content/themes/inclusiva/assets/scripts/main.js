@@ -24,8 +24,6 @@
           html: true
         });
 
-        $('body').scrollspy({ target: '#navbar-example2' });
-
         $('.sl__footer').owlCarousel({
         loop: true,
         margin: 0,
