@@ -1,7 +1,7 @@
 <?php
 	// ACF Archive Page
 	$res__tipo = get_field('res__tipo');
-	$term = $term = get_term( $res__tipo, 'tipos' );
+	$term = get_term( $res__tipo, 'tipos' );
 	$term__name = $term->name;
 
 	global $paged;

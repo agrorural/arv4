@@ -70,6 +70,26 @@
 			}
 		}
 	}
+	&.page-template-template-directorios{
+		.panel{
+			margin-bottom: 0px;
+			.table{
+				tbody{
+					tr{
+						td{
+							&:first-of-type{
+								width: 20%;
+							}
+							&:last-of-type{
+								width: 40%;
+								text-align: right;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 
