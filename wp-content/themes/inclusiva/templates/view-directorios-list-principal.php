@@ -1,4 +1,4 @@
-<h3>Órganos de Dirección</h3>
+<h3 class="ap__list__title">Órganos de Dirección</h3>
 
 <?php
 	global $paged;
@@ -19,7 +19,7 @@
   $wp_query = $temp; 
 ?>
 
-<h3>Órgano de Control</h3>
+<h3 class="ap__list__title">Órgano de Control</h3>
 
 <?php
 	global $paged;
@@ -40,7 +40,7 @@
   $wp_query = $temp; 
 ?>
 
-<h3>Órganos de Apoyo</h3>
+<h3 class="ap__list__title">Órganos de Apoyo</h3>
 
 <?php
 	global $paged;
@@ -61,7 +61,7 @@
   $wp_query = $temp; 
 ?>
 
-<h3>Órganos de Asesoramiento</h3>
+<h3 class="ap__list__title">Órganos de Asesoramiento</h3>
 
 <?php
 	global $paged;
@@ -82,7 +82,7 @@
   $wp_query = $temp; 
 ?>
 
-<h3>Órganos de Línea</h3>
+<h3 class="ap__list__title">Órganos de Línea</h3>
 
 <?php
 	global $paged;
@@ -103,7 +103,7 @@
   $wp_query = $temp; 
 ?>
 
-<h3>Órganos de Desconcentrados</h3>
+<h3 class="ap__list__title">Órganos de Desconcentrados</h3>
 
 <?php
 	global $paged;

@@ -71,18 +71,32 @@
 		}
 	}
 	&.page-template-template-directorios{
-		.panel{
-			margin-bottom: 0px;
-			.table{
-				tbody{
-					tr{
-						td{
-							&:first-of-type{
-								width: 20%;
-							}
-							&:last-of-type{
-								width: 40%;
-								text-align: right;
+		.ap__list{
+			h3.ap__list__title{
+				background-color: $green--light;
+				color: $white;
+				margin-bottom: 0;
+				padding: 10px 15px;
+				font-size: 18px;
+			}
+			.panel{
+				margin-bottom: 0px;
+				.panel-heading{
+					padding: 5px 15px;
+					@include border-radius(0);
+					font-size: 14px;
+				}
+				.table{
+					tbody{
+						tr{
+							td{
+								&:first-of-type{
+									width: 20%;
+								}
+								&:last-of-type{
+									width: 40%;
+									text-align: right;
+								}
 							}
 						}
 					}
