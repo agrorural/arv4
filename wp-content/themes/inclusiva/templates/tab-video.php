@@ -73,13 +73,6 @@ wp_reset_postdata(); ?>
 	</figcaption>
 	</figure>
 <?php } ?>
-<figure>
-		<a href="<?php echo get_post_format_link('video'); ?>" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-			<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
-	<figcaption>
-	<h3 class="tab-title"><a href="<?php echo get_post_format_link('video'); ?>">Ver todos los videos</a></h3>
-	</figcaption>
-	</figure>
 </div>
 <?php
 // Restore original Post Data

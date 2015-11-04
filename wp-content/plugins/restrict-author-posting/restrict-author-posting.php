@@ -4,7 +4,7 @@ Plugin Name: Restrict Author Posting
 Plugin URI: http://www.jamviet.com/2015/05/restrict-author-posting.html
 Description: This plugin help you to add restriction posting to editor/author in your blog.
 Author: Jam Việt
-Version: 2.1
+Version: 2.1.2
 Tags:	restrict user, banned user, user role, posting to category, specific posting category, author role, restrict using media, user file media
 Author URI: http://www.jamviet.com
 Donate link: http://www.jamviet.com/2015/05/restrict-author-posting.html
@@ -159,8 +159,7 @@ function restrict_user_form( $user ) {
 		</tr>
 	</table>
 	<script>
-		var $jq = jQuery.noConflict(true);
-		$jq('select#allow').multipleSelect();
+		jQuery('select#allow').multipleSelect();
 	</script>
 <?php 
 }

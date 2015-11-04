@@ -109,7 +109,7 @@ body{
     overflow: hidden;
 
       @include focus-shadow();
-      z-index: 0
+      z-index: 0;
 
   }
 }
@@ -190,7 +190,7 @@ p{
 /* Páginas Especiales */
 
 .section{
-	padding-top: 30px;
+	padding-top: 60px;
 	padding-bottom: 30px;
 }
 

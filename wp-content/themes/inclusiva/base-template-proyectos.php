@@ -32,10 +32,8 @@ use Roots\Sage\Wrapper;
     <?php } else { ?>
       	<div class="masshead">
     <?php } ?>
-		    <div class="container">
-			  		<?php get_template_part('templates/page', 'header-proyectos'); ?>
-			</div>
-    </div>
+			  <?php get_template_part('templates/page', 'header-proyectos'); ?>
+		</div>
 
     <div class="wrap container" role="document">
       <div class="content row">

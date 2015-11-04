@@ -41,7 +41,7 @@ footer{
 	&.content-info{
 		padding-top: 30px;
 		padding-bottom: 30px;
-		@include gradient-vertical($brown--lighter, $brown--light, 0%, 100%);
+		@include gradient-vertical($white, $blue--sky, 0%, 100%);
 		.container{
 			.widget{
 				margin-bottom: 30px;
@@ -88,11 +88,11 @@ footer{
 		}
 	}
 	&.post-footer{
-		background-color: $brown--light;
-		background-image: url('../images/post-footer__bg.png');
+		background-color: $blue--sky;
+		background-image: url('../images/post-footer__bg--2.png');
 		background-position: center bottom;
 		background-repeat: repeat-x;
-		padding-top: 15px;
+		padding-top: 60px;
 		padding-bottom: 30px;
 		.container{
 			

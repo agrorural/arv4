@@ -3,7 +3,7 @@ Contributors: mcjambi
 Tags: restrict user, banned user, user role, posting to category, specific posting category,author role
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 2.1
+Stable tag: 2.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://www.jamviet.com/2015/05/restrict-author-posting.html
@@ -34,6 +34,8 @@ Just unzip plugin and move all of theme to plugins folder inside Wordpress direc
 2. In editor there are only alowing categories !
 3. User now can be restricted using own file in media
 == Changelog ==
+= 2.1.2 =
+Fixed bug in User's Profile can not generate Password
 = 2.1 =
 Add new Function: Restrict User using file in Media, now author can be restricted using his/her own file only in Media Page or in New Post screen.
 = 2.0.2 =
@@ -56,6 +58,8 @@ Fixed English and something more !
 First version release.
 
 == Upgrade Notice ==
+= 2.1.2 =
+Fixed bug in User's Profile can not generate Password
 = 2.1 =
 Add new Function: Restrict User using file in Media, now author can be restricted using his/her own file only in Media Page or in New Post screen.
 = 2.0.2 =
