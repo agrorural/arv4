@@ -36,7 +36,7 @@ $the_query = new WP_Query( $args ); ?>
 	    				<?php the_content(); ?>
 	    			</div>
 		    		<div class="sl__home__link">
-		    			<p><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__link"><?php if ($banner__btn_title) { echo $banner__btn_title; } else { echo 'Saber más'; } ?></a></p>
+		    			<p><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__danger"><?php if ($banner__btn_title) { echo $banner__btn_title; } else { echo 'Saber más'; } ?></a></p>
 		    		</div>
 				</figcaption>
 			</figure>

@@ -26,6 +26,7 @@ function setup() {
     'publicaciones_navigation' => __('Publicaciones Navigation', 'sage'),
     'of_imagen_navigation' => __('Oficina de Imagen Navigation', 'sage'),
     'transparencia_navigation' => __('Transparencia Navigation', 'sage'),
+    'multimedia_navigation' => __('Multimedia Navigation', 'sage'),
     'participa_navigation' => __('Participa Navigation', 'sage'),
     'colabora_navigation' => __('Colabora Navigation', 'sage'),
     'desarrolla_navigation' => __('Desarrolla Navigation', 'sage'),

@@ -34,6 +34,9 @@ use Roots\Sage\Wrapper;
     <?php } ?>
 			  <?php get_template_part('templates/page', 'header-proyectos'); ?>
 		</div>
+    <?php if ($tag__name && has_nav_menu('pry_'.$tag__name.'_navigation')){ ?>
+          <?php get_template_part('templates/nav', 'proyecto-'.$tag__name ); ?>
+    <?php } ?>
 
     <div class="wrap container" role="document">
       <div class="content row">

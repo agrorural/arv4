@@ -33,10 +33,7 @@
 					}
 				}
 				a.cta__link{
-					position: relative;
-					display: block;
 					font-size: 11px;
-					margin-top: 15px;
 				}
 			}
 			aside{
@@ -295,10 +292,7 @@
 											padding-top: 10px;
 											padding-bottom: 20px;
 											a{
-												@include button-variant( $green--accent, transparent, transparent );
-												text-transform: uppercase;
-												@include opensans(bold);
-												font-size: 11px;
+												
 											}
 										}
 									}
@@ -453,9 +447,6 @@
   										padding-top: 10px;
   										padding-bottom: 20px;
   										a{
-  											@include button-variant( $green--accent, transparent, transparent );
-  											text-transform: uppercase;
-  											@include opensans(bold);
   										}
   									}
   								}
