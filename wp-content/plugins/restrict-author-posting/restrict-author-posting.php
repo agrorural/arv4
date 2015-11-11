@@ -4,7 +4,7 @@ Plugin Name: Restrict Author Posting
 Plugin URI: http://www.jamviet.com/2015/05/restrict-author-posting.html
 Description: This plugin help you to add restriction posting to editor/author in your blog.
 Author: Jam Việt
-Version: 2.1.2
+Version: 2.1.3
 Tags:	restrict user, banned user, user role, posting to category, specific posting category, author role, restrict using media, user file media
 Author URI: http://www.jamviet.com
 Donate link: http://www.jamviet.com/2015/05/restrict-author-posting.html
@@ -53,6 +53,26 @@ function jamviet_restrict_author_file_in_media( $wp_query = array() ) {
 		return $wp_query;
 }
 add_filter('ajax_query_attachments_args', 'jamviet_restrict_author_file_in_media' );
+
+
+/*
+Change default category to his/her category !
+*/
+
+add_filter('pre_option_default_category', 'jam_change_default_category');
+
+function jam_change_default_category($ID) {
+	// Avoid error or heavy load !
+	if ( ! is_user_logged_in() )
+		return $ID;
+	$user_id = get_current_user_id();
+	$restrict_cat = get_user_meta( $user_id, '_access', true);
+	if ( is_array($restrict_cat) ) {
+		return reset($restrict_cat);
+	} else {
+		return $ID;
+	}
+}
 
 
 /**
@@ -127,7 +147,8 @@ function restrict_user_form( $user ) {
 		// Do not throught error in user's screen ! // @JamViet
 		if ( $selected )
 		foreach ($selected as $term_id) {
-			if (!empty($term_id)){
+			// fixed delete category make error !
+			if (!empty($term_id) && get_the_category_by_ID($term_id) ){
 				$option = $xpath->query("//select[@id='allow']//option[@value='$term_id']");
 				$option->item(0)->setAttribute('selected', 'selected');
 			}
@@ -153,13 +174,15 @@ function restrict_user_form( $user ) {
 					<legend class="screen-reader-text"><span>Restrict using his/her own file in Media</span></legend>
 					<label for="_restrict_media">
 					<input type="checkbox" <?php checked (get_user_meta($user->ID, '_restrict_media', true), 1, 1 ) ?> value="1" id="_restrict_media" name="_restrict_media">
-				Whenever it checked, User can only using his/her own file (image/video) in Media</label>
+				Whenever it checked, Author can only use his/her own file (image/video) in Media</label>
 					</fieldset>
 			</td>
 		</tr>
 	</table>
 	<script>
+	<!--
 		jQuery('select#allow').multipleSelect();
+	-->
 	</script>
 <?php 
 }

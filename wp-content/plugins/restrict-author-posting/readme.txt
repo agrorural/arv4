@@ -3,7 +3,7 @@ Contributors: mcjambi
 Tags: restrict user, banned user, user role, posting to category, specific posting category,author role
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://www.jamviet.com/2015/05/restrict-author-posting.html
@@ -16,10 +16,13 @@ This plugin allow you to restrict the category that your site contributors or an
 My plugin will help you to add restriction category to User profile, so the author or editor can post in just specific categories.
 <br>
 <br>
+* New Update: If user is restricted to a category, the first one in the list will be chosen as a default for that user if he didn’t chose the category he wants to publish in ( thanks to [ash](http://dvvlc.com/) for this bug ). AND delete Category no longer show an error in User's Profile !
+<br>
+<br>
 * New Update: Include a new function to restrict author using media file ( image/video ), just a checkbox in User Profile, you can restrict Author using all media file or just his/her own file !
 <br>
 <br>
-Just a small code, so it\'ll never slow down your website !
+Just a small code, and run in Admin Screen so it'll never slow down your website !
 <br>
 <br>
 If you have any question, or found a bug, please [let me know](http://www.jamviet.com/2015/05/restrict-author-posting.html) !
@@ -33,7 +36,11 @@ Just unzip plugin and move all of theme to plugins folder inside Wordpress direc
 1. Choose a category for author
 2. In editor there are only alowing categories !
 3. User now can be restricted using own file in media
+
+
 == Changelog ==
+= 2.1.3 =
+If user is restricted to a category, the first one in the list will be chosen as a default for that user if he didn’t chose the category he wants to publish in ( thanks to ash for this bug ). AND delete Category no longer show an error in User's Profile ! 
 = 2.1.2 =
 Fixed bug in User's Profile can not generate Password
 = 2.1 =
@@ -58,6 +65,8 @@ Fixed English and something more !
 First version release.
 
 == Upgrade Notice ==
+= 2.1.3 =
+If user is restricted to a category, the first one in the list will be chosen as a default for that user if he didn’t chose the category he wants to publish in ( thanks to ash for this bug ). AND delete Category no longer show an error in User's Profile ! 
 = 2.1.2 =
 Fixed bug in User's Profile can not generate Password
 = 2.1 =
