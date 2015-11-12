@@ -17,34 +17,7 @@
 						</div>
 
 						<div class="tab-pane" id="b">
-							<div class="multimedia--1">
-								<figure>
-									<a href="#" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/420/250/sports/4/" />
-									<figcaption>
-										<time>Lunes, 3 de mayo de 2015</time>
-										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="multimedia--2">
-								<figure>
-									<a href="#" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/5/" />
-									<figcaption>
-										<time>Lunes, 3 de mayo de 2015</time>
-										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
-									</figcaption>
-								</figure>
-								<figure>
-									<a href="#" class="tab-icon"><i class="fa fa-youtube-play"></i></i></a>
-									<img class="img-responsive" src="http://lorempixel.com/400/250/sports/6/" />
-									<figcaption>
-										<time>Lunes, 3 de mayo de 2015</time>
-										<h3 class="tab-title"><a href="">Entrevista al Director Ejecutivo en Ayacucho</a></h3>
-									</figcaption>
-								</figure>
-							</div>
+							<?php get_template_part('templates/tab', 'gallery'); ?>
 						</div>
 					</div>
 				</div>

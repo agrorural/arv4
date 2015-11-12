@@ -76,9 +76,12 @@
                 }
             }
         });
+        $('.sl__home figure').css('visibility', 'hidden');
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+        console.log('Ya se inicio el JS');
+        $('.sl__home figure').css('visibility', 'visible');
       }
     },
     // About us page, note the change from about-us to about_us.

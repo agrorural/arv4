@@ -336,8 +336,8 @@
 			} /* Termina .owl-nav */
 			.owl-dots{ 
 				position: absolute;
-				top: 20px;
-				left: 20px;
+				top: 30px;
+				left: 30px;
 				.owl-dot{
 					float: left;
 					margin: 0 5px 0 0;
@@ -420,7 +420,7 @@
   										margin-bottom: 0;
   										padding-top: 15px;
   										padding-bottom: 10px;
-  										font-size: 48px !important;
+  										font-size: 54px !important;
   										text-align: left;
   										a{
   											color: $white;
@@ -445,9 +445,7 @@
   								.sl__home__link{
   									p{
   										padding-top: 10px;
-  										padding-bottom: 20px;
-  										a{
-  										}
+  										padding-bottom: 0;
   									}
   								}
 							} 
@@ -514,8 +512,8 @@
 			} /* Termina .owl-nav */
 			.owl-dots{ 
 				position: absolute;
-				top: 20px;
-				left: 20px;
+				top: 30px;
+				right: 30px;
 				.owl-dot{
 					float: left;
 					margin: 0 5px 0 0;

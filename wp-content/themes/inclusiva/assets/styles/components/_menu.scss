@@ -11,7 +11,7 @@ ul#menu-navegacion-primaria{
 			@include opensans(bold);
 			text-transform: uppercase;
 			color: $purple;
-			font-size: 12px;
+			font-size: 13px;
 			&:hover{
 				color: $red--google--hover; 
 			}

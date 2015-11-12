@@ -37,7 +37,7 @@
 								<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
 
 								<figcaption>
-									<h4><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" target="_blank"><?php the_title();?></a></h4>
+									<h4><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>"><?php the_title();?></a></h4>
 									<p><?php the_content(); ?></p>
 								</figcaption>
 							
