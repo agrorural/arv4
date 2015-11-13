@@ -34,24 +34,36 @@
 
 	$post__slug = $post->post_name;
 	$post__slug__up = strtoupper($post__slug);
-?>
+
+	$estado__cnv = get_term_link( $est__list_slug, 'est-convocatorias' );
+	$estado__cnv__default = get_term_link( 'en-espera', 'est-convocatorias' );
+?>	
 
 	<?php if( $est__list_name == 'Finalizada' )
 	{
 		$progress = '100';
 		$status = 'default';
+	} else if ( $est__list_name == 'Cancelada' ){
+		$progress = '100';
+		$status = 'danger';
+	} else if ( $est__list_name == 'Desierta' ){
+		$progress = '100';
+		$status = 'warning';
 	} else if ( $est__list_name == 'En Proceso' ){
 		$progress = '66.6';
-		$status = 'warning';
-	}else{
+		$status = 'info';
+	} else if ( $est__list_name == 'Abierta' ){
 		$progress = '33.3';
 		$status = 'success';
+	}else{
+		$progress = '0';
+		$status = 'default';
 	}
 	?>
 
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
-	 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><a class="label label-<?php echo $status; ?> pull-right" href="<?php echo get_term_link( $est__list_slug, 'est-convocatorias' ); ?> "><?php echo $est__list_name;?></a>
+	 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><a class="label label-<?php echo $status; ?> pull-right" href="<?php if($est__list_name){echo $estado__cnv;}else{echo $estado__cnv__default;} ?>"><?php if ($est__list_name){echo $est__list_name; }else{ echo 'En Espera'; } ?></a>
   </header>
   <div class="entry-summary panel-body">
     <?php the_content(); ?>
@@ -139,6 +151,8 @@
 
     <?php if( $ev_curricular == 'Publicado' ){ ?>
     	<a class="cta__link" href="<?php echo $dir.'/transparencia/convocatorias/C-'.$cat__list_slug_up_1.'-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Bases, requisitos y cronograma</a>
+    <?php }else{ ?>
+    	No se ha publicado
     <?php } ?>
     <div class="pull-right">
       <?php get_template_part('templates/sharing', 'list'); ?>
