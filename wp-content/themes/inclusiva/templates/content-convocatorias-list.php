@@ -115,7 +115,7 @@
 
 		        <?php if( $cat__list_slug_1 == 'CAP' ){ ?>
 		            <?php if( $ev_psicologica == 'Publicado' ){ ?>
-		            	<td><a href="<?php echo $dir.'/transparencia/convocatorias/P-'.$cat__list_slug_up_1.'-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
+		            	<td><a href="<?php echo $dir.'/transparencia/convocatorias/P-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
 		            <?php } else { ?>
 		            	<?php if( $ev_psicologica_fec ){ ?>
 		            		<td><p><?php echo date_i18n($dfs, $ev_psicologica_fec_uts); ?></p></td>
@@ -126,7 +126,7 @@
 		        <?php } ?>
 		        
 		        <?php if($en_personal == 'Publicado'){ ?>
-		        	<td><a href="<?php echo $dir.'/transparencia/convocatorias/E-'.$cat__list_slug_up_1.'-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
+		        	<td><a href="<?php echo $dir.'/transparencia/convocatorias/E-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
 		        <?php } else { ?>
 		        	<?php if( $en_personal_fec ){ ?>
 		        		<td><p><?php echo date_i18n($dfs, $en_personal_fec_uts); ?></p></td>
@@ -136,7 +136,7 @@
 		        <?php } ?>
 
 		        <?php if($re_final == 'Publicado'){ ?>
-		        	<td><a href="<?php echo $dir.'/transparencia/convocatorias/R-'.$cat__list_slug_up_1.'-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
+		        	<td><a href="<?php echo $dir.'/transparencia/convocatorias/R-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
 		        <?php } else { ?>
 		        	<?php if( $re_final_fec ){ ?>
 		        		<td><p><?php echo date_i18n($dfs, $re_final_fec_uts); ?></p></td>
@@ -150,7 +150,7 @@
   <div class="panel-footer">
 
     <?php if( $ev_curricular == 'Publicado' ){ ?>
-    	<a class="cta__link" href="<?php echo $dir.'/transparencia/convocatorias/C-'.$cat__list_slug_up_1.'-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Bases, requisitos y cronograma</a>
+    	<a class="cta__link" href="<?php echo $dir.'/transparencia/convocatorias/C-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Bases, requisitos y cronograma</a>
     <?php }else{ ?>
     	No se ha publicado
     <?php } ?>

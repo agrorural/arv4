@@ -65,7 +65,8 @@ html{
 
 body{
 	@include opensans();
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.6;
   &.page, &.archive, &.single{
     background-color: $white--smoke;
     .wrap{
@@ -256,9 +257,68 @@ p{
 }
 /* Navegación Secundaria*/
 
+main{
+  section{
+    .page-header{
+      margin-top: 44px !important;
+    }
+  }
+}
+
 .section{
 	padding-top: 60px;
 	padding-bottom: 30px;
+}
+
+article{
+  .entry-content{
+    img{
+      border:1px solid $gray--light;
+      margin: 20px auto;
+    }
+    @include make-row();
+    margin-right: 0;
+    margin-left: 0;
+    .entry-content__article{
+      @include make-sm-column(10);
+      /*padding-right: 0;*/
+    }
+    .entry-content__share{
+      margin-top: 20px;
+      @include make-sm-column(2);
+      /*padding-left: 0;*/
+      .sharing-list{
+        display: block;
+        ul{
+          li{
+            margin-bottom: 3px;
+            a{
+              color: $white !important;
+              text-align: left;
+              i{
+                padding-right: 7px;
+              }
+            }
+          }
+          li#fb{
+            a{
+              background-color: $blue--fb;
+            }
+          }
+          li#tw{
+            a{
+              background-color: $blue--tw;
+            }
+          }
+          li#gp{
+            a{
+              background-color: $red--google;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 article.article-list{
@@ -269,13 +329,13 @@ article.article-list{
     margin-right: 15px;
     a.format-icon{
       position: absolute;
-      top: 0px;
-      right: 0px;
-      padding:3px 7px; 
-      background-color: $yellow;
-      color: $black; 
+      bottom: 5px;
+      left: 5px;
+      padding: 0px 5px; 
+      border: 1px solid $yellow;
       i{
-        font-size: 9px;
+        font-size: 12px;
+        color: $yellow;
       }
     }
   }
@@ -305,7 +365,7 @@ article.article-list{
     position: relative;
     display: block;
     z-index: 0;
-    @include focus-shadow();
+    
     figcaption{
       position: absolute;
       bottom: 0;
@@ -328,6 +388,10 @@ article.article-list{
       p{
         margin-bottom: 0;
       }
+    }
+  
+    &.shadow{
+      @include focus-shadow();
     }
   }
 }

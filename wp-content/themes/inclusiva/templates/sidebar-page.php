@@ -7,7 +7,7 @@
 	endif;
 	?>
 </section>
-<?php } elseif ( is_page( array ( 'agro-rural', 'que-es-agro-rural', 'antecedentes', 'mision-y-vision', 'organigrama', 'directorio' ) ) ) {?>
+<?php } elseif ( is_page( array ( 'agro-rural', 'la-institucion', 'antecedentes', 'mision-y-vision', 'organigrama', 'directorio' ) ) ) {?>
 <section class="widget">
 	<h3>Quiénes Somos</h3>
     <?php

@@ -42,11 +42,10 @@
               }
           }
         });
-
         $('.sb__category').owlCarousel({
-        loop: true,
-        margin: 0,     
-        items: 1
+          loop: true,
+          margin: 0,     
+          items: 1
         });
       },
       finalize: function() {
@@ -80,7 +79,6 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-        console.log('Ya se inicio el JS');
         $('.sl__home figure').css('visibility', 'visible');
       }
     },

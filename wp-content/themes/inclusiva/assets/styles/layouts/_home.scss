@@ -41,15 +41,23 @@
 				&.eventos{
 					.widget{
 						&.tribe-events-list-widget{
-							
+							position: relative;
+							overflow: hidden;
+							&:before{
+								@include fa();
+								content: "\f073";
+								margin-right: 0px;
+								position: absolute;
+								color: $green--light;
+								font-size: 500% !important;
+								bottom: -3px;
+								right: -3px;
+								line-height: 1 !important;
+							}
+
 							h3{
 								background-color: $green;
 								color: $white;
-								&:before{
-									@include fa();
-									content: "\f073";
-									margin-right: 5px;
-								}
 							}
 
 							background-color: $green;
