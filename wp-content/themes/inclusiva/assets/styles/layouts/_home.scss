@@ -102,7 +102,7 @@
 		}
 
 		&.multimedia__banner{
-			background-color: $gray--text; 
+			background: $gray--text  url(../images/multimedia__bg.png) repeat-x bottom center; 
 			.multimedia{
 				@include make-lg-column(9);
 				.page-header{
@@ -149,7 +149,6 @@
 						.tab-pane{		
 						padding-top: 20px;					
 							p{ color: $white; }
-							a{ color: $orange; }
 
 							.multimedia--1{
 								@include make-lg-column(6);
@@ -164,10 +163,14 @@
 										}
 									}
 									figcaption{
+										h3{
+											@include opensans(semibold);
+										}
 										h3, time{
 											margin: 0;
-											color: $white;
-											a{ color: $green--accent; }
+											color: $gray--light;
+											@include text-on-focus();
+											a{ color: $white; }
 										}
 										h3{
 											font-size: 14px;
@@ -191,10 +194,14 @@
 										}
 									}
 									figcaption{
+										h3{
+											@include opensans(semibold);
+										}
 										h3, time{
 											margin: 0;
-											color: $white;
-											a{ color: $green--accent; }
+											color: $gray--light;
+											@include text-on-focus();
+											a{ color: $white; }
 										}
 										h3{
 											font-size: 14px;
@@ -215,9 +222,14 @@
 								figure{
 									a.tab-icon{
 										position: absolute;
-										top: 0;
-										padding: 15px;
-										color: $green--accent;
+										top: 15px;
+										left: 20px;
+										color: $yellow;
+										border: 1px solid $yellow;
+										padding: 0 7px;
+										i{
+											font-size: 12px;
+										}
 									}
 								}
 							}

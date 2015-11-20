@@ -20,7 +20,7 @@ while ( $query1->have_posts() ) {
 	$query1->the_post(); ?>
 <div class="multimedia--1">
 	<figure>
-		<a href="<?php the_permalink(); ?>" class="tab-icon"><i class="fa fa-file-image-o"></i></i></a>
+		<a href="<?php the_permalink(); ?>" class="tab-icon tip" title="Contiene galería de fotos"><i class="fa fa-file-image-o"></i></i></a>
 		<?php if ( has_post_thumbnail() ){?>
 			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 		<?php } else { ?>
@@ -61,7 +61,7 @@ wp_reset_postdata(); ?>
 <div class="multimedia--2">
 <?php while ( $query2->have_posts() ) { $query2->the_post();  ?>
 	<figure>
-		<a href="<?php the_permalink(); ?>" class="tab-icon"><i class="fa fa-file-image-o"></i></i></a>
+		<a href="<?php the_permalink(); ?>" class="tab-icon tip" title="Contiene galería de fotos"><i class="fa fa-file-image-o"></i></i></a>
 		<?php if ( has_post_thumbnail() ){?>
 			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 		<?php } else { ?>
