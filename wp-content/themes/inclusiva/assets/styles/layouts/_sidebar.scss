@@ -18,6 +18,11 @@
 			padding: 0;
 			list-style-type: none;
 			li{
+				time{
+					color: $gray--light;
+					font-size: 10px;
+					padding: 3px 15px 0; 
+				}
 				a{
 					display: block;
 					padding: 7px 15px;
@@ -35,6 +40,20 @@
 						color: $red--google;
 						border-left: 3px solid $red--google;
 						@include opensans(bold);
+					}
+				}
+			}
+			&.related-posts{
+				li{
+					a{
+						padding-top: 1px;
+						color: $red--google;
+						&:hover{
+							color: $red--google--hover;
+						}
+					}
+					p{
+						padding: 7px 15px; 
 					}
 				}
 			}

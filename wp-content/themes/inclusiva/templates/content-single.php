@@ -3,6 +3,11 @@
     <header class="col-sm-10">
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry-meta'); ?>
+      <?php if( $post->post_excerpt ) { ?>
+        <div class="entry-summary">
+          <p class="entry-summary"><?php echo $post->post_excerpt; ?></p>  
+        </div>
+      <?php } ?>
     </header>
     <div class="entry-content">    
       <div class="entry-content__article">

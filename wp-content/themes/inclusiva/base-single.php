@@ -27,7 +27,7 @@ use Roots\Sage\Wrapper;
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
           <aside class="sidebar" role="complementary">
-            <?php include Wrapper\sidebar_path(); ?>
+            <?php get_template_part('templates/sidebar', 'single'); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
       </div><!-- /.content -->

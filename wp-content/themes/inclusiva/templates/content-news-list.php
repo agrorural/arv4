@@ -1,10 +1,11 @@
 <article <?php post_class('article-list'); ?>>
 <?php 
+	global $post;
 	$format = get_post_format();
 	$format__link = get_post_format_link( $format );
 ?>
 
-<?php $has__format = has_post_format($format,$post_id); ?>
+<?php $has__format = has_post_format($format,$post->post_id); ?>
 	<figure>
 	<?php if ( $has__format ){ ?>
 		<a title="<?php echo $format; ?>" href="<?php echo $format__link;?>" class="format-icon tip">

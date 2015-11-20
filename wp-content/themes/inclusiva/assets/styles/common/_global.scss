@@ -134,6 +134,16 @@ a{
 
 p{
   text-align: justify;
+  &.entry-summary{
+    @include opensans(light);
+    font-size: 16px;
+    margin: 15px auto;
+  }
+}
+article{
+  img{
+    border:1px solid $gray--light;
+  }
 }
 
 /* Páginas Especiales */
@@ -273,7 +283,6 @@ main{
 article{
   .entry-content{
     img{
-      border:1px solid $gray--light;
       margin: 20px auto;
     }
     @include make-row();

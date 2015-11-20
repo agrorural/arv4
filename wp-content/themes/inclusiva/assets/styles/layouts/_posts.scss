@@ -1,4 +1,10 @@
 .single{
+	&.single-post{
+		.masshead{
+			background: transparent url(../images/dia-del-campesino.jpg) no-repeat center top;  
+			@include full-bg();
+		}
+	}
 	article.post header .entry-title {
     	font-size: 36px
     }
