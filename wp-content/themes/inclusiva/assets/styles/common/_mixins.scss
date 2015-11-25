@@ -205,3 +205,20 @@
     margin: 0;
     padding: 0;
 }
+
+@mixin placeholder( $color : $gray ){
+  &::-webkit-input-placeholder { 
+    color:  $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:  $color;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:  $color;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:  $color;
+  }
+}

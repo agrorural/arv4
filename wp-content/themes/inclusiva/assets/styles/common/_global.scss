@@ -206,6 +206,12 @@ article{
 }
 /* Páginas Especiales */
 
+.search-form{
+  .form-control{
+    @include fa();
+  }
+}
+
 /* Navegación Secundaria*/
 .navbar-sub{
   min-height: 38px;
