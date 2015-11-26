@@ -14,7 +14,7 @@
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', 'noticias'); ?>
+  <?php get_template_part('templates/content', 'news-list'); ?>
 <?php endwhile; ?>
 
 <?php /*the_posts_navigation(); */ ?>

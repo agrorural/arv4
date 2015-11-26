@@ -23,7 +23,18 @@
 				}
 
 				#item-header{
+					#item-header-cover-image{
+						#item-actions, #item-meta{
+							span{
+								@include meta-text();
+							}
 
+							p, h3{
+								font-size: 13px;
+								color: $gray--light;
+							}
+						}
+					}
 				}	
 				#item-nav, .dir-form{
 					.item-list-tabs{
@@ -118,7 +129,7 @@
 					}
 				}
 			}
-			.avatar-block, #item-options, .standard-form{
+			.avatar-block, .item-options, .standard-form, .widget-error{
 				padding: 7px 15px;
 			}
 			ul.item-list{

@@ -362,13 +362,14 @@ article{
     h2, h3, h4{
       @include opensans(semibold);
       font-size: 18px;
+      margin-bottom: 1px;
     }
     time{
-      @include opensans(light);
+      @include meta-text();
+      font-size: 13px;
       display: block;
       position: relative; 
       margin-bottom: 5px;
-      color: $gray;
     }
   }
   .entry-summary{
@@ -378,6 +379,23 @@ article{
     }
   }
 }
+
+/* Panel */
+.panel-footer{
+  padding: 0 15px !important;
+  .cta__link{
+    margin: 0;
+    padding: 10px 0; 
+  }
+  .sharing-list{
+    float: right;
+    ul{
+      margin: 0;
+      padding: 7.5px 0;
+    }
+  }
+}
+
 
 .widget{
   figure{

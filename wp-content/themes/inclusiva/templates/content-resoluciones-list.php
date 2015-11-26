@@ -28,8 +28,7 @@
     <?php }else{ ?>
       <p>No Disponible</p>
     <?php } ?>
-    <div class="pull-right">
-      <?php get_template_part('templates/sharing', 'list'); ?>
-    </div>
+
+    <?php get_template_part('templates/sharing', 'list'); ?>
   </div>
 </article>

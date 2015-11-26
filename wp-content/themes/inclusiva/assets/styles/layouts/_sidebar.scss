@@ -3,6 +3,10 @@
 		border-left: 1px solid $gray--lighter; 
 		margin-bottom: 30px;
 		background-color: $white;
+		.form-control{
+			with: 100%;
+			padding: 7px 15px;
+		}
 		h3{
 			padding: 13px 15px 12px 15px;
 			margin: 0;
@@ -19,8 +23,7 @@
 			list-style-type: none;
 			li{
 				time{
-					color: $gray--light;
-					font-size: 10px;
+					@include meta-text();
 					padding: 3px 15px 0; 
 				}
 				a{
