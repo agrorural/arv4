@@ -146,6 +146,10 @@ article{
   }
 }
 
+.alert{
+  @include border-radius(0);
+}
+
 /* Páginas Especiales */
 .special-header{
   .masshead{

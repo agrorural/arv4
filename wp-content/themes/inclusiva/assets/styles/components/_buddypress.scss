@@ -1,0 +1,134 @@
+.buddypress{
+	.wrap.container{
+		margin-top: 30px;
+		.item{
+			.item-title{}
+			.item-meta{
+				.activity{
+					@include meta-text();
+				}
+			}
+		}
+		main{
+			.page-header{
+				margin-top: 0; 
+			}
+			.alert{
+				margin-top: 20px;
+			}
+
+			#buddypress{
+				div.dir-search{
+					margin: -75px 0 0;
+				}
+
+				#item-header{
+
+				}	
+				#item-nav, .dir-form{
+					.item-list-tabs{
+						background-color: $red--google--hover;
+						ul{
+							li{
+								a{
+									@include opensans(bold);
+									font-size: 11px;
+									text-transform: uppercase;
+									color: $white;
+									@include opacity(0.8);
+									
+									&:hover{
+										@include opacity(1);
+									}
+								}
+							
+								&.current.selected, &.selected{
+									a{
+										background-color: $red--google;
+										color: $white;
+										@include opacity(1);
+									}
+								}
+							}
+						}
+					}
+				}
+
+					#subnav{
+						&.item-list-tabs{
+						background-color: $white--smoke;
+						margin-top: 0;
+							ul{
+								li{
+									label, a{
+										@include opensans(light);
+										font-size: 12px;
+										font-weight: normal;
+									}
+
+									&.current.selected{
+										a{
+											background-color: transparent;
+											@include opensans(light);
+											font-weight: normal;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					.profile{
+						h4{
+							margin-bottom: 15px;
+						}
+						table.profile-fields{
+							tr{
+								td{
+									&.label{
+										color: $gray--text;
+									}
+									&.data{}
+								}
+							}
+						}
+
+					}
+
+				#item-body{
+					padding-bottom: 30px;
+				}
+			}
+		}	
+
+		aside{
+			.bp-login-widget-user-avatar{
+				padding-left: 15px;
+			}
+			.bp-login-widget-user-links{
+				padding: 0px 15px 0 0; 
+				.bp-login-widget-user-link{
+					margin-bottom: 1px;
+				}
+				.bp-login-widget-user-logout{
+					a{
+						@include opensans(light);
+						font-size: 10px;
+						font-weight: normal;
+					}
+				}
+			}
+			.avatar-block, #item-options, .standard-form{
+				padding: 7px 15px;
+			}
+			ul.item-list{
+				li{
+					padding: 7px 15px;
+					a{
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}

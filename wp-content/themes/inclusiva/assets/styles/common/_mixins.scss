@@ -222,3 +222,15 @@
     color:  $color;
   }
 }
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin meta-text( $color: $gray--light ){
+  @include opensans(light);
+  font-size: 10px;
+  color: $color;
+}

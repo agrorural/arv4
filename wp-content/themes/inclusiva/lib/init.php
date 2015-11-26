@@ -85,6 +85,24 @@ function widgets_init() {
   ]);
 
   register_sidebar([
+    'name'          => __('BuddyPress Top', 'sage'),
+    'id'            => 'sidebar-buddypress-top',
+    'before_widget' => '<section class="alert alert-success widget %1$s %2$s" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
+    'after_widget'  => '</section>',
+    'before_title'  => '',
+    'after_title'   => ''
+  ]);
+
+  register_sidebar([
+    'name'          => __('BuddyPress', 'sage'),
+    'id'            => 'sidebar-buddypress',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
     'name'          => __('Footer', 'sage'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
