@@ -10,7 +10,7 @@
 	$temp = $wp_query; 
 	$wp_query = null; 
 	$wp_query = new WP_Query(); 
-	$wp_query->query('posts_per_page=5&post_type=post&tag='.$tag__name.'&paged='.$paged);
+	$wp_query->query('posts_per_page=5&post_type=post&tag_id='.$pry__tag.'&paged='.$paged);
 	while ($wp_query->have_posts()) : $wp_query->the_post(); 
 ?>
 

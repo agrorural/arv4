@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
 		$pry__logo = get_field('pry__logo');
 		$pry__tag = get_field('pry__tag'); 
 		$tag_by_ID = get_term_by('id', $pry__tag, 'post_tag');
-		$tag__name = $tag_by_ID->name;
+    $tag__slug = $tag_by_ID->slug;
     ?>
 
     <?php if (has_post_thumbnail( $post->ID ) ){ ?>
@@ -34,8 +34,8 @@ use Roots\Sage\Wrapper;
     <?php } ?>
 			  <?php get_template_part('templates/page', 'header-proyectos'); ?>
 		</div>
-    <?php if ($tag__name && has_nav_menu('pry_'.$tag__name.'_navigation')){ ?>
-          <?php get_template_part('templates/nav', 'proyecto-'.$tag__name ); ?>
+    <?php if ($tag__slug && has_nav_menu('pry_'.$tag__slug.'_navigation')){ ?>
+          <?php get_template_part('templates/nav', 'proyecto-'.$tag__slug ); ?>
     <?php } ?>
 
     <div class="wrap container" role="document">
@@ -44,8 +44,8 @@ use Roots\Sage\Wrapper;
           <?php get_template_part('templates/section', 'proyectos'); ?>
         </main><!-- /.main -->
         <aside class="sidebar" role="complementary">
-        <?php if ($tag__name){ ?>
-          <?php get_template_part('templates/sidebar', 'proyecto-'.$tag__name ); ?>
+        <?php if ($tag__slug){ ?>
+          <?php get_template_part('templates/sidebar', 'proyecto-'.$tag__slug ); ?>
         <?php }else{ ?>
           <?php include Wrapper\sidebar_path(); ?>
         <?php } ?>

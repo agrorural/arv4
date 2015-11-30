@@ -36,6 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <h1 class="navbar-brand minagri"><a href="http://www.minagri.gob.pe"><span>Minagri</span></a></h1>
       <h1 class="navbar-brand"><a href="<?= esc_url(home_url('/')); ?>"><span><?php bloginfo('name'); ?></span></a></h1>
     </div>
 

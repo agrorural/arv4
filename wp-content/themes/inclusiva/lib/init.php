@@ -87,8 +87,8 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('BuddyPress Top', 'sage'),
     'id'            => 'sidebar-buddypress-top',
-    'before_widget' => '<section class="alert alert-success widget %1$s %2$s" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
-    'after_widget'  => '</section>',
+    'before_widget' => '',
+    'after_widget'  => '',
     'before_title'  => '',
     'after_title'   => ''
   ]);
