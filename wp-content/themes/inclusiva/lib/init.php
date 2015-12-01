@@ -33,7 +33,10 @@ function setup() {
     'sede_amazonas_navigation' => __('Sede Amazonas Navigation', 'sage'),
     // Proyectos
     'pry_pssa_navigation' => __('Proyecto PSSA Navigation', 'sage'), //PSSA
-    'pry_pssa_cmp_navigation' => __('Componentes Proyecto PSSA Navigation', 'sage'), //PSSA - Componentes
+      'pry_pssa_cmp_navigation' => __('Componentes Proyecto PSSA Navigation', 'sage'), //PSSA - Componentes
+    
+    'pry_aliados-ii_navigation' => __('Proyecto Aliados II Navigation', 'sage'), //PSSA
+    
     // Resoluciones
     'res_rde_navigation' => __('Resoluciones RDE Navigation', 'sage') //RDE
 
