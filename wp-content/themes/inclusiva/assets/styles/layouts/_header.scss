@@ -165,9 +165,12 @@ h1{
 			-webkit-animation-name: pulse;
 			animation-name: pulse;
 		}
-	
-		&.minagri{
+		
+		&.agrorural{
 			padding-right: 15px;
+		}
+
+		&.minagri{	
 			a{
 				background-image: url(../images/logo__minagri--sm.png)!important;
 			}
