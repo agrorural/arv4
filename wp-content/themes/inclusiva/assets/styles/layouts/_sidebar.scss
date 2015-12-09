@@ -60,9 +60,12 @@
 					}
 				}
 			}
-			&#recentcomments{
+			&#recentcomments, &.plain{
 				li{
 					padding: 7px 15px;
+					p{
+						text-align: left;
+					}
 				}
 			}
 		}

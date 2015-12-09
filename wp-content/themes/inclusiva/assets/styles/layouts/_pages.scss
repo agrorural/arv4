@@ -117,18 +117,38 @@
 					}
 					.media-body{
 						h1{
-							font-size: 24px;
+							font-size: 18px;
+							margin-top: 0;
+							
+						}
+						@media (min-width: $screen-sm-min) {
+							h1{
+								font-size: 48px;
+								@include opensans(light);
+							}
 						}
 						h1, p{
 							@include text-on-focus();
 						}
 						a{
-							color: $green--accent;
+							color: $yellow;
 						}
-						@media (min-width: $screen-sm-min) {
-							h1{
-								font-size: 36px;
-							}
+					}
+				}
+				.page-header{
+					position: relative;
+					padding-top: 130px; 
+					z-index: 100;
+					text-align: center;
+					h1{
+						font-size: 18px;
+						margin-top: 0;
+						
+					}
+					@media (min-width: $screen-sm-min) {
+						h1{
+							font-size: 48px;
+							@include opensans(light);
 						}
 					}
 				}
