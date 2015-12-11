@@ -39,7 +39,10 @@ function setup() {
     'pry_sierra-sur-ii_navigation' => __('Proyecto Sierra Sur II Navigation', 'sage'), //PSSA
     
     // Resoluciones
-    'res_rde_navigation' => __('Resoluciones RDE Navigation', 'sage') //RDE
+    'res_rde_navigation' => __('Resoluciones RDE Navigation', 'sage'), //RDE
+
+    // Servicios
+    'servicios_navigation' => __('Servicios Navigation', 'sage') //RDE
 
   ]);
 

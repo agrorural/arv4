@@ -913,7 +913,18 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 				$inner .= tribe_get_start_date( $event, true, $format );
 				$inner .= '</span>' . $time_range_separator;
 				$inner .= '<span class="tribe-event-date-end">';
-				$inner .= tribe_get_end_date( $event, true, $format2ndday );
+
+				$end_date_full = tribe_get_end_date( $event, true, Tribe__Date_Utils::DBDATETIMEFORMAT );
+				$end_date_full_timestamp = strtotime( $end_date_full );
+
+				// if the end date is <= the beginning of the day, consider it the previous day
+				if ( $end_date_full_timestamp <= strtotime( tribe_beginning_of_day( $end_date_full ) ) ) {
+					$end_date = tribe_format_date( $end_date_full_timestamp - DAY_IN_SECONDS, false, $format2ndday );
+				} else {
+					$end_date = tribe_get_end_date( $event, false, $format2ndday );
+				}
+
+				$inner .= $end_date;
 			} else {
 				$inner .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
 				$inner .= '</span>' . $time_range_separator;
@@ -1111,7 +1122,10 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		if ( isset( $deprecated ) ) {
 			_deprecated_argument( __FUNCTION__, '3.10' );
 		}
-		return tribe_get_option( 'tribeEnableViews', array( 'month' ) );
+		return tribe_get_option( 'tribeEnableViews', array(
+			'list',
+			'month',
+		) );
 	}
 
 	/**
@@ -1316,8 +1330,22 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		// Remove "all" HTML based on what is allowed
 		$excerpt = wp_kses( $excerpt, $allowed_html );
 
-		// Still treat this as an Excerpt on WP
-		$excerpt = wp_trim_excerpt( $excerpt );
+		/**
+		 * Filter the number of words in an excerpt.
+		 *
+		 * @param int $number The number of words. Default 55.
+		 */
+		$excerpt_length = apply_filters( 'excerpt_length', 55 );
+
+		/**
+		 * Filter the string in the "more" link displayed after a trimmed excerpt.
+		 *
+		 * @param string $more_string The string shown within the more link.
+		 */
+		$excerpt_more = apply_filters( 'excerpt_more', ' [&hellip;]' );
+
+		// Now we actually trim it
+		$excerpt = wp_trim_words( $excerpt, $excerpt_length, $excerpt_more );
 
 		return wpautop( $excerpt );
 	}

@@ -1,4 +1,14 @@
 .archive{
+	&.post-type-archive-servicios{
+		.masshead{
+			background-image: url('../images/masshead--servicios.jpg');
+			@include full-bg();
+			.page-header{
+				margin: 0 auto;
+				padding: 0;
+			}
+		}
+	}
 	.multimedia--1{
 		@include make-row();
 		margin: 0 0 30px;
@@ -89,7 +99,14 @@
 	}
 }
 
-
+.servicios__logo{
+	margin: 0 auto;
+	a{
+		margin: 0 auto;
+		@include img-replace( 420px, 300px);
+		background-image: url('../images/serviagro__logo--sm.png');
+	}
+}
 
 @media(min-width: $screen-sm-min){
 	.archive{
