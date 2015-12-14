@@ -8,6 +8,73 @@
 				padding: 0;
 			}
 		}
+		.wrapper{
+		@include make-row();
+			.inner{
+				@include make-lg-column(4);
+				@include make-xs-column(6);
+				padding: 0;
+				.thumbnail{
+					margin: 0;
+					position: relative;
+					border: 0 none;
+					@include border-radius(0);
+					padding: 0;
+					@include focus-shadow();
+					z-index: 0;
+					&:hover{
+						&:after{
+							background-image: none;
+							background: $red--google;
+							@include zoomIn();
+						}
+					}
+					.caption{
+						z-index: 10;
+						@include text-on-focus();
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						a{
+							@include text-on-focus();
+						}
+						h3, p, a{
+							text-align: center;
+						}
+
+						h3{
+							font-size: 16px;
+						}
+						p{
+							font-size: 11px;
+						}
+
+						@media(min-width: $screen-lg-min){
+							padding-top: 50px;
+							h3{
+								font-size: 24px;
+							}
+							p{
+								display: none;
+								visibility: hidden;
+							}
+							&:hover{
+								h3{
+									@include fadeInUp();
+								}
+								p{
+									display: block;
+									visibility: visible;
+									@include fadeInUp();
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	.multimedia--1{
 		@include make-row();
