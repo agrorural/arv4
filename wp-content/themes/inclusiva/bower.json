@@ -10,13 +10,9 @@
     "bootstrap-sass-official": "3.3.5",
     "font-awesome": "~4.4.0",
     "owl-carousel2": "~2.0.0-beta.3",
-    "geoffgraham.animate.scss": "~3.2.2",
-    "modernizr": "~3.2.0"
+    "geoffgraham.animate.scss": "~3.2.2"
   },
   "overrides": {
-    "modernizr": {
-      "main": "./modernizr.js"
-    },
     "bootstrap-sass-official": {
       "main": [
         "./assets/stylesheets/_bootstrap.scss",

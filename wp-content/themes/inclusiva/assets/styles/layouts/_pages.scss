@@ -69,6 +69,14 @@
 				content: none;
 			}
 		}
+
+		.sidebar{
+			.widget{
+				.textwidget{
+					padding: 7px 15px;
+				}
+			}
+		}
 	}
 	&.page-template-template-directorios{
 		.ap__list{

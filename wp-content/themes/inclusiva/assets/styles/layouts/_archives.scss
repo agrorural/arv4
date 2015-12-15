@@ -22,11 +22,12 @@
 					padding: 0;
 					@include focus-shadow();
 					z-index: 0;
+					@include fadeIn();
 					&:hover{
 						&:after{
 							background-image: none;
 							background: $red--google;
-							@include zoomIn();
+							@include fadeIn();
 						}
 					}
 					.caption{
