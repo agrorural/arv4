@@ -42,7 +42,9 @@ function setup() {
     'res_rde_navigation' => __('Resoluciones RDE Navigation', 'sage'), //RDE
 
     // Servicios
-    'servicios_navigation' => __('Servicios Navigation', 'sage') //RDE
+    'servicios_navigation' => __('Servicios Navigation', 'sage'), //RDE
+      // SidebarServicios
+      'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage') //RDE
 
   ]);
 

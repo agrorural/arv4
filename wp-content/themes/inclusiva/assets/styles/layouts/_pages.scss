@@ -113,41 +113,16 @@
 		}
 	}
 
-	/*&.page-template-template-proyectos, &.parent-pageid-12025, &.parent-pageid-11347, &.parent-pageid-11363{*/
-		&.special-header{
-			.masshead{
-				.media{
-					position: relative;
-					padding-top: 130px; 
-					z-index: 100;
-					.media-left{
+	&.special-header{
+		.masshead{
+			.media{
+				position: relative;
+				padding-top: 130px; 
+				z-index: 100;
+				.media-left{
 
-					}
-					.media-body{
-						h1{
-							font-size: 18px;
-							margin-top: 0;
-							
-						}
-						@media (min-width: $screen-sm-min) {
-							h1{
-								font-size: 48px;
-								@include opensans(light);
-							}
-						}
-						h1, p{
-							@include text-on-focus();
-						}
-						a{
-							color: $yellow;
-						}
-					}
 				}
-				.page-header{
-					position: relative;
-					padding-top: 130px; 
-					z-index: 100;
-					text-align: center;
+				.media-body{
 					h1{
 						font-size: 18px;
 						margin-top: 0;
@@ -159,10 +134,45 @@
 							@include opensans(light);
 						}
 					}
+					h1, p{
+						@include text-on-focus();
+					}
+					a{
+						color: $yellow;
+					}
+				}
+			}
+			.page-header{
+				position: relative;
+				padding-top: 130px; 
+				z-index: 100;
+				text-align: center;
+				h1{
+					font-size: 18px;
+					margin-top: 0;
+					
+				}
+				@media (min-width: $screen-sm-min) {
+					h1{
+						font-size: 48px;
+						@include opensans(light);
+					}
 				}
 			}
 		}
-	/*}*/
+	}
+
+	&.page-template-template-serviagro{
+		.masshead{
+			background-image: url(../images/masshead--servicios.jpg);
+			-webkit-background-size: cover;
+			background-size: cover;
+			.page-header {
+				margin: 0 auto;
+				padding: 0;
+			}
+		}
+	}
 }
 
 
