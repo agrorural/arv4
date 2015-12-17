@@ -1,14 +1,14 @@
-# Translation of Development in Spanish (Spain)
-# This file is distributed under the same license as the Development package.
+# Translation of Development (4.4.x) in Spanish (Spain)
+# This file is distributed under the same license as the Development (4.4.x) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-12-11 20:42:49+0000\n"
+"PO-Revision-Date: 2015-12-17 11:31:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Development\n"
+"Project-Id-Version: Development (4.4.x)\n"
 
 #. translators: 'rtl' or 'ltr'. This sets the text direction for WordPress.
 #: wp-includes/locale.php:201
@@ -409,10 +409,6 @@ msgstr "No tienes permisos para hacer esto."
 msgid "The handler for the route is invalid"
 msgstr "El controlador para la ruta es inválido"
 
-#: wp-includes/rest-api/class-wp-rest-request.php:860
-msgid "Invalid parameter(s): %s"
-msgstr "Parámetro(s) inválido(s): %s"
-
 #: wp-includes/rest-api/class-wp-rest-server.php:279
 msgid "JSONP support is disabled on this site."
 msgstr "El soporte JSONP está deshabilitado en este sitio."
@@ -434,6 +430,10 @@ msgstr "En %1$s, usa el método %2$s,no la función %3$s. Echa un vistazo a %4$s
 #: wp-includes/rest-api/class-wp-rest-request.php:832
 msgid "Missing parameter(s): %s"
 msgstr "Parámetro(s) que falta(n): %s"
+
+#: wp-includes/rest-api/class-wp-rest-request.php:860
+msgid "Invalid parameter(s): %s"
+msgstr "Parámetro(s) no válido(s): %s"
 
 #: wp-includes/post.php:1381
 msgid "Posts list"
@@ -671,7 +671,7 @@ msgstr "Basura"
 msgid "Search installed themes&hellip;"
 msgstr "Buscar temas instalados&hellip;"
 
-#: wp-includes/comment-template.php:2110
+#: wp-includes/comment-template.php:2115
 msgid "<a href=\"%1$s\" aria-label=\"Logged in as %2$s. Edit your profile.\">Logged in as %2$s</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr "<a href=\"%1$s\" aria-label=\"Conectado como %2$s. Edita tu perfil.\">Conectado como %2$s</a>. <a href=\"%3$s\">¿Quieres salir?</a>"
 
@@ -1680,24 +1680,24 @@ msgid "The %1$s option is deprecated for the family of %2$s functions. Use the %
 msgstr "La opción %1$s ha quedado obsoleta para la familia de funciones %2$s. Utiliza la función %3$s en su lugar."
 
 #. translators: %s: post title
-#: wp-includes/comment-template.php:1467
+#: wp-includes/comment-template.php:1472
 msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Comentarios desactivados<span class=\"screen-reader-text\"> en %s</span>"
 
 #. translators: %s: post title
-#: wp-includes/comment-template.php:1456
+#: wp-includes/comment-template.php:1461
 msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "1 comentario<span class=\"screen-reader-text\"> en %s</span>"
 
 #. translators: 1: Number of comments 2: post title
-#: wp-includes/comment-template.php:1461
+#: wp-includes/comment-template.php:1466
 msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
 msgid_plural "%1$s Comments<span class=\"screen-reader-text\"> on %2$s</span>"
 msgstr[0] "%1$s comentario<span class=\"screen-reader-text\"> en %2$s</span>"
 msgstr[1] "%1$s comentarios<span class=\"screen-reader-text\"> en %2$s</span>"
 
 #. translators: %s: post title
-#: wp-includes/comment-template.php:1451
+#: wp-includes/comment-template.php:1456
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "No hay comentarios<span class=\"screen-reader-text\"> en %s</span>"
 
@@ -1891,7 +1891,7 @@ msgstr "Etiqueta: %s"
 msgid "Category: %s"
 msgstr "Categoría: %s"
 
-#: wp-includes/comment-template.php:1558
+#: wp-includes/comment-template.php:1563
 msgid "Reply to %s"
 msgstr "Responder a %s"
 
@@ -4423,7 +4423,7 @@ msgstr "Crear un archivo de configuración"
 #. translators: %s: wp-config.php
 #: wp-load.php:87
 msgid "You can create a %s file through a web interface, but this doesn't work for all server setups. The safest way is to manually create the file."
-msgstr "Puedes crear un fichero %s a través de una interfaz web, pero esto no funciona en todas las configuracioned de servidores. La forma más segura es crear el archivo manualmente."
+msgstr "Puedes crear un fichero %s a través de una interfaz web, pero esto no funciona en todas las configuraciones de servidores. La forma más segura es crear el archivo manualmente."
 
 #: wp-activate.php:99
 msgid "Your site at <a href=\"%1$s\">%2$s</a> is active. You may now log in to your site using your chosen username of &#8220;%3$s&#8221;. Please check your email inbox at %4$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%5$s\">reset your password</a>."
@@ -5186,7 +5186,7 @@ msgstr "La constante <code>VHOST</code> <strong> está obsoleta</strong>. Usa la
 msgid "<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username."
 msgstr "<strong>ERROR</strong>: Este nombre de usuario no es válido, ya que usa caracteres no permitidos. Por favor, introduce un nombre de usuario válido."
 
-#: wp-includes/comment-template.php:2094
+#: wp-includes/comment-template.php:2099
 msgid "Required fields are marked %s"
 msgstr "Los campos necesarios están marcados %s"
 
@@ -5353,7 +5353,7 @@ msgstr "Hubo un error añadiéndote a este sitio. Volver a la <a href=\"%s\">pá
 msgid "This file is too big. Files must be less than %d KB in size."
 msgstr "Este archivo es demasiado grande. Los archivos deben tener un tamaño inferior a %d KB."
 
-#: wp-includes/comment-template.php:2111
+#: wp-includes/comment-template.php:2116
 msgid "Your email address will not be published."
 msgstr "Tu dirección de correo electrónico no será publicada."
 
@@ -6972,11 +6972,11 @@ msgstr "No se permite el registro de nuevos usuarios."
 msgid "The slug &#8220;%s&#8221; is already in use by another term"
 msgstr "El slug &#8220;%s&#8221; lo está utilizando ya otro término."
 
-#: wp-includes/comment-template.php:2124
+#: wp-includes/comment-template.php:2129
 msgid "Cancel reply"
 msgstr "Cancelar respuesta"
 
-#: wp-includes/comment-template.php:2125
+#: wp-includes/comment-template.php:2130
 msgid "Post Comment"
 msgstr "Publicar comentario"
 
@@ -7425,15 +7425,15 @@ msgid_plural "%s topics"
 msgstr[0] "%s tema"
 msgstr[1] "%s temas"
 
-#: wp-includes/comment-template.php:1559
+#: wp-includes/comment-template.php:1564
 msgid "Log in to Reply"
 msgstr "Inicia sesión para responder"
 
-#: wp-includes/comment-template.php:1670
+#: wp-includes/comment-template.php:1675
 msgid "Leave a Comment"
 msgstr "Dejar un comentario"
 
-#: wp-includes/comment-template.php:1671
+#: wp-includes/comment-template.php:1676
 msgid "Log in to leave a Comment"
 msgstr "Inicia sesión para dejar un comentario"
 
@@ -7486,7 +7486,7 @@ msgstr "Primera entrada"
 msgid "Site Title"
 msgstr "Título del sitio"
 
-#: wp-includes/comment-template.php:2090
+#: wp-includes/comment-template.php:2095
 #: wp-includes/theme-compat/comments.php:102
 msgid "Website"
 msgstr "Web"
@@ -7505,7 +7505,7 @@ msgstr "&laquo; Página anterior"
 msgid "Next Page &raquo;"
 msgstr "Página siguiente &raquo;"
 
-#: wp-includes/comment-template.php:2108
+#: wp-includes/comment-template.php:2113
 #: wp-includes/theme-compat/comments.php:82
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Disculpa, debes <a href=\"%s\">iniciar sesión</a> para escribir un comentario."
@@ -7531,16 +7531,16 @@ msgstr "Última actualización: %s"
 msgid "Feed for all posts filed under %s"
 msgstr "Feed para todas las entradas archivadas en %s"
 
-#: wp-includes/comment-template.php:1739
+#: wp-includes/comment-template.php:1744
 msgid "Click here to cancel reply."
 msgstr "Clic para cancelar respuesta."
 
-#: wp-includes/comment-template.php:1826 wp-includes/comment-template.php:2118
+#: wp-includes/comment-template.php:1831 wp-includes/comment-template.php:2123
 #: wp-includes/theme-compat/comments.php:75
 msgid "Leave a Reply"
 msgstr "Deja un comentario"
 
-#: wp-includes/comment-template.php:1827 wp-includes/comment-template.php:2119
+#: wp-includes/comment-template.php:1832 wp-includes/comment-template.php:2124
 #: wp-includes/theme-compat/comments.php:75
 msgid "Leave a Reply to %s"
 msgstr "Responder a %s"
@@ -7641,7 +7641,7 @@ msgstr "Mis sitios"
 msgid "<strong>ERROR</strong>: This email is already registered, please choose another one."
 msgstr "<strong>ERROR</strong>: Esa dirección de correo electrónico ya está registrada. Por favor, elige otra."
 
-#: wp-includes/comment-template.php:2088
+#: wp-includes/comment-template.php:2093
 #: wp-includes/theme-compat/comments-popup.php:81 wp-login.php:721
 msgid "Email"
 msgstr "Correo electrónico"
@@ -7650,7 +7650,7 @@ msgstr "Correo electrónico"
 msgid "Yes"
 msgstr "Sí"
 
-#: wp-includes/comment-template.php:1476
+#: wp-includes/comment-template.php:1481
 msgid "Enter your password to view comments."
 msgstr "Escribe tu contraseña para ver los comentarios."
 
@@ -7797,7 +7797,7 @@ msgstr "Extracto"
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: wp-includes/comment-template.php:2086
+#: wp-includes/comment-template.php:2091
 #: wp-includes/theme-compat/comments-popup.php:76
 #: wp-includes/theme-compat/comments.php:96
 msgid "Name"
@@ -7841,7 +7841,7 @@ msgstr "Contenido"
 msgid "No comments yet."
 msgstr "Aún no hay comentarios."
 
-#: wp-includes/comment-template.php:1557 wp-includes/script-loader.php:488
+#: wp-includes/comment-template.php:1562 wp-includes/script-loader.php:488
 msgid "Reply"
 msgstr "Responder"
 
@@ -7976,7 +7976,7 @@ msgstr "Editar imagen"
 msgid "Full Size"
 msgstr "Tamaño completo"
 
-#: wp-includes/comment-template.php:1041 wp-includes/comment-template.php:2106
+#: wp-includes/comment-template.php:1041 wp-includes/comment-template.php:2111
 msgctxt "noun"
 msgid "Comment"
 msgstr "Comentario"
