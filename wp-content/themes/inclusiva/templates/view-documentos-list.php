@@ -3,7 +3,7 @@
 	$doc__tipo = get_field('doc__tipo');
 	$term = get_term( $doc__tipo, 'tipos' );
 	$term__name = $term->name;
-
+	
 	global $paged;
 	global $wp_query;
 	$temp = $wp_query; 

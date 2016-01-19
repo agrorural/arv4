@@ -78,7 +78,7 @@
 		<thead>
 	      <tr>
 	        <th>Evaluación Curricular</th>
-	        <?php if( $cat__list_slug_1 == 'CAP' ){ ?>
+	        <?php if( $cat__list_slug_1 == 'cap' ){ ?>
 	        	<th>Evaluación Psicológica</th>
 	        <?php } ?>
 	        <th>Aptos para Entrevista Personal</th>
@@ -113,7 +113,7 @@
 		        	</td>
 
 
-		        <?php if( $cat__list_slug_1 == 'CAP' ){ ?>
+		        <?php if( $cat__list_slug_1 == 'cap' ){ ?>
 		            <?php if( $ev_psicologica == 'Publicado' ){ ?>
 		            	<td><a href="<?php echo $dir.'/transparencia/convocatorias/P-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
 		            <?php } else { ?>
