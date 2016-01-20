@@ -294,6 +294,12 @@ article{
   .entry-content{
     img{
       margin: 20px auto;
+      &.alignright{
+        margin: 10px 0 10px 10px;
+      }
+      &.alignleft{
+        margin: 10px 10px 10px 0;
+      }
     }
     @include make-row();
     margin-right: 0;
