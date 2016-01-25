@@ -61,6 +61,8 @@ use Roots\Sage\Wrapper;
           <aside class="sidebar" role="complementary">
           <?php if ( is_singular('tribe_events') ) { ?>
             <?php get_template_part('templates/sidebar', 'singular'); ?>
+          <?php }else if ( is_page( array( 'sistema-de-control-interno', 'normativa', 'integrantes', 'actividades', 'acta-de-compromiso', 'galeria-acta', 'acta-de-reunion' ) ) ){ ?>
+            <?php get_template_part('templates/sidebar', 'sci'); ?>
           <?php }else{ ?>
             <?php get_template_part('templates/sidebar', 'page'); ?>
           <?php } ?>

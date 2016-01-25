@@ -44,7 +44,10 @@ function setup() {
     // Servicios
     'servicios_navigation' => __('Servicios Navigation', 'sage'), //RDE
       // SidebarServicios
-      'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage') //RDE
+      'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage'), //RDE
+
+    // Servicios
+    'sci_navigation' => __('SCI Navigation', 'sage') // SCI
 
   ]);
 
