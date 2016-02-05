@@ -562,7 +562,7 @@ class GFExport {
 
 	}
 
-	private static function get_field_row_count( $form, $exported_field_ids, $entry_count ) {
+	public static function get_field_row_count( $form, $exported_field_ids, $entry_count ) {
 		$list_fields = GFAPI::get_fields_by_type( $form, array( 'list' ), true );
 
 		//only getting fields that have been exported

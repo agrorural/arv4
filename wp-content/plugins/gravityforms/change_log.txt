@@ -1,4 +1,94 @@
 ------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.17
+    - Fixed an issue with the {embed_url} merge tag when notifications are resent from the admin.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.16
+    - Fixed an issue which could cause an incorrect calculation result for the number field when using the decimal comma format.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.15
+    - Added security enhancements.
+    - Fixed an issue with the embed_post and custom_field merge tags when the form is not located on a singular page.
+    - Fixed a PHP notice which could occur during post creation if the postAuthor property is not set in the form object.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.14
+    - Fixed an issue causing some values to be encoded before being saved.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.13
+    - Updated French translation. Credit: Yann Gauche.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.12
+    - AF: Added gform_addon_field_value, a generic filter for overriding the mapped field value. See https://www.gravityhelp.com/documentation/article/gform_addon_field_value/
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.11
+    - Fixed an issue with the database permissions check.
+    - Fixed PHP warning when using GFCommon::replace_variables() without providing a form object.
+    - AF: Fixed issue where templates with leading whitespace generated a jQuery warning in repeater.js
+    - AF: Updated 'add' callback to include 'index' as a fourth parameter
+    - AF: Updated bulk actions for feed list able to no longer include the duplicate action.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.10
+    - Updated plugin settings tab links to only include the page and subview query arguments.
+    - Updated Danish translation. Credit: WPbureauet.dk/Georg Adamsen.
+    - Fixed a PHP notice if the form CSS Class Name setting was not configured.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.9
+    - Added security enhancements. Credit: Allan Collins of 10up.com
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.8
+    - Fixed missing Font Awesome file.
+    - Fixed an RTL layout issue with the Time field.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.7
+    - Fixed an issue which could cause an incorrect calculation result during submission when using values from fields which don't have the number format setting.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.6
+    - Added "Email Service" field to notifications to allow for sending email notifications via third party services. Defaults to WordPress.
+    - Added "gform_notification_services" filter to add custom notification email services.
+    - Added "gform_notification_validation" filter to apply custom validations when saving notifications.
+    - Updated "gform_notification_ui_settings" filter with the validation state as the fourth parameter.
+    - Updated "gform_pre_send_email" filter with the notification object as the third parameter.
+    - Updated Finnish translation. Credit: Aki Björklund.
+    - Updated Font Awesome to version 4.5.0.
+    - Fixed an issue where on some occasions the Post Category field choices could be missing from the field filters value dropdown on the entry list page.
+    - Fixed an issue with the entry list field filters where searching by the Post Category field would not return any entries.
+    - AF: Updated checkbox and radio settings fields to support choices with icons. Icon can be an image URL or Font Awesome icon class.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.5
+    - Fixed issue where division by zero generated warnings in calculation formulas
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.4
+    - Added action "gform_post_notification_save" which fires after notification is successfully saved.
+    - Updated Portuguese Brazilian translation. Credit: Dennis Franck.
+    - Fixed PHP notice on the entry list page which could occur for multi-file enabled fields if the field value was modified post submission using a custom method.
+    - Fixed PHP warning on the entry detail page which could occur if the file upload field value was cleared post submission using a custom method.
+    - Fixed an issue creating the post when the category name includes the colon character.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.3
+    - Updated the arguments used to retrieve the users to improve performance when populating the entries page filters. Credit: the GravityView team.
+	- Fixed issue with entry list sorting on certain mySQL installations.
+	- Fixed PHP notice which could occur during merge tag replacement if the form id or title are not set in the supplied form object. Credit: the GravityView team.
+    - AF: Updated GFAddOn::single_setting_label() to not display PHP notice when label is not provided.
+
+------------------------------------------------------------------------------------------------------------------
+Version 1.9.15.2
+    - Updated GFExport::get_field_row_count() to be a public method.
+    - API: Updated title to "Gravity Forms Web API".
+    
+------------------------------------------------------------------------------------------------------------------
 Version 1.9.15.1
 	- Added data-label attribute to the list field to support more responsive styles.
 	- Updated the gform_list_item_pre_add filter to include $group (the tr) as the second parameter.
@@ -13,7 +103,7 @@ Version 1.9.15
 	- Added the gform_search_criteria_entry_list filter allowing the search criteria for the entry list to be overridden. See https://www.gravityhelp.com/documentation/article/gform_search_criteria_entry_list/
     - Added $default parameter to rgar() function to allow returning a specified value if the targeted property is empty
     - Added security enhancements. Credit: Andrew Bauer - Boston University Web Team.
-    - Added security enhancements. Credit: Cyber Security Works.
+    - Added security enhancements. Credit: Sathish Kumar from Cyber Security Works Pvt Ltd (http://cybersecurityworks.com/)
     - Added the 'gform_media_upload_path' filter so the location post image files are copied to during post creation can be overridden. See https://www.gravityhelp.com/documentation/article/gform_media_upload_path/
     - Added new filter 'gform_review_page' to enable review form page. See https://www.gravityhelp.com/documentation/article/gform_review_page/
     - Added is_zero_decimal() helper to RGCurrency.

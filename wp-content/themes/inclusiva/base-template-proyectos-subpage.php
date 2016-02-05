@@ -39,7 +39,7 @@ use Roots\Sage\Wrapper;
 			  <?php get_template_part('templates/page', 'header-proyectos-subpage'); ?>
 		</div>
     <?php if ($tag__slug && has_nav_menu('pry_'.$tag__slug.'_navigation')){ ?>
-          <?php get_template_part('templates/nav', 'proyecto-'.$tag__slug ); ?>
+          <?php get_template_part('templates/nav', 'proyectos' ); ?>
     <?php } ?>
 
     <div class="wrap container" role="document">

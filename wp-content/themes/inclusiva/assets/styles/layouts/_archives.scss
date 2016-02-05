@@ -167,6 +167,45 @@
 	}
 }
 
+.single-servicios{
+	.masshead{
+		background-image: url('../images/masshead--servicios.jpg');
+		@include full-bg();
+		.page-header{
+			margin: 0 auto;
+			padding: 0;
+		}
+	}
+	&.videos-de-capacitacion{
+		.main{
+			.wrapper{
+				@include make-row();
+				.inner{
+					@include make-sm-column(3);
+					@include make-xs-column(12);
+					.thumbnail{
+						@inclide border-radius(0);
+    					padding: 0;
+    					img{
+    						margin: 0;
+    					}
+    					.caption{
+    						text-align: center;
+    						a{
+    							margin: 7px auto 3px;
+    							padding: 0;
+    							font-size: 14px; 
+    							@include opensans(bold);
+    						}
+    					}
+					}
+				}
+			}
+
+		}
+	}
+}
+
 .servicios__logo{
 	margin: 0 auto;
 	a{

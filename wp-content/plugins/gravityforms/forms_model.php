@@ -2298,8 +2298,9 @@ class GFFormsModel {
 
 				case 'post_category' :
 					foreach ( explode( ',', $value ) as $cat_string ) {
-						list( $cat_name, $cat_id ) = rgexplode( ':', $cat_string, 2 );
-						array_push( $categories, $cat_id );
+						$cat_array = explode( ':', $cat_string );
+						// the category id is the last item in the array, access it using end() in case the category name includes colons.
+						array_push( $categories, end( $cat_array ) );
 					}
 					break;
 
@@ -2320,7 +2321,7 @@ class GFFormsModel {
 		$post_data['images']        = $images;
 
 		//setting current user as author depending on settings
-		$post_data['post_author'] = $form['useCurrentUserAsAuthor'] && ! empty( $lead['created_by'] ) ? $lead['created_by'] : $form['postAuthor'];
+		$post_data['post_author'] = $form['useCurrentUserAsAuthor'] && ! empty( $lead['created_by'] ) ? $lead['created_by'] : rgar( $form, 'postAuthor' );
 
 		return $post_data;
 	}
@@ -4234,7 +4235,7 @@ class GFFormsModel {
 		}
 
 		//initializing rownum
-		$wpdb->query( 'select @rownum:=0' );
+		$wpdb->query( 'SELECT @rownum:=0' );
 
 		GFCommon::log_debug( $sql );
 
@@ -4331,6 +4332,7 @@ class GFFormsModel {
                    $orderby
                 ) sorted ON d.lead_id = sorted.id
                 $where
+                ORDER BY sorted.sort
                 LIMIT $offset,$page_size
             ) filtered ON filtered.id = l.id
 

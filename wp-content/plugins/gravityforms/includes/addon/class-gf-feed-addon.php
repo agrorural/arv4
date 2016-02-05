@@ -110,7 +110,7 @@ abstract class GFFeedAddOn extends GFAddOn {
 	}
 
 	public function scripts() {
-
+	
 		$scripts = array(
 			array(
 				'handle'  => 'gform_form_admin',
@@ -920,7 +920,6 @@ abstract class GFFeedAddOn extends GFAddOn {
 	protected function get_bulk_actions() {
 		$bulk_actions = array( 
 			'delete'    => esc_html__( 'Delete', 'gravityforms' ),
-			'duplicate' => esc_html__( 'Duplicate', 'gravityforms' )	
 		);
 
 		return $bulk_actions;
