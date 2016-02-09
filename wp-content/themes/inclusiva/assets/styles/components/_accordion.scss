@@ -32,9 +32,9 @@
     			border-color: $green--light;
     			h4{
 	    			a{
-	    				color: $green;
+	    				color: $red--google;
 	    				&:hover{
-	    					color: $red--google;
+	    					color: $red;
 	    				}
 
 	    				&.btn-danger{
