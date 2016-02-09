@@ -1,0 +1,63 @@
+.panel-group{
+	.panel{
+		@include border-radius(0);
+		.panel-heading{
+			color: $white;
+    		background-color: $green--light;
+    		border-color: $green--light;
+    		h4{
+    			a{
+    				color: $white;
+    				&[aria-expanded=true]{
+    					.fa-plus-circle{
+    						-ms-transform: rotate(45deg); /* IE 9 */
+    						-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    						transform: rotate(45deg);
+    					}
+    				}
+    			}
+    		}
+		}
+		.panel-collapse{
+			.panel-body{
+
+			}
+		}
+	}
+	&.panel-child{
+		.panel{
+			.panel-heading{
+				color: $green--light;
+    			background-color: transparent;
+    			border-color: $green--light;
+    			h4{
+	    			a{
+	    				color: $green;
+	    				&:hover{
+	    					color: $red--google;
+	    				}
+
+	    				&.btn-danger{
+	    					color: $white;
+	    					&:hover{
+	    						color: $white;
+	    					}
+	    				}
+	    				&[aria-expanded=true]{
+							.fa-angle-down{
+								-ms-transform: rotate(180deg); /* IE 9 */
+								-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+								transform: rotate(180deg);
+							}
+    					}
+	    			}
+    			}
+			}
+			.panel-collapse{
+				.panel-body{
+
+				}
+			}
+		}
+	}
+}

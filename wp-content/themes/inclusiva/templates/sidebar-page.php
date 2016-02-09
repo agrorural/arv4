@@ -7,7 +7,7 @@
 	endif;
 	?>
 </section>
-<?php } elseif ( is_page( array ( 'agro-rural', 'la-institucion', 'antecedentes', 'mision-y-vision', 'organigrama', 'directorio', 'preguntas-frecuentes' ) ) ) {?>
+<?php } else if ( is_page( array ( 'agro-rural', 'la-institucion', 'antecedentes', 'mision-y-vision', 'organigrama', 'directorio', 'preguntas-frecuentes' ) ) ) {?>
 <section class="widget">
 	<h3>Quiénes Somos</h3>
     <?php
@@ -16,7 +16,7 @@
 	endif;
 	?>
 </section>
-<?php } elseif ( is_page( array ( 'Contacto'))){ ?>
+<?php } else if ( is_page( array ( 'Contacto'))){ ?>
 
 <section class="widget text-2 widget_text"><h3>La Institución</h3>			<div class="textwidget"><address>
   <strong><a href="//localhost:3000/portal">AGRO RURAL</a></strong><br>
@@ -45,6 +45,19 @@
 				) 
 {?>
     <?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
+<?php } else if( is_page( array('csst') ) ) {?>
+	<section class="widget">
+	<h3>CSST</h3>
+    <?php
+	if (has_nav_menu('transparencia_navigation')) :
+		wp_nav_menu(['theme_location' => 'transparencia_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']);
+	endif;
+	?>
+</section>
+<section class="widget">
+	<h3>Formulario de Requerimientos</h3>
+
+</section>
 <?php } else {?>
 	<?php dynamic_sidebar('sidebar-primary'); ?>
 <?php } ?>
