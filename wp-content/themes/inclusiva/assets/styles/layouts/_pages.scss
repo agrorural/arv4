@@ -119,8 +119,14 @@
 				position: relative;
 				padding-top: 130px; 
 				z-index: 100;
+					a{
+						color: $yellow;
+						font-size: 11px;
+					}
 				.media-left{
-
+					p{
+						text-align: center;
+					}
 				}
 				.media-body{
 					h1{
@@ -136,9 +142,6 @@
 					}
 					h1, p{
 						@include text-on-focus();
-					}
-					a{
-						color: $yellow;
 					}
 				}
 			}
