@@ -24,8 +24,11 @@ $the_query = new WP_Query( $args ); ?>
 		?>
 		<div class="item">
 			<figure>
-				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('full', array('class' => 'img-responsive' )); } ?>
-				<figcaption>
+				<?php if ( has_post_thumbnail() ) { ?>
+					<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+					<img class="owl-lazy" data-src="<?php echo $url; ?>" class="img-responsive" alt="">
+				<?php } ?>
+				<figcaption class="hidden">
 					<div class="sl__home__hashtag">
 	    				<a href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank"><?php if ($banner__ht) { echo '#'.$banner__ht; } else { echo bloginfo( 'url' ); } ?></a>
 	    			</div>
@@ -39,6 +42,8 @@ $the_query = new WP_Query( $args ); ?>
 		    			<p><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__danger"><?php if ($banner__btn_title) { echo $banner__btn_title; } else { echo 'Saber más'; } ?></a></p>
 		    		</div>
 				</figcaption>
+			
+				<i class="fa fa-circle-o-notch fa-spin spinner"></i>
 			</figure>
 		</div>
 	<?php endwhile; ?>

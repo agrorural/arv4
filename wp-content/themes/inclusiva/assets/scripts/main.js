@@ -64,6 +64,7 @@
             autoplay: true,
             autoplayTimeout: 30000,
             autoplayHoverPause:true,
+            lazyLoad: true,
             nav: true,
             navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"],
             responsive:{
@@ -75,11 +76,18 @@
                 }
             }
         });
-        $('.sl__home figure').css('visibility', 'hidden');
+        $(window).load(function () {
+            $('.sl__home figure figcaption').removeClass('hidden');
+            $('.sl__home figure .spinner').remove();
+        });
+          
+
+
+
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-        $('.sl__home figure').css('visibility', 'visible');
+
       }
     },
     // About us page, note the change from about-us to about_us.

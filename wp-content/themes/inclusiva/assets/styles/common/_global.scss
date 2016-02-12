@@ -386,6 +386,20 @@ article{
   }
 }
 
+.hidden{
+  display: none;
+  visibility: hidden;
+  @include opacity(0);
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include text-on-focus();
+  z-index: 10000;
+}
+
 /* Panel */
 .panel-footer{
   padding: 0 15px !important;
