@@ -46,17 +46,8 @@
 {?>
     <?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
 <?php } else if( is_page( array('csst') ) ) {?>
-	<section class="widget">
-	<h3>CSST</h3>
-    <?php
-	if (has_nav_menu('transparencia_navigation')) :
-		wp_nav_menu(['theme_location' => 'transparencia_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']);
-	endif;
-	?>
-</section>
 <section class="widget">
 	<h3>Formulario de Requerimientos</h3>
-
 </section>
 <?php } else {?>
 	<?php dynamic_sidebar('sidebar-primary'); ?>

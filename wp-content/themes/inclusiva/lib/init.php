@@ -40,14 +40,14 @@ function setup() {
     'pry_aiaf_navigation' => __('Proyecto AIAF Navigation', 'sage'), //AIAF
     
     // Resoluciones
-    'res_rde_navigation' => __('Resoluciones RDE Navigation', 'sage'), //RDE
+    'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
 
     // Servicios
     'servicios_navigation' => __('Servicios Navigation', 'sage'), //RDE
       // SidebarServicios
       'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage'), //RDE
 
-    // Servicios
+    // Sistema de Control Interno
     'sci_navigation' => __('SCI Navigation', 'sage') // SCI
 
   ]);
