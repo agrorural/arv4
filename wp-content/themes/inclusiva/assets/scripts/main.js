@@ -28,6 +28,7 @@
         loop: true,
         margin: 0,
         nav: true, 
+        lazyLoad: true,
         navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"],
         dots: false,      
           responsive:{
@@ -46,6 +47,31 @@
           loop: true,
           margin: 0,     
           items: 1
+        });
+
+                 //Colorbox Settings
+        var cbSettings = {
+          rel: 'cboxElement',
+          width: '95%',
+          height: 'auto',
+          maxWidth: '660',
+          maxHeight: 'auto',
+          title: function() {
+            return $(this).find('img').attr('alt');
+          }
+        };     
+
+        //Initialize jQuery Colorbox   
+        $('.gallery a[href$=".jpg"], .gallery a[href$=".jpeg"], .gallery a[href$=".png"], .gallery a[href$=".gif"]').colorbox(cbSettings);
+
+        //Keep lightbox responsive on screen resize
+        $(window).on('resize', function() {
+            $.colorbox.resize({
+            width: window.innerWidth > parseInt(cbSettings.maxWidth) ? cbSettings.maxWidth : cbSettings.width
+          }); 
+        });
+        $(window).load(function () {
+            $('.sl__footer').removeClass('hidden');
         });
       },
       finalize: function() {
@@ -78,12 +104,9 @@
         });
         $(window).load(function () {
             $('.sl__home figure figcaption').removeClass('hidden');
+            $('.sl__footer').removeClass('hidden');
             $('.sl__home figure .spinner').remove();
         });
-          
-
-
-
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

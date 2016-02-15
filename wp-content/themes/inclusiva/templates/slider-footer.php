@@ -10,7 +10,7 @@ $args  = array(
 $the_query = new WP_Query( $args ); ?>
 
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="owl-carousel sl__footer">
+	<div class="owl-carousel sl__footer hidden">
 
 	<!-- pagination here -->
 
