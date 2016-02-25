@@ -14,7 +14,9 @@
 					<i class="fa fa-<?php echo $format; ?>"></i>
 				</a>
 			<?php } ?>
-			<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+			</a>
 		</figure>
 	<?php } ?>
 	

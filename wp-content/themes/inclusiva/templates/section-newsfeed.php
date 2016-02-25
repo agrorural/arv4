@@ -32,7 +32,7 @@
 								$banner__url = get_field('banner__url');
 								$banner__txt = get_field('banner__txt'); 
 							?>
-								<section class="widget row banner col-sm-12 col-xs-6">
+								<section class="widget banner">
 									<?php if ($banner__txt) {?>
 										<figure class="shadow">
 											<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>

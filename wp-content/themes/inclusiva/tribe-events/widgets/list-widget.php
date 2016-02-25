@@ -61,7 +61,7 @@ if ( $posts ) : ?>
 		?>
 	</ol><!-- .hfeed -->
 
-	<p class="tribe-events-widget-link">
+	<p class="tribe-events-widget-link cta__container">
 		<a class="cta__link" href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( __( 'Ver Todos los Eventos' ), '' ); ?></a>
 	</p>
 

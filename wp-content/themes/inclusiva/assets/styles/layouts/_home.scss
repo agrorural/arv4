@@ -102,15 +102,15 @@
 		}
 
 		&.multimedia__banner{
-			background: $gray--text  url(../images/multimedia__bg.png) repeat-x bottom center; 
+			background: $brown  url(../images/multimedia__bg.png) repeat-x bottom center; 
 			.multimedia{
 				@include make-lg-column(9);
 				.page-header{
 					margin: 0;
-					border-bottom: 1px solid $gray--text--dark;
+					border-bottom: 1px solid $green;
 					h3{
 						margin-top: 0;
-						color: $cream;
+						color: $green;
 					}
 				}
 				.tabbable.tabs-left{
@@ -120,22 +120,22 @@
 						@include make-sm-column(2);
 						@include make-xs-column(2); 
 						margin-right: 0;
-						border-right: 1px solid $gray--text--dark;
+						border-right: 1px solid $green;
 						padding-right: 0;
 						li{
 							a{
-								color: $gray--light;
+								color: $cream;
 								@include border-radius(0);
 								border: 1px solid transparent;
 								margin-bottom: 2px;
 								&:hover{
-									background-color: $gray--text--dark;
+									background-color: $green--light;
 								}
 							}
 							&.active{
 								a{
 									color: $white;
-									background-color: $gray--text--dark;
+									background-color: $green;
 									border: 1px solid transparent;
 									@include border-radius(0);
 								}
@@ -224,8 +224,8 @@
 										position: absolute;
 										top: 15px;
 										left: 20px;
-										color: $yellow;
-										border: 1px solid $yellow;
+										color: $green--accent;
+										border: 1px solid $green--accent;
 										padding: 0 7px;
 										i{
 											font-size: 12px;
@@ -241,15 +241,19 @@
 				.widget{
 					background-color: transparent;
 					@include text-on-focus();
-					border-left: 1px solid $gray--text--dark;
+					border-left: 1px solid $green;
 					.nav-sidebar{
 						li{
 							a{
 								border-bottom: 1px solid transparent;
-								@include text-on-focus();
+								color: $green;
+								&:hover{
+									color: $green--accent;
+								}
 							}
 						}
 					}
+				
 				}
 			}
 		}
@@ -380,6 +384,18 @@
 				}
 			} /* Termina .owl-dots */
 		} /* Termina .sl__home */
+		.section{
+			&.newsfeed{
+				aside{
+					.widget figure figcaption h4{
+						font-size: 14px;
+					}
+					.widget figure figcaption p a{
+						font-size: 10px;
+					}
+				}
+			}
+		}
 	} /* Termina home*/
 }
 

@@ -15,7 +15,7 @@ $the_query = new WP_Query( $args ); ?>
 		<?php get_template_part('templates/content', 'home-news-list'); ?>
 	<?php endwhile; ?>
 	<!-- end of the loop -->
-	<p><a href="<?php echo bloginfo( 'url' ); ?>/noticias" class="cta__link">Ver todo</a></p>
+	<p class="cta__container"><a href="<?php echo bloginfo( 'url' ); ?>/noticias" class="cta__link">Ver todo</a></p>
 	<!-- pagination here -->
 
 	<?php wp_reset_postdata(); ?>

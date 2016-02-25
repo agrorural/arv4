@@ -139,6 +139,12 @@ p{
     font-size: 16px;
     margin: 15px auto;
   }
+  &.cta__container{
+    .cta__link{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 article{
   img{
@@ -435,8 +441,8 @@ article{
       }
       h4{
         @include opensans(bold);
-        font-size: 18px; 
-        margin-bottom: 0;
+        font-size: 16px; 
+        margin: 0 auto;
       }
       p, ul li a, p a{
         font-size: 11px;
