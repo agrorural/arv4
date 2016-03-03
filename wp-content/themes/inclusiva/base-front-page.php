@@ -64,7 +64,7 @@ use Roots\Sage\Wrapper;
     <?php wp_reset_postdata(); ?>
 
     <?php else : ?>
-      <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+      <?php //Silence is golden ?>
     <?php endif; ?>
 
   </body>

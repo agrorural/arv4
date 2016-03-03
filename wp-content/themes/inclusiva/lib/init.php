@@ -42,9 +42,13 @@ function setup() {
     // Resoluciones
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
 
+    // Convocatorias
+    'cnv_cas_navigation' => __('Convocatorias CAS Navigation', 'sage'), //CAS
+    'cnv_cap_navigation' => __('Convocatorias CAP Navigation', 'sage'), //CAP
+
     // Servicios
     'servicios_navigation' => __('Servicios Navigation', 'sage'), //RDE
-      // SidebarServicios
+      // Sidebar Servicios
       'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage'), //RDE
 
     // Sistema de Control Interno
