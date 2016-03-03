@@ -102,10 +102,20 @@
                 }
             }
         });
+
+        // Verifica si hay Modal del Front Page
+        var findModal = $('.home-page').find("#fontPageModal");
+
+        // Normalización
         $(window).load(function () {
             $('.sl__home figure figcaption').removeClass('hidden');
             $('.sl__footer').removeClass('hidden');
             $('.sl__home figure .spinner').remove();
+
+            //Si hay Modal, lo muestra
+            if(findModal.length > 0){
+              $('#fontPageModal').modal();
+            }
         });
       },
       finalize: function() {

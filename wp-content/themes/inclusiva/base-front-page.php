@@ -39,5 +39,33 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/footer');
       wp_footer();
     ?>
+
+  <?php 
+    // Argumentos
+    $args  = array(
+      'post_type' => 'Banners', 
+      'posiciones' => 'Modal Home',
+      'post_per_page' => 1
+    );
+
+    // the query
+    $the_query = new WP_Query( $args ); ?>
+
+    <?php if ( $the_query->have_posts() ) : ?>
+
+    <!-- pagination here -->
+
+    <!-- the loop -->
+    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+      <?php get_template_part('templates/modal', 'home'); ?>
+    <?php endwhile; ?>
+    <!-- end of the loop -->
+
+    <?php wp_reset_postdata(); ?>
+
+    <?php else : ?>
+      <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php endif; ?>
+
   </body>
 </html>
