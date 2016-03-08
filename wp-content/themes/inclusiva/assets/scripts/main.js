@@ -43,13 +43,14 @@
               }
           }
         });
+
         $('.sb__category').owlCarousel({
           loop: true,
           margin: 0,     
           items: 1
         });
 
-                 //Colorbox Settings
+        //Colorbox Settings
         var cbSettings = {
           rel: 'cboxElement',
           width: '95%',
@@ -63,6 +64,9 @@
 
         //Initialize jQuery Colorbox   
         $('.gallery a[href$=".jpg"], .gallery a[href$=".jpeg"], .gallery a[href$=".png"], .gallery a[href$=".gif"]').colorbox(cbSettings);
+
+        //Read only Gravity Forms
+        $(".gform_wrapper .gf_disabled input").attr("disabled", "");
 
         //Keep lightbox responsive on screen resize
         $(window).on('resize', function() {
