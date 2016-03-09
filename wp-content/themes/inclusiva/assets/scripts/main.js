@@ -66,7 +66,7 @@
         $('.gallery a[href$=".jpg"], .gallery a[href$=".jpeg"], .gallery a[href$=".png"], .gallery a[href$=".gif"]').colorbox(cbSettings);
 
         //Read only Gravity Forms
-        $(".gform_wrapper .gf_disabled input").attr("disabled", "");
+        $(".gform_wrapper .gf_disabled input").attr("readonly", "");
 
         //Keep lightbox responsive on screen resize
         $(window).on('resize', function() {
