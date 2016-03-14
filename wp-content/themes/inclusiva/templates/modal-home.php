@@ -2,6 +2,7 @@
 	// ACF 
 	global $post;
 	$banner__url = get_field('banner__url'); 
+	$banner__txt = get_field('banner__txt'); 
 	$banner__btn_title = get_field('banner__btn_title');
 	$banner__ht = get_field('banner__ht');
 	$banner__ht_url = get_field('banner__ht_url');

@@ -25,12 +25,6 @@
     <tbody>
 		<tr>
 			<td>
-				<?php if ( $dir_cargo ) echo $dir_cargo; ?>
-				<ul class="list-inline">
-					<?php if ( $dir_resolucion ) echo '<li><a href="'.$dir_resolucion.'"><small>Resolución</small></a></li>'; ?>
-				</ul>
-			</td>
-			<td>
 				<?php if ( $dir_responsable ) echo $dir_responsable; ?>
 				<ul class="list-inline">
 					<?php if ( $dir_cv ) echo '<li><a href="'.$dir_cv.'"><small>Curriculum vitae</small></a></li>'; ?>
@@ -38,10 +32,20 @@
 				</ul>
 			</td>
 			<td>
+				<?php if ( $dir_cargo ) echo $dir_cargo; ?>
+				<ul class="list-inline">
+					<?php if ( $dir_resolucion ) echo '<li><a href="'.$dir_resolucion.'"><small>Resolución</small></a></li>'; ?>
+				</ul>
+			</td>
+			<td>
 				<p>
-					<?php if ( $dir_direccion ) echo $dir_direccion; ?><br />
 					<?php if ( $dir_telefono ) echo $dir_telefono; ?><br />
-					<a href="mailto:<?php if ( $dir_correo ) echo $dir_correo; ?>"><?php if ( $dir_correo ) echo $dir_correo; ?></a>
+				</p>
+			</td>
+			<td>
+				<p>
+					<a href="mailto:<?php if ( $dir_correo ) echo $dir_correo; ?>"><?php if ( $dir_correo ) echo $dir_correo; ?></a><br /><br />
+					<?php if ( $dir_direccion ) echo '<i class="fa fa-map-marker"></i> '.$dir_direccion; ?>
 				</p>
 			</td>
 		</tr>

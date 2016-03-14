@@ -146,6 +146,13 @@ p{
     }
   }
 }
+
+table{
+  p{
+    text-align: left;
+  }
+}
+
 article{
   img{
     border:1px solid $gray--light;
@@ -159,6 +166,8 @@ article{
 .modal{
   .modal-content{
     @include border-radius(0);
+    padding: 0;
+    border: 0 none;
     .modal-header{}
     .modal-body{
       &.banner-only{
@@ -167,14 +176,16 @@ article{
           position: relative;
           .close{
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0px;
+            right: -20px;
             @include opacity(.5);
-            @include border-radius(10px);
+            @include border-radius(0px);
             padding: 3px 5px;
             font-size: 12px;
-            font-weight: normal;
-            background-color: $white;
+            font-weight: normal !important;
+            text-shadow: none;
+            background-color: $red--google;
+            color: $white;
             &:hover{
               @include opacity(1);
             }
