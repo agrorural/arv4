@@ -18,9 +18,8 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="masshead"></div>
+    <?php get_template_part('templates/masshead'); ?>
     <div class="wrap container" role="document">
-    <?php get_template_part('templates/page', 'header-gallery'); ?>
       <div class="content row">
         <main class="main" role="main">
           <?php include Wrapper\template_path(); ?>

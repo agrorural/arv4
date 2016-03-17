@@ -24,7 +24,7 @@
 	        
 	        <li class="">
 				<?php get_template_part('templates/entry-meta'); ?>
-				<a rel="external" href="<? the_permalink()?>">
+				<a rel="external" href="<?php the_permalink()?>">
 				<?php the_title(); ?>
 				</a>
 	        </li>

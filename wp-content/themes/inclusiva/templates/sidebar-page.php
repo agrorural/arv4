@@ -45,7 +45,7 @@
 				) 
 {?>
     <?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
-<?php } else if( is_page( array('Comité de Seguridad y Salud en el Trabajo de AGRO RURAL') ) ) {?>
+<?php } else if( is_page( array('Comité de Seguridad y Salud en el Trabajo') ) ) {?>
 <section class="widget">
 	<h3>Documentos</h3>
 

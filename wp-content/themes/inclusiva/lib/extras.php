@@ -36,6 +36,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * Quitando estilos de plugins
  */
 function remove_unwanted_plugins() {
-  wp_dequeue_style('contact-form-7');
+  wp_dequeue_style('some-plugin-asset');
+  wp_deregister_style('some-plugin-asset');
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\remove_unwanted_plugins');
+add_action('wp_print_styles', __NAMESPACE__ . '\\remove_unwanted_plugins', 99999);

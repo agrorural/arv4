@@ -20,7 +20,6 @@ use Roots\Sage\Wrapper;
     ?>
     <?php get_template_part('templates/masshead'); ?>
     <div class="wrap container" role="document">
-    <?php get_template_part('templates/page', 'header'); ?>
       <div class="content row">
         <main class="main" role="main">
           <?php get_template_part('templates/section', 'convocatorias-cap'); ?>

@@ -10,9 +10,6 @@
       "files": [
         "styles/main.scss"
       ],
-      "vendor": [
-        "../../plugins/contact-form-7/includes/css/styles.css"
-      ],
       "main": true
     },
     "editor-style.css": {

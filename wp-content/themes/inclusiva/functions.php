@@ -20,6 +20,8 @@ $sage_includes = [
   'lib/extras.php',                // Custom functions
   'lib/wp_bootstrap_navwalker.php',    // Register Custom Navigation Walker
   'lib/gf_snippets.php',    // Gravity Forms Snippet
+  'lib/cpt.php', // Custom Post Types
+  'lib/ctp_roles.php',
 ];
 
 foreach ($sage_includes as $file) {
