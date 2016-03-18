@@ -13,6 +13,8 @@
 			<?php get_template_part('templates/page','header-noticias'); ?>
 		<?php } else if ( is_post_type_archive('servicios') ) { ?>
 			<?php get_template_part('templates/page','header-servicios'); ?>
+		<?php } else if ( is_post_type_archive('producto') ) { ?>
+			<?php get_template_part('templates/page','header-producto'); ?>
 		<?php } else if ( is_post_type_archive('tribe_events') || is_singular('tribe_events') ) { ?>
       		<?php get_template_part('templates/page', 'header-events'); ?>
 		<?php } else if( is_tax( 'post_format', 'post-format-gallery' ) ){ ?>

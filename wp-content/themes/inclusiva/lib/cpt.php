@@ -76,5 +76,54 @@ function create_my_taxonomies() {
 		'query_var'         => true,
 	);
 
+	$labels_producto_coordinador = array(
+		'name'              => _x( 'Coordinadores', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Coordinador', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar coordinadores' ),
+		'all_items'         => __( 'Todos los  coordinadores' ),
+		'parent_item'       => __( 'Coordinador Padre' ),
+		'parent_item_colon' => __( 'Coordinador Padre:' ),
+		'edit_item'         => __( 'Editar Coordinador' ),
+		'update_item'       => __( 'Actualizar Coordinador' ),
+		'add_new_item'      => __( 'Agregar Nuevo Coordinador' ),
+		'new_item_name'     => __( 'Nombre de Nuevo Coordinador' ),
+		'menu_name'         => __( 'Coordinadores' ),
+	);
+
+	$args_producto_coordinador = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_producto_coordinador,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+	);
+
+	$labels_producto_productor = array(
+		'name'              => _x( 'Productores', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Productor', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar productores' ),
+		'all_items'         => __( 'Todos los  productores' ),
+		'parent_item'       => __( 'Productor Padre' ),
+		'parent_item_colon' => __( 'Productor Padre:' ),
+		'edit_item'         => __( 'Editar productor' ),
+		'update_item'       => __( 'Actualizar productor' ),
+		'add_new_item'      => __( 'Agregar Nuevo productor' ),
+		'new_item_name'     => __( 'Nombre de Nuevo productor' ),
+		'menu_name'         => __( 'Productores' ),
+	);
+
+	$args_producto_productor = array(
+		'public' 			=> true,
+		'hierarchical'      => false,
+		'labels'            => $labels_producto_productor,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+	);
+
+
 	register_taxonomy( 'presentacion', 'producto', $args_producto_presentacion );
+	register_taxonomy( 'coordinador', 'producto', $args_producto_coordinador );
+	register_taxonomy( 'productor', 'producto', $args_producto_productor );
 }

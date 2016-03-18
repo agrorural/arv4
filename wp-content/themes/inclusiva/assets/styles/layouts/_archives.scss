@@ -77,6 +77,63 @@
 			}
 		}
 	}
+	&.post-type-archive-producto{
+		.masshead{
+			background-image: url('../images/masshead--producto.jpg') !important;
+			@include full-bg();
+		}
+		.main{
+			figure.producto{
+				@include make-xs-column(6);
+			}
+			@media(min-width: $screen-sm-min){
+				figure.producto{
+					@include make-xs-column(3);
+					.thumbnail{
+						background-color: $brown--lighter;
+						padding: 0;
+						border: 0 none;
+						@include border-radius(0px);
+						a{
+							display: block;
+							img{}
+						}
+						figcaption{
+							background-color: $white--smoke;
+							padding: 0;
+							h3{
+								@include opensans();
+								font-size: 100%;
+								margin: 0;
+								padding: 5px 0;
+								a{
+									color: $gray;
+								}
+
+							}
+							.cta__container{
+								display: none;
+								.cta__link{
+									display: inline-block;
+									font-size: 75%;
+									padding: 0;
+								}
+
+							}
+						}
+						&:hover{
+							figcaption{
+								.cta__container{
+									display: block;
+									@include fadeInUp();
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.multimedia--1{
 		@include make-row();
 		margin: 0 0 30px;
