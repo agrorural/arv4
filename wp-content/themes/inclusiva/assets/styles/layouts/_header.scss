@@ -34,6 +34,16 @@ header{
 								padding-left: 10px;
 								padding-right: 10px;
 							}
+							&#menu-item-14012{
+								a{
+									background-color: $white;
+										color: $red--google;
+									&:hover{
+										background-color: $yellow--light;
+										color: $red--google--hover;
+									}
+								}
+							}
 
 							&.menu-item-11086{
 								a{

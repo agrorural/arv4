@@ -8,15 +8,15 @@
       <ul class="nav navbar-nav navbar-date">
         <li><p class="navbar-brand"><?php echo date_i18n('l, j \d\e F \d\e Y', time()); ?></p></li>
       </ul>
-
-      <div class="navbar-form navbar-right navbar-search"><?php get_search_form(); ?></div>
       
        <?php
       if (has_nav_menu('social_navigation')) :
         wp_nav_menu(['theme_location' => 'social_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-social']);
       endif;
       ?>
-    
+
+      <div class="navbar-form navbar-right navbar-search"><?php get_search_form(); ?></div>
+      
       <?php
       if (has_nav_menu('links_navigation')) :
         wp_nav_menu(['theme_location' => 'links_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-links']);
