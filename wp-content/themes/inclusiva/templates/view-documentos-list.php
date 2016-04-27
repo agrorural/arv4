@@ -12,9 +12,11 @@
 	$wp_query->query('post_type=documentos&posts_per_page=10&year='.$post__date.'&tipos='. $term__name .'&paged='.$paged);
 	while ($wp_query->have_posts()) : $wp_query->the_post(); 
 ?>
-
-<?php get_template_part('templates/content', 'documentos-list'); ?>
-
+<?php if ($term__name && $term__name == 'Directivas'){ ?>
+	<?php get_template_part('templates/content', 'documentos-directivas'); ?>
+<?php }else{ ?>
+	<?php get_template_part('templates/content', 'documentos-list'); ?>
+<?php } ?>
 <?php endwhile; ?>
 
     <?php wp_pagenavi(); ?>

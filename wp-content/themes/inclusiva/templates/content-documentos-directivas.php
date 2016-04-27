@@ -1,0 +1,46 @@
+<?php 
+	$rde_link = get_field('rde_link');
+	$upload_dir = wp_upload_dir();
+	$dir = $upload_dir["baseurl"];
+	$dir__nro = get_field('dir__nro');
+	$dir__desc = get_field('dir__desc');
+	
+	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
+  	$post__slug = $post->post_name;
+  	$post__slug__up = strtoupper($post__slug);
+?>
+<article <?php post_class('panel panel-default'); ?>>
+  <header class="panel-heading">
+	 <a href="<?php the_permalink(); ?>">
+	 <?php if($dir__nro){?>
+	 	<?php echo $dir__nro; ?>
+	 <?php }else { ?>
+	 	<?php the_title(); ?>
+	 <?php } ?>
+	 </a>
+  </header>
+      <!-- Table -->
+  <table class="table">
+    <tbody>
+          <tr>
+            <td><?php get_template_part('templates/entry-meta'); ?></td>
+          </tr>
+    </tbody>
+  </table>
+  <div class="entry-summary panel-body">
+  	<?php if($dir__desc){?>
+	 	<?php echo $dir__desc; ?>
+	 <?php }else { ?>
+    	<?php the_content(); ?>
+    <?php } ?>
+  </div>
+  <div class="panel-footer">
+    <?php if($rde_link == 'Publicado') {?>
+      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+    <?php }else{ ?>
+      <p>No Disponible</p>
+    <?php } ?>
+
+    <?php get_template_part('templates/sharing', 'list'); ?>
+  </div>
+</article>
