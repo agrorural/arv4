@@ -24,7 +24,7 @@
   </div>
   <div class="panel-footer">
     <?php if($rde_link == 'Publicado') {?>
-      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>" target="_blank"><i class="fa fa-file-o"></i> Descargar archivo</a>
     <?php }else{ ?>
       <p>No Disponible</p>
     <?php } ?>
