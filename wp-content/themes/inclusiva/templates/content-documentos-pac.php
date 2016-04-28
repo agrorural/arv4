@@ -1,23 +1,23 @@
 <?php 
-	$rde_link = get_field('rde_link');
-	$upload_dir = wp_upload_dir();
-	$dir = $upload_dir["baseurl"];
-	$doc_ane__nom = get_field('doc_ane__nom');
-	$doc_ane__desc = get_field('doc_ane__desc');
-	
-	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
+  $rde_link = get_field('rde_link');
+  $upload_dir = wp_upload_dir();
+  $dir = $upload_dir["baseurl"];
+  $doc_ane__nom = get_field('doc_ane__nom');
+  $doc_ane__desc = get_field('doc_ane__desc');
+  
+  $term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
   $post__slug = $post->post_name;
   $post__slug__up = strtoupper($post__slug);
 ?>
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
-	 <a href="<?php the_permalink(); ?>">
-	 <?php if($doc_ane__nom){?>
-	 	<?php echo $doc_ane__nom; ?>
-	 <?php }else { ?>
-	 	<?php the_title(); ?>
-	 <?php } ?>
-	 </a>
+   <a href="<?php the_permalink(); ?>">
+   <?php if($doc_ane__nom){?>
+    <?php echo $doc_ane__nom; ?>
+   <?php }else { ?>
+    <?php the_title(); ?>
+   <?php } ?>
+   </a>
   </header>
       <!-- Table -->
   <table class="table">
@@ -28,10 +28,10 @@
     </tbody>
   </table>
   <div class="entry-summary panel-body">
-  	<?php if($doc_ane__desc){?>
-	 	<?php echo $doc_ane__desc; ?>
-	 <?php }else { ?>
-    	<?php the_content(); ?>
+    <?php if($doc_ane__desc){?>
+    <?php echo $doc_ane__desc; ?>
+   <?php }else { ?>
+      <?php the_content(); ?>
     <?php } ?>
   </div>
   <div class="panel-footer">

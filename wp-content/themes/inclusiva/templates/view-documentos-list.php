@@ -14,7 +14,9 @@
 ?>
 <?php if ($term__name && $term__name == 'Directivas'){ ?>
 	<?php get_template_part('templates/content', 'documentos-directivas'); ?>
-<?php }else{ ?>
+<?php } else if ($term__name && $term__name == 'PAC'){ ?>
+	<?php get_template_part('templates/content', 'documentos-pac'); ?>
+<?php } else { ?>
 	<?php get_template_part('templates/content', 'documentos-list'); ?>
 <?php } ?>
 <?php endwhile; ?>
