@@ -16,6 +16,8 @@
 	<?php get_template_part('templates/content', 'documentos-directivas'); ?>
 <?php } else if ($term__name && $term__name == 'PAC'){ ?>
 	<?php get_template_part('templates/content', 'documentos-pac'); ?>
+<?php } else if ($term__name && $term__name == 'RDE'){ ?>
+	<?php get_template_part('templates/content', 'documentos-rde'); ?>
 <?php } else { ?>
 	<?php get_template_part('templates/content', 'documentos-list'); ?>
 <?php } ?>
