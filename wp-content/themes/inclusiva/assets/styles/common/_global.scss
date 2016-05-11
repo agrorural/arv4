@@ -335,7 +335,9 @@ main{
 }
 
 .section{
-  padding-top: 60px;
+  @media(min-width: $screen-sm-min){
+    padding-top: 30px;
+  }
   padding-bottom: 30px;
 }
 
