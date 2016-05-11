@@ -119,11 +119,13 @@ header{
 							-o-transition-timing-function: ease;
 							width: 33px;
 							@include placeholder($white);					
-							
 							&:focus, &:active{
-								@include placeholder($gray);
 								background-color: $white--smoke;
 								width: 100%;
+							}
+							&:active{
+								@include placeholder($gray);
+								font-size: 85%;
 							}
 						}
 

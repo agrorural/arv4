@@ -25,8 +25,14 @@ $the_query = new WP_Query( $args ); ?>
 		<div class="item">
 			<figure>
 				<?php if ( has_post_thumbnail() ) { ?>
-					<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-					<img class="owl-lazy" data-src="<?php echo $url; ?>" class="img-responsive" alt="">
+					<?php 
+						$thumb__ID = get_post_thumbnail_id( $post->ID );
+						$thumb__attr = wp_get_attachment_image_src( $thumb__ID, 'full' );
+						$thumb__URI = $thumb__attr[0];
+						$thumb__width = $thumb__attr[1];
+						$thumb__height = $thumb__attr[2];
+					?>
+					<img class="owl-lazy" data-src="<?php echo $thumb__URI; ?>" class="img-responsive" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
 				<?php } ?>
 				<figcaption class="hidden">
 					<div class="sl__home__hashtag">

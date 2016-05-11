@@ -1,75 +1,75 @@
 @mixin text-render(){
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
 }
 
 @mixin border-radius($radius) {
-	border-radius: $radius;
+  border-radius: $radius;
 }
 @mixin shadow--2dp(){
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 @mixin opensans($variation: 'regular'){
-	font-family: 'opensans#{$variation}', sans-serif;
-	@include text-render();
+  font-family: 'opensans#{$variation}', sans-serif;
+  @include text-render();
 }
 
 @mixin text-shadow(){
-	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 @mixin focus-shadow(){
-	&:after {
-		display: block;
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
-		z-index: 2;
-		opacity: 0.30;
-		background: -moz-linear-gradient(top, rgba(0,0,0,0.001) 0%, rgba(0,0,0,1) 100%); 
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.001)), color-stop(100%,rgba(0,0,0,1)));
-		background: -webkit-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-		background: -o-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-		background: -ms-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-		background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
-	}
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.30;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.001) 0%, rgba(0,0,0,1) 100%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.001)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  }
 }
 
 @mixin text-on-focus(){
-	color: $white;
+  color: $white;
     text-shadow: 1px 2px 2px rgba(0,0,0,.3);
 }
 
 @mixin photo-credit( $photo: 'AGRO RURAL' ){ 
-	&:before{
-		position: absolute;
-		content: 'Foto: #{$photo}';
-		@include opensans();
-		top: 15px;
-		right: 15px;
-		z-index: 15;
-		color: $white;
-		font-size: 8px;
-		@include opacity(.5);
-	}
+  &:before{
+    position: absolute;
+    content: 'Foto: #{$photo}';
+    @include opensans();
+    top: 15px;
+    right: 15px;
+    z-index: 15;
+    color: $white;
+    font-size: 8px;
+    @include opacity(.5);
+  }
 }
 
 @mixin title-xs($variant: 'light'){
-	font-size: 10px;
+  font-size: 10px;
     @include opensans( $variant );
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
 @mixin fa (){
-	display: inline-block;
-    font: normal normal normal 14px/20px FontAwesome !important;
+  display: inline-block;
+    font: normal normal normal 14px/20px FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -145,7 +145,6 @@
   }
   &:hover,
   &:focus {
-
     background-color: transparent;
   }
   &[disabled],
@@ -158,40 +157,40 @@
 }
 
 %btn-success {
-	color: $yellow;
-  	background-color: $green;
-  	border-color: $green;
+  color: $yellow;
+    background-color: $green;
+    border-color: $green;
 }
 
 %btn-danger {
-	color: $white;
-  	background-color: $red--google;
-  	border-color: $red--google--hover;
-  	&:hover, &:active{
-  		color: $white !important;
-  		background-color: $red--google--hover;
-  		border-color: $red--google--hover;
-  	}
+  color: $white;
+    background-color: $red--google;
+    border-color: $red--google--hover;
+    &:hover, &:active{
+      color: $white !important;
+      background-color: $red--google--hover;
+      border-color: $red--google--hover;
+    }
 }
 
 @mixin cta($type : 'link' ){
-	@include btn();
-	@extend %btn-#{$type};
-	@include opensans(bold);
-	text-transform: uppercase;
-	margin-bottom: 8px;
-	margin-top: 8px;
+  @include btn();
+  @extend %btn-#{$type};
+  @include opensans(bold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 @mixin full-bg(){
-	-webkit-background-size: cover;
+  -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
 @mixin img-replace( $width: 100%, $height: 100% ){
-	display: block;
+  display: block;
     width: $width;
     height: $height;
     background-repeat: no-repeat;
@@ -207,7 +206,7 @@
     }
 }
 @mixin img-replace-span(){
-	position: relative;
+  position: relative;
     display: block;
     text-indent: 100%;
     white-space: nowrap;
@@ -217,6 +216,7 @@
 }
 
 @mixin placeholder( $color : $gray ){
+  @include opensans();
   &::-webkit-input-placeholder { 
     color:  $color;
   }

@@ -59,12 +59,12 @@
 }
 
 html{
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body{
-	@include opensans();
+  @include opensans();
   font-size: 14px;
   line-height: 1.6;
   &.page, &.archive, &.single{
@@ -335,8 +335,8 @@ main{
 }
 
 .section{
-	padding-top: 60px;
-	padding-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 30px;
 }
 
 article{
