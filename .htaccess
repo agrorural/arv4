@@ -10,3 +10,11 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+#<IfModule pagespeed_module>
+#       ModPagespeed on
+#       ModPagespeedEnableFilters extend_cache,combine_css,inline_css,combine_ja$
+#</IfModule>
+#<IfModule mod_deflate.c>
+#        AddOutputFilterByType DEFLATE text/html text/plain text/xml application$
+#</IfModule>

@@ -4,11 +4,17 @@
       "files": [
         "scripts/main.js"
       ],
+      "vendor":[
+        ""
+      ],
       "main": true
     },
     "main.css": {
       "files": [
         "styles/main.scss"
+      ],
+      "vendor":[
+        "../../plugins/buddypress/bp-templates/bp-legacy/css/buddypress.min.css"
       ],
       "main": true
     },
