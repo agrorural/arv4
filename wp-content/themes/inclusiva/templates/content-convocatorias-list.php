@@ -1,6 +1,7 @@
 <?php 
 	$upload_dir = wp_upload_dir();
 	$dir = $upload_dir["baseurl"];
+	$post__date = mysql2date("Y", $post->post_date_gmt);
 
 	// Variables de ACF Convocatorias
 	$dfs = 'j \d\e F';
@@ -87,21 +88,20 @@
 	    </thead>
 		<tbody>
 		      <tr>
-
 		        	<td>
 		        		<p>
 		        		<?php if( $cat__list_slug_1 == 'cas' ){ ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/cv-2015.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 07:  FORMULARIO DE CURRICULUM VITAE</a></li>
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/declaracion-jurada-2015.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 08: Formato de Declaración Jurada (en original) debidamente suscrito </a></li>
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/etiqueta-2015.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 07:  FORMULARIO DE CURRICULUM VITAE</a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/ddjj-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 08: Formato de Declaración Jurada (en original) debidamente suscrito </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/etiqueta-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
 <li><i class="fa-li fa fa-check-square"></i>Copia Simple del DNI o Carné de Extranjería, de ser el caso (vigente y legible)</li>
 </ul>'>Formatos</a> 
 		        		<?php } else { ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/cv-cap--2015.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 1. Ficha Curricular </a></li>
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/declaracion-jurada-cap--2015.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 2. Declaración Jurada </a></li>
-<li><a href="http://www.agrorural.gob.pe/wp-content/uploads/convocatorias/etiqueta-cap.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-cap-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 1. Ficha Curricular </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/ddjj-cap-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 2. Declaración Jurada </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/etiqueta-cap-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
 <li><i class="fa-li fa fa-check-square"></i>Copia Simple del DNI o Carné de Extranjería, de ser el caso (vigente y legible)</li>
 </ul>'>Formatos </a>
 		        		<?php } ?>
