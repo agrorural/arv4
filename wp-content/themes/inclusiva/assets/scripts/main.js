@@ -77,6 +77,17 @@
         $(window).load(function () {
             $('.sl__footer').removeClass('hidden');
         });
+
+        //Fuerza a los tabs a mostrar los maps de MyMaps
+        $('#myTabs li a').click('show', function(e) {  
+            paneID = $(e.target).attr('href');
+            src = $(paneID).attr('data-src');
+            // if the iframe hasn't already been loaded once
+            if($(paneID+" iframe").attr("src")==="")
+            {
+                $(paneID+" iframe").attr("src",src);
+            }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
