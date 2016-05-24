@@ -1,7 +1,7 @@
 .archive{
 	&.post-type-archive-servicios{
 		.masshead{
-			background-image: url('../images/masshead--servicios.jpg');
+			background-image: url('../images/masshead--servicios.jpg') !important;
 			@include full-bg();
 			.page-header{
 				margin: 0 auto;

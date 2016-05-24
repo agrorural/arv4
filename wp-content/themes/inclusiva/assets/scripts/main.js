@@ -78,7 +78,7 @@
             $('.sl__footer').removeClass('hidden');
         });
 
-        //Fuerza a los tabs a mostrar los maps de MyMaps
+        //Fuerza a los tabs a mostrar los maps de myTabs
         $('#myTabs li a').click('show', function(e) {  
             paneID = $(e.target).attr('href');
             src = $(paneID).attr('data-src');
