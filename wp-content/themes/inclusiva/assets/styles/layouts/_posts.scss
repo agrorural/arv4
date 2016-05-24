@@ -8,4 +8,9 @@
 	article.post header .entry-title {
     	font-size: 36px
     }
+   &.single-servicios{
+   	article .entry-content .entry-content__article{ 
+   		width: 100%;
+   	}
+   }
 }

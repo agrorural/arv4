@@ -16,16 +16,6 @@
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
       </div>
-              <div class="entry-content__share">
-        <h5 style="margin-top:0">Compartir</h5>
-        <div class="sharing-list">
-          <ul class="list-unstyled">
-            <li id="fb"><a class="btn btn-block" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook"></i>Facebook</a></li>
-            <li id="tw"><a class="btn btn-block" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i>Twitter</a></li>
-            <li id="gp"><a class="btn btn-block" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i>Google +</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
   </article>
 <?php endwhile; ?>
