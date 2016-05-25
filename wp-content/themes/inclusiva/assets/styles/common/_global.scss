@@ -356,13 +356,9 @@ article{
     margin-right: 0;
     margin-left: 0;
     .entry-content__article{
-      @include make-sm-column(10);
-      /*padding-right: 0;*/
+
     }
     .entry-content__share{
-      margin-top: 20px;
-      @include make-sm-column(2);
-      /*padding-left: 0;*/
       .sharing-list{
         display: block;
         ul{
@@ -464,7 +460,7 @@ article{
     float: right;
     ul{
       margin: 0;
-      padding: 7.5px 0;
+      padding: 3px 0;
     }
   }
 }
@@ -564,9 +560,28 @@ article{
 
 .sharing-list{
   li{
+    padding-right: 0;
+    padding-left: 0;
     a{
-      i{
-        font-size: 14px;
+      .fa-stack.fa-lg{
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1.8em;
+        .fa-stack-1x{
+          font-size: 14px;
+        }
+        .fa-stack-2x{
+          font-size: 1.8em;
+        }
+        .badge{
+            position: absolute;
+            @include border-radius(0);
+            z-index: 3;
+            font-size: 8px;
+            bottom: 2px;
+            right: 2px;
+            padding: 2px 4px;
+        } 
       }
     }
 
@@ -735,8 +750,10 @@ article{
 }
 
 @media(min-width: $screen-md-min){
-  .sharing-list, .panel-heading .label{
-    display: none;
+  .page-template-template-documentos, .page-template-template-convocatorias-cas, page-template-template-convocatorias-cap{
+    .sharing-list, .panel-heading .label{
+      display: none;
+    }
   }
   article{
     &:hover{
