@@ -155,7 +155,7 @@
     	No se ha publicado
     <?php } ?>
     <div class="pull-right">
-      <?php get_template_part('templates/sharing', 'list'); ?>
+      <?php get_template_part('templates/sharing'); ?>
     </div>
   </div>
 </article>
