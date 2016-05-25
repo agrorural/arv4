@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-04-15 13:17:03+0000\n"
+"PO-Revision-Date: 2016-05-24 17:56:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,10 +19,6 @@ msgstr "Comentarios del elemento"
 msgid "Message was not sent. Please try again."
 msgstr "Mensaje no enviado. Por favor, inténtalo de nuevo."
 
-#: bp-xprofile/classes/class-bp-xprofile-field.php:1475
-msgid "Enabled"
-msgstr "Habilitado"
-
 #: bp-members/classes/class-bp-members-admin.php:1456
 msgid "Pending users list"
 msgstr "Lista pendiente de usuarios"
@@ -35,6 +31,10 @@ msgstr "Darse de baja"
 #: bp-xprofile/classes/class-bp-xprofile-field.php:1468
 msgid "Autolink"
 msgstr "Auto enlace"
+
+#: bp-xprofile/classes/class-bp-xprofile-field.php:1475
+msgid "Enabled"
+msgstr "Activado"
 
 #: bp-members/classes/class-bp-members-admin.php:1454
 msgid "Filter users list"
@@ -140,7 +140,7 @@ msgstr "Cambiar los colores de la plantilla del correo electrónico utilizando e
 msgid "BuddyPress Options"
 msgstr "Opciones de BuddyPress"
 
-#: bp-core/bp-core-taxonomy.php:34
+#: bp-core/bp-core-taxonomy.php:33
 msgctxt "email type taxonomy description"
 msgid "BuddyPress email types"
 msgstr "Tipos de correo electrónico BuddyPress"
@@ -277,6 +277,10 @@ msgctxt "email"
 msgid "Footer"
 msgstr "Pie de página"
 
+#: bp-core/bp-core-customizer-email.php:284
+msgid "Email background color"
+msgstr "Color de fondo del correo electrónico"
+
 #: bp-core/bp-core-customizer-email.php:145
 msgctxt "email"
 msgid "Header"
@@ -298,7 +302,7 @@ msgstr "Los correos electrónicos han sido reinstalados con éxito."
 msgid "Customize the appearance of emails sent by BuddyPress."
 msgstr "Personalizar la apariencia de los correos electrónicos enviados por BuddyPress."
 
-#: bp-core/bp-core-customizer-email.php:34 bp-core/bp-core-filters.php:1105
+#: bp-core/bp-core-customizer-email.php:34 bp-core/bp-core-filters.php:1115
 msgctxt "screen heading"
 msgid "BuddyPress Emails"
 msgstr "Correos electrónicos de BuddyPress"
@@ -338,6 +342,17 @@ msgstr ""
 "Para solicitarla de nuevo visite: {{{group.url}}}"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3245
+msgid ""
+"You recently changed the email address associated with your account on {{site.name}}. If this is correct, <a href=\"{{{verify.url}}}\">go here to confirm the change</a>.\n"
+"\n"
+"Otherwise, you can safely ignore and delete this email if you have changed your mind, or if you think you have received this email in error."
+msgstr ""
+"Recientemente has cambiado la dirección de tu correo electrónico asociado con tu cuenta en {{site.name}}. Si es correcto, <a href=\"{{{verify.url}}}\">entra aquí para confirmar el cambio</a>.\n"
+"\n"
+"De lo contrario, puedes prescindir de este correo electrónico y eliminarlo si has cambiado de idea, o si piensas que has recibido este correo electrónico por error."
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3237
 msgid ""
 "{{sender.name}} sent you a new message: &quot;{{usersubject}}&quot;\n"
@@ -358,14 +373,102 @@ msgid "[{{{site.name}}}] Verify your new email address"
 msgstr "[{{{site.name}}}] Verifica tu nuevo correo electrónico"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3239
+msgid ""
+"{{sender.name}} sent you a new message: &quot;{{usersubject}}&quot;\n"
+"\n"
+"&quot;{{usermessage}}&quot;\n"
+"\n"
+"Go to the discussion to reply or catch up on the conversation: {{{message.url}}}"
+msgstr ""
+"{{sender.name}} te ha enviado un nuevo mensaje: &quot;{{usersubject}}&quot;\n"
+"\n"
+"&quot;{{usermessage}}&quot;\n"
+"\n"
+"Ir a la conversación para contestar o ponerte al día: {{{message.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3235
 msgid "[{{{site.name}}}] New message from {{sender.name}}"
 msgstr "[{{{site.name}}}] Nuevo mensaje de {{sender.name}}"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3231
+msgid ""
+"{{requesting-user.name}} wants to join the group &quot;{{group.name}}&quot;. As you are the administrator of this group, you must either accept or reject the membership request.\n"
+"\n"
+"To manage this and all other pending requests, visit: {{{group-requests.url}}}\n"
+"\n"
+"To view {{requesting-user.name}}'s profile, visit: {{{profile.url}}}"
+msgstr ""
+"{{requesting-user.name}} quiere entrar en el grupo &quot;{{group.name}}&quot;. Como eres el administrador de este grupo, debes aceptar o rechazar la petición de membresía.\n"
+"\n"
+"Para gestionar esta y otras peticiones pendientes, visita: {{{group-requests.url}}}\n"
+"\n"
+"Para ver el perfil de {{requesting-user.name}}, visita: {{{profile.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3229
+msgid ""
+"<a href=\"{{{profile.url}}}\">{{requesting-user.name}}</a> wants to join the group &quot;{{group.name}}&quot;. As you are an administrator of this group, you must either accept or reject the membership request.\n"
+"\n"
+"<a href=\"{{{group-requests.url}}}\">Go here to manage this</a> and all other pending requests."
+msgstr ""
+"<a href=\"{{{profile.url}}}\">{{requesting-user.name}}</a> quiere entrar en el grupo &quot;{{group.name}}&quot;. Como eres el administrador del grupo, debes aceptar o rechazar la petición de membresía.\n"
+"\n"
+"<a href=\"{{{group-requests.url}}}\">Entra aquí para administrar esta</a> y otras peticiones pendientes."
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3227
 msgid "[{{{site.name}}}] Membership request for group: {{group.name}}"
 msgstr "[{{{site.name}}}]Solicitud de membresía para el grupo: {{group.name}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3221
+msgid "You have been promoted to <b>{{promoted_to}}</b> in the group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;."
+msgstr "Has sido nombrado para <b>{{promoted_to}}</b> en el grupo &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;."
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3223
+msgid ""
+"You have been promoted to {{promoted_to}} in the group: &quot;{{group.name}}&quot;.\n"
+"\n"
+"To visit the group, go to: {{{group.url}}}"
+msgstr ""
+"Has sido nombrado para {{promoted_to}} en el grupo: &quot;{{group.name}}&quot;.\n"
+"\n"
+"Para visitar el grupo, ir a: {{{group.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3219
+msgid "[{{{site.name}}}] You have been promoted in the group: \"{{group.name}}\""
+msgstr "[{{{site.name}}}] Has sido nombrado en el grupo: \"{{group.name}}\""
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3215
+msgid ""
+"{{inviter.name}} has invited you to join the group: &quot;{{group.name}}&quot;.\n"
+"\n"
+"To accept your invitation, visit: {{{invites.url}}}\n"
+"\n"
+"To learn more about the group, visit {{{group.url}}}.\n"
+"To view {{inviter.name}}'s profile, visit: {{{inviter.url}}}"
+msgstr ""
+"{{inviter.name}} te ha invitado a entrar en el grupo: &quot;{{group.name}}&quot;.\n"
+"\n"
+"Para aceptar tu invitación, visita: {{{invites.url}}}\n"
+"\n"
+"Para aprender más sobre el grupo, visita {{{group.url}}}.\n"
+"Para ver el perfil de  {{inviter.name}}, visita: {{{inviter.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3213
+msgid ""
+"<a href=\"{{{inviter.url}}}\">{{inviter.name}}</a> has invited you to join the group: &quot;{{group.name}}&quot;.\n"
+"<a href=\"{{{invites.url}}}\">Go here to accept your invitation</a> or <a href=\"{{{group.url}}}\">visit the group</a> to learn more."
+msgstr ""
+"<a href=\"{{{inviter.url}}}\">{{inviter.name}}</a> te ha invitado a entrar en el grupo: &quot;{{group.name}}&quot;.\n"
+"<a href=\"{{{invites.url}}}\">Ir aquí para aceptar la invitación</a> o <a href=\"{{{group.url}}}\">visitar el grupo</a> para aprender más."
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3203
@@ -418,6 +521,17 @@ msgid "[{{{site.name}}}] Activate your account"
 msgstr "[{{{site.name}}}] Activa tu cuenta"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3175
+msgid ""
+"Thanks for registering!\n"
+"\n"
+"To complete the activation of your account, go to the following link: {{{activate.url}}}"
+msgstr ""
+"¡Gracias por registrarte!\n"
+"\n"
+"Para completar la activación de tu cuenta, accede al siguiente enlace: {{{activate.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3157
 msgid ""
 "{{poster.name}} mentioned you in a status update:\n"
@@ -462,6 +576,36 @@ msgstr "[{{{site.name}}}] {{poster.name}} te ha mencionado en una actualización
 msgid "[{{{site.name}}}] {{poster.name}} replied to one of your comments"
 msgstr "[{{{site.name}}}] {{poster.name}} respondió a uno de tus comentarios"
 
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3151
+msgid ""
+"{{poster.name}} replied to one of your comments:\n"
+"\n"
+"\"{{usermessage}}\"\n"
+"\n"
+"Go to the discussion to reply or catch up on the conversation: {{{thread.url}}}"
+msgstr ""
+"{{poster.name}} ha contestado a uno de tus comentarios:\n"
+"\n"
+"\"{{usermessage}}\"\n"
+"\n"
+"Ir a la conversación para contestar o ponerse al día: {{{thread.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3149
+msgid ""
+"{{poster.name}} replied to one of your comments:\n"
+"\n"
+"<blockquote>&quot;{{usermessage}}&quot;</blockquote>\n"
+"\n"
+"<a href=\"{{{thread.url}}}\">Go to the discussion</a> to reply or catch up on the conversation."
+msgstr ""
+"{{poster.name}} ha contestado a uno de tus comentarios:\n"
+"\n"
+"<blockquote>&quot;{{usermessage}}&quot;</blockquote>\n"
+"\n"
+"<a href=\"{{{thread.url}}}\">Ir a la conversación</a> para responder o ponerse al día."
+
 #: bp-core/admin/bp-core-admin-functions.php:933
 msgid "Most email clients support HTML email. However, some people prefer to receive plain text email. Enter a plain text alternative version of your email here."
 msgstr "Muchos clientes de correo electrónico soportan HTML. No obstante, algunas personas prefieren recibirlo en texto plano. Introduzca una versión alternativa en texto plano de su correo electrónico aquí."
@@ -470,13 +614,17 @@ msgstr "Muchos clientes de correo electrónico soportan HTML. No obstante, algun
 msgid "Choose when this email will be sent."
 msgstr "Elegir cuando va a ser enviado este correo electrónico."
 
-#: bp-core/admin/bp-core-admin-components.php:191
-msgid "Select %s"
-msgstr "Selecciona la %s"
+#: bp-core/admin/bp-core-admin-functions.php:839
+msgid "Are your emails in the wrong language? Go to <a href=\"%s\">BuddyPress Tools and run the \"reinstall emails\"</a> tool."
+msgstr "¿Están tus correos electrónicos en el idioma incorrecto? Vete a las <a href=\"%s\">herramientas de BuddyPress Tools y activa la opción de \"reinstalar correos electrónicos\"</a>."
 
 #: bp-core/admin/bp-core-admin-components.php:195
 msgid "%s is a required component"
 msgstr "%s es un componente requerido"
+
+#: bp-core/admin/bp-core-admin-components.php:191
+msgid "Select %s"
+msgstr "Seleccionar %s"
 
 #: bp-activity/bp-activity-functions.php:1632
 msgctxt "Activity Custom Post Type comment action"
@@ -582,14 +730,14 @@ msgstr "Selecciona el dia"
 msgid "Select month"
 msgstr "Selecciona el mes"
 
-#: bp-xprofile/classes/class-bp-xprofile-field-type-datebox.php:118
-#: bp-xprofile/classes/class-bp-xprofile-field-type-datebox.php:287
-msgid "Select year"
-msgstr "Selecciona el año"
-
 #: bp-xprofile/classes/class-bp-xprofile-field-type-number.php:97
 msgid "Number field"
 msgstr "Campo del número"
+
+#: bp-xprofile/classes/class-bp-xprofile-field-type-datebox.php:118
+#: bp-xprofile/classes/class-bp-xprofile-field-type-datebox.php:287
+msgid "Select year"
+msgstr "Selecciona el mes"
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:27
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:30
@@ -703,7 +851,7 @@ msgstr "Comentario %s"
 msgid "Edit Cover Image"
 msgstr "Editar imagen de portada"
 
-#: bp-members/bp-members-functions.php:2475
+#: bp-members/bp-members-functions.php:2474
 msgid "You may not register a member type with this name."
 msgstr "No puedes registrar un tipo de miembro con este nombre."
 
@@ -812,27 +960,27 @@ msgctxt "cover image types separator"
 msgid ","
 msgstr ","
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:244
+#: bp-core/classes/class-bp-attachment-cover-image.php:243
 msgid "Your new cover image was uploaded successfully."
 msgstr "Tu nueva imagen de cabecera se subió correctamente."
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:245
+#: bp-core/classes/class-bp-attachment-cover-image.php:244
 msgid "There was a problem deleting your cover image. Please try again."
 msgstr "Hubo un problema eliminando tu imagen de cabecera. Por favor, inténtalo de nuevo."
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:246
+#: bp-core/classes/class-bp-attachment-cover-image.php:245
 msgid "Your cover image was deleted successfully!"
 msgstr "¡Tu imagen de portada se eliminó correctamente!"
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:262
+#: bp-core/classes/class-bp-attachment-cover-image.php:261
 msgid "The group cover image was uploaded successfully."
 msgstr "La imagen de portada del grupo se subió correctamente."
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:263
+#: bp-core/classes/class-bp-attachment-cover-image.php:262
 msgid "There was a problem deleting the group cover image. Please try again."
 msgstr "Hubo un problema eliminando la imagen de cabecera del grupo. Por favor, inténtalo de nuevo."
 
-#: bp-core/classes/class-bp-attachment-cover-image.php:264
+#: bp-core/classes/class-bp-attachment-cover-image.php:263
 msgid "The group cover image was deleted successfully!"
 msgstr "¡La imagen de portada del grupo fue eliminada correctamente!"
 
@@ -899,10 +1047,6 @@ msgctxt "x hours ago - akismet cleared this item"
 msgid "%1$s &mdash; %2$s"
 msgstr "%1$s &mdash; %2$s"
 
-#: bp-core/admin/bp-core-admin-functions.php:577
-msgid "Note: Any fields in the first group will appear on the signup page."
-msgstr "Nota: Cualquier campo en el primer grupo aparecerá en la página de registro."
-
 #: bp-activity/bp-activity-admin.php:708
 msgid "No activity found with this ID."
 msgstr "No se encontró ninguna actividad con este ID"
@@ -911,17 +1055,21 @@ msgstr "No se encontró ninguna actividad con este ID"
 msgid "Go back and try again."
 msgstr "Vuelve atrás e inténtalo de nuevo."
 
-#: bp-core/bp-core-filters.php:772
+#: bp-core/admin/bp-core-admin-functions.php:577
+msgid "Note: Any fields in the first group will appear on the signup page."
+msgstr "Nota: Cualquier campo en el primer grupo aparecera en la pagina de registro."
+
+#: bp-core/bp-core-filters.php:782
 msgctxt "customizer menu type label"
 msgid "Custom Link"
 msgstr "Enlace personalizado"
 
-#: bp-core/bp-core-filters.php:793
+#: bp-core/bp-core-filters.php:803
 msgctxt "customizer menu section title"
 msgid "BuddyPress (logged-in)"
 msgstr "BuddyPress (conectado)"
 
-#: bp-core/bp-core-filters.php:798
+#: bp-core/bp-core-filters.php:808
 msgctxt "customizer menu section title"
 msgid "BuddyPress (logged-out)"
 msgstr "BuddyPress (desconectado)"
@@ -1285,9 +1433,9 @@ msgstr "Hubo un error enviado tu estado, por favor, prueba de nuevo."
 msgid "There was an error posting that reply, please try again."
 msgstr "Hubo un error enviado la respuesta, por favor, prueba de nuevo."
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.3)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.3)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://buddypress.org/"
 msgstr "https://buddypress.org/"
@@ -3699,7 +3847,7 @@ msgstr "Cuenta activada"
 msgid "Check Your Email To Activate Your Account!"
 msgstr "Comprueba tu correo para activar tu cuenta"
 
-#: bp-members/bp-members-screens.php:370
+#: bp-members/bp-members-screens.php:362
 msgid "Your account is now active!"
 msgstr "Tú cuenta está activada"
 
@@ -3738,44 +3886,44 @@ msgctxt "component directory title"
 msgid "Members"
 msgstr "Miembros"
 
-#: bp-members/bp-members-functions.php:2452
+#: bp-members/bp-members-functions.php:2451
 msgid "Member type already exists."
 msgstr "El tipo de miembro ya existe"
 
-#: bp-members/bp-members-functions.php:2317
+#: bp-members/bp-members-functions.php:2316
 msgid "Activation email resent! Please check your inbox or spam folder."
 msgstr "¡Email de activación reenviado! Por favor, comprueba tu bandeja de entrada o la carpeta de Spam."
 
-#: bp-members/bp-members-functions.php:2315
+#: bp-members/bp-members-functions.php:2314
 msgid "<strong>ERROR</strong>: Your account has already been activated."
 msgstr "<strong>ERROR</strong>: Tu cuenta ya había sido activada."
 
-#: bp-members/bp-members-functions.php:2284
+#: bp-members/bp-members-functions.php:2283
 msgid "<strong>ERROR</strong>: Your account has not been activated. Check your email for the activation link."
 msgstr "<strong>ERROR</strong>: Tu cuenta no ha sido activada. Comprueba correo electrónico para el enlace de activación."
 
-#: bp-members/bp-members-functions.php:2282
+#: bp-members/bp-members-functions.php:2281
 msgid "If you have not received an email yet, <a href=\"%s\">click here to resend it</a>."
 msgstr "Si todavía no has recibido el correo, <a href=\"%s\">haz click aquí para reenviarlo</a>."
 
-#: bp-members/bp-members-functions.php:1978
+#: bp-members/bp-members-functions.php:1977
 msgid "That username is already activated."
 msgstr "Ese nombre de usuario ya está activado."
 
-#: bp-members/bp-members-functions.php:1964
+#: bp-members/bp-members-functions.php:1963
 msgid "Could not create user"
 msgstr "No se pudo crear el usuario"
 
-#: bp-members/bp-members-functions.php:1931
+#: bp-members/bp-members-functions.php:1930
 msgid "The site is already active."
 msgstr "El sitio se encuentra activo."
 
-#: bp-members/bp-members-functions.php:1929
+#: bp-members/bp-members-functions.php:1928
 msgid "The user is already active."
 msgstr "El usuario ya está activo."
 
-#: bp-members/bp-members-functions.php:1922
-#: bp-members/bp-members-functions.php:1949
+#: bp-members/bp-members-functions.php:1921
+#: bp-members/bp-members-functions.php:1948
 msgid "Invalid activation key."
 msgstr "Clave de activación no válida."
 
@@ -3825,7 +3973,7 @@ msgid "User last_activity data is no longer stored in usermeta. Use bp_update_us
 msgstr "Los datos de last_activity del usuario ya no se almacenan en la tabla usermeta. Utiliza en su lugar bp_update_user_last_activity()"
 
 #: bp-members/bp-members-functions.php:1417
-#: bp-members/bp-members-functions.php:2417
+#: bp-members/bp-members-functions.php:2416
 msgid "<strong>ERROR</strong>: Your account has been marked as a spammer."
 msgstr "<strong>ERROR</strong>: >Tu cuenta ha sido marcada como spam."
 
@@ -5247,6 +5395,10 @@ msgstr "Un error ha ocurrido mientras intentabas modificar los siguientes usuari
 msgid "The following users were successfully added to the group: %s"
 msgstr "Los siguientes usuarios han sido añadidos correctamente al grupo: %s"
 
+#: bp-groups/bp-groups-admin.php:532
+msgid "The following users could not be added to the group: %s"
+msgstr "Los siguientes usuarios no han podido añadirse al grupo: %s"
+
 #: bp-groups/bp-groups-admin.php:528
 msgid "The group has been updated successfully."
 msgstr "El grupo ha sido actualizado correctamente."
@@ -6528,32 +6680,32 @@ msgstr "El archivio se ha subido con éxito."
 msgid "The uploaded file was only partially uploaded."
 msgstr "El archivo cargado sólo fue parcialmente subido."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:406
+#: bp-core/classes/class-bp-attachment-avatar.php:407
 #: bp-groups/bp-groups-screens.php:977
 msgid "The group profile photo was deleted successfully!"
 msgstr "¡La imagen de perfil del grupo fue borrada correctamente!"
 
-#: bp-core/classes/class-bp-attachment-avatar.php:404
+#: bp-core/classes/class-bp-attachment-avatar.php:405
 #: bp-groups/bp-groups-actions.php:346
 msgid "The group profile photo was uploaded successfully."
 msgstr "La foto de perfil del grupo se ha subido con éxito."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:405
+#: bp-core/classes/class-bp-attachment-avatar.php:406
 #: bp-groups/bp-groups-screens.php:979
 msgid "There was a problem deleting the group profile photo. Please try again."
 msgstr "Ha habido un problema al borrar la foto de perfil del grupo. Por favor, vuelve a intentarlo."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:403
+#: bp-core/classes/class-bp-attachment-avatar.php:404
 #: bp-groups/bp-groups-screens.php:1022
 msgid "There was a problem cropping the group profile photo."
 msgstr "Hubo un problema ajustando el tamaño de la imagen de perfil del grupo."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:388
+#: bp-core/classes/class-bp-attachment-avatar.php:389
 #: bp-xprofile/bp-xprofile-actions.php:40
 msgid "Your profile photo was deleted successfully!"
 msgstr "¡Tu imagen de perfil ha sido borrada correctamente!"
 
-#: bp-core/classes/class-bp-attachment-avatar.php:387
+#: bp-core/classes/class-bp-attachment-avatar.php:388
 #: bp-xprofile/bp-xprofile-actions.php:42
 msgid "There was a problem deleting your profile photo. Please try again."
 msgstr "Ha habido un problema al borrar tu foto de perfil. Por favor, vuelve a intentarlo."
@@ -6570,12 +6722,12 @@ msgid_plural "Please upload only these file types: %s."
 msgstr[0] "Por favor, sube solamente este tipo de archivo: %s."
 msgstr[1] "Por favor, sube solamente estos tipos de archivo: %s."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:386
+#: bp-core/classes/class-bp-attachment-avatar.php:387
 #: bp-xprofile/bp-xprofile-screens.php:274
 msgid "Your new profile photo was uploaded successfully."
 msgstr "Tu nueva imagen de perfil fue subida con éxito."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:385
+#: bp-core/classes/class-bp-attachment-avatar.php:386
 #: bp-xprofile/bp-xprofile-screens.php:260
 msgid "There was a problem cropping your profile photo."
 msgstr "Hubo un error ajustando el tamaño de la imagen."
@@ -6791,7 +6943,7 @@ msgctxt "Page title for the Activity directory."
 msgid "Activity"
 msgstr "Actividad"
 
-#: bp-core/bp-core-filters.php:576
+#: bp-core/bp-core-filters.php:586
 msgid "Page %s"
 msgstr "Página %s"
 
@@ -6822,7 +6974,7 @@ msgstr "Directorio"
 msgid "Activate Your Account"
 msgstr "Activa tu cuenta"
 
-#: bp-core/bp-core-filters.php:400 bp-core/bp-core-filters.php:433
+#: bp-core/bp-core-filters.php:410 bp-core/bp-core-filters.php:443
 msgid "[User Set]"
 msgstr "[Por el usuario]"
 
@@ -7526,7 +7678,7 @@ msgstr "Desconectado"
 msgid "Logged-In"
 msgstr "Conectado"
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.5.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: bp-core/admin/bp-core-admin-functions.php:753
 #: bp-core/classes/class-bp-admin.php:228

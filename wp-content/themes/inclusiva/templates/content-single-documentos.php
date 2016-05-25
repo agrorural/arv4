@@ -7,6 +7,8 @@
 		$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
 		$post__slug = $post->post_name;
 		$post__slug__up = strtoupper($post__slug);
+
+    $count = count($term_list);
 	?>
   <article <?php post_class(); ?>>
     <header>
@@ -19,10 +21,14 @@
     </div>
     <footer>
       <?php if($rde_link == 'Publicado') {?>
-      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
-    <?php }else{ ?>
-      <p>No Disponible</p>
-    <?php } ?>
+        <?php if ( $count > 1 ) { ?>
+          <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+        <?php }else{ ?>
+          <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+        <?php } ?>
+      <?php }else{ ?>
+        <p>No Disponible</p>
+      <?php } ?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>

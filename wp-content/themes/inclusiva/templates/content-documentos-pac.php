@@ -41,6 +41,6 @@
       <p>No Disponible</p>
     <?php } ?>
 
-    <?php get_template_part('templates/sharing', 'list'); ?>
+    <?php get_template_part('templates/sharing'); ?>
   </div>
 </article>

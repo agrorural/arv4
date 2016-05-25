@@ -38,6 +38,7 @@ function setup() {
     'pry_aliados-ii_navigation' => __('Proyecto Aliados II Navigation', 'sage'), //Aliados II
     'pry_sierra-sur-ii_navigation' => __('Proyecto Sierra Sur II Navigation', 'sage'), //PSSA
     'pry_aiaf_navigation' => __('Proyecto AIAF Navigation', 'sage'), //AIAF
+    'pry_csst_navigation' => __('Proyecto CSST Navigation', 'sage'), //CSST
     
     // Resoluciones
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE

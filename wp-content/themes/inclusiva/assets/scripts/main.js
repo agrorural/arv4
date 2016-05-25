@@ -100,22 +100,15 @@
         $('.sl__home').owlCarousel({
             items: 1,
             loop: true,
-            center: true,
             margin: 0,
             autoplay: true,
             autoplayTimeout: 30000,
             autoplayHoverPause:true,
-            lazyLoad: true,
+            center: true,
             nav: true,
-            navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"],
-            responsive:{
-                678:{
-                    
-                },
-                1000:{
-                    
-                }
-            }
+            //lazyLoad: true,
+            navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"]
+           
         });
 
         // Verifica si hay Modal del Front Page
