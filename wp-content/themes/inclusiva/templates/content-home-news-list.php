@@ -6,6 +6,10 @@
 		$format__link = get_post_format_link( $format );
 
 		switch ($format) {
+		case "image":
+		    $format__text = "galería";
+		    $format__icon = "camera";
+		    break;
 		case "gallery":
 		    $format__text = "galería";
 		    $format__icon = "camera";
