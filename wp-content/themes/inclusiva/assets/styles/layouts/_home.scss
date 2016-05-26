@@ -423,7 +423,7 @@
       						z-index: 0;
 							
 							img{
-								
+								@include fadeInDown();
 							}
 							figcaption{
 								position: absolute !important;

@@ -117,6 +117,7 @@
         // Normalización
         $(window).load(function () {
             $('.sl__home figure figcaption').removeClass('hidden');
+            $('.sl__home figure img').removeClass('hidden');
             $('.sl__footer').removeClass('hidden');
             $('.sl__home figure .spinner').remove();
 

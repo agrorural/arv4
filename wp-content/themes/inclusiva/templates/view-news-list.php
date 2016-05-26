@@ -1,7 +1,8 @@
 <?php 
 $args = array(
 	'post_type' => 'post',
-	'posts_per_page' => 5
+	'posts_per_page' => 5,
+	'tag__not_in'=>array('196') //Oculta las entradas del CSST
 	);
 // the query
 $the_query = new WP_Query( $args ); ?>

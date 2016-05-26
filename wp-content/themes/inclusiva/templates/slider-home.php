@@ -32,7 +32,7 @@ $the_query = new WP_Query( $args ); ?>
 						$thumb__width = $thumb__attr[1];
 						$thumb__height = $thumb__attr[2];
 					?>
-					<img class="img-responsive" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
+					<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
 				<?php } ?>
 				<figcaption class="hidden">
 					<div class="sl__home__hashtag">
