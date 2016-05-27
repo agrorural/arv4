@@ -24,7 +24,7 @@ ul#menu-navegacion-primaria{
 				li{
 					a{
 						@include opensans(light);
-						font-size: 13px;
+						font-size: 14px;
 						text-transform: none;
 						color: $gray;
 						padding: 5px 20px; 
@@ -32,11 +32,16 @@ ul#menu-navegacion-primaria{
 							background-color: $red--google--light;
 						}
 					}
+					&.sub-item{
+						a{
+							font-size: 13px;
+						}
+					}
 					&.dropdown-header{
-						font-size: 10px;
+						font-size: 13px;
 						text-transform: uppercase;
 						@include title-xs();
-						color: $gray--light;
+						color: $brown;
 					}
 					&.active{
 						a, a:hover{
@@ -49,7 +54,7 @@ ul#menu-navegacion-primaria{
 				&:hover{
 					li{
 						&.dropdown-header{
-							color: $black;
+							color: $red;
 						}
 					}
 				}

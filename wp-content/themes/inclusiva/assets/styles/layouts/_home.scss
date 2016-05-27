@@ -157,10 +157,17 @@
 								figure{ 
 									@include make-lg-column(12);
 									
-									a.tab-icon{
-										i{
-											font-size: 18px;
-										}
+									a.format-icon{
+										position: absolute;
+									    left: 50%;
+									    top: 50%;
+									    transform: translate(-50%, -50%);
+									    .fa-stack {
+									    	.fa-stack-2x{
+									    		color: $black;
+									    		@include opacity(.35);
+									    	}
+									    }
 									}
 									figcaption{
 										h3{
@@ -188,10 +195,17 @@
 								figure{ 
 									@include make-lg-column(6);
 									@include make-xs-column(6);
-									a.tab-icon{
-										i{
-											font-size: 18px;
-										}
+									a.format-icon{
+										position: absolute;
+									    left: 50%;
+									    top: 25%;
+									    transform: translate(-50%, -25%);
+									    .fa-stack {
+									    	.fa-stack-2x{
+									    		color: $black;
+									    		@include opacity(.35);
+									    	}
+									    }
 									}
 									figcaption{
 										h3{
@@ -220,15 +234,10 @@
 								padding-left: 0px !important;
 								padding-right: 0px !important;
 								figure{
-									a.tab-icon{
-										position: absolute;
-										top: 15px;
-										left: 20px;
-										color: $green--accent;
-										border: 1px solid $green--accent;
-										padding: 0 7px;
+									a.format-icon{
+
 										i{
-											font-size: 12px;
+
 										}
 									}
 								}
@@ -599,9 +608,9 @@
 
 		.multimedia--1{
 			figure{ 
-				a.tab-icon{
+				a.format-icon{
 					i{
-						font-size: 24px;
+						
 					}
 				}
 				figcaption{

@@ -1,6 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-    <header class="col-sm-10">
+    <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php if( $post->post_excerpt ) { ?>
         <div class="entry-summary">

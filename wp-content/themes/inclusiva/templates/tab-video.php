@@ -20,7 +20,12 @@ while ( $query1->have_posts() ) {
 	$query1->the_post(); ?>
 <div class="multimedia--1">
 	<figure>
-		<a href="<?php the_permalink(); ?>" class="tab-icon tip" title="Contiene video"><i class="fa fa-play"></i></i></a>
+		<a title="Contiene video" href="<?php the_permalink(); ?>" class="format-icon tip">
+			<span class="fa-stack fa-lg">
+			  <i class="fa fa-circle fa-stack-2x"></i>
+			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
 		<?php if ( has_post_thumbnail() ){?>
 			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 		<?php } else { ?>
@@ -61,7 +66,12 @@ wp_reset_postdata(); ?>
 <div class="multimedia--2">
 <?php while ( $query2->have_posts() ) { $query2->the_post();  ?>
 	<figure>
-		<a href="<?php the_permalink(); ?>" class="tab-icon tip" title="Contiene video"><i class="fa fa-play"></i></i></a>
+		<a title="Contiene video" href="<?php the_permalink(); ?>" class="format-icon tip">
+			<span class="fa-stack fa-lg">
+			  <i class="fa fa-circle fa-stack-2x"></i>
+			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
 		<?php if ( has_post_thumbnail() ){?>
 			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 		<?php } else { ?>
