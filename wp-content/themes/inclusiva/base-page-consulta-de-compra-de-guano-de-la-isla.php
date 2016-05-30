@@ -26,26 +26,7 @@ use Roots\Sage\Wrapper;
 			<?php include Wrapper\template_path(); ?>
 		</main><!-- /.main -->
 		<aside class="sidebar" role="complementary">
-			<div class="well">
-				<h4>Intranet <br /><small>Gestión de Control QR</small></h4>
-				<form>
-					<ul class="list-inline">
-						<li>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Usuario</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su usuario">
-							</div>
-						</li>
-						<li>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Contraseña</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su clave">
-							</div>
-						</li>
-					</ul>
-					<button type="submit" class="btn btn-default">Ingresar a la Intranet</button>
-				</form>
-			</div>	
+			<a href="<?php bloginfo('url')?>/servicios/venta-de-guano-de-la-isla/reportes-2015-2016/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/guano-reporte-2015-2016.jpg" class="img-responsive" alt=""></a>
 		</aside><!-- /.sidebar -->
 
       </div><!-- /.content -->
