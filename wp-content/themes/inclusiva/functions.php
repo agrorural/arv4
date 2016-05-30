@@ -56,7 +56,7 @@ function bpdev_redirect_to_profile( $redirect_to_calculated, $redirect_url_speci
  
     //if the user is not site admin,redirect to his/her profile
  
-    if( isset( $user->ID) && ! is_super_admin( $user->ID ) )
+    if( isset( $user->ID) && ! is_super_admin( $user->ID ) && is_author( $user->ID ) )
         return bp_core_get_user_domain( $user->ID );
     else
         return $redirect_to_calculated; /*if site admin or not logged in, do not do anything much*/
