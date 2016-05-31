@@ -93,9 +93,14 @@
 		margin-bottom: 5px;
 	}
 
-		.sidebar-search-form{
+		#searchform{
 			padding-left: 15px;
 			padding-right: 15px;
+			.checkbox{
+				label{
+					display: block;
+				}
+			}
 		}
 
 	}

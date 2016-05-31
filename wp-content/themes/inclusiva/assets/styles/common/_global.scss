@@ -422,8 +422,7 @@ article{
 
   header{
     h2, h3, h4{
-      @include opensans(semibold);
-      font-size: 18px;
+      @include entry-title();
       margin-bottom: 1px;
     }
     time{
@@ -461,7 +460,7 @@ article{
   padding: 0 15px !important;
   .cta__link{
     margin: 0;
-    padding: 10px 0; 
+    padding: 12px 0; 
   }
   .sharing-list{
     float: right;
@@ -513,8 +512,7 @@ article{
 .panel{
   @include border-radius(0);
   .panel-heading{
-    @include opensans();
-    font-size: 18px;
+    @include entry-title();
     .label{
       @include title-xs();
       padding: 5px 10px;
@@ -757,7 +755,7 @@ article{
 }
 
 @media(min-width: $screen-md-min){
-  .page-template-template-documentos, .page-template-template-convocatorias-cas, page-template-template-convocatorias-cap{
+  .page-template-template-documentos, .page-template-template-convocatorias-cas, .page-template-template-convocatorias-cap{
     .sharing-list, .panel-heading .label{
       display: none;
     }

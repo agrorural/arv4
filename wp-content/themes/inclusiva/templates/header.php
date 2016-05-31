@@ -4,7 +4,7 @@
 ?>
 <header class="section search-header hidden">
   <div class="container">
-    <?php get_search_form(); ?>
+    <?php get_template_part('templates/searchform','advanced'); ?>
   </div>
 </header>
 <header class="super-header">

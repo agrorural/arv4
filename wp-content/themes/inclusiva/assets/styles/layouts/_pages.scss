@@ -195,36 +195,36 @@
 }
 
 article{
-	&.post{
-		padding-top: 20px;
-		padding-bottom: 20px;
-		border-bottom: 1px solid $brown--lighter;
-		figure{}
-		header{
-			.entry-title{
-				font-size: 20px;
-				@include opensans(light); 
-				margin-top: 0;
-				a{ 
-					/*color: $brown; */
-				}
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $brown--lighter;
+	figure{}
+	header{
+		.entry-title{
+			@include entry-title(); 
+			margin-top: 0;
+			a{ 
+				/*color: $brown; */
 			}
 		}
-		.entry-summary{
-			p{
-				@include opensans();
-				a.read-more{
-					display: block;
-					padding-top: 10px;
-				}
+	}
+	.entry-summary{
+		p{
+			@include opensans();
+			a.read-more{
+				display: block;
+				padding-top: 10px;
 			}
 		}
-		
-		@include clearfix();
-		
-		&:last-of-type{
-			border-bottom: 3px solid $brown--lighter;
-		}
+	}
+	
+	@include clearfix();
+	
+	&:last-of-type{
+		border-bottom: 3px solid $brown--lighter;
+	}
+	&.panel{
+		padding-bottom: 0;
 	}
 }
 

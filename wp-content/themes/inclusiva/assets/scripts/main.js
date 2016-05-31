@@ -20,10 +20,9 @@
       init: function() {
         // JavaScript to be fired on all pages
         $('.tip').tooltip();
-        $('[data-toggle="popover"]').popover({
-          html: true
-        });
+        $('[data-toggle="popover"]').popover({html: true});
 
+        //Footer carousel
         $('.sl__footer').owlCarousel({
         loop: true,
         margin: 0,
@@ -44,12 +43,6 @@
           }
         });
 
-        $('.sb__category').owlCarousel({
-          loop: true,
-          margin: 0,     
-          items: 1
-        });
-
         //Colorbox Settings
         var cbSettings = {
           rel: 'cboxElement',
@@ -68,49 +61,31 @@
         //Read only Gravity Forms
         $(".gform_wrapper .gf_disabled input").attr("readonly", "");
 
-        //Keep lightbox responsive on screen resize
-        $(window).on('resize', function() {
-            $.colorbox.resize({
-            width: window.innerWidth > parseInt(cbSettings.maxWidth) ? cbSettings.maxWidth : cbSettings.width
-          }); 
-        });
-        $(window).load(function () {
-            $('.sl__footer').removeClass('hidden');
-        });
-
-        //Fuerza a los tabs a mostrar los maps de myTabs
-        $('#myTabs li a').click('show', function(e) {  
-            paneID = $(e.target).attr('href');
-            src = $(paneID).attr('data-src');
-            // if the iframe hasn't already been loaded once
-            if($(paneID+" iframe").attr("src")==="")
-            {
-                $(paneID+" iframe").attr("src",src);
-            }
-        });
-
         //Placeholder del buscador según busqueda
-        $(document).ready(function(){
-          var getCheckedCheckBoxes = function(groupName){
+          var getCheckedCheckBoxes = function(groupName, labelPrefix, inputID){
           var arr = [];
           var result = $('input[name="' + groupName + '"]:checked');
 
           result.each(function(index, element){
-            arr.push($('label[for="cb__' + $(this).val() + '"]').text());
+            arr.push($('label[for="' + labelPrefix + $(this).val() + '"]').text());
           });
 
             if (arr.length > 0) {
-              $('input[name="s"]').prop('placeholder', 'Buscar en' + arr);  
+              $('input[id="'+ inputID +'"]').prop('placeholder', 'Buscar en' + arr);  
             }else{
-              $('input[name="s"]').prop('placeholder', 'Ingrese su búsqueda');
+              $('input[id="'+ inputID +'"]').prop('placeholder', 'Ingrese su búsqueda');
             }
 
             console.log(arr.length);
     
           };
 
-          $('input[name="post_type[]"]').click(function(){
-            getCheckedCheckBoxes('post_type[]');
+          $('#searchform input[name="post_type[]"]').click(function(){
+            getCheckedCheckBoxes('post_type[]', 'cb__', 's');
+          });
+
+          $('#searchform-advanced input[name="post_type[]"]').click(function(){
+            getCheckedCheckBoxes('post_type[]', 'cba__', 'sa');
           });
 
           //Home search form
@@ -120,6 +95,16 @@
             $('.section.search-header #s').focus();
             $(this).parent().toggleClass("active");
           });
+        
+        //Keep lightbox responsive on screen resize
+        $(window).on('resize', function() {
+            $.colorbox.resize({
+            width: window.innerWidth > parseInt(cbSettings.maxWidth) ? cbSettings.maxWidth : cbSettings.width
+          }); 
+        });
+        
+        $(window).load(function () {
+            $('.sl__footer').removeClass('hidden');
         });
         
       },
@@ -167,9 +152,19 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'georeferenciacion_de_proyectos': {
       init: function() {
         // JavaScript to be fired on the about us page
+        //Fuerza a los tabs a mostrar los maps de myTabs
+        $('#myTabs li a').click('show', function(e) {  
+            paneID = $(e.target).attr('href');
+            src = $(paneID).attr('data-src');
+            // if the iframe hasn't already been loaded once
+            if($(paneID+" iframe").attr("src")==="")
+            {
+                $(paneID+" iframe").attr("src",src);
+            }
+        });
       }
     }
   };

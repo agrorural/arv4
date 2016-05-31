@@ -1,6 +1,6 @@
 <form role="search" method="get" class="" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	<?php $query_types = get_query_var('post_type'); $query_types = array($query_types); //var_dump($query_types);?>
-		<div class="input-group input-group-lg">
+		<div class="input-group">
 			<label class="sr-only"><?php _e('Search for:', 'sage'); ?></label>
 			<input type="text" name="s" id="s" value="<?= get_search_query(); ?>" class="search-field form-control" placeholder="Ingrese su búsqueda" />			
 			<span class="input-group-btn">

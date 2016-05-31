@@ -152,7 +152,7 @@
     <?php if( $ev_curricular == 'Publicado' ){ ?>
     	<a class="cta__link" href="<?php echo $dir.'/transparencia/convocatorias/C-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Bases, requisitos y cronograma</a>
     <?php }else{ ?>
-    	No se ha publicado
+    	<a href="#" class="cta__link">No se ha publicado</a>
     <?php } ?>
     <div class="pull-right">
       <?php get_template_part('templates/sharing'); ?>
