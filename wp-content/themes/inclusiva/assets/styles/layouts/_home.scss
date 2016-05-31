@@ -26,9 +26,7 @@
 							color: $gray--light;
 						}
 						h2{
-							@include opensans(semibold);
-							font-size: 13px;
-							margin-top: 3px;
+							@include entry-title(subtitle);
 						}
 					}
 				}
@@ -69,10 +67,9 @@
 									margin-bottom: 10px;
 									padding-bottom: 10px;
 									border-bottom: 1px solid rgba(0,0,0,.06);
-									h4{
-										font-size: 13px;
+									h4{										
+										@include entry-title(subtitle);
 										margin: 0;
-										@include opensans(semibold);
 										a{
 											color: $yellow;
 										}
@@ -171,7 +168,7 @@
 									}
 									figcaption{
 										h3{
-											@include opensans();
+											@include entry-title(subtitle);
 										}
 										h3, time{
 											margin: 0;
@@ -180,7 +177,7 @@
 											a{ color: $white; }
 										}
 										h3{
-											font-size: 13px;
+											
 										}
 										time{
 											@include meta-text();
@@ -209,7 +206,7 @@
 									}
 									figcaption{
 										h3{
-											@include opensans();
+											@include entry-title(subtitle);
 										}
 										h3, time{
 											margin: 0;
@@ -628,7 +625,7 @@
 					background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
 					h3{
-						font-size: 20px !important;
+						@include entry-title(media);
 					}
 					h3, time{
 						margin: 0;

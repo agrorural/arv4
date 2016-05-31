@@ -245,8 +245,18 @@
   color: $color;
 }
 
-@mixin entry-title(){
+@mixin entry-title($titleVariant: 'normal' ){
   @include opensans();
-  font-size: 20px;
+    @if $titleVariant == 'normal' {
+      font-size: 20px;
+      line-height: 24px;
+    } @else if $titleVariant == 'media' {
+      font-size: 18px;
+      line-height: 20px;
+    } @else if $titleVariant == 'subtitle' {
+      font-size: 14px;
+      line-height: 18px;
+    } @else {}
+  
   font-weight: normal;
 }
