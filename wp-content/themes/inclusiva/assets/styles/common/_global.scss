@@ -253,7 +253,7 @@ article{
     margin-top: 30px !important;
     main{}
     aside{
-      margin-top: 30px;
+
     }
   }
 
@@ -261,7 +261,6 @@ article{
 
 .search-form{
   .form-control{
-    @include fa();
   }
 }
 

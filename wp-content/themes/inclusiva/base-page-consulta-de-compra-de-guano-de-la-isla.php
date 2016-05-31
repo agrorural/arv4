@@ -26,7 +26,7 @@ use Roots\Sage\Wrapper;
 			<?php include Wrapper\template_path(); ?>
 		</main><!-- /.main -->
 		<aside class="sidebar" role="complementary">
-			<a href="<?php bloginfo('url')?>/servicios/venta-de-guano-de-la-isla/reportes-2015-2016/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/guano-reporte-2015-2016.jpg" class="img-responsive" alt=""></a>
+			<a href="<?php bloginfo('url')?>/servicios/venta-de-guano-de-la-isla/reportes-2015-2016/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/control-gestion-qr.jpg" class="img-responsive" alt=""></a>
 		</aside><!-- /.sidebar -->
 
       </div><!-- /.content -->

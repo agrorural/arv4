@@ -88,6 +88,40 @@
                 $(paneID+" iframe").attr("src",src);
             }
         });
+
+        //Placeholder del buscador según busqueda
+        $(document).ready(function(){
+          var getCheckedCheckBoxes = function(groupName){
+          var arr = [];
+          var result = $('input[name="' + groupName + '"]:checked');
+
+          result.each(function(index, element){
+            arr.push($('label[for="cb__' + $(this).val() + '"]').text());
+          });
+
+            if (arr.length > 0) {
+              $('input[name="s"]').prop('placeholder', 'Buscar en' + arr);  
+            }else{
+              $('input[name="s"]').prop('placeholder', 'Ingrese su búsqueda');
+            }
+
+            console.log(arr.length);
+    
+          };
+
+          $('input[name="post_type[]"]').click(function(){
+            getCheckedCheckBoxes('post_type[]');
+          });
+
+          //Home search form
+          $( ".search-icon a" ).click(function(event) {
+            event.preventDefault();
+            $('.section.search-header').toggleClass( "show hidden" );
+            $('.section.search-header #s').focus();
+            $(this).parent().toggleClass("active");
+          });
+        });
+        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

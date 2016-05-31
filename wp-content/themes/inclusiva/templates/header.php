@@ -2,6 +2,11 @@
   // This file assumes that you have included the nav walker from https://github.com/twittem/wp-bootstrap-navwalker
   // somewhere in your theme.
 ?>
+<header class="section search-header hidden">
+  <div class="container">
+    <?php get_search_form(); ?>
+  </div>
+</header>
 <header class="super-header">
   <div class="container">
    <nav class="collapse" role="navigation"> 
@@ -15,8 +20,6 @@
       endif;
       ?>
 
-      <div class="navbar-form navbar-right navbar-search"><?php get_search_form(); ?></div>
-      
       <?php
       if (has_nav_menu('links_navigation')) :
         wp_nav_menu(['theme_location' => 'links_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-links']);

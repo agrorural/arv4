@@ -30,6 +30,8 @@
 			<?php get_template_part('templates/page', 'header-video'); ?>
 		<?php } else if( is_tax( 'post_format', 'post-format-link' ) ){ ?>
 			<?php get_template_part('templates/page', 'header-link'); ?>
+		<?php } else if( is_search() ){ ?>
+			<?php get_template_part('templates/page', 'header-search'); ?>
 		<?php } else if(is_singular()){ ?>
 			<?php get_template_part('templates/page-header', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 		<?php } else if(is_page()){ ?>

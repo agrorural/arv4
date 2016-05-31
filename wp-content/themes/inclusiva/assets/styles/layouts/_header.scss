@@ -1,5 +1,15 @@
 /* Begin Super Header */
 header{
+	&.search-header{
+		background-color: $green--light;
+		#searchform{
+			.checkbox{
+				label{
+					color: $white;
+				}
+			}
+		}
+	}
 	&.super-header{
 		@include gradient-horizontal( $green, $green--light, 0%, 100%); 
 		border-bottom: 1px solid transparent;
@@ -16,6 +26,23 @@ header{
 						padding: 5px 0;
 						margin-bottom: 0;
 						color: $white;
+					}
+					&.search-icon{
+						a{
+							background-color: $green;
+							&:hover{
+								color: $yellow;
+							}
+							&:focus{
+								background-color: $green;
+							}
+						}
+						&.active{
+							a{
+								background-color: $green--light;
+								color: $yellow;
+							}
+						}
 					}
 				}
 				&.navbar-right{ 
@@ -97,35 +124,11 @@ header{
 	  			}
 				
 				.search-form{
-					.form-control{
-						height: 30px;
-						padding: 3px 7px;
-						font-size: 11px;
-						border: 1px solid transparent;
-						background-color: $white--smoke;
-						@include border-radius(0px);
-						@include fa();
-						
-						@media (min-width: $screen-lg-min){
-							background-color: transparent;
-							-webkit-transition-duration: 400ms;
-							-webkit-transition-property: width, background;
-							-webkit-transition-timing-function: ease;
-							-moz-transition-duration: 400ms;
-							-moz-transition-property: width, background;
-							-moz-transition-timing-function: ease;
-							-o-transition-duration: 400ms;
-							-o-transition-property: width, background;
-							-o-transition-timing-function: ease;
-							width: 33px;
-							@include placeholder($white);					
+					.form-control{						
+						@media (min-width: $screen-lg-min){				
 							&:focus, &:active{
-								background-color: $white--smoke;
-								width: 100%;
 							}
 							&:active{
-								@include placeholder($gray);
-								font-size: 85%;
 							}
 						}
 
