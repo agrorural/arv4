@@ -6,7 +6,7 @@
 		}
 	}
 	article.post header .entry-title {
-    	font-size: 36px
+    	@include entry-title(lg);
     }
    &.single-servicios{
    	article .entry-content .entry-content__article{ 

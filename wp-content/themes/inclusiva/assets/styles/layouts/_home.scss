@@ -26,7 +26,7 @@
 							color: $gray--light;
 						}
 						h2{
-							@include entry-title(subtitle);
+							@include entry-title(xs);
 						}
 					}
 				}
@@ -68,7 +68,7 @@
 									padding-bottom: 10px;
 									border-bottom: 1px solid rgba(0,0,0,.06);
 									h4{										
-										@include entry-title(subtitle);
+										@include entry-title(xs);
 										margin: 0;
 										a{
 											color: $yellow;
@@ -168,7 +168,7 @@
 									}
 									figcaption{
 										h3{
-											@include entry-title(subtitle);
+											@include entry-title(xs);
 										}
 										h3, time{
 											margin: 0;
@@ -206,7 +206,7 @@
 									}
 									figcaption{
 										h3{
-											@include entry-title(subtitle);
+											@include entry-title(xs);
 										}
 										h3, time{
 											margin: 0;
@@ -625,7 +625,7 @@
 					background: linear-gradient(to bottom, rgba(0,0,0,0.001) 0%,rgba(0,0,0,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
 					h3{
-						@include entry-title(media);
+						@include entry-title(sm);
 					}
 					h3, time{
 						margin: 0;
