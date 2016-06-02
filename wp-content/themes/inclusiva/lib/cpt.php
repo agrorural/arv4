@@ -18,7 +18,7 @@ function create_my_post_types() {
 		'not_found'          => __( 'Ningún Producto encontrado.', 'incl' ),
 		'not_found_in_trash' => __( 'Ningún Producto encontrado en la Papelera.', 'incl' )
 	);
-
+ 
 	$args_producto = array(
 		'labels'             => $labels_producto,
         'description'        => __( 'Productos de AGRO RURAL.', 'incl' ),

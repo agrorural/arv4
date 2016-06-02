@@ -22,19 +22,3 @@
 		</figcaption>
 	</div>
 </figure>
-
-<?php
-//				if( !empty($terms) ) {
-//					echo $term_list;
-//
-//					$term = array_pop($terms);
-//
-//					$strProdRepresentante = get_field('strProdRepresentante', $term );
-//					$strProdcorreo = get_field('strProdcorreo', $term );
-//					$strProdUbicacion = get_field('strProdUbicacion', $term );
-//					// do something with $custom_field
-//					echo '<br />'.$strProdRepresentante.'<br/>';
-//					echo $strProdUbicacion.'<br/>';
-//					echo '<a href="mailto:'.$strProdcorreo.'">Contactar al productor</a>';
-//				}
-?>

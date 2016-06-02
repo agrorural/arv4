@@ -537,7 +537,7 @@ article{
         padding: 5px 15px 5px;
       }
       th{
-        font-weight: normal;
+       @include opensans(semibold);
       }
       td{
         font-size: 12px;

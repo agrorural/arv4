@@ -117,7 +117,7 @@
       init: function() {
         // JavaScript to be fired on the home page
         $('.sl__home').owlCarousel({
-            items: 1,
+            items: 1, 
             loop: true,
             margin: 0,
             autoplay: true,

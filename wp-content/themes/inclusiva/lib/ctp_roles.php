@@ -20,7 +20,7 @@ function producto_meta_cap( $caps, $cap, $user_id, $args ) {
 		else
 			$caps[] = $post_type->cap->edit_others_posts;
 	}
-
+ 
 	/* If deleting a producto, assign the required capability. */
 	elseif ( 'delete_producto' == $cap ) {
 		if ( $user_id == $post->post_author )

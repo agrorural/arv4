@@ -86,7 +86,7 @@
 			figure.producto{
 				@include make-xs-column(6);
 			}
-			@media(min-width: $screen-sm-min){
+			@media(min-width: $screen-sm-min){ 
 				figure.producto{
 					@include make-xs-column(4);
 					.thumbnail{

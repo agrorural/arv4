@@ -59,7 +59,7 @@
     @include opacity(.5);
   }
 }
-
+ 
 @mixin title-xs($variant: 'light'){
   font-size: 10px;
     @include opensans( $variant );

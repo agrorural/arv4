@@ -15,4 +15,4 @@
 		<label class=cba__productos"" for="cba__productos"><input id="cba__productos" type="checkbox" name="post_type[]" value="productos" <?php if (in_array('productos', $query_types, false) || is_page_template('template-productos.php')) { echo 'checked'; } ?> /> Productos</label>
 		<label class="cba__tribe_events" for="cba__tribe_events"><input id="cba__tribe_events" type="checkbox" name="post_type[]" value="tribe_events" <?php if (in_array('tribe_events', $query_types, false) ) { echo 'checked'; } ?> /> Eventos</label>  
 	</div>
-</form> 
+</form>  
