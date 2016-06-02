@@ -1,8 +1,8 @@
 <?php 
 
-add_filter( 'map_meta_cap', 'custom_meta_cap', 10, 4 );
+add_filter( 'map_meta_cap', 'producto_meta_cap', 10, 4 );
 
-function custom_meta_cap( $caps, $cap, $user_id, $args ) {
+function producto_meta_cap( $caps, $cap, $user_id, $args ) {
 
 	/* If editing, deleting, or reading a producto, get the post and post type object. */
 	if ( 'edit_producto' == $cap || 'delete_producto' == $cap || 'read_producto' == $cap ) {

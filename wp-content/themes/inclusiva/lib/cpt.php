@@ -53,52 +53,6 @@ function create_my_post_types() {
 add_action( 'init', 'create_my_taxonomies', 0 );
 function create_my_taxonomies() {
 	// Agregar Nuevo taxonomy, make it hierarchical (like categories)
-	$labels_producto_presentacion = array(
-		'name'              => _x( 'Presentaciones', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Presentación', 'taxonomy singular name' ),
-		'search_items'      => __( 'Buscar Presentaciones' ),
-		'all_items'         => __( 'Todas las  Presentaciones' ),
-		'parent_item'       => __( 'Presentación Padre' ),
-		'parent_item_colon' => __( 'Presentación Padre:' ),
-		'edit_item'         => __( 'Editar Presentación' ),
-		'update_item'       => __( 'Actualizar Presentación' ),
-		'add_new_item'      => __( 'Agregar Nueva Presentación' ),
-		'new_item_name'     => __( 'Nombre de Nueva Presentación' ),
-		'menu_name'         => __( 'Presentaciones' ),
-	);
-
-	$args_producto_presentacion = array(
-		'public' 			=> true,
-		'hierarchical'      => true,
-		'labels'            => $labels_producto_presentacion,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-	);
-
-	$labels_producto_coordinador = array(
-		'name'              => _x( 'Coordinadores', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Coordinador', 'taxonomy singular name' ),
-		'search_items'      => __( 'Buscar coordinadores' ),
-		'all_items'         => __( 'Todos los  coordinadores' ),
-		'parent_item'       => __( 'Coordinador Padre' ),
-		'parent_item_colon' => __( 'Coordinador Padre:' ),
-		'edit_item'         => __( 'Editar Coordinador' ),
-		'update_item'       => __( 'Actualizar Coordinador' ),
-		'add_new_item'      => __( 'Agregar Nuevo Coordinador' ),
-		'new_item_name'     => __( 'Nombre de Nuevo Coordinador' ),
-		'menu_name'         => __( 'Coordinadores' ),
-	);
-
-	$args_producto_coordinador = array(
-		'public' 			=> true,
-		'hierarchical'      => true,
-		'labels'            => $labels_producto_coordinador,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-	);
-
 	$labels_producto_productor = array(
 		'name'              => _x( 'Productores', 'taxonomy general name' ),
 		'singular_name'     => _x( 'Productor', 'taxonomy singular name' ),
@@ -110,7 +64,7 @@ function create_my_taxonomies() {
 		'update_item'       => __( 'Actualizar productor' ),
 		'add_new_item'      => __( 'Agregar Nuevo productor' ),
 		'new_item_name'     => __( 'Nombre de Nuevo productor' ),
-		'menu_name'         => __( 'Productores' ),
+		'menu_name'         => __( 'Productores' )
 	);
 
 	$args_producto_productor = array(
@@ -120,10 +74,103 @@ function create_my_taxonomies() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_productor',
+			'edit_terms' => 'edit_productor',
+			'delete_terms' => 'delete_productor',
+			'assign_terms' => 'assign_productor'
+		)
 	);
 
+	$labels_producto_marca = array(
+		'name'              => _x( 'Marcas', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Marca', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Marcas' ),
+		'all_items'         => __( 'Todos las  Marcas' ),
+		'parent_item'       => __( 'Marca Padre' ),
+		'parent_item_colon' => __( 'Marca Padre:' ),
+		'edit_item'         => __( 'Editar Marca' ),
+		'update_item'       => __( 'Actualizar Marca' ),
+		'add_new_item'      => __( 'Agregar Nueva Marca' ),
+		'new_item_name'     => __( 'Nombre de Nueva Marca' ),
+		'menu_name'         => __( 'Marcas' )
+	);
 
-	register_taxonomy( 'presentacion', 'producto', $args_producto_presentacion );
-	register_taxonomy( 'coordinador', 'producto', $args_producto_coordinador );
+	$args_producto_marca = array(
+		'public' 			=> true,
+		'hierarchical'      => false,
+		'labels'            => $labels_producto_marca,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_marca',
+			'edit_terms' => 'edit_marca',
+			'delete_terms' => 'delete_marca',
+			'assign_terms' => 'assign_marca'
+		)
+	);
+
+	$labels_producto_lugar = array(
+		'name'              => _x( 'Lugares', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Lugar', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Lugares' ),
+		'all_items'         => __( 'Todos los  Lugares' ),
+		'parent_item'       => __( 'Lugar Padre' ),
+		'parent_item_colon' => __( 'Lugar Padre:' ),
+		'edit_item'         => __( 'Editar Lugar' ),
+		'update_item'       => __( 'Actualizar Lugar' ),
+		'add_new_item'      => __( 'Agregar Nuevo Lugar' ),
+		'new_item_name'     => __( 'Nombre de Nuevo Lugar' ),
+		'menu_name'         => __( 'Lugares' )
+	);
+
+	$args_producto_lugar = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_producto_lugar,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_lugar',
+			'edit_terms' => 'edit_lugar',
+			'delete_terms' => 'delete_lugar',
+			'assign_terms' => 'assign_lugar'
+		)
+	);
+
+	$labels_producto_clasificacion = array(
+		'name'              => _x( 'Clasificaciones', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Clasificación', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Clasificaciones' ),
+		'all_items'         => __( 'Todos las Clasificaciones' ),
+		'parent_item'       => __( 'Clasificación Padre' ),
+		'parent_item_colon' => __( 'Clasificación Padre:' ),
+		'edit_item'         => __( 'Editar Clasificación' ),
+		'update_item'       => __( 'Actualizar Clasificación' ),
+		'add_new_item'      => __( 'Agregar Nueva Clasificación' ),
+		'new_item_name'     => __( 'Nombre de Nueva Clasificación' ),
+		'menu_name'         => __( 'Clasificaciones' )
+	);
+
+	$args_producto_clasificacion = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_producto_clasificacion,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_clasificacion',
+			'edit_terms' => 'edit_clasificacion',
+			'delete_terms' => 'delete_clasificacion',
+			'assign_terms' => 'assign_clasificacion'
+		)
+	);
+
 	register_taxonomy( 'productor', 'producto', $args_producto_productor );
+	register_taxonomy( 'marca', 'producto', $args_producto_marca );
+	register_taxonomy( 'lugar', 'producto', $args_producto_lugar );
+	register_taxonomy( 'clasificacion', 'producto', $args_producto_clasificacion );
 }

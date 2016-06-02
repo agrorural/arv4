@@ -88,11 +88,10 @@
 			}
 			@media(min-width: $screen-sm-min){
 				figure.producto{
-					@include make-xs-column(3);
+					@include make-xs-column(4);
 					.thumbnail{
 						background-color: $brown--lighter;
 						padding: 0;
-						border: 0 none;
 						@include border-radius(0px);
 						a{
 							display: block;
@@ -100,10 +99,9 @@
 						}
 						figcaption{
 							background-color: $white--smoke;
-							padding: 0;
+							padding: 15px;
 							h3{
-								@include opensans();
-								font-size: 100%;
+								@include entry-title(sm);
 								margin: 0;
 								padding: 5px 0;
 								a{
@@ -112,8 +110,8 @@
 
 							}
 							.cta__container{
-								display: none;
-								.cta__link{
+								/*display: none;*/
+								.cta__link{ 
 									display: inline-block;
 									font-size: 75%;
 									padding: 0;
@@ -124,8 +122,8 @@
 						&:hover{
 							figcaption{
 								.cta__container{
-									display: block;
-									@include fadeInUp();
+									/*display: block;
+									@include fadeInUp();*/
 								}
 							}
 						}

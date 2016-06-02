@@ -13,4 +13,34 @@
    		width: 100%;
    	}
    }
+
+	&.single-producto{
+		article{
+			.producto__imagen{
+				@include make-sm-column(5);
+				@include make-xs-column(12);
+			}
+			.producto__descripcion{
+				@include make-sm-column(7);
+				@include make-xs-column(12);
+				header{
+					h1{
+						@include entry-title(lg);
+						margin-bottom: 0;
+					}
+					.producto__small{
+						margin-bottom: 15px;
+						h5{
+							margin-top: 3px;
+							@include entry-title();
+							color: $green--light;
+						}
+					}
+				}
+			}
+			footer, .comments, .producto__detalles{
+				@include make-sm-column(12);
+			}
+		}
+	}
 }
