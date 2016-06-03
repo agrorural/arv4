@@ -18,7 +18,7 @@
 				$post_type__name = 'Página';
 				break;
 
-			case 'productos':
+			case 'producto':
 				$post_type__icon = 'glyphicon-shopping-cart';
 				$post_type__name = 'Producto';
 				break;

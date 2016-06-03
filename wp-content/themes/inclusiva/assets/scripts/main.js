@@ -62,9 +62,9 @@
         $(".gform_wrapper .gf_disabled input").attr("readonly", "");
 
         //Placeholder del buscador según busqueda
-          var getCheckedCheckBoxes = function(groupName, labelPrefix, inputID){
+          var getCheckedCheckBoxes = function(handlerID, groupName, labelPrefix, inputID){
           var arr = [];
-          var result = $('input[name="' + groupName + '"]:checked');
+          var result = $('#' +handlerID + ' input[name="' + groupName + '"]:checked');
 
           result.each(function(index, element){
             arr.push($('label[for="' + labelPrefix + $(this).val() + '"]').text());
@@ -76,16 +76,16 @@
               $('input[id="'+ inputID +'"]').prop('placeholder', 'Ingrese su búsqueda');
             }
 
-            console.log(arr.length);
+            console.log(arr);
     
           };
 
           $('#searchform input[name="post_type[]"]').click(function(){
-            getCheckedCheckBoxes('post_type[]', 'cb__', 's');
+            getCheckedCheckBoxes('searchform', 'post_type[]', 'cb__', 's');
           });
 
           $('#searchform-advanced input[name="post_type[]"]').click(function(){
-            getCheckedCheckBoxes('post_type[]', 'cba__', 'sa');
+            getCheckedCheckBoxes('searchform-advanced', 'post_type[]', 'cba__', 'sa');
           });
 
           //Home search form

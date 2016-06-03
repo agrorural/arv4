@@ -263,3 +263,29 @@
   
   font-weight: normal;
 }
+
+@mixin searchform_for($searchform_type: 'default'){
+   @if $searchform_type == 'default' {
+
+    } @else if $searchform_type == 'post' {
+      label.cb__documentos, label.cb__convocatorias, label.cb__servicios, label.cb__producto, label.cb__tribe_events{
+        display: none;
+        visibility: hidden;
+      }
+    } @else if $searchform_type == 'documentos' {
+      label.cb__post, label.cb__convocatorias, label.cb__servicios, label.cb__producto, label.cb__tribe_events{
+        display: none;
+        visibility: hidden;
+      }
+    } @else if $searchform_type == 'convocatorias' {
+      label.cb__post, label.cb__documentos, label.cb__servicios, label.cb__producto, label.cb__tribe_events{
+        display: none;
+        visibility: hidden;
+      }
+    } @else if $searchform_type == 'producto' {
+      label.cb__post, label.cb__documentos, label.cb__servicios, label.cb__convocatorias, label.cb__tribe_events{
+        display: none;
+        visibility: hidden;
+      }
+    }@else {}
+}

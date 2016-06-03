@@ -103,6 +103,16 @@ function verify_post_format($content){
   return $content;
 }
 
+add_filter('the_title', __NAMESPACE__.'\\custom_post_type_archive_title');
+function custom_post_type_archive_title ($title){
+  global $id;
+  $post__types = array('producto');
+
+  if (strlen($title) > 30 && is_post_type_archive($post__types) && $id ) {
+     $title = substr($title,0,30) . '...';
+  }
+  return $title;
+}
 
 function wpa54064_inspect_scripts() {
     global $wp_scripts;

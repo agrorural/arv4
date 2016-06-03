@@ -2,8 +2,7 @@
 	<?php //ACF FIelds
 		$clasificacion = get_the_term_list( $post->ID, 'clasificacion', '', ',', '' );
 		$marca = get_the_term_list( $post->ID, 'marca', '', ',', '' );
-		$marca__no_link = strip_tags( $marca );
-		
+		$marca__no_link = strip_tags( $marca );	
 
 		$prod__precio = get_field( "prod__precio" );
 		$prod__pres = get_field( "prod__pres" );
@@ -32,14 +31,13 @@
 			$produ__telef = get_field('produ__telef', $produ__term );
 		}
 	?>
-
 <article <?php post_class(); ?>>
 	<section class="producto__imagen">
 		<a href="<?php the_permalink(); ?>">
 			<?php if ( has_post_thumbnail() ){?>
 				<?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
 			<?php } else { ?>
-				<img src="http://lorempixel.com/415/500/people/3/" class="img-responsive" />
+				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/producto--default.jpg" class="img-responsive" />
 			<?php } ?>
 		</a>
 	</section>
@@ -47,16 +45,16 @@
 		<header>
 			<h1 class="entry-title"><?php the_title(); ?> <?php if ($marca) echo $marca__no_link; ?></h1>
 			<section class="producto__small">
-			<ul class="list-inline">
-				<li><?php echo '<h5>S/. '. $prod__precio . ' <small>' . $prod__pres . '</small></h5>'; ?></li>
-				<li><?php echo '<p>Beneficia a '. $prod__ben . ' familias</p>'; ?></li>
-			</ul>
+				<ul class="list-inline">
+					<li><?php echo '<h5>S/. '. $prod__precio . ' <small> / ' . $prod__pres . '</small></h5>'; ?></li>
+					<li class="pull-right"><?php if($prod__ben) echo '<p>'. $prod__ben . ' familias productoras</p>'; ?></li>
+				</ul>
 			</section>
 		</header>
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<p class="cta__container">
-				<a class="btn btn-success btn-lg" href="#b" data-toggle="tab" aria-expanded="false"><i class="fa fa-paper-plane"></i> Quiero comprar</a>
+				<a class="btn btn-success btn-lg" href="#b" data-toggle="tab" aria-expanded="false"><i class="fa fa-paper-plane"></i> Contacta al productor</a>
 			</p>
 		</div>	
 	</section>
@@ -64,8 +62,8 @@
 		<!-- tabs top -->
 		<div class="tabbable tabs-top">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#a" data-toggle="tab">Sobre el Producto</a></li>
-				<li><a href="#b" data-toggle="tab">Sobre el Productor</a></li>
+				<li class="active"><a href="#a" data-toggle="tab">Detalle</a></li>
+				<li><a href="#b" data-toggle="tab">Productor</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="a">	

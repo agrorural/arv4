@@ -101,6 +101,18 @@
 					display: block;
 				}
 			}
+			&.searchform_for_post{
+				@include searchform_for(post);
+			}
+			&.searchform_for_documentos{
+				@include searchform_for(documentos);
+			}
+			&.searchform_for_convocatorias{
+				@include searchform_for(convocatorias);
+			}
+			&.searchform_for_producto{
+				@include searchform_for(producto);
+			}
 		}
 
 	}
