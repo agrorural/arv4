@@ -53,12 +53,22 @@
 		</header>
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-			  <i class="fa fa-paper-plane"></i> Contacta al productor
-			</button>
+			
+			<?php if (isset($produ__correo)){ ?>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#productoModal">
+				  <i class="fa fa-paper-plane"></i> Contacta al productor
+				</button>
+			<?php }else{ ?>
+				<button type="button" class="btn btn-success btn-lg tip" disabled>
+				  <i class="fa fa-paper-plane"></i> Contacta al productor
+				</button>
+			<?php } ?>
 		</div>	
 	</section>
+
+	<hr>
+
 	<section class="producto__detalles section">
 		<!-- tabs top -->
 		<div class="tabbable tabs-top">
@@ -143,33 +153,35 @@
 							<h4>Sobre el Productor</h4>
 						</div>
 						<div class="panel-body">
-							<?php print_r( $produ__term->description ); ?>
+							<?php if (isset($produ__term)) print_r( $produ__term->description ); ?>
 						</div>
 						<table class="table table-striped table-responsive">
 							<tbody>
+								<?php if(isset($produ__term)){ ?>
 								<tr>
 									<th scope="row">Productor/Empresa/Asociación</th>
 									<td><?php echo '<a href="' . get_term_link($produ__term->term_id) . '">' . $produ__term->name . '</a>'; ?> <?php the_field('produ__rep_leg', 'camacho'); ?></td>
 								</tr>
-								<?php if($produ__ruc) {?>
+								<?php } ?>
+								<?php if(isset($produ__ruc)) {?>
 								<tr>
 									<th scope="row">RUC</th>
 									<td><?php echo $produ__ruc; ?></td>
 								</tr>
 								<?php } ?>
-								<?php if($produ__rep_leg) {?>
+								<?php if(isset($produ__rep_leg)) {?>
 								<tr>
 									<th scope="row">Representante Legal</th>
 									<td><?php echo $produ__rep_leg; ?></td>
 								</tr>
 								<?php } ?>
-								<?php if($produ__cont_com) {?>
+								<?php if(isset($produ__cont_com)) {?>
 								<tr>
 									<th scope="row">Contacto Comercial</th>
 									<td><?php echo $produ__cont_com; ?></td>
 								</tr>
 								<?php } ?>
-								<?php if($produ__telef) {?>
+								<?php if(isset($produ__telef)) {?>
 								<tr>
 									<th scope="row">Teléfono</th>
 									<td><?php echo $produ__telef; ?></td>
@@ -183,7 +195,7 @@
 		</div>
 		<!-- /tabs -->
 	</section>
-	<hr>
+
 	<footer>
 		<?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
 	</footer>

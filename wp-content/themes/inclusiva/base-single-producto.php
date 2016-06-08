@@ -37,19 +37,35 @@ use Roots\Sage\Wrapper;
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Consulta a Productores</h4>
-      </div>
-      <div class="modal-body">
-        <?php gravity_form( 'Consulta a Productores', false, false, true, false, true, '', true ); ?>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="modal fade" id="productoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Consulta a Productores</h4>
+	      </div>
+	      <div class="modal-body">
+		      <?php 
+		      	$productores__terms = get_the_terms( get_the_ID(), 'productor');
+		      	if( !empty($productores__terms) ) {
+					
+					$produ__term = array_pop($productores__terms);
+					$produ__correo = get_field('produ__correo', $produ__term );
+				}
+		      ?>
+	        <?php 
+	        	if(isset($produ__correo)){
+	        		gravity_form( 'Consulta a Productores', false, false, true, false, true, '', true ); 
+	        	}else{
+	        		//var_dump($produ__correo);
+	        		echo '<p>Lo sentimos, el productor aún no ha habilitado un buzón para recepcionar consultas.</p>';
+	        	}
+	        ?>
+
+	      </div>
+	    </div>
+	  </div>
+	</div>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
