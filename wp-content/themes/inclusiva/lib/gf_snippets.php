@@ -20,3 +20,15 @@ function populate_fec_reclamacion( $value ) {
     
     return $gf_date;
 }
+
+add_filter( 'gform_field_value_gf__produ__correo', 'populate_gf__produ__correo' );
+function populate_gf__produ__correo( $value ) {
+	global $post;
+	$productores__terms = get_the_terms( get_the_ID($post->ID), 'productor');
+	
+	if( !empty($productores__terms) ) {
+		$produ__term = array_pop($productores__terms);
+		$produ__correo = get_field('produ__correo', $produ__term );
+		return $produ__correo;
+	}
+}

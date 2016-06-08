@@ -53,9 +53,10 @@
 		</header>
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<p class="cta__container">
-				<a class="btn btn-success btn-lg" href="#b" data-toggle="tab" aria-expanded="false"><i class="fa fa-paper-plane"></i> Contacta al productor</a>
-			</p>
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+			  <i class="fa fa-paper-plane"></i> Contacta al productor
+			</button>
 		</div>	
 	</section>
 	<section class="producto__detalles section">
@@ -166,12 +167,6 @@
 								<tr>
 									<th scope="row">Contacto Comercial</th>
 									<td><?php echo $produ__cont_com; ?></td>
-								</tr>
-								<?php } ?>
-								<?php if($produ__correo) {?>
-								<tr>
-									<th scope="row">Correo electrónico</th>
-									<td><?php echo $produ__correo; ?></td>
 								</tr>
 								<?php } ?>
 								<?php if($produ__telef) {?>
