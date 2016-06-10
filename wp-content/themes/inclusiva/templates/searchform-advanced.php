@@ -8,7 +8,7 @@
 			</span>
 		</div>
 	<div class="checkbox">
-		<label class="cba__post" for="cba__post"><input id="cba__post" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types, false) || is_page_template('template-noticias.php') || is_single()) { echo 'checked'; } ?> /> Noticias</label>
+		<label class="cba__post" for="cba__post"><input id="cba__post" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types, false) || is_page_template('template-noticias.php') || is_singular( 'post' )) { echo 'checked'; } ?> /> Noticias</label>
 		<label class="cba__documentos" for="cba__documentos"><input id="cba__documentos" type="checkbox" name="post_type[]" value="documentos" <?php if (in_array('documentos', $query_types, false) ||  is_page_template('template-documentos.php') ) { echo 'checked'; } ?> /> Documentos</label>
 		<label class="cba__convocatorias" for="cba__convocatorias"><input id="cba__convocatorias" type="checkbox" name="post_type[]" value="convocatorias" <?php if (in_array('convocatorias', $query_types, false) || is_page_template('template-convocatorias-cas.php') || is_page_template('template-convocatorias-cap.php') || is_page_template('template-convocatorias-practicas.php') ) { echo 'checked'; } ?> /> Convocatorias</label>  
 		<label class="cba__servicios" for="cba__servicios"><input id="cba__servicios" type="checkbox" name="post_type[]" value="servicios" <?php if (in_array('servicios', $query_types, false) || is_page_template('template-servicios.php')) { echo 'checked'; } ?> /> Servicios</label>

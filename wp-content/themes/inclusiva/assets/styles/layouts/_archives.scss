@@ -77,7 +77,7 @@
 			}
 		}
 	}
-	&.post-type-archive-producto{
+	&.post-type-archive-producto, &.tax-clasificacion{
 		.masshead{
 			background-image: url('../images/masshead--producto.jpg') !important;
 			@include full-bg();

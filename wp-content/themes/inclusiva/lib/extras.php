@@ -105,11 +105,10 @@ function verify_post_format($content){
 
 add_filter('the_title', __NAMESPACE__.'\\custom_post_type_archive_title');
 function custom_post_type_archive_title ($title){
-  global $id;
   $post__types = array('producto');
 
-  if (strlen($title) > 30 && is_post_type_archive($post__types) && $id ) {
-     $title = substr($title,0,30) . '...';
+  if (strlen($title) > 30 && is_post_type_archive($post__types) && in_the_loop() ) {
+     $title = substr($title,0,30) . '&#8230;';
   }
   return $title;
 }

@@ -25,9 +25,8 @@
 			<input type="submit" class="btn btn-default" id="searchsubmit" value="Buscar" />
 		</span>
 	</div>
-	<?php echo '<!-- ' . basename( get_page_template() ) . ' -->'; ?>
 	<div class="checkbox">
-		<label class="cb__post" for="cb__post"><input id="cb__post" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types, false) || is_page_template('template-noticias.php') || is_single()) { echo 'checked'; } ?> /> Noticias</label>
+		<label class="cb__post" for="cb__post"><input id="cb__post" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types, false) || is_page_template('template-noticias.php') || is_singular( 'post' )) { echo 'checked'; } ?> /> Noticias</label>
 		<label class="cb__documentos" for="cb__documentos"><input id="cb__documentos" type="checkbox" name="post_type[]" value="documentos" <?php if (in_array('documentos', $query_types, false) ||  is_page_template('template-documentos.php') ) { echo 'checked'; } ?> /> Documentos</label>
 		<label class="cb__convocatorias" for="cb__convocatorias"><input id="cb__convocatorias" type="checkbox" name="post_type[]" value="convocatorias" <?php if (in_array('convocatorias', $query_types, false) || is_page_template('template-convocatorias-cas.php') || is_page_template('template-convocatorias-cap.php') || is_page_template('template-convocatorias-practicas.php') ) { echo 'checked'; } ?> /> Convocatorias</label>  
 		<label class="cb__servicios" for="cb__servicios"><input id="cb__servicios" type="checkbox" name="post_type[]" value="servicios" <?php if (in_array('servicios', $query_types, false) || is_page_template('template-servicios.php')) { echo 'checked'; } ?> /> Servicios</label>

@@ -92,7 +92,7 @@
           $( ".search-icon a" ).click(function(event) {
             event.preventDefault();
             $('.section.search-header').toggleClass( "show hidden" );
-            $('.section.search-header #s').focus();
+            $('.section.search-header #sa').focus();
             $(this).parent().toggleClass("active");
           });
         
