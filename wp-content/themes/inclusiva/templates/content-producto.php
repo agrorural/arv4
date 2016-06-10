@@ -41,7 +41,6 @@
 		</a>
 		<figcaption>
 			<h3 class=""><a href="<?php the_permalink(); ?>" class="" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-			<?php if ($marca) echo '<p><small>'. $marca .'</small></p>'; ?>
 			<?php echo '<h6>S/. '. $prod__precio . ' <small> / ' . $prod__pres . '</small></h6>'; ?>
 		</figcaption>
 	</div>

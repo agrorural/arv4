@@ -83,49 +83,97 @@
 			@include full-bg();
 		}
 		.main{
+			section.clasificacion{
+				@include make-sm-column(12);
+
+			}
 			figure.producto{
-				@include make-xs-column(6);
+				.thumbnail{
+					background-color: $brown--lighter;
+					padding: 0;
+					border: 0 none;
+					@include border-radius(0px);
+					figcaption{
+						text-align: center;
+						background-color: $white--smoke;
+						h3{
+							@include entry-title(xs);
+							margin: 0;
+							padding: 5px 0;
+							a{
+								color: $gray;
+							}
+
+						}
+						h6{
+							color: $green--light;
+							small{
+								color: $gray;
+								@include opacity(.85);
+							}
+						}
+					}
+				}
+			}
+			@media(max-width: $screen-xs-max){
+					@include make-row();
+					figure.producto{
+						@include make-xs-column(6);
+					}
 			}
 			@media(min-width: $screen-sm-min){ 
 				figure.producto{
 					@include make-xs-column(3);
 					.thumbnail{
-						background-color: $brown--lighter;
-						padding: 0;
-						@include border-radius(0px);
+						position: relative;
+						overflow: hidden;
 						a{
 							display: block;
-							img{}
+							img{
+								
+							}
 						}
 						figcaption{
-							background-color: $white--smoke;
-							padding: 15px;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							background-color: $yellow--light;
+							@include fadeOutDown();
 							h3{
-								@include entry-title(xs);
-								margin: 0;
-								padding: 5px 0;
+								padding-left: 15px;
+								padding-right: 15px;
+								padding-top: 10px;
+								padding-bottom: 0;
+								@include opensans(semibold);
 								a{
-									color: $gray;
-								}
-
-							}
-							.cta__container{
-								/*display: none;*/
-								.cta__link{ 
-									display: inline-block;
-									font-size: 75%;
-									padding: 0;
+									&:hover{
+										color: $green--light;
+									}
 								}
 
 							}
 						}
-						&:hover{
-							figcaption{
-								.cta__container{
-									/*display: block;
-									@include fadeInUp();*/
+					}
+					&:hover{
+						.thumbnail{
+							a{
+								img{
+									@include pulse();
 								}
 							}
+						}
+						figcaption{
+							@include keyframes(fadeInUp) {
+							  0% {
+							    opacity: 0;
+							    @include transform(translateY(20px));}
+							  100% {
+							    opacity: 0.85;
+							    @include transform(translateY(0));
+							  }
+							}
+							@include fadeInUp();
 						}
 					}
 				}

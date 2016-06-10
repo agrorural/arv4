@@ -54,6 +54,9 @@ function setup() {
       // Sidebar Servicios
       'servicios_sidebar_navigation' => __('Servicios Sidebar Navigation', 'sage'), //RDE
 
+    // Productos
+    'producto_clasificacion_navigation' => __('Clasificación de Productos Navigation', 'sage'), //RDE
+
     // Sistema de Control Interno
     'sci_navigation' => __('SCI Navigation', 'sage') // SCI
 

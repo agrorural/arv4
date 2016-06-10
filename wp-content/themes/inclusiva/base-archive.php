@@ -24,7 +24,7 @@ use Roots\Sage\Wrapper;
     ?>
 
 		<?php get_template_part('templates/masshead'); ?>
-    <?php if (has_nav_menu('servicios_navigation')){ ?>
+    <?php if (has_nav_menu($post_type . '_navigation')){ ?>
           <?php get_template_part('templates/nav', ''.$post_type ); ?>
     <?php } ?>
 
