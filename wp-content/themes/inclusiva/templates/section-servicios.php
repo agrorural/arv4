@@ -8,6 +8,8 @@ $args = array(
 			'terms'    => 'serviagro',
 		),
 	),
+	'orderby'	=> 'title',
+	'order'		=>	'ASC',
 	'posts_per_page' => -1
 );
 
