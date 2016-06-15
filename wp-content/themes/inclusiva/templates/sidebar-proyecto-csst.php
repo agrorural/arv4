@@ -17,7 +17,12 @@
 			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/risst/LEY SEGURIDAD Y SALUD LABORAL.pdf"><i class="fa fa-file-pdf-o"></i> Ley Seguridad y Salud Laboral</a>
 		</li>
 		<li>
-			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/risst/procedimiento-IPERC.pdf"><i class="fa fa-file-pdf-o"></i>Procedimiento IPERC</a>
+			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/risst/procedimiento-IPERC.pdf"><i class="fa fa-file-pdf-o"></i> Procedimiento IPERC</a>
+		</li>
+		<li>
+			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/risst/csst__acta-de-instalacion.pdf"><i class="fa fa-file-pdf-o"></i> Acta de Instalación</a>
+			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/transparencia/documentos/rde/RDE-248-2015-AG-AGRORURAL-DE.PDF"><i class="fa fa-file-pdf-o"></i> RDE N° 248-2015-AG-AGRORURAL-DE</a>
+			<a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/transparencia/documentos/rde/RDE-066-2016-AG-AGRORURAL-DE.PDF"><i class="fa fa-file-pdf-o"></i> RDE N° 066-2016-AG-AGRORURAL-DE</a>
 		</li>
 	</ul>
 </section>
