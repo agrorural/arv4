@@ -33,7 +33,7 @@ use Roots\Sage\Wrapper;
       	<div class="masshead">
     <?php } ?>
 			  <?php get_template_part('templates/page', 'header-proyectos'); ?>
-		</div>
+		  </div>
     <?php if ($tag__slug && has_nav_menu('pry_'.$tag__slug.'_navigation')){ ?>
           <?php get_template_part('templates/nav', 'proyectos' ); ?>
     <?php } ?>

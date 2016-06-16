@@ -113,58 +113,24 @@
 		}
 	}
 
-	&.special-header{
-		.masshead{
-			.media{
-				position: relative;
-				padding-top: 130px; 
-				z-index: 100;
-					a{
-						color: $yellow;
-						font-size: 11px;
-					}
-				.media-left{
-					p{
-						text-align: center;
-					}
-				}
-				.media-body{
-					h1{
-						font-size: 18px;
-						margin-top: 0;
-						
-					}
-					@media (min-width: $screen-sm-min) {
-						h1{
-							font-size: 48px;
-							@include opensans(light);
-						}
-					}
-					h1, p{
-						@include text-on-focus();
-					}
+	&.page-template-template-proyectos{
+		.proyecto{
+			@include center-block();
+			text-align: center;
+			z-index: 1000;
+			.proyecto__logo{
+				img{
+					margin: 0 auto;
 				}
 			}
-			.page-header{
-				position: relative;
-				padding-top: 130px; 
-				z-index: 100;
-				text-align: center;
+			.proyecto__descripcion{
 				h1{
-					font-size: 18px;
-					margin-top: 0;
-					
-				}
-				@media (min-width: $screen-sm-min) {
-					h1{
-						font-size: 48px;
-						@include opensans(light);
-					}
+					color: $white;
+					@include text-shadow();
 				}
 			}
 		}
 	}
-
 	&.page-template-template-serviagro{
 		.masshead{
 			background-image: url(../images/masshead--servicios.jpg);
@@ -248,5 +214,35 @@ article{
 	a{
 		border: 0 none;
 		margin: 0 10px;
+	}
+}
+
+@media(max-width: $screen-xs-max){
+	.page-template-template-proyectos{
+		.proyecto{	
+			@include make-sm-column(6);
+			padding: 30px 0;
+			.proyecto__descripcion{
+				h1{
+					@include entry-title('xs');
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: $screen-sm-min){
+	.page-template-template-proyectos{
+		.proyecto{	
+			position: absolute;
+			bottom: 15px;
+			left: 0;
+			right: 0;
+			.proyecto__descripcion{
+				h1{
+					@include entry-title('lg');
+				}
+			}
+		}
 	}
 }
