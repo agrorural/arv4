@@ -20,6 +20,7 @@ $the_query = new WP_Query( $args ); ?>
 			$banner__url = get_field('banner__url'); 
 			$banner__btn_title = get_field('banner__btn_title');
 			$banner__ht = get_field('banner__ht');
+			$banner__txt = get_field('banner__txt');
 			$banner__ht_url = get_field('banner__ht_url');
 		?>
 		<div class="item">
@@ -32,23 +33,30 @@ $the_query = new WP_Query( $args ); ?>
 						$thumb__width = $thumb__attr[1];
 						$thumb__height = $thumb__attr[2];
 					?>
-					<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
+					<?php if ($banner__txt == 1) { ?>
+						<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
+					<?php }else{ ?>
+						<a class="banner__txt" href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank">
+							<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
+						</a>
+					<?php } ?>
 				<?php } ?>
-				<figcaption class="hidden">
-					<div class="sl__home__hashtag">
-	    				<a href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank"><?php if ($banner__ht) { echo '#'.$banner__ht; } else { echo bloginfo( 'url' ); } ?></a>
-	    			</div>
-	    			<div class="sl__home__title">
-	    				<h3><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>"><?php the_title(); ?></a></h3>
-	    			</div>
-	    			<div class="sl__home__content">
-	    				<?php the_content(); ?>
-	    			</div>
-		    		<div class="sl__home__link">
-		    			<p><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__danger"><?php if ($banner__btn_title) { echo $banner__btn_title; } else { echo 'Saber más'; } ?></a></p>
-		    		</div>
-				</figcaption>
-			
+				<?php if ($banner__txt == 1) { ?>
+					<figcaption class="hidden">
+						<div class="sl__home__hashtag">
+		    				<a href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank"><?php if ($banner__ht) { echo '#'.$banner__ht; } else { echo bloginfo( 'url' ); } ?></a>
+		    			</div>
+		    			<div class="sl__home__title">
+		    				<h3><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>"><?php the_title(); ?></a></h3>
+		    			</div>
+		    			<div class="sl__home__content">
+		    				<?php the_content(); ?>
+		    			</div>
+			    		<div class="sl__home__link">
+			    			<p><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__danger"><?php if ($banner__btn_title) { echo $banner__btn_title; } else { echo 'Saber más'; } ?></a></p>
+			    		</div>
+					</figcaption>
+				<?php } ?>
 				<i class="fa fa-circle-o-notch fa-spin spinner"></i>
 			</figure>
 		</div>

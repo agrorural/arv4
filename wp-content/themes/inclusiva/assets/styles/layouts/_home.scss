@@ -264,7 +264,23 @@
 				}
 			}
 		}
-	}	
+	}
+	.sl__home{
+		.owl-stage-outer{
+			.owl-stage{
+				background-color: $gray--text;
+				.owl-item{
+					figure{
+						.banner__txt{
+							display:block; 
+							position: relative; 
+							z-index: 3
+						}
+					}
+				}	
+			}
+		}
+	}
 }
 
 @media (max-width: $screen-xs-max) {
@@ -467,7 +483,7 @@
 			.owl-dots{ 
 				position: absolute;
 				top: 30px;
-				left: 30px;
+				left: 15px;
 				.owl-dot{
 					float: left;
 					margin: 0 5px 0 0;

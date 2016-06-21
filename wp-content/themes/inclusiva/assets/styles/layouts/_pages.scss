@@ -115,7 +115,7 @@
 
 	&.page-template-template-proyectos{
 		.proyecto{
-			@include center-block();
+			@include container-fixed();
 			text-align: center;
 			z-index: 1000;
 			.proyecto__logo{
@@ -239,6 +239,7 @@ article{
 			left: 0;
 			right: 0;
 			.proyecto__descripcion{
+				
 				h1{
 					@include entry-title('lg');
 				}
