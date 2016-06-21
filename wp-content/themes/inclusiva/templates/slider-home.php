@@ -36,7 +36,7 @@ $the_query = new WP_Query( $args ); ?>
 					<?php if ($banner__txt == 1) { ?>
 						<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
 					<?php }else{ ?>
-						<a class="banner__txt" href="<?php if ($banner__ht_url) { echo $banner__ht_url; } else { echo bloginfo( 'url' ); } ?>" target="_blank">
+						<a class="banner__txt" href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>" class="cta__danger">
 							<img class="img-responsive hidden" src="<?php echo $thumb__URI; ?>" alt="" width="<?php echo $thumb__width; ?>" height="<?php echo $thumb__height; ?>" />
 						</a>
 					<?php } ?>
