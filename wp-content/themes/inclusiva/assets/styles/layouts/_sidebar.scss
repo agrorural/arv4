@@ -46,12 +46,7 @@
 					}
 				}
 				&.dropdown{
-					&:hover{
-						.dropdown-menu{
-							display: block;
-							margin: 0;
-						}
-					}
+
 				}
 			}
 			&.related-posts{
@@ -115,5 +110,15 @@
 			}
 		}
 
+	}
+}
+
+@media(max-width: $screen-xs-max){
+	.sidebar{
+		.widget{
+			&.banner{
+				@include make-xs-column(6);
+			}
+		}
 	}
 }

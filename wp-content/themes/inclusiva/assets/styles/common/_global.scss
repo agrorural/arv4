@@ -289,31 +289,28 @@ article{
         }
 
         &.dropdown{
-          &:hover{
-            ul.dropdown-menu{
-              display: block;
-              @include shadow--2dp();
-              @include border-radius(0);
-              margin: 0;
-              padding: 0;
-              border: 0;
-              width: 100%;
-              
-              @media(min-width: $screen-sm-min){
-                width: auto;
-              }
+          ul.dropdown-menu{
+            @include shadow--2dp();
+            @include border-radius(0);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            
+            @media(min-width: $screen-sm-min){
+              width: auto;
+            }
 
-              li{
-                a{
-                  @include opensans();
-                  padding-top: 10px;
-                  padding-bottom: 10px;
-                  text-transform: none;
-                  color: $gray--text;
-                  &:hover{
-                    background-color: $white--smoke;
-                    color: $black;
-                  }
+            li{
+              a{
+                @include opensans();
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-transform: none;
+                color: $gray--text;
+                &:hover{
+                  background-color: $white--smoke;
+                  color: $black;
                 }
               }
             }

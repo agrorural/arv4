@@ -204,8 +204,44 @@ h1{
 			.navbar-links, .navbar-social{
 				background-color: transparent !important;
 			}
+			.navbar-links{
+				ul.dropdown-menu{
+					margin-top: 7px;
+				}
+			}
 		} /* Termina .super-header */	
+		&.banner{
+			ul#menu-navegacion-primaria{
+				li{
+					a{
+						.glyphicon-home{
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	} /* Termina header*/
+	
+	h1{
+		&.navbar-brand{
+
+			a{
+	  			span{}
+			}
+			&:hover{}
+			
+			&.agrorural{}
+
+			&.minagri{	
+				a{
+					background-image: url(../images/logo__minagri--xs.png)!important;
+					background-repeat: no-repeat;
+					width: 45px !important;
+				}
+			}
+		}
+	}	
 
 		.home{
 		.sl__home{

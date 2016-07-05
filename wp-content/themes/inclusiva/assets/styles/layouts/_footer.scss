@@ -127,7 +127,38 @@ footer{
 }
 
 
-@media(max-width: $screen-xs-max){} 
+@media(max-width: $screen-xs-max){
+	footer{
+		&.post-footer{
+			.container{
+				.footer__logo{
+					&.minagri, &.peru{
+						a{
+							span{}
+						}
+					}
+					&.minagri{
+						@include center-block();
+						float: none;
+						a{
+							width: auto;
+							background-position: center;
+						}
+						margin-bottom: 20px;	
+					}
+					&.peru{
+						@include center-block();
+						float: none;
+						a{
+							width: auto;
+							background-position: center;
+						}
+					}
+				}
+			}
+		}
+	}
+} 
 @media(min-width: $screen-sm-min){}
 @media(max-width: $screen-sm-max){}
 @media(min-width: $screen-md-min){}
