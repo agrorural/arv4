@@ -284,6 +284,48 @@
 }
 
 @media (max-width: $screen-xs-max) {
+	.home{
+		.sl__home{
+			.owl-stage-outer{
+				.owl-stage{
+					.owl-item{
+						figure{
+							figcaption{
+									.sl__home__title{}
+									.sl__home__content{
+										p{
+										}
+									}
+									.sl__home__link{
+										position: absolute;
+										bottom: 0;
+										p{
+											padding: 0 !important;
+											a{
+												padding-left: 0;
+											}
+										}
+									}
+							} 
+						}
+
+						&.active{
+							figure{
+							}
+							img{}
+							figcaption{}
+						}
+					}
+				}
+			} /* Owl Stage Outer Ends*/
+
+			.owl-nav{} /* Termina .owl-nav */
+			.owl-dots{ 
+				.owl-dot{}
+			} /* Termina .owl-dots */
+		} /* Termina .sl__home */
+	} /* Termina home*/
+
 	.multimedia--1{
 		figure{ 
 			a.format-icon{

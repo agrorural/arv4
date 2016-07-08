@@ -21,8 +21,10 @@
 			<?php the_content(); ?>
 		</div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			<?php if( $banner__url ){ ?>
+				<a href="<?php echo $banner__url; ?>" class="btn btn-primary"><?php if( $banner__btn_title ) echo $banner__btn_title; else echo "Más información"; ?></a>
+			<?php } ?>
 		</div>
 	<?php }else{ ?>
 		<div class="modal-body banner-only">

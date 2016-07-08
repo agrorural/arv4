@@ -51,8 +51,6 @@ use Roots\Sage\Wrapper;
 
     <?php wp_reset_postdata(); ?>
 
-    <?php else : ?>
-      <?php //Silence is golden ?>
     <?php endif; ?>
 
   </body>
