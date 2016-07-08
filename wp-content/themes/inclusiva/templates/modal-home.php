@@ -10,7 +10,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="fontPageModal" tabindex="-1" role="dialog" aria-labelledby="fontPageModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
     <?php if ($banner__txt) {?>
 		<div class="modal-header">
