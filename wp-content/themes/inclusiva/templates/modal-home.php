@@ -6,8 +6,16 @@
 	$banner__btn_title = get_field('banner__btn_title');
 	$banner__ht = get_field('banner__ht');
 	$banner__ht_url = get_field('banner__ht_url');
-?>
+	$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
+	$banner__vig = get_field('banner__vig');
 
+
+	if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
+        change_post_status( $post->ID, 'draft' );
+    }	
+
+?>
+         
 <!-- Modal -->
 <div class="modal fade" id="fontPageModal" tabindex="-1" role="dialog" aria-labelledby="fontPageModalLabel">
   <div class="modal-dialog" role="document">

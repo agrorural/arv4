@@ -62,3 +62,9 @@ function bpdev_redirect_to_profile( $redirect_to_calculated, $redirect_url_speci
         return $redirect_to_calculated; /*if site admin or not logged in, do not do anything much*/
  
 }
+
+function change_post_status($post_id,$status){
+    $current_post = get_post( $post_id, 'ARRAY_A' );
+    $current_post['post_status'] = $status;
+    wp_update_post($current_post);
+}

@@ -29,6 +29,12 @@
 							<?php // ACF 
 								$banner__url = get_field('banner__url');
 								$banner__txt = get_field('banner__txt'); 
+								$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
+								$banner__vig = get_field('banner__vig');
+
+								if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
+							        change_post_status( $post->ID, 'draft' );
+							    }
 							?>
 								<section class="widget banner">
 									<?php if ($banner__txt) {?>
@@ -78,7 +84,14 @@
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 							<?php // ACF 
 								$banner__url = get_field('banner__url');
-								$banner__txt = get_field('banner__txt'); 
+								$banner__txt = get_field('banner__txt');
+								$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
+								$banner__vig = get_field('banner__vig');
+								//var_dump($banner__vig);
+
+								if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
+							        change_post_status( $post->ID, 'draft' );
+							    } 
 							?>
 								<section class="widget banner">
 									<?php if ($banner__txt) {?>
