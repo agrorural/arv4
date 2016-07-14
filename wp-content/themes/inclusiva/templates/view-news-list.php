@@ -2,7 +2,7 @@
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 5,
-	'tag__not_in'=>array('196') //Oculta las entradas del CSST
+	'tag__not_in'=>array('47','196') //Oculta las entradas del AIAF, CSST
 	);
 // the query
 $the_query = new WP_Query( $args ); ?>
