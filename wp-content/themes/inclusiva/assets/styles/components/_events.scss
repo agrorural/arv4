@@ -1,0 +1,28 @@
+.post-type-archive-tribe_events{
+	&.events-category{
+		.wrapper{
+			@include make-row(0);
+			padding-top: 15px;
+			padding-bottom: 15px;
+			background-color: $cream;
+			margin-bottom: 30px;
+			.banner{
+				@include make-sm-column(6);
+			}
+		}
+	}
+}
+
+@media(max-width: $screen-sm-max){
+	.post-type-archive-tribe_events{
+		&.events-category{
+			.wrapper{
+				@include make-row();
+				padding-bottom: 0;
+				.banner{
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}
