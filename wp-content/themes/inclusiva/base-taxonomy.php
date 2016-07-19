@@ -21,6 +21,7 @@ use Roots\Sage\Wrapper;
 
     <?php //Get the post_type
       $post_type = get_post_type( get_the_ID() );
+      $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
     ?>
 
 		<?php get_template_part('templates/masshead'); ?>
@@ -31,7 +32,7 @@ use Roots\Sage\Wrapper;
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main" role="main">
-          <?php include Wrapper\template_path(); ?>
+            <?php get_template_part('templates/section', ''.$post_type);  ?>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
           <aside class="sidebar" role="complementary">
