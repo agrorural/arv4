@@ -32,3 +32,18 @@ function populate_gf__produ__correo( $value ) {
 		return $produ__correo;
 	}
 }
+
+add_filter( 'gform_currencies', 'add_pen_currency' );
+function add_pen_currency( $currencies ) {
+    $currencies['PEN'] = array(
+        'name'               => __( 'Sol Peruano', 'gravityforms' ),
+        'symbol_left'        => 'S/. ',
+        'symbol_right'       => '',
+        'symbol_padding'     => ' ',
+        'thousand_separator' => ',',
+        'decimal_separator'  => '.',
+        'decimals'           => 2
+    );
+
+    return $currencies;
+}

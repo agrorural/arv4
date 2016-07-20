@@ -1,6 +1,7 @@
 <?php // ACF 
 	$servicio__url = get_field('servicio__url'); 
 	$servicio__url__txt = get_field('servicio__url__txt'); 
+	$servicio__url__target = get_field('servicio__url__target'); 
 ?>
 <div class="inner">
 	<div class="thumbnail">
@@ -10,7 +11,7 @@
 	  <div class="caption">
 	    <h3>
 	    	<?php if ( $servicio__url ){ ?>
-	    		<a href="<?php echo $servicio__url; ?>" target="_blank">
+	    		<a href="<?php echo $servicio__url; ?>" target="<?php if ($servicio__url__target) echo '_blank'; else echo '_self'; ?>">
 	    	<?php } else { ?>
 	    		<a href="<?php the_permalink(); ?>">
 	    	<?php } ?>

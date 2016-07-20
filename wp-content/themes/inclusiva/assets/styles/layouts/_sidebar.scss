@@ -17,9 +17,7 @@
 			-webkit-font-smoothing: antialiased;
 		}
 		.nav{
-			&.nav-sidebar{
-			ul{
-
+			&.nav-sidebar{		
 				margin: 15px 0 0;
 				padding: 0;
 				list-style-type: none;
@@ -64,30 +62,34 @@
 						 }
 					}
 				}
-				&.related-posts{
-					li{
-						a{
-							padding-top: 1px;
-							color: $red--google;
-							&:hover{
-								color: $red--google--hover;
-							}
-						}
-						p{
-							padding: 7px 15px; 
+			}
+		}
+		ul{
+			margin: 15px 0 0;
+			padding: 0;
+			list-style-type: none;
+			&.related-posts{
+				li{
+					a{
+						padding-top: 1px;
+						color: $red--google;
+						&:hover{
+							color: $red--google--hover;
 						}
 					}
-				}
-				&#recentcomments, &.plain{
-					li{
-						padding: 7px 15px;
-						p{
-							text-align: left;
-						}
+					p{
+						padding: 7px 15px; 
 					}
 				}
 			}
-		}
+			&#recentcomments, &.plain{
+				li{
+					padding: 7px 15px;
+					p{
+						text-align: left;
+					}
+				}
+			}
 		}
 		.tagcloud, .textwidget{
 			padding: 7px 15px; 
