@@ -8,6 +8,7 @@ use Roots\Sage\Wrapper;
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
+  <?php get_template_part('lib/ga'); ?>
   <body <?php body_class(); ?>>
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
