@@ -14,9 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <?php do_action( 'tribe_events_before_template' ) ?>
-
 <!-- Banners Serviagro -->
-<?php if( has_term( 'serviagro', 'tribe_events_cat' ) ) { ?>
+<?php if( is_tax( 'tribe_events_cat', 'serviagro') ) { ?>
 		<div class="wrapper">
 			<div class="banner">
 				<a href="https://issuu.com/serviagro/stacks/3b64c2c809e14c068f1bf043f4b786a9" target="_blank"><img src="<?php echo bloginfo('template_url'); ?>/dist/images/bn__serviagro.png" class="img-responsive" /></a>
