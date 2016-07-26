@@ -83,10 +83,46 @@
 			@include full-bg();
 		}
 		.main{
-			section.clasificacion{
-				@include make-sm-column(12);
-
+			section.clasificaciones{
+				@include make-row(0);
+				padding: 15px 0;
+				margin-bottom: 30px;
+				background-color: $yellow--light;
+				.wrapper{
+					@include make-xs-column(12);
+					@include make-sm-column(4);
+					@include make-lg-column(4);
+					.thumbnail{
+						position: relative;
+						@media(min-width: $screen-sm-min){
+							margin-bottom: 0;
+						}
+						.caption{
+							position: absolute;
+							bottom: 10px;
+							left: 0;
+							right: 0;
+							background-color: $white;
+							h3{
+								@include entry-title(sm);
+								margin-top: 0;
+								margin-bottom: 3px;
+							}
+							p{
+								@include meta-text();
+								margin-bottom: 0;
+							}
+							h3, p{
+								text-align: center;
+							}
+						}
+						&:hover{
+							img{}
+						}
+					}
+				}
 			}
+
 			figure.producto{
 				.thumbnail{
 					background-color: $brown--lighter;
@@ -129,9 +165,6 @@
 						overflow: hidden;
 						a{
 							display: block;
-							img{
-								
-							}
 						}
 						figcaption{
 							position: absolute;

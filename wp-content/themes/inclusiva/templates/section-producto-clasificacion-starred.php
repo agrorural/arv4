@@ -1,4 +1,4 @@
-<section class="section clasificacion">
+<section class="section clasificaciones">
 	<?php 
 		$args = array(
 				'taxonomy'	=> 'clasificacion',
@@ -9,20 +9,30 @@
 		);
 		$clasificaciones = get_terms( $args ); 
 	?>
-	<?php 
-		//echo '<pre>';
-		//	var_dump($clasificaciones);
-		//echo '</pre>';
+	<?php if ( ! empty( $clasificaciones ) && ! is_wp_error( $clasificaciones ) ) : ?>
+		<?php foreach ( $clasificaciones as $clasificacion ) : ?>
+			<?php 
+				$term_link = get_term_link( $clasificacion ); 
+				$taxonomy = $clasificacion->taxonomy; $term_id = strval($clasificacion->term_id);
+				$clas__img = get_field('clas__img', $taxonomy.'_'.$term_id);
 
-		if ( ! empty( $clasificaciones ) && ! is_wp_error( $clasificaciones ) ){
-	
-		    foreach ( $clasificaciones as $clasificacion ) {
-		    	$term_link = get_term_link( $clasificacion );
-		    	if ( is_wp_error( $term_link ) ) {
-			        continue;
-			    }
-		        echo '<section class="thumbnail col-sm-4"><a href="' . esc_url( $term_link ) . '">' . $clasificacion->name . ' <span>('. $clasificacion->count .')</span></a></section>';
-		    }
-		}
-	?>
+				if ( is_wp_error( $term_link ) ) { continue; }
+			?>
+			<section class="wrapper">
+				<div class="thumbnail">
+				<?php if ($clas__img) { ?>
+
+					<?php echo '<img src="'.$clas__img['sizes']['thumb-clasificaciones'].'" />'; ?>
+				<?php }else {?>
+					<img src="<?php echo get_template_directory_uri(); ?>/dist/images/producto--default.jpg" width="600px" height="350px" class="img-responsive" />
+				<?php } ?>
+				      <div class="caption">
+				        <h3><a href="<?php echo esc_url( $term_link ); ?>"><?php echo $clasificacion->name; ?></a></h3>
+				        <p><?php echo $clasificacion->count; ?> productos</p>			
+						<?php //var_dump( $clas__img ); ?>
+				      </div>
+				</div>
+			</section>
+		<?php endforeach; ?>
+	<?php endif; ?>
 </section>

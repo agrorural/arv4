@@ -15,6 +15,10 @@ function setup() {
   // Enable plugins to manage the document title
   // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
   add_theme_support('title-tag');
+  
+  // Enable custom logo support
+  add_theme_support( 'custom-logo' );
+
 
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
@@ -71,6 +75,7 @@ function setup() {
   add_image_size( 'thumb-videos', 400, 230, true );
   add_image_size( 'thumb-category-bn', 750, 825, true );
   add_image_size( 'thumb-news-list', 125, 75, true );
+  add_image_size( 'thumb-clasificaciones', 400, 195, array( 'left', 'top' ) );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
