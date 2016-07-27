@@ -94,12 +94,14 @@
 					@include make-lg-column(4);
 					.thumbnail{
 						position: relative;
+						@include border-radius(0);
+						padding: 0;
 						@media(min-width: $screen-sm-min){
 							margin-bottom: 0;
 						}
 						.caption{
 							position: absolute;
-							bottom: 10px;
+							bottom: 7px;
 							left: 0;
 							right: 0;
 							background-color: $white;
@@ -163,6 +165,7 @@
 					.thumbnail{
 						position: relative;
 						overflow: hidden;
+						margin-bottom: 30px;
 						a{
 							display: block;
 						}

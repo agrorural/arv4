@@ -20,14 +20,15 @@
 			?>
 			<section class="wrapper">
 				<div class="thumbnail">
-				<?php if ($clas__img) { ?>
-
-					<?php echo '<img src="'.$clas__img['sizes']['thumb-clasificaciones'].'" />'; ?>
-				<?php }else {?>
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/images/producto--default.jpg" width="600px" height="350px" class="img-responsive" />
-				<?php } ?>
+					<a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">
+						<?php if ($clas__img) { ?>
+							<?php echo '<img src="'.$clas__img['sizes']['thumb-clasificaciones'].'" />'; ?>
+						<?php }else {?>
+							<img src="<?php echo get_template_directory_uri(); ?>/dist/images/clasificacion--default.jpg" width="600px" height="350px" class="img-responsive" />
+						<?php } ?>
+					</a>
 				      <div class="caption">
-				        <h3><a href="<?php echo esc_url( $term_link ); ?>"><?php echo $clasificacion->name; ?></a></h3>
+				        <h3><a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>"><?php echo $clasificacion->name; ?></a></h3>
 				        <p><?php echo $clasificacion->count; ?> productos</p>			
 						<?php //var_dump( $clas__img ); ?>
 				      </div>

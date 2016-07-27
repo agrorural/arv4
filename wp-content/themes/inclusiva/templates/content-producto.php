@@ -34,7 +34,7 @@
 	<div class="thumbnail">
 		<a href="<?php the_permalink(); ?>">
 			<?php if ( has_post_thumbnail() ){?>
-				<?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
+				<?php the_post_thumbnail('thumb-productos', array('class' => 'img-responsive')); ?>
 			<?php } else { ?>
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/producto--default.jpg" class="img-responsive" />
 			<?php } ?>

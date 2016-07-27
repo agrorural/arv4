@@ -76,6 +76,7 @@ function setup() {
   add_image_size( 'thumb-category-bn', 750, 825, true );
   add_image_size( 'thumb-news-list', 125, 75, true );
   add_image_size( 'thumb-clasificaciones', 400, 195, array( 'left', 'top' ) );
+  add_image_size( 'thumb-productos', 185, 205, array( 'left', 'top' ) );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

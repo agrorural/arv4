@@ -1,0 +1,103 @@
+.gform_wrapper{
+	form{
+		.validation_error{
+			@extend .alert;
+			@extend .alert-danger;
+		}
+		.gform_body{			
+			.gform_fields{
+				@include make-row();
+				@extend .list-unstyled;
+				.gfield{
+					@extend .col-sm-12;
+					@extend .clearfix;
+					@extend .form-group;
+					&.gsection{
+						margin-top: 15px;
+						.gsection_title{
+							@include title-xs();
+							font-size: 13px;
+							padding-bottom: 7px;
+							border-bottom: 1px solid $gray--light;
+						}
+					}
+					&.gf_left_third, &.gf_middle_third, &.gf_right_third{
+						@extend .col-sm-4;
+					}
+					&.gf_left_half, &.gf_right_half{
+						@extend .col-sm-6;
+					}
+					&.gf_left_third,&.gf_left_half{
+						clear: left;
+					}
+					&.gf_right_third, &.gf_right_half{
+						clear: right;
+					}
+					label{
+						@extend .control-label;
+						cursor: pointer;
+					}
+					.ginput_container{
+						input[type="text"], select, textarea{
+							@extend .form-control;
+						}
+						.charleft{
+							@include meta-text();
+						}
+						&.ginput_complex{
+							span{
+								label{
+									@include meta-text();
+								}
+							}
+						}
+						&.ginput_container_radio{
+							.gfield_radio{
+								@extend .list-unstyled;
+								li{
+									input{
+										margin-right: 3px;
+									}
+									label{
+										font-weight: normal;
+									}
+								}
+							}
+						}
+					}
+					.gfield_description{
+						display: none;
+						font-size: 10px;
+					}
+				}
+			}
+		}
+		.gform_footer{
+			@include make-row(0);
+			border-top: 1px solid $gray--lighter;
+			margin-top: 15px;
+			padding-top: 15px;
+			.gform_button{
+				@extend .btn;
+				@extend .btn-success;				
+			}
+		}
+	}
+	&.gform_validation_error{
+		form{
+			.gform_body{
+				.gform_fields{
+					.gfield{
+						&.gfield_error{
+							@extend .has-error;
+							.validation_message{
+								display: block;
+								color: $red--google;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
