@@ -33,6 +33,7 @@
 					&.gf_right_third, &.gf_right_half{
 						clear: right;
 					}
+
 					label{
 						@extend .control-label;
 						cursor: pointer;
@@ -51,8 +52,8 @@
 								}
 							}
 						}
-						&.ginput_container_radio{
-							.gfield_radio{
+						&.ginput_container_radio, &.ginput_container_checkbox{
+							.gfield_radio, .gfield_checkbox{
 								@extend .list-unstyled;
 								li{
 									input{
@@ -68,6 +69,19 @@
 					.gfield_description{
 						display: none;
 						font-size: 10px;
+					}
+
+					&.gf_list_inline{
+						.ginput_container_checkbox{
+							.gfield_checkbox{
+								@extend .list-inline;
+								li{
+									label{
+										font-weight: normal;
+									}
+								}
+							}
+						}
 					}
 				}
 			}
