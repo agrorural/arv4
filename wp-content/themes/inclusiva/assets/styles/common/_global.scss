@@ -67,7 +67,6 @@ body{
   @include opensans();
   font-size: 14px;
   line-height: 1.6;
-  color: $red--google !important;
   &.page, &.archive, &.single{
     background-color: $white--smoke;
     .wrap{
