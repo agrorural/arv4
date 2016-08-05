@@ -281,6 +281,26 @@
 			}
 		}
 	}
+	.sl__modal-home{
+		.owl-nav{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 15px;
+			.owl-prev, .owl-next{
+				display: inline-block;
+				padding-right: 5px;
+    			padding-left: 5px;
+    			&.disabled{
+    				button{
+    					@extend .disabled;
+    				}
+    			}
+			}
+			.owl-next{
+			}
+		}
+	}
 }
 
 @media (max-width: $screen-xs-max) {

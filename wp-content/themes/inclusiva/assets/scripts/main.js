@@ -125,9 +125,22 @@
             autoplayHoverPause:true,
             center: true,
             nav: true,
-            //lazyLoad: true,
             navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"]
-           
+        });
+
+        var owl_sl__modal_home = $('.sl__modal-home');
+
+        owl_sl__modal_home.owlCarousel({
+            items: 1, 
+            margin: 0,
+            autoplay: true,
+            autoHeight: true,
+            navRewind: false,
+            autoplayTimeout: 30000,
+            autoplayHoverPause:true,
+            nav: true,
+            navText: ['<button type="button" class="btn btn-link"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>', '<button type="button" class="btn btn-link"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>'],
+            dots: false
         });
 
         // Verifica si hay Modal del Front Page

@@ -33,7 +33,7 @@ use Roots\Sage\Wrapper;
     $args  = array(
       'post_type' => 'Banners', 
       'posiciones' => 'Modal Home',
-      'post_per_page' => 1
+      'post_per_page' => 5
     );
 
     // the query
@@ -42,13 +42,19 @@ use Roots\Sage\Wrapper;
     <?php if ( $the_query->have_posts() ) : ?>
 
     <!-- pagination here -->
-
-    <!-- the loop -->
-    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <?php get_template_part('templates/modal', 'home'); ?>
-    <?php endwhile; ?>
-    <!-- end of the loop -->
-
+    <div class="modal fade" id="fontPageModal" tabindex="-1" role="dialog" aria-labelledby="fontPageModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="owl-carousel sl__modal-home">
+          <!-- the loop -->
+          <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <div class="item modal-content">
+              <?php get_template_part('templates/modal', 'home'); ?>
+            </div>
+          <?php endwhile; ?>
+          <!-- end of the loop -->
+        </div>
+      </div>
+    </div>
     <?php wp_reset_postdata(); ?>
 
     <?php endif; ?>
