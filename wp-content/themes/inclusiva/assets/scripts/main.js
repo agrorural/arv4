@@ -139,7 +139,7 @@
             autoplayTimeout: 30000,
             autoplayHoverPause:true,
             nav: true,
-            navText: ['<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>', '<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>'],
+            navText: ['<button type="button" class="btn btn-default"><i class="fa fa-angle-left"></i></button>', '<button type="button" class="btn btn-default"><i class="fa fa-angle-left"></i></button>'],
             dots: false
         });
 
