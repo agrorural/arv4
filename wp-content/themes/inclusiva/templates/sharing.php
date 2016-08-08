@@ -21,7 +21,7 @@
 			</a>
 		</li>
 		<li id="wa" class="share-social">
-			<a class="btn btn-default" href="whatsapp://send?text=<?php the_title();?>" data-action="share/whatsapp/share">
+			<a class="btn btn-default" href="whatsapp://send?text=<?php the_permalink();?>" data-action="share/whatsapp/share">
 				  <i class="fa fa-whatsapp"></i>
 			</a>
 		</li>
