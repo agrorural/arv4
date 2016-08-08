@@ -109,7 +109,7 @@ body{
   }
 }
 
-a{
+a, button.btn-link{
   color: $red;
   &:hover, &:active{
     color: $red--google;

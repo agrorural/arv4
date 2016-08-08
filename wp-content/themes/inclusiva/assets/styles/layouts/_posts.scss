@@ -35,6 +35,28 @@
 							@include entry-title();
 							color: $green--light;
 						}
+						ul{
+							li.pull-right{
+								p{
+
+								}
+							}
+						}
+					}
+				}
+				.entry-content{
+					.media{
+						@extend .well;
+						@include border-radius(0);
+						padding: 15px;
+						.media-body{}
+						.media-right{
+							a{
+								img{
+									margin: 0 auto;
+								}
+							}
+						}
 					}
 				}
 			}

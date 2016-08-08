@@ -47,11 +47,40 @@
 			<section class="producto__small">
 				<ul class="list-inline">
 					<li><?php echo '<h5>S/. '. $prod__precio . ' <small> / ' . $prod__pres . '</small></h5>'; ?></li>
-					<li class="pull-right"><?php if($prod__ben) echo '<p>'. $prod__ben . ' familias productoras</p>'; ?></li>
+					<li class="pull-right"><?php if($prod__ben) echo '<small><p>'. $prod__ben . ' familias productoras</small></p>'; ?></li>
 				</ul>
 			</section>
 		</header>
 		<div class="entry-content">
+			<?php if( has_term( 'Vendi Way', 'clasificacion') ) { ?>
+				<?php
+					$term = get_term_by('name', 'Vendi Way', 'clasificacion');
+					$taxonomy = $term->taxonomy; 
+					$term_link = get_term_link( $term ); 
+					
+					$term_id = strval($term->term_id);
+					$clas__img = get_field('clas__img', $taxonomy.'_'.$term_id);
+					//echo '<pre>';
+					//var_dump($clas__img);
+					//echo '</pre>';
+				?>
+				<div class="media">
+					<div class="media-body">
+						<small>Este producto también se puede encontrar en <a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">Vendi Way</a> <button type="button" class="btn btn-xs btn-link" data-toggle="popover" title="¿Qué es vendi Way?" data-content="<p>Vendi Way es un espacio en donde se pueden comprar productos agrarios dentro de los Supermercados Candy. </p><p><a href='<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>'>Saber más</a></p>" data-trigger="focus" ><i class="fa fa-question-circle"></i></button></small>
+					</div>
+					<div class="media-right">
+						<a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">
+							<?php if ($clas__img) { ?>
+								<?php echo '<img src="'.$clas__img['sizes']['thumb-vendi-way'].'" />'; ?>
+							<?php }else {?>
+								<img src="<?php echo get_template_directory_uri(); ?>/dist/images/vendi-way--default.jpg" width="250px" height="64px" class="img-responsive" />
+							<?php } ?>
+						</a>
+					</div>
+				</div>
+
+			<?php } ?>
+
 			<?php the_content(); ?>
 			
 			<?php if (isset($produ__correo)){ ?>
