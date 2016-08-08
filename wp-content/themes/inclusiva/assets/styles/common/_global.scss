@@ -329,7 +329,97 @@ main{
   padding-bottom: 30px;
 }
 
+/*
+SHARING
+*/
+.sharing-list{
+  display: inline;
+  overflow: hidden;
+  max-height: 32px;
+  ul{
+    @extend .list-unstyled;
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 0;
+    li{
+      padding: 0;
+      float: left;
+      a, button{
+        color: $white !important;
+        text-align: center;
+        width: 32px;
+        height: 32px;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        @include border-radius(0);
+        border: 0 none;
+      }
+    }
+    li.share-header{
+      z-index: 1000;
+      button{
+        background-color: $green--light;
+      }
+    }
+    li#fb{
+      a{
+        background-color: $blue--fb;
+      }
+    }
+    li#tw{
+      a{
+        background-color: $blue--tw;
+      }
+    }
+    li#gp{
+      a{
+        background-color: $red--google;
+      }
+    }
+    li#wa{
+      a{
+        background-color: $green;
+      }
+      @media(min-width: $screen-sm-min){
+        display: none; 
+      }
+    }
+
+    li.share-social{
+      z-index: 0;
+      @media(min-width: $screen-sm-min){
+        a{
+          @include opacity(.9);
+          &:hover{
+            @include opacity(1);
+          }
+        }
+      }
+    }
+  }
+}
+
 article{
+  header{
+    h2, h3, h4{
+      @include entry-title();
+      margin-bottom: 1px;
+    }
+    time{
+      @include meta-text();
+      font-size: 13px;
+      display: block;
+      position: relative; 
+      margin-bottom: 5px;
+    }
+  }
+  .entry-summary{
+    .cta__link{
+      @include opensans();
+      text-transform: none;
+    }
+  }
   .entry-content{
     img{
       margin: 20px auto;
@@ -340,48 +430,41 @@ article{
         margin: 10px 10px 10px 0;
       }
     }
-    @include make-row();
-    margin-right: 0;
-    margin-left: 0;
+    @include make-row(0);
     .entry-content__article{
 
     }
-    .entry-content__share{
-      .sharing-list{
-        display: block;
+  }
+  footer{
+    @include make-row(0);
+    .sharing-list{
+      @media(min-width: $screen-sm-min){
         ul{
-          li{
-            margin-bottom: 3px;
-            a{
-              color: $white !important;
-              text-align: left;
-              i{
-                padding-right: 7px;
+          @include make-sm-column(4,0);
+          li.share-social{
+            @include slideOutLeft();
+          }
+        }
+        &:hover{
+          ul{
+            li.share-header{
+              z-index: 1000;
+              button{
+                cursor: default;
+                @include opacity(.35);
               }
             }
-          }
-          li#fb{
-            a{
-              background-color: $blue--fb;
-            }
-          }
-          li#tw{
-            a{
-              background-color: $blue--tw;
-            }
-          }
-          li#gp{
-            a{
-              background-color: $red--google;
+            li.share-social{
+              @include slideInLeft(
+                $duration: .25s,
+                $delay: 0
+              );
             }
           }
         }
       }
     }
   }
-}
-
-article{
   figure{
     position: relative;
     display: block;
@@ -408,26 +491,6 @@ article{
       @include bounceIn();
     }
   }
-
-  header{
-    h2, h3, h4{
-      @include entry-title();
-      margin-bottom: 1px;
-    }
-    time{
-      @include meta-text();
-      font-size: 13px;
-      display: block;
-      position: relative; 
-      margin-bottom: 5px;
-    }
-  }
-  .entry-summary{
-    .cta__link{
-      @include opensans();
-      text-transform: none;
-    }
-  }
 }
 
 .hidden{
@@ -452,10 +515,12 @@ article{
     padding: 12px 0; 
   }
   .sharing-list{
+    margin-top: 4px;
     float: right;
     ul{
-      margin: 0;
-      padding: 3px 0;
+      li#share-header{
+        display: none;
+      }
     }
   }
 }
@@ -551,60 +616,6 @@ article{
   }
 }
 /* Termina .panel */
-
-.sharing-list{
-  li{
-    padding-right: 0;
-    padding-left: 0;
-    a{
-      .fa-stack.fa-lg{
-        width: 1.8em;
-        height: 1.8em;
-        line-height: 1.8em;
-        .fa-stack-1x{
-          font-size: 14px;
-        }
-        .fa-stack-2x{
-          font-size: 1.8em;
-        }
-        .badge{
-            position: absolute;
-            @include border-radius(0);
-            z-index: 3;
-            font-size: 8px;
-            bottom: 2px;
-            right: 2px;
-            padding: 2px 4px;
-        } 
-      }
-    }
-
-    &#fb{
-      a{ 
-        color: $blue--fb; 
-        &:hover, &:active{
-          color: $blue--fb--hover;
-        }
-      }
-    }
-    &#tw{
-      a{ 
-        color: $blue--tw; 
-        &:hover, &:active{
-          color: $blue--tw--hover;
-        }
-      }
-    }
-    &#gp{
-      a{ 
-        color: $red--google; 
-        &:hover, &:active{
-          color: $red--google--hover;
-        }
-      }
-    }
-  }
-}
 
 /* custom inclusion of right, left and below tabs */
 

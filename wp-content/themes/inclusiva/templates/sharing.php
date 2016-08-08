@@ -1,27 +1,28 @@
 <div class="sharing-list">
-	<ul class="list-inline">
-		<li id="fb">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
-				<span class="fa-stack fa-lg">
-				  <i class="fa fa-circle fa-stack-2x"></i>
-				  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-				</span>
+	<ul>
+		<li id="share-header" class="share-header">
+			<button type="button" class="btn btn-default">
+				  <i class="fa fa-share-alt"></i>
+			</button>
+		</li>
+		<li id="fb" class="share-social">
+			<a class="btn btn-default" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
+				  <i class="fa fa-facebook"></i>
 			</a>
 		</li>
-		<li id="tw">
-			<a href="https://twitter.com/home?status=<?php the_permalink(); ?>">
-				<span class="fa-stack fa-lg">
-				  <i class="fa fa-circle fa-stack-2x"></i>
-				  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-				</span>
+		<li id="tw" class="share-social">
+			<a class="btn btn-default" href="https://twitter.com/home?status=<?php the_permalink(); ?>">
+				  <i class="fa fa-twitter"></i>
 			</a>
 		</li>
-		<li id="gp">
-			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>">
-				<span class="fa-stack fa-lg">
-				  <i class="fa fa-circle fa-stack-2x"></i>
-				  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-				</span>
+		<li id="gp" class="share-social">
+			<a class="btn btn-default" href="https://plus.google.com/share?url=<?php the_permalink(); ?>">
+				  <i class="fa fa-google-plus"></i>
+			</a>
+		</li>
+		<li id="wa" class="share-social">
+			<a class="btn btn-default" href="whatsapp://send?text=<?php the_title();?>" data-action="share/whatsapp/share">
+				  <i class="fa fa-whatsapp"></i>
 			</a>
 		</li>
 	</ul>
