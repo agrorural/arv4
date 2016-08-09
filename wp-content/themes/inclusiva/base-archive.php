@@ -8,7 +8,7 @@ use Roots\Sage\Wrapper;
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
-  <body <?php body_class('special-header'); ?>>
+  <body <?php body_class(); ?>>
   <?php get_template_part('lib/ga'); ?>
     <!--[if lt IE 9]>
       <div class="alert alert-warning">

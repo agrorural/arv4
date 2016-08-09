@@ -1,8 +1,8 @@
 <?php use Roots\Sage\Titles; ?>
 
 <div class="page-header">
+	<?php if (function_exists('custom_breadcrumbs')) { custom_breadcrumbs(); } ?>
 	<?php if ( is_page('Contacto') ) {?>
-		
 	<?php } else if ( get_post_type() != 'post' || is_404() || is_search() ) {?>
   		<h1><?= Titles\title(); ?></h1>
   	<?php }else { ?>

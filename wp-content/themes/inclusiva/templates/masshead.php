@@ -24,6 +24,8 @@
 			<?php get_template_part('templates/page','header-producto'); ?>
 		<?php } else if ( is_post_type_archive('tribe_events') || is_singular('tribe_events') ) { ?>
       		<?php get_template_part('templates/page', 'header-events'); ?>
+      	<?php } else if ( is_category() ) { ?>
+      		<?php get_template_part('templates/page', 'header-category'); ?>
 		<?php } else if( is_tax( 'post_format', 'post-format-gallery' ) ){ ?>
 			<?php get_template_part('templates/page', 'header-gallery'); ?>
 		<?php } else if( is_tax( 'post_format', 'post-format-video' ) ){ ?>
@@ -41,4 +43,3 @@
 		<?php } ?>
 	</div>
   </div>
-    

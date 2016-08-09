@@ -5,6 +5,10 @@ global $wp_query;
 	$page__root = get_page_by_title( $the__title, OBJECT, 'directorios' );
 	$dir_responsable = get_field('dir_responsable', $page__root->ID);
 
+	//echo '<pre>';
+	//var_dump($page__root->ID);
+	//echo '</pre>';
+
 ?>
 <?php if( $dir_responsable ) { ?>
 <section class="widget responsables">

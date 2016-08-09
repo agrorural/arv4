@@ -41,6 +41,7 @@
         "./assets/stylesheets/bootstrap/_input-groups.scss",
         "./assets/stylesheets/bootstrap/_navs.scss",
         "./assets/stylesheets/bootstrap/_navbar.scss",
+        "./assets/stylesheets/bootstrap/_breadcrumbs.scss",
         "./assets/stylesheets/bootstrap/_pagination.scss",
         "./assets/stylesheets/bootstrap/_pager.scss",
         "./assets/stylesheets/bootstrap/_labels.scss",

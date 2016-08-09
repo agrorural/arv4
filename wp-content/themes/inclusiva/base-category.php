@@ -20,28 +20,15 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <?php 
-	    $cat = get_query_var('cat'); $get_cat = get_category ($cat); 
+	    $cat = get_query_var('cat'); 
+      $get_cat = get_category ($cat); 
 	    $category_id = get_cat_ID( $get_cat->name );
 		  $category_link = get_category_link( $category_id );
       $category_name = $get_cat->name;
       $category_slug = $get_cat->slug;
 	   ?>
 
-    <div class="masshead">
-	    <div class="container">
-	    	<div class="page-header">
-		  		<h1>
-		  			<a href="<?php echo $category_link; ?>">
-		  			<?php if ( ! is_category( 'agrorural' ) ) { echo 'Dirección Zonal'; } ?>
-		  				<?php echo $category_name; ?>
-		  					<?php /*<small><a href="<?php echo $category_link; ?>/feed"><i class="fa fa-rss-square"></i> RSS de las noticias</a>*/ ?>
-		  					</small>
-		  			</a>
-		  		</h1>
-		  		<p><?php echo category_description( $category_id ); ?> </p>
-	  		</div>
-		</div>
-    </div>
+    <?php get_template_part('templates/masshead'); ?>
 
     <div class="wrap container" role="document">
       <div class="content row">
