@@ -28,30 +28,26 @@
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 							<?php // ACF 
 								$banner__url = get_field('banner__url');
-								$banner__txt = get_field('banner__txt'); 
+								$banner__pop = get_field('banner__pop');
+								//var_dump($banner__pop);
 								$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
 								$banner__vig = get_field('banner__vig');
+								$content = esc_attr(get_the_content());
 
 								if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
 							        change_post_status( $post->ID, 'draft' );
-							    }
+							    } 
 							?>
 								<section class="widget banner">
-									<?php if ($banner__txt) {?>
-										<figure class="shadow">
-											<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
-											<figcaption>
-												<h4><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>"><?php the_title();?></a></h4>
-												<p><?php the_content(); ?></p>
-											</figcaption>
-										</figure>
-									<?php }else{ ?>
-										<figure>
+									<figure>
+										<?php if ($banner__pop) {?>
+											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
+										<?php }else{ ?>
 											<a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>">
-												<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
-											</a>
-										</figure>
-									<?php } ?>
+										<?php } ?>
+											<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
+										</a>
+									</figure>
 								</section>
 						<?php endwhile; ?>
 						<!-- end of the loop -->
@@ -84,31 +80,26 @@
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 							<?php // ACF 
 								$banner__url = get_field('banner__url');
-								$banner__txt = get_field('banner__txt');
+								$banner__pop = get_field('banner__pop');
+								//var_dump($banner__pop);
 								$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
 								$banner__vig = get_field('banner__vig');
-								//var_dump($banner__vig);
+								$content = esc_attr(get_the_content());
 
 								if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
 							        change_post_status( $post->ID, 'draft' );
 							    } 
 							?>
 								<section class="widget banner">
-									<?php if ($banner__txt) {?>
-										<figure class="shadow">
-											<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
-											<figcaption>
-												<h4><a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>"><?php the_title();?></a></h4>
-												<p><?php the_content(); ?></p>
-											</figcaption>
-										</figure>
-									<?php }else{ ?>
-										<figure>
+									<figure>
+										<?php if ($banner__pop) {?>
+											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
+										<?php }else{ ?>
 											<a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>">
-												<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
-											</a>
-										</figure>
-									<?php } ?>
+										<?php } ?>
+											<?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
+										</a>
+									</figure>
 								</section>
 						<?php endwhile; ?>
 						<!-- end of the loop -->
