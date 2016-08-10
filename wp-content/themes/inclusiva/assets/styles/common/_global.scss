@@ -161,7 +161,9 @@ ol{
           }
         }
       &.item-current{
-        display: none;
+        a{
+          display: none;
+        }
       }
     }
   }
