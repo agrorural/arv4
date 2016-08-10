@@ -11,3 +11,20 @@
 		    </nav>
           </section>
     <?php } ?>
+
+    <?php
+
+    $vendi_way_exists = term_exists( 'Vendi Way', 'clasificacion' );
+
+    if ($vendi_way_exists) {
+    	$vendi_way_ID = $vendi_way_exists ['term_id'];
+    	$vendi_way = get_term_by('id', $vendi_way_ID, 'clasificacion');
+    	$vendi_way_link = get_term_link( $vendi_way ); 
+    	$clas__img = get_field('clas__img', $vendi_way->taxonomy.'_'.$vendi_way_ID);
+    	$clas__img_url = $clas__img['url'];
+    	echo '<a href="' . $vendi_way_link . '">';
+    		echo '<img src="' . $clas__img_url . '" class="img-responsive" />';
+    	echo '</a>';
+    }
+    
+    ?>

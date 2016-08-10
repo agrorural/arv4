@@ -41,7 +41,7 @@
 								<section class="widget banner">
 									<figure>
 										<?php if ($banner__pop) {?>
-											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
+											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
 										<?php }else{ ?>
 											<a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>">
 										<?php } ?>
@@ -93,7 +93,7 @@
 								<section class="widget banner">
 									<figure>
 										<?php if ($banner__pop) {?>
-											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
+											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
 										<?php }else{ ?>
 											<a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>">
 										<?php } ?>

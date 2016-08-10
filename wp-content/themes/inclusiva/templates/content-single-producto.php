@@ -61,12 +61,12 @@
 					$term_id = strval($term->term_id);
 					$clas__img = get_field('clas__img', $taxonomy.'_'.$term_id);
 					//echo '<pre>';
-					//var_dump($clas__img);
+					//var_dump($term);
 					//echo '</pre>';
 				?>
 				<div class="media">
 					<div class="media-body">
-						<small>Este producto también se puede encontrar en <a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">Vendi Way</a> <button type="button" class="btn btn-xs btn-link" data-toggle="popover" title="¿Qué es vendi Way?" data-content="<p>Vendi Way es un espacio en donde se pueden comprar productos agrarios dentro de los Supermercados Candy. </p><p><a href='<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>'>Saber más</a></p>" data-trigger="focus" ><i class="fa fa-question-circle"></i></button></small>
+						<small>Este producto también se puede encontrar en <a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">Vendi Way</a> <button type="button" class="btn btn-xs btn-link" data-toggle="popover" title="<?php echo $term->name; ?>" data-content="<p><?php echo $term->description; ?></p><p><a href='<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>'>Ver más productos Vendi Way</a></p>" data-trigger="focus" ><i class="fa fa-question-circle"></i></button></small>
 					</div>
 					<div class="media-right">
 						<a href="<?php if($term_link){ echo esc_url( $term_link ); } else { echo bloginfo(url); }; ?>">
