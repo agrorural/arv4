@@ -260,20 +260,21 @@ h1{
   									a{	
   										color: $white;
   										@include opensans(semibold);
-  										text-transform: uppercase;
+  										text-transform: inherit !important;
   										font-size: 10px;
   									}
   								}
   								.sl__home__title{
   									h3{
-  										text-transform: uppercase; 
-  										@include opensans();
+  										@include entry-title('sm');
+										text-transform: inherit !important;
+										font-size: 20px;
+										line-height: 1.3 !important;
   										color: $white;
-  										font-size: 18px;                                                                                                                                                                        
   										margin-top: 0px;
   										margin-bottom: 0;
-  										padding-top: 7px;
-  										padding-bottom: 10px;
+  										padding-top: 0 !important;
+  										padding-bottom: 0 !important;
   										border-bottom: 1px solid transparent;
   										a{
   											color: $white;

@@ -314,12 +314,16 @@
 									.sl__home__title{}
 									.sl__home__content{
 										p{
+											h3{
+												
+											}
 										}
 									}
 									.sl__home__link{
 										position: absolute;
 										bottom: 0;
 										p{
+											margin-bottom: 0;
 											padding: 0 !important;
 											a{
 												padding-left: 0;
@@ -341,7 +345,12 @@
 
 			.owl-nav{} /* Termina .owl-nav */
 			.owl-dots{ 
-				.owl-dot{}
+				top: 15px !important;
+				left: inherit !important;
+				right: 10px;
+				.owl-dot{
+
+				}
 			} /* Termina .owl-dots */
 		} /* Termina .sl__home */
 	} /* Termina home*/
@@ -520,7 +529,7 @@
 			.owl-nav{
 				.owl-prev, .owl-next{
 					position: absolute;
-					bottom: 20px;	
+					bottom: 15px;	
 					text-align: center;
 					opacity: 1;
 					background-color: $green--accent; 

@@ -143,7 +143,7 @@ function custom_breadcrumbs() {
               $taxonomy_exists = taxonomy_exists($custom_taxonomy);
               if(empty($last_category) && !empty($custom_taxonomy) && $taxonomy_exists) {
                 $taxonomy_terms = get_the_terms( $post->ID, $custom_taxonomy );
-                $cat_id         = $taxonomy_terms[0]->term_id;
+                $cat_id  = $taxonomy_terms[0]->term_id;
                 $cat_nicename   = $taxonomy_terms[0]->slug;
                 $cat_link       = get_term_link($taxonomy_terms[0]->term_id, $custom_taxonomy);
                 $cat_name       = $taxonomy_terms[0]->name;
@@ -197,13 +197,13 @@ function custom_breadcrumbs() {
               // Tag page
 
               // Get tag information
-              $term_id        = get_query_var('tag_id');
-              $taxonomy       = 'post_tag';
-              $args           = 'include=' . $term_id;
-              $terms          = get_terms( $taxonomy, $args );
-              $get_term_id    = $terms[0]->term_id;
-              $get_term_slug  = $terms[0]->slug;
-              $get_term_name  = $terms[0]->name;
+              $term_id = get_query_var('tag_id');
+              $taxonomy= 'post_tag';
+              $args = 'include=' . $term_id;
+              $terms = get_terms( $taxonomy, $args );
+              $get_term_id = $terms[0]->term_id;
+              $get_term_slug = $terms[0]->slug;
+              $get_term_name = $terms[0]->name;
 
               // Display the tag name
               echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
