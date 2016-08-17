@@ -362,8 +362,6 @@ main{
 SHARING
 */
 .sharing-list{
-  display: inline;
-  overflow: hidden;
   max-height: 32px;
   ul{
     @extend .list-unstyled;
@@ -386,10 +384,15 @@ SHARING
         background-color: $gray;
       }
     }
+    @media(max-width: $screen-xs-max){
+      li.share-header{
+        display: none;
+      }
+    }
     li.share-header{
       z-index: 1000;
       button{
-        background-color: $green--light;
+        @include button-variant($white, $green--light, $green--light);
       }
     }
     li#fb{
@@ -468,27 +471,25 @@ article{
   footer{
     @include make-row(0);
     .sharing-list{
+      @include make-sm-column(4,0);
+      width: auto !important;
+      overflow: hidden;
       @media(min-width: $screen-sm-min){
         ul{
-          @include make-sm-column(4,0);
           li.share-social{
-            @include slideOutLeft();
+            @include slideOutLeft(
+              $duration: .25s,
+              $delay: 0
+            );
           }
-        }
-        &:hover{
-          ul{
-            li.share-header{
-              z-index: 1000;
-              button{
-                cursor: default;
-                @include opacity(.35);
+          &.active{
+            li{
+              &.share-social{
+                @include slideInLeft(
+                  $duration: .25s,
+                  $delay: 0
+                );
               }
-            }
-            li.share-social{
-              @include slideInLeft(
-                $duration: .25s,
-                $delay: 0
-              );
             }
           }
         }

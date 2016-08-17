@@ -29,39 +29,31 @@
 	  </div>
   <?php } ?>
 	<?php if( $pry__fb || $pry__tw || $pry__yt || $pry__web ) { ?>
-		  <div class="sharing-list">
-	    	<ul class="list-inline">
-	    		<?php if($pry__fb){ ?>
-					<li id="fb">
-						<a href="<?php echo 'http://www.facebook.com/' . $pry__fb; ?>" class="tip" target="_blank" rel="follow" title="Síguenos en Facebook">
-							<span class="fa-stack fa-lg">
-				              <i class="fa fa-circle fa-stack-2x"></i>
-				              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-				            </span>
+		<div class="sharing-list">
+			<ul>
+				<?php if($pry__fb){ ?>
+					<li id="fb"  class="share-social">
+						<a href="<?php echo 'http://www.facebook.com/' . $pry__fb; ?>" class="tip btn btn-default" target="_blank" rel="follow" title="Síguenos en Facebook">
+				              <i class="fa fa-facebook"></i>
 						</a>
 					</li>
 				<?php } ?>
 				<?php if($pry__tw){ ?>
-					<li id="tw">
-						<a href="<?php echo 'http://twitter.com/' . $pry__tw; ?>" class="tip" target="_blank" rel="follow" title="Síguenos en Twitter">
-							<span class="fa-stack fa-lg">
-				              <i class="fa fa-circle fa-stack-2x"></i>
-				              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-				            </span>
+					<li id="tw"  class="share-social">
+						<a href="<?php echo 'http://twitter.com/' . $pry__tw; ?>" class="tip btn btn-default" target="_blank" rel="follow" title="Síguenos en Twitter">
+				              <i class="fa fa-twitter"></i>
+				    
 						</a>
 					</li>
 				<?php } ?>
-		    	<?php if($pry__web){ ?>
-					<li>
-						<a href="<?php echo $pry__web; ?>" class="tip" target="_blank" rel="follow" title="Visita nuestra Web">
-							<span class="fa-stack fa-lg">
-				              <i class="fa fa-circle fa-stack-2x"></i>
-				              <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-				            </span>
+				<?php if($pry__web){ ?>
+					<li id="wb" class="share-social">
+						<a href="<?php echo $pry__web; ?>" class="tip btn btn-default" target="_blank" rel="follow" title="Visita nuestra Web">
+				              <i class="fa fa-globe"></i>
 						</a>
 					</li>
 				<?php } ?>
-	   		</ul>
-	    </div>
+				</ul>
+		</div>
 	<?php } ?>
 </div>

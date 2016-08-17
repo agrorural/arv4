@@ -96,6 +96,13 @@
             $(this).parent().toggleClass("active");
           });
         
+
+        // Sharing buttons
+        $('.single .sharing-list ul').click(function(){
+          $( this ).toggleClass( "active" );
+          $('.share-header button').toggleClass( "active" );
+        });
+
         //Keep lightbox responsive on screen resize
         $(window).on('resize', function() {
             $.colorbox.resize({
