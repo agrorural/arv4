@@ -41,6 +41,6 @@
 <div class="modal-footer">
 	<button type="button" class="btn btn-default ctaNotShowAgain" data-dismiss="modal">Cerrar</button>
 	<?php if( $banner__url ){ ?>
-		<a href="<?php echo $banner__url; ?>" class="btn btn-primary"><?php if( $banner__btn_title ) echo $banner__btn_title; else echo "Más información"; ?></a>
+		<a href="<?php echo $banner__url; ?>" class="btn btn-danger"><?php if( $banner__btn_title ) echo $banner__btn_title; else echo "Más información"; ?></a>
 	<?php } ?>
 </div>

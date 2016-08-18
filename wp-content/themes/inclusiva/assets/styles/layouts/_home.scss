@@ -282,6 +282,10 @@
 		}
 	}
 	.sl__modal-home{
+		.modal-header{
+			background-color: $yellow--light;
+			color: $brown;
+		}
 		.owl-nav{
 			position: absolute;
 			bottom: 0;
