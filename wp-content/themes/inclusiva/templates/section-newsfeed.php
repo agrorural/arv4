@@ -3,11 +3,16 @@
 		<div class="content row">
 			<main class="multimedia">
 				<div class="page-header">	
-				<h3>Noticias</h3>
+				<h3>Noticias <small><a href="<?php echo bloginfo( 'url' ); ?>/noticias" class="">Ver todas <span class="icon long-arrow-right"></span></a></small></h3>
 				</div>
-				<?php get_template_part('templates/view', 'news-list'); ?>
+				<div class="media-list">
+					<?php get_template_part('templates/view', 'news-list'); ?>
+				</div>
 			</main>
 			<aside class="sidebar eventos">
+				<div class="page-header">	
+					<h3>Eventos <small><a href="<?php echo bloginfo( 'url' ); ?>/eventos" class="">Ver todos <span class="icon long-arrow-right"></span></a></small></h3>
+				</div>
 				<?php dynamic_sidebar('sidebar-events'); ?>
 				<?php 
 

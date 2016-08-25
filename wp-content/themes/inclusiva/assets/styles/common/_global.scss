@@ -141,6 +141,61 @@ p{
   }
 }
 
+/* Format Icons*/
+.icon {
+  @include fa-icon();
+    &.aside{
+        &:before{
+            content: $fa-var-columns;
+        }
+    }
+    &.audio{
+        &:before{
+            content: $fa-var-music;
+        }
+    }
+    &.chat{
+        &:before{
+            content: $fa-var-commenting;
+        }
+    }
+    &.gallery{
+        &:before{
+            content: $fa-var-camera;
+        }
+    }
+    &.image{
+        &:before{
+            content: $fa-var-image;
+        }
+    }
+    &.link{
+        &:before{
+            content: $fa-var-link;
+        }
+    }
+    &.quote{
+        &:before{
+            content: $fa-var-quote-right;
+        }
+    }
+    &.status{
+        &:before{
+            content: $fa-var-smile-o;
+        }
+    }
+    &.video{
+        &:before{
+            content: $fa-var-video-camera;
+        }
+    }
+    &.long-arrow-right{
+        &:before{
+            content: $fa-var-long-arrow-right;
+        }
+    }
+}
+
 table{
   p{
     text-align: left;

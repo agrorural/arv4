@@ -4,9 +4,28 @@
 			margin: 0;
 			h3{
 				margin-top: 0;
-				@include opensans();
+				@include opensans('light');
 				padding: 13px 0px 9pt;
 				letter-spacing: 1.25px;
+				small{
+					padding-top: 4px;
+					text-transform: uppercase;
+					@extend .pull-right;
+					a{
+						@extend .btn;
+						@extend .btn-xs;
+						@include button-variant($gray-light, transparent, $gray-light);
+						@include opensans();
+						font-size: 8px;
+						@include border-radius(16px);
+						i, span{
+							display: none;
+						}
+						&:hover{
+							@include button-variant($white, $gray-light, $gray-light);
+						}
+					}
+				}
 			}
 		}
 
@@ -16,27 +35,69 @@
 				article.post{
 					padding-bottom: 7px;
 					padding-top: 7px;
-					figure{
-						float: left;
-						margin-right: 10px;
+					position: relative;
+					.media-left{
+						position: relative;
+						.icon-format{
+							position: absolute;
+							bottom: 0;
+							right: 10px;
+							a{
+								@extend .btn;
+								@extend .btn-xs;
+								@include button-variant($white, $black, transparent);
+								@include border-radius(0);
+								@include opacity(.5);
+							}
+						}	
 					}
 					header{
+						h4{
+							@include entry-title(xs);
+						}
 						time{
 							font-size: 11px;
 							color: $gray--light;
+							@media(min-width: $screen-sm-min){
+								position: absolute;
+								bottom: 0;
+							}
 						}
-						h2{
-							@include entry-title(xs);
+					}
+					&:hover{
+						.media-left{
+							.icon-format{
+								a{
+									@include fadeIn();
+								}
+							}
 						}
 					}
 				}
-				a.cta__link{
-					font-size: 11px;
-				}
+				
+					&:hover{
+						.page-header > h3 > small > a > i, span{
+							display: inline-block;
+						}
+					}
 			}
-			aside{
-				@include make-sm-column(3);
+
+			aside{			
 				&.eventos{
+					@include make-sm-column(3);
+					.page-header{
+						background-color: $brown--lighter;
+						padding-left: 15px;
+						padding-right: 15px;
+						border-bottom: 1px solid $brown--lighter;
+						h3{
+							small{
+								a{
+									@include button-variant($white, $brown, $brown);
+								}
+							}
+						}
+					}
 					.widget{
 						&.tribe-events-list-widget{
 							position: relative;
@@ -46,39 +107,61 @@
 								content: "\f073";
 								margin-right: 0px;
 								position: absolute;
-								color: $green--light;
+								color: $brown--light;
 								font-size: 500% !important;
 								bottom: -3px;
 								right: -3px;
 								line-height: 1 !important;
 							}
 
-							h3{
-								background-color: $green;
-								color: $white;
-							}
-
-							background-color: $green;
+							background-color: $brown--lighter;
 							ol.vcalendar{
 								padding-left: 15px;
 								padding-right: 15px;
-								padding-top: 15px;
 								li{
 									margin-bottom: 10px;
 									padding-bottom: 10px;
 									border-bottom: 1px solid rgba(0,0,0,.06);
-									h4{										
-										@include entry-title(xs);
-										margin: 0;
-										a{
-											color: $yellow;
+									.media-left{
+										.event-date{
+											width: 50px;
+											text-align: center;
+											border: 1px solid $brown--light;
+											.date-month{
+												text-transform: uppercase;
+												background-color: $red--google;
+												color: $white;
+												padding: 3px 10px;
+												border-bottom: 1px solid $brown--light;
+											}
+											.date-day{
+												@include opensans('bold');
+												background-color: transparent;
+												color: $brown;
+												padding: 1px 10px;
+											}
 										}
 									}
-									.duration{
-										font-weight: normal;
-										font-size: 11px;
-										color: $white;
-										@include opacity(.75);
+									.media-body{
+										position: relative;
+										h4{
+											@include entry-title(xs);
+											margin: 0;
+											a{
+												color: $gray-dark;
+												&:hover{
+													color: $red--google;
+												}
+											}
+										}
+										time{
+											@include opensans('light');
+											@extend .small;
+											font-size: 10px;
+											line-height: 1;
+											color: $brown;
+											@include opacity(.75);
+										}
 									}
 								}
 							}
@@ -93,6 +176,16 @@
 								}
 							}
 						}
+						margin-bottom: 5px;
+					}
+
+				}
+				&.banner{
+					@include make-sm-column(3);
+				}
+				&:hover{
+					.page-header > h3 > small > a > i, span{
+						display: inline-block;
 					}
 				}
 			}

@@ -267,3 +267,18 @@ function custom_breadcrumbs() {
             echo '</ol>';
           }
         }
+
+//function to call first uploaded image in functions file
+function default_thumb($size = 'full', $image = 'news-thumb') {
+    global $post, $posts;
+    $image_url = '';
+    ob_start();
+    ob_end_clean();
+
+    if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
+        $image_url = $matches[1][0];
+    else
+        $image_url = get_bloginfo('template_url') . "/dist/images/". $image .".jpg";
+    return $image_url;
+
+}

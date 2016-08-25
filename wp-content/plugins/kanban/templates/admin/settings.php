@@ -7,7 +7,7 @@
 
 	<h1>
 		<?php echo __( sprintf( '%s Settings', Kanban::get_instance()->settings->pretty_name ), 'kanban' ); ?>
-		<a href="<?php echo sprintf( '%s/%s/board', home_url(), Kanban::$slug ); ?><?php echo isset($_GET['board_id']) ? '?board_id=' . $_GET['board_id'] : '' ?>" class="page-title-action" target="_blank" id="btn-go-to-board" onclick="window.open('<?php echo sprintf( '%s/%s/board', home_url(), Kanban::$slug ); ?><?php echo isset($_GET['board_id']) ? '?board_id=' . $_GET['board_id'] : '' ?>', 'kanbanboard'); return false;">
+		<a href="<?php echo Kanban_Template::get_uri() ?><?php echo isset($_GET['board_id']) ? '?board_id=' . $_GET['board_id'] : '' ?>" class="page-title-action" target="_blank" id="btn-go-to-board" onclick="window.open('<?php echo Kanban_Template::get_uri() ?><?php echo isset($_GET['board_id']) ? '?board_id=' . $_GET['board_id'] : '' ?>', 'kanbanboard'); return false;">
 			<?php echo __( 'Go to your board', 'kanban' ); ?>
 		</a>
 	</h1>
@@ -32,6 +32,7 @@
 		<?php
 		echo apply_filters( 'kanban_settings_tabs', '' );
 		?>
+		<a href="#tab-help" id="tab-help-tab" class="nav-tab"><?php echo __( 'Diagnostics', 'kanban' ); ?></a>
 	</h2>
 
 
@@ -360,6 +361,19 @@
 
 		<?php wp_nonce_field( 'kanban-options', Kanban_Utils::get_nonce() ); ?>
 
+
+
+
+		<div class="tab" id="tab-help" style="display: none;">
+			<p>
+				<button type="button" class="button" id="button-load-diagnostic-info">
+					<?php echo __( 'Send diagnostic info to support', 'kanban' ) ?>
+				</button>
+			</p>
+			<p>
+				<textarea readonly placeholder="<?php echo __( 'Please click the button above.', 'kanban' ) ?>" class="large-text" id="kanban-diagnostic-info" rows="10"></textarea>
+			</p>
+		</div><!-- tab-help -->
 	</form>
 
 
