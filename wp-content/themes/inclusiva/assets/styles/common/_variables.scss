@@ -12,6 +12,7 @@ $white: 				#ffffff;
 $white--smoke:			#fafafa;
 $white--smoke--darK:	#f1f1f1;
 $brown:					#543022;
+$brown--light--1:		lighten($brown, 15%);
 $brown--light:			#c6baa2;
 $brown--lighter--2:		lighten($brown, 25%);
 $brown--lighter:		lighten($brown--light, 15%);

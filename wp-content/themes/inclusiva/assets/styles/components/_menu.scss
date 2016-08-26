@@ -10,7 +10,7 @@ ul#menu-navegacion-primaria{
 		a{
 			@include opensans(bold);
 			text-transform: uppercase;
-			color: $purple;
+			color: $brown--lighter;
 			font-size: 13px;
 			&:hover{
 				color: $red--google--hover; 
@@ -20,6 +20,9 @@ ul#menu-navegacion-primaria{
 		&.dropdown{
 			ul.dropdown-menu{
 				@include border-radius(0);
+				@media(max-width: $screen-xs-max){
+					background-color: $brown--lighter;
+				}
 				li{
 					a{
 						@include opensans(light);
@@ -95,6 +98,10 @@ ul#menu-navegacion-primaria{
 				}
 			}
 		}
+		&.open > a{
+			color: $red--google--hover;
+			background-color: $brown--light;
+		}
 	}
 }
 
@@ -149,6 +156,122 @@ ul#menu-super-navegacion{
 					background-color: $white;
 					li{
 						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+ul#menu-social-navegacion{
+	margin-right: 0;
+	li{
+		&.menu-icon{
+			padding-right: 3px;
+			a{
+				@include fa-icon();
+				background-color: $gray;
+				width: 34px;
+				height: 34px;
+				padding: 0;
+				text-align: center;
+				line-height: 34px;
+				@include border-radius(0);
+				span{
+					@include text-hide();
+				}
+				&:before{
+					color: $white;
+				}
+			}
+		}
+		&.fb{
+			a{
+				background-color: $blue--fb;
+				&:hover{
+					background-color: $blue--fb--hover !important;
+				}
+				&:before{
+					content: $fa-var-facebook;
+				}
+			}
+		}
+		&.tw{
+			a{
+				background-color: $blue--tw;
+				&:hover{
+					background-color: $blue--tw--hover !important;
+				}
+				&:before{
+					content: $fa-var-twitter;
+				}
+			}
+		}
+		&.yt{
+			a{
+				background-color: $red--google;
+				&:hover{
+					background-color: $red--google--hover !important;
+				}
+				&:before{
+					content: $fa-var-youtube;
+				}
+			}
+		}
+		&.pte{
+			a{
+
+				background-color: $yellow--light;
+				&:hover{
+					background-color: $yellow !important;
+				}
+				&:before{
+					content: $fa-var-search;
+					color: $gray-dark;
+				}
+				@media (min-width: $screen-sm-min){
+					width: auto;
+					padding-left: 10px;
+					padding-right: 10px;
+					span{
+						@include opensans();
+						font-size: 14px;
+						color: $gray-dark;
+						padding-left: 5px;
+					}
+				}
+				@media (max-width: $screen-xs-max){
+					width: 34px;
+					span{
+						@include text-hide();
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.navbar-branding{
+		.navbar-brand{
+			margin: 0 auto;
+			width: 100%;
+			a{
+				margin: 0 auto;
+			}
+		}
+		nav{
+			.menu-social-navegacion-container{
+				width: 100%;
+				text-align: center;
+				ul{
+					margin: 0 auto;
+					&.navbar-right{
+						li{
+							display: inline;
+							float: none !important;
+						}
 					}
 				}
 			}

@@ -43,7 +43,7 @@
 							        change_post_status( $post->ID, 'draft' );
 							    } 
 							?>
-								<section class="widget banner">
+								<section class="widget">
 									<figure>
 										<?php if ($banner__pop) {?>
 											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">
@@ -95,7 +95,7 @@
 							        change_post_status( $post->ID, 'draft' );
 							    } 
 							?>
-								<section class="widget banner">
+								<section class="widget">
 									<figure>
 										<?php if ($banner__pop) {?>
 											<a tabindex="0" class="" role="button" data-toggle="popover" data-placement="top" title="<?php the_title_attribute(); ?>" data-content="<?php echo $content; ?>">

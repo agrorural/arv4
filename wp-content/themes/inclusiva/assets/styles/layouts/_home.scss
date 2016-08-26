@@ -31,6 +31,9 @@
 
 		&.newsfeed{
 			main{
+				@media(max-width: $screen-xs-max){
+					margin-bottom: 30px;
+				}
 				@include make-sm-column(6);
 				article.post{
 					padding-bottom: 7px;
@@ -85,6 +88,7 @@
 			aside{			
 				&.eventos{
 					@include make-sm-column(3);
+					margin-bottom: 3px;
 					.page-header{
 						background-color: $brown--lighter;
 						padding-left: 15px;
@@ -181,7 +185,12 @@
 
 				}
 				&.banner{
-					@include make-sm-column(3);
+					@include make-row();
+					.widget{
+						@include make-xs-column(6);
+						@include make-sm-column(12);
+						margin-bottom: 3px;
+					}
 				}
 				&:hover{
 					.page-header > h3 > small > a > i, span{
@@ -361,7 +370,7 @@
 	.sl__home{
 		.owl-stage-outer{
 			.owl-stage{
-				background-color: $gray--text;
+				background-color: $brown--light;
 				.owl-item.active.center{
 					figure{
 						.banner__txt{
@@ -555,7 +564,7 @@
 		.sl__home{
 			.owl-stage-outer{
 				.owl-stage{
-					background-color: $gray--text;
+					background-color: $brown--lighter;
 					.owl-item{
 						figure{
 							img{}
@@ -697,7 +706,7 @@
 			.owl-stage-outer{
 				overflow: visible;
 				.owl-stage{
-					background-color: $gray--text;
+					background-color: $brown--light;
 					.owl-item{
 						width: 1140px;
 						figure{

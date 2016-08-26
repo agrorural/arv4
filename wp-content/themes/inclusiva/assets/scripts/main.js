@@ -84,23 +84,38 @@
             getCheckedCheckBoxes('searchform', 'post_type[]', 'cb__', 's');
           });
 
-          $('#searchform-advanced input[name="post_type[]"]').click(function(){
-            getCheckedCheckBoxes('searchform-advanced', 'post_type[]', 'cba__', 'sa');
-          });
+          //$('#searchform-advanced input[name="post_type[]"]').click(function(){
+            //getCheckedCheckBoxes('searchform-advanced', 'post_type[]', 'cba__', 'sa');
+          //});
 
           //Home search form
-          $( ".search-icon a" ).click(function(event) {
-            event.preventDefault();
-            $('.section.search-header').toggleClass( "show hidden" );
-            $('.section.search-header #sa').focus();
-            $(this).parent().toggleClass("active");
-          });
-        
+          //$( ".search-icon a" ).click(function(event) {
+          //  event.preventDefault();
+          //  $('.section.search-header').toggleClass( "show hidden" );
+          //  $('.section.search-header #sa').focus();
+          //  $(this).parent().toggleClass("active");
+          //});
 
         // Sharing buttons
         $('.single .sharing-list ul').click(function(){
           $( this ).toggleClass( "active" );
           $('.share-header button').toggleClass( "active" );
+        });
+
+        // Focus the searchform
+        $('#s').focusin(function(){
+          $('#searchform').addClass('focused');
+          console.log("Esta seleccionado el input");
+        });
+
+        $('.close-searchform').click(function(event){
+          event.preventDefault();
+          $('#searchform').removeClass('focused');
+        });
+
+        //Mobile menu button
+        $('.navbar-toggle').click(function(event) {
+          $(this).toggleClass( "opened" );
         });
 
         //Keep lightbox responsive on screen resize

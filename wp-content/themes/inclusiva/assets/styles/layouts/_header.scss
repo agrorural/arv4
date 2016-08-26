@@ -1,15 +1,5 @@
 /* Begin Super Header */
 header{
-	&.search-header{
-		background-color: $green--light;
-		form{
-			.checkbox{
-				label{
-					color: $white;
-				}
-			}
-		}
-	}
 	&.super-header{
 		@include gradient-horizontal( $green, $green--light, 0%, 100%); 
 		border-bottom: 1px solid transparent;
@@ -138,13 +128,109 @@ header{
 		}
 	}
 
-	&.navbar-default {
+	&.navbar-main{
+		@include gradient-horizontal( $brown, $brown--light--1, 0%, 100%); 
+		border-color: $brown;
+		margin-bottom: 0;
+		.navbar-header{
+			button{
+				padding: 5px 10px;
+				border-color: $brown--lighter;
+				@include border-radius(0);
+				.icon{
+					color: $brown--lighter;
+					&:before{
+			            content: $fa-var-bars;
+			        }
+				}
+				&:hover, &:focus{
+					background-color: transparent;
+				}
+				&.opened{
+					.icon{
+						&:before{
+						    content: $fa-var-close;
+						}
+					}
+				}
+			}
+			.navbar-brand{
+				@extend .visible-xs;
+				color: $brown--lighter;
+				margin-bottom: 0;
+			}
+		}
+		nav{
+			border-color: transparent !important;
+			.navbar-form{
+				border-color: transparent !important;
+				form{
+					position: relative;
+					.input-group{
+						.input-group-btn{
+							input[type="submit"]{
+								@extend .btn;
+								@include button-variant($white, $brown, $brown);
+								@include border-radius(0);
+							}
+						}
+					}
+					.checkbox-container{
+						display: none;
+						@media(min-width: $screen-sm-min){
+							position: absolute;
+							top: 34px;
+							left: 0;
+							right: 0;
+						}
+						background-color: $white;
+						padding-bottom: 15px;
+						@include fadeOutUp();
+						.page-header, label{
+							padding-left: 15px;
+							padding-right: 15px;
+						}
+						.page-header{
+							margin: 10px 0 20px;
+							@media(max-width: $screen-xs-max){
+								padding-top: 3px;
+							}
+							padding-bottom: 0;
+							h4{
+								@include title-xs();
+								line-height: 1.85em;
+							}
+						}
+						.checkbox{
+							display: block;
+							@media(max-width: $screen-xs-max){
+								padding-left: 15px;
+								padding-right: 15px;
+							}
+
+						}
+					}
+					&.focused{
+						.checkbox-container{
+							display: block;
+							@include fadeInDown();
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.navbar-branding {
   		background-color: $white;
   		border-color: $white;
   		margin-bottom: 0;
   		.container{
   			padding-top: 15px;
   			padding-bottom: 15px;
+  			nav{
+  				padding-top: 10px;
+  			}
   		}
 	}
 }
