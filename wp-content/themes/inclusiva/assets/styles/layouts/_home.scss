@@ -185,10 +185,10 @@
 
 				}
 				&.banner{
-					@include make-row();
+					@include make-row(0);
 					.widget{
-						@include make-xs-column(6);
-						@include make-sm-column(12);
+						@include make-xs-column(6, 0);
+						@include make-sm-column(12, 0);
 						margin-bottom: 3px;
 					}
 				}
