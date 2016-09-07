@@ -2,7 +2,7 @@
 	global $post; 
 	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
 	$term__slug = $term_list[0]->slug; 
-	//echo $term__slug;
+	echo $term__slug;
 ?>
     <?php if (has_nav_menu('doc_'.$term__slug.'_navigation')) { ?>
     <section class="widget">

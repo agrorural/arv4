@@ -48,7 +48,8 @@ function setup() {
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
     'doc_directivas_navigation' => __('Documentos: Directivas Navigation', 'sage'), //Directivas
     'doc_pac_navigation' => __('Documentos: PAC Navigation', 'sage'), //PAC
-    'doc_convenios_navigation' => __('Documentos: Convenios Navigation', 'sage'), //PAC
+    'doc_convenios_navigation' => __('Documentos: Convenios Navigation', 'sage'), //Convenios
+    'doc_rd_navigation' => __('Documentos: RD Navigation', 'sage'), //RD
 
     // Convocatorias
     'cnv_cas_navigation' => __('Convocatorias CAS Navigation', 'sage'), //CAS
