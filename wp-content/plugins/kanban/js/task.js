@@ -34,8 +34,8 @@ Task.prototype.build_el = function()
 		estimate_records: obj_order_by_prop(this.board().record.estimate_records(), 'position'),
 		project_records: this.board().record.project_records,
 		allowed_users: this.board().record.allowed_users(),
-		current_user_can_write: this.board().current_user().has_cap('write')
-		// hide_progress_bar: this.board().record.settings().hide_progress_bar
+		current_user_can_write: this.board().current_user().has_cap('write'),
+		show_task_ids: this.board().record.settings().show_task_ids == 1 ? true : false
 	});
 
 
@@ -643,6 +643,43 @@ Task.prototype.dom = function()
 	);
 
 
+	self.$el
+	.on(
+		'mousedown',
+		'.btn-task-hour',
+		function()
+		{
+			var $div = $(this);
+
+			// wait 500 ms
+			var timer = setInterval(function()
+			{
+				// clear 500ms
+				clearInterval($div.data('click_timer'));
+
+				// click every 100ms
+				var timer = setInterval(function()
+				{
+					$div.trigger('click');
+				}, 100);
+
+				$div.data('click_timer', timer);
+
+			}, 500);
+
+			$div.data('click_timer', timer);
+		}
+	)
+	.on(
+		'mouseup mouseleave',
+		'.btn-task-hour',
+		function()
+		{
+			var $div = $(this);
+			clearInterval($div.data('click_timer'));
+		}
+	);
+
 }; // dom
 
 
@@ -1050,8 +1087,16 @@ Task.prototype.parse_project = function()
 
 
 
-	if ( typeof project_title === 'undefined' || project_title === '' || project_title === null )
+	if ( typeof project_title === 'undefined' || project_title === null )
 	{
+		return;
+	}
+
+
+
+	if (  '' === project_title )
+	{
+		this.project_save(0);
 		return;
 	}
 

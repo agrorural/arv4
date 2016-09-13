@@ -33,7 +33,7 @@ jQuery(function($)
 
 
 
-	$('.nav-tab-wrapper a').on(
+	$('.nav-tab').on(
 		'click',
 		function()
 		{
@@ -67,6 +67,15 @@ jQuery(function($)
 
 
 	$('.color-picker').wpColorPicker();
+
+	$('.slide-toggle').on(
+		'click',
+		function () {
+			var id = $(this).attr('href');
+			$(id).slideToggle('fast');
+			return false;
+		}
+	);
 
 
 
@@ -189,7 +198,7 @@ jQuery(function($)
 			$('.error', $form).remove();
 
 			var data = {
-				'action': 'kanban_register_user',
+				'action': 'kanban_register_user'
 			};
 
 			$('input', $form).each(function()

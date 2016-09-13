@@ -11,25 +11,25 @@ $(function()
 		catch (err) {}
 	});
 
-
+	
 
 	//set scrollbar width
-    parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body');
-    child=parent.children();
-    scrollbar_w=child.innerWidth()-child.height(99).innerWidth();
-    parent.remove();
+	var parent = $('<div style="width:50px;height:50px;overflow:auto"><div></div></div>').appendTo('body');
+	var child = parent.children();
+	var scrollbar_w=child.innerWidth()-child.height(99).innerWidth();
+	parent.remove();
 
-    // add scrollbar width to el
-    $('.row-statuses-wrapper').css('marginRight', scrollbar_w);
-
-
-
-    // init dom elements
-    new Modal_Projects( $('#modal-projects') );
+	// add scrollbar width to el
+	$('.row-statuses-wrapper').css('marginRight', scrollbar_w);
 
 
 
-    // re-add previous view settings
+	// init dom elements
+	new Modal_Projects( $('#modal-projects') );
+
+
+
+	// re-add previous view settings
 	var view_classes = Cookies.get('view');
 	if ( view_classes !== 'undefined' )
 	{
@@ -76,7 +76,7 @@ $(function()
 
 
 
-    // store all templates
+	// store all templates
 	$('.template').each(function ()
 	{
 		var $t = $(this);
@@ -252,6 +252,28 @@ $(function()
 		{
 			$('body').toggleClass('board-view-all-cols');
 			cookie_views();
+			return false;
+		}
+	);
+
+
+
+	$('#btn-view-fullscreen').on(
+		'click',
+		function ()
+		{
+			var $btn = $(this);
+			if (screenfull.enabled) {
+				screenfull.toggle();
+				if ( $('.glyphicon:visible', $btn).length > 0 ) {
+					$('.glyphicon', $btn).css('display', 'none');
+				}
+				else {
+					$('.glyphicon', $btn).css('display', 'inline-block');
+				}
+
+
+			}
 			return false;
 		}
 	);
@@ -440,6 +462,19 @@ $(function()
 				if ( e.shiftKey )
 				{
 					$('#btn-view-all-cols').trigger('click');
+					return false;
+				}
+			}
+
+
+
+
+			// shift + u: toggle full screen
+			if( e.keyCode === 85 && $any_input.length === 0 )
+			{
+				if ( e.shiftKey )
+				{
+					$('#btn-view-fullscreen').trigger('click');
 					return false;
 				}
 			}

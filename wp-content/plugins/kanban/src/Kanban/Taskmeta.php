@@ -20,41 +20,40 @@ class Kanban_Taskmeta extends Kanban_Db
 	protected static $table_name = 'taskmeta';
 
 	// define db table columns and their validation type
-	 protected static $table_columns = array(
+	protected static $table_columns = array(
 		'meta_key' => 'text',
 	 	'meta_value' => 'text',
 	 	'created_dt_gmt' => 'datetime',
 		'task_id' => 'int'
-	 );
+	);
+
+
+
+	static function get_one ($task_id, $meta_key)
+	{
+		global $wpdb;
+
+		$table_name = self::table_name();
+
+		$sql = $wpdb->prepare(
+			"SELECT * FROM $table_name WHERE task_id = %d AND meta_key = %s",
+			$task_id,
+			$meta_key
+		);
+
+		$sql = apply_filters( 'kanban_taskmeta_get_one_sql', $sql );
+
+		$record = $wpdb->get_row($sql);
+
+		return $record;
+	}
+
 
 
 	static function update( $task_id, $meta_key, $meta_value )
 	{
-		global $wpdb;
-
-
-
 		// delete existing record
 		self::delete($task_id, $meta_key);
-
-
-
-		// create new record
-//		$success = $wpdb->insert(
-//			self::table_name(),
-//			array(
-//				'meta_key'       => $meta_key,
-//				'meta_value'     => $meta_value,
-//				'created_dt_gmt' => Kanban_Utils::mysql_now_gmt(),
-//				'task_id'        => $task_id,
-//			),
-//			array(
-//				'%s',
-//				'%s',
-//				'%s',
-//				'%d'
-//			)
-//		);
 
 
 
@@ -63,7 +62,7 @@ class Kanban_Taskmeta extends Kanban_Db
 				'meta_key'       => $meta_key,
 				'meta_value'     => $meta_value,
 				'created_dt_gmt' => Kanban_Utils::mysql_now_gmt(),
-				'task_id'        => $task_id,
+				'task_id'        => $task_id
 			)
 		);
 
@@ -80,27 +79,13 @@ class Kanban_Taskmeta extends Kanban_Db
 
 
 
-		return $success;
+		return $is_successful;
 	}
 
 
 
 	static function delete( $task_id, $meta_key )
 	{
-		global $wpdb;
-
-
-
-		// delete existing record
-//		$success = $wpdb->delete(
-//			self::table_name(),
-//			array(
-//				'task_id'  => $task_id,
-//				'meta_key' => $meta_key
-//			)
-//		);
-
-
 		$is_successful = self::_delete(
 			array(
 				'task_id'  => $task_id,
@@ -108,9 +93,21 @@ class Kanban_Taskmeta extends Kanban_Db
 			)
 		);
 
+		return $is_successful;
+	}
 
 
-		return $success;
+
+
+	static function duplicate( $taskmeta_id, $data = array() )
+	{
+		// reset
+		unset($data['id']);
+		$data['created_dt_gmt'] = Kanban_Utils::mysql_now_gmt();
+
+		$is_successful = self::_duplicate( $taskmeta_id, $data );
+
+		return $is_successful;
 	}
 
 
@@ -124,7 +121,7 @@ class Kanban_Taskmeta extends Kanban_Db
 			created_dt_gmt datetime NOT NULL,
 			meta_key varchar(255) DEFAULT NULL,
 			meta_value longtext,
-			UNIQUE KEY  (id),
+			UNIQUE KEY id (id),
 			KEY task_id (task_id),
 			KEY meta_key (meta_key)
 			)";

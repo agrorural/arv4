@@ -26,7 +26,7 @@ class Kanban_Admin
 	static function init()
 	{
 		// redirect to welcome screen on activation
-		add_action( 'admin_init', array( __CLASS__, 'welcome_screen_do_activation_redirect' ) );
+		add_action( 'admin_init', array( __CLASS__, 'screen_do_activation_redirect' ) );
 
 		// add settings link
 		add_filter(
@@ -163,7 +163,7 @@ class Kanban_Admin
 
 			try
 			{
-				$addons = json_decode( $response['body'] );
+				$addons = @json_decode( $response['body'] );
 			}
 			catch ( Exception $e )
 			{
@@ -255,6 +255,7 @@ class Kanban_Admin
 		$user_email		= $_POST["new-user-email"];
 		$user_first 	= $_POST["new-user-first"];
 		$user_last	 	= $_POST["new-user-last"];
+		$board_id	 	= $_POST["board_id"];
 
 		$errors = array();
 
@@ -290,6 +291,13 @@ class Kanban_Admin
 			return;
 		}
 
+		$boards = Kanban_Board::get_all();
+
+		if ( !in_array($board_id, array_keys($boards)) )
+		{
+			$board_id = Kanban_Board::get_current();
+		}
+
 
 
 		$userdata = array(
@@ -316,7 +324,7 @@ class Kanban_Admin
 		$allowed_users = Kanban_Option::get_option( 'allowed_users' );
 		$allowed_users[] = $user_id;
 
-		Kanban_Option::update_option( 'allowed_users', $allowed_users );
+		Kanban_Option::update_option( 'allowed_users', $allowed_users, $board_id );
 
 
 
@@ -336,15 +344,16 @@ class Kanban_Admin
 	 */
 	static function admin_menu()
 	{
-		// Base 64 encoded SVG image.
-		$icon_svg = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAABJhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIj4KICAgICAgICAgPHhtcE1NOkRlcml2ZWRGcm9tIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgPHN0UmVmOmluc3RhbmNlSUQ+eG1wLmlpZDowMzI5ZDQ2Yy0zN2Q3LTRkOWUtOGMyYi01M2EzOGExODdjYTU8L3N0UmVmOmluc3RhbmNlSUQ+CiAgICAgICAgICAgIDxzdFJlZjpkb2N1bWVudElEPmFkb2JlOmRvY2lkOnBob3Rvc2hvcDphYzEwN2JmZC03N2QxLTExNzktYTUzMC1lMzczNGI5NzU3N2I8L3N0UmVmOmRvY3VtZW50SUQ+CiAgICAgICAgIDwveG1wTU06RGVyaXZlZEZyb20+CiAgICAgICAgIDx4bXBNTTpEb2N1bWVudElEPnhtcC5kaWQ6QUQ3QTc3MDQyRjY3MTFFNkEwQjRFRTcyQzVGOUM0QTE8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6QUQ3QTc3MDMyRjY3MTFFNkEwQjRFRTcyQzVGOUM0QTE8L3htcE1NOkluc3RhbmNlSUQ+CiAgICAgICAgIDx4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDoxYTRkMjg4NS1jMjMwLTQ0ZmQtYTViYy00NWQ1YmRkNGNkNzQ8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KxIidFAAAAq5JREFUOBF9UztPVEEUPmfmPnYXERsqpOChjY3xBZtYaALsaqzt6CxsNmisBHFXQKwMrtr6C+iMRh4+KsKiUBkSY8QQIfRq2Md9zPidu6wFJp7k3syd+b5zzjfnu0yI8sdc3hozQZa6mHhbkZ0sZJdXSrakNuc3ef76fDy3ls+yiaeJuJfI7mnih4Xs0hsuV4avuin9mpEoCg25vqagFlMYmuydi28rUuDJSv48q3gtdcThBs5cDyUs8IG9pozlopAb1bgRR2Tq+1ENQFKax4WchDJ30+0u135HdWPICJZAMsZOOky2K2wYdEYeWpNcXliP5bzngI5t6gkasWBclFaCjQJwiLoUXjuQIB8NPAaAwEvjm/mbbCbBtOU1MQG+hdlwfVCZdpCN75vIUKrNSTmuUpmjXnr/ZyitzDTZaEDbGexFmaNuWjCCjSNLuImStEzlSu4yKo+D1Y12v5NWxVsXFj7JFOS8xCVTroycJWMfWMX9wO5qxbOFgaX31AIlwFKTkKwPyP+sD2GSCgKSKBaLGM7/4zAmkfBsNX8JE5zgRILd0oqKhYHl9VZ3IuH5au5MZCGB7Ulc3A/c3ezY4OIHfrqaG9I+LzsuU4jR+JgALgznfG5scGlD+plbGT6N5Ottx1ydGAkTgIkEP6IsmWmYhsQk2DAgV9s6XJiEJltiWPG9TIerqzjD/E3tV1RXMnlrp5CAukMxiWIPeuRO/CAxku1rJQCwT8wFrI89JdjEfMTHMUrac+BtjCiUnHgC10uMtI11MxRvJxh0DW0wsw3hB/iI9sDkKaXgzYz2IYVhkrTotErN/uUbflSvxpRud1IK9X1gIUsSzOiFF1tfh0Z7N+CsPpS30PgZhhq9PbCY/M6dpzrV4/zL3Ss3TrzDH9pvDekotF9iY2/ikl/9AT1wTLdcZ7ToAAAAAElFTkSuQmCC';
+		$svg = '<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 63.84"><defs><style>.cls-1{fill:#82878c;}</style></defs><title>kanban</title><ellipse class="cls-1" cx="50.52" cy="13.51" rx="13.48" ry="13.51"/><ellipse class="cls-1" cx="13.48" cy="13.51" rx="13.48" ry="13.51"/><ellipse class="cls-1" cx="50.52" cy="50.33" rx="13.48" ry="13.51"/><ellipse class="cls-1" cx="13.48" cy="50.33" rx="13.48" ry="13.51"/></svg>';
+
+		$icon_svg = 'data:image/svg+xml;base64,' . base64_encode( $svg );
 
 		// add the base slug and page
 		add_menu_page(
 			Kanban::get_instance()->settings->pretty_name,
 			Kanban::get_instance()->settings->pretty_name,
 			'manage_options',
-			sprintf( '%s_welcome', Kanban::get_instance()->settings->basename ),
+			Kanban::get_instance()->settings->basename,
 			null,
 			$icon_svg
 		);
@@ -354,17 +363,17 @@ class Kanban_Admin
 		// redeclare same page to change name to settings
 		// @link https://codex.wordpress.org/Function_Reference/add_submenu_page#Inside_menu_created_with_add_menu_page.28.29
 		add_submenu_page(
-			'kanban_welcome',
+			Kanban::get_instance()->settings->basename,
 			'Welcome',
 			'Welcome',
 			'manage_options',
-			'kanban_welcome',
+			Kanban::get_instance()->settings->basename,
 			array( __CLASS__, 'welcome_page' )
 		);
 
 		// add the settings admin page
 		add_submenu_page(
-			'kanban_welcome',
+			Kanban::get_instance()->settings->basename,
 			'Settings',
 			'Settings',
 			'manage_options',
@@ -373,7 +382,7 @@ class Kanban_Admin
 		);
 
 		add_submenu_page(
-			'kanban_welcome',
+			Kanban::get_instance()->settings->basename,
 			'Add-ons',
 			'Add-ons',
 			'manage_options',
@@ -382,7 +391,7 @@ class Kanban_Admin
 		);
 
 		add_submenu_page(
-			'kanban_welcome',
+			Kanban::get_instance()->settings->basename,
 			'Contact Us',
 			'Contact Us',
 			'manage_options',
@@ -435,16 +444,16 @@ class Kanban_Admin
 
 	// redirect to welcome page
 	// @link http://premium.wpmudev.org/blog/tabbed-interface/
-	static function welcome_screen_do_activation_redirect()
+	static function screen_do_activation_redirect()
 	{
 		// Bail if no activation redirect
-		if ( ! get_transient( sprintf( '_%s_welcome_screen_activation_redirect', Kanban::get_instance()->settings->basename ) ) )
+		if ( ! get_transient( sprintf( '_%s_screen_activation_redirect', Kanban::get_instance()->settings->basename ) ) )
 		{
 			return;
 		}
 
 		// Delete the redirect transient
-		delete_transient( sprintf( '_%s_welcome_screen_activation_redirect', Kanban::get_instance()->settings->basename ) );
+		delete_transient( sprintf( '_%s_screen_activation_redirect', Kanban::get_instance()->settings->basename ) );
 
 		// Bail if activating from network, or bulk
 		if ( is_network_admin() || isset( $_GET['activate-multi'] ) )
@@ -456,7 +465,7 @@ class Kanban_Admin
 		wp_safe_redirect(
 			add_query_arg(
 				array(
-					'page'       => sprintf( '%s_welcome', Kanban::get_instance()->settings->basename ),
+					'page'       => Kanban::get_instance()->settings->basename,
 					'activation' => '1'
 				),
 				admin_url( 'admin.php' )
