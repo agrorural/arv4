@@ -20,12 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="banner">
 				<a href="https://issuu.com/serviagro/stacks/3b64c2c809e14c068f1bf043f4b786a9" target="_blank"><img src="<?php echo bloginfo('template_url'); ?>/dist/images/bn__serviagro.png" class="img-responsive" /></a>
 			</div>
-			<div class="banner">
-				<a href="http://sellomunicipal.midis.gob.pe/?page_id=3178" target="_blank"><img src="<?php echo bloginfo('template_url'); ?>/dist/images/bn__serviagro--2.png" class="img-responsive" /></a>
-			</div>
 		</div>
 <?php }	?>
-
+<!-- Banners Serviagro -->
 <!-- Tribe Bar -->
 <?php tribe_get_template_part( 'modules/bar' ); ?>
 
