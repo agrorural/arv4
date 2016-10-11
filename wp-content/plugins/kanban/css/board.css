@@ -178,30 +178,51 @@ sub {
   z-index: 0; }
   .task:hover, .task.active {
     z-index: 1; }
-  .task [contenteditable] {
-    overflow-x: hidden; }
-  .task [contenteditable="true"] {
-    cursor: pointer;
+  .task [contenteditable],
+  .task [data-contenteditable] {
+    overflow-x: hidden;
     margin: 0 -3px 0 -3px;
+    min-height: 21px;
     padding: 3px; }
-    .task [contenteditable="true"]:hover, .task [contenteditable="true"]:focus, .task [contenteditable="true"]:active {
+  .task [contenteditable="true"],
+  .task [data-contenteditable="true"] {
+    cursor: pointer; }
+    .task [contenteditable="true"]:hover, .task [contenteditable="true"]:focus, .task [contenteditable="true"]:active,
+    .task [data-contenteditable="true"]:hover,
+    .task [data-contenteditable="true"]:focus,
+    .task [data-contenteditable="true"]:active {
       background: #f9f9fa; }
-    .task [contenteditable="true"]:empty:before {
+    .task [contenteditable="true"]:empty:before,
+    .task [data-contenteditable="true"]:empty:before {
       color: #dfdfdf;
       content: attr(placeholder);
       display: block;
       /* For Firefox */ }
-    .task [contenteditable="true"] a {
+    .task [contenteditable="true"] a,
+    .task [data-contenteditable="true"] a {
       cursor: pointer; }
   .task .task-menu {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    padding: 3px;
+    right: 3px;
+    top: 3px;
     z-index: 1; }
     .task .task-menu .dropdown {
       opacity: .618; }
       .task .task-menu .dropdown:hover, .task .task-menu .dropdown.open {
         opacity: 1; }
+    @media screen and (min-width: 768px) {
+      .task .task-menu > .btn {
+        display: none; }
+      .task .task-menu:hover, .task .task-menu:active, .task .task-menu:focus {
+        background: white;
+        border: 1px solid #EEE; }
+        .task .task-menu:hover > .btn, .task .task-menu:active > .btn, .task .task-menu:focus > .btn {
+          display: block; } }
+    @media screen and (max-width: 767px) {
+      .task .task-menu {
+        background: white;
+        border: 1px solid #EEE; } }
   .task .task-project {
     max-width: 80%;
     min-height: .618em;

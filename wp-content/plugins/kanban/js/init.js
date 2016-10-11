@@ -27,14 +27,6 @@ $( function () {
 
 
 
-	// re-add previous view settings
-	var view_classes = Cookies.get( 'view' );
-	if ( view_classes !== 'undefined' ) {
-		$( 'body' ).addClass( view_classes );
-	}
-
-
-
 	// when boards are done
 	var populated_board_count = 0;
 
@@ -179,6 +171,7 @@ $( function () {
 	);
 
 
+
 	$( '.btn-filter-reset' )
 	.on(
 		'click',
@@ -206,10 +199,13 @@ $( function () {
 	);
 
 
+
 	$( '#btn-view-compact' ).on(
 		'click',
 		function () {
-			$( 'body' ).toggleClass( 'board-view-compact' );
+			$( 'body' )
+			.addClass( 'board-view-set' )
+			.toggleClass( 'board-view-compact' );
 			cookie_views();
 
 			// make sure we redraw
@@ -223,7 +219,9 @@ $( function () {
 	$( '#btn-view-all-cols' ).on(
 		'click',
 		function () {
-			$( 'body' ).toggleClass( 'board-view-all-cols' );
+			$( 'body' )
+			.addClass( 'board-view-set' )
+			.toggleClass( 'board-view-all-cols' );
 			cookie_views();
 			return false;
 		}
@@ -249,6 +247,20 @@ $( function () {
 			return false;
 		}
 	);
+
+
+
+	// re-add previous view settings
+	var view_classes = Cookies.get( 'view' );
+
+	if ( view_classes !== 'undefined' ) {
+		$( 'body' ).addClass( view_classes );
+	}
+
+	// If user hasn't applied a view, apply the global option
+	if ( !$( 'body' ).is( '.board-view-set' ) && 1 == boards[current_board_id].record.settings().show_all_cols ) {
+		$( '#btn-view-all-cols' ).trigger( 'click' );
+	}
 
 
 
@@ -477,6 +489,7 @@ $( function () {
 
 
 
+	// If debugging, notify javascript  errors.
 	if ( 'script' == kanban.url_params.debug ) {
 		window.onerror = function ( errorMsg, url, lineNumber ) {
 			notify(
@@ -488,6 +501,7 @@ $( function () {
 
 
 
+	// Check for updates by other users every 5 seconds.
 	setInterval( function () {
 		var data = {
 			action: 'updates_task',
@@ -507,10 +521,17 @@ $( function () {
 			url: kanban.ajaxurl,
 			data: data,
 			success: function ( response ) {
+
 				try {
 					for ( var i in response.data.projects ) {
 						var project_record = response.data.projects[i];
+
 						var board = boards[project_record.board_id];
+
+						// Skip it, if this user made the update.
+						if ( project_record.modified_user_id == board.record.current_user_id() ) {
+							return;
+						}
 
 						if ( project_record.is_active == 1 ) {
 							//add/update
@@ -540,6 +561,10 @@ $( function () {
 							}
 						}
 					}
+
+					if ( Object.size( response.data.projects ) > 0 ) {
+						notify( kanban.text.project_updates, 'success' );
+					}
 				}
 				catch ( err ) {
 				}
@@ -550,6 +575,11 @@ $( function () {
 					for ( var i in response.data.tasks ) {
 						var task_record = response.data.tasks[i];
 						var board = boards[task_record.board_id];
+
+						// Skip it, if this user made the update.
+						if ( task_record.modified_user_id == board.record.current_user_id() ) {
+							return;
+						}
 
 						if ( task_record.is_active == 1 ) {
 							var task = board.record.tasks[task_record.id] = new Task( task_record );
@@ -575,6 +605,10 @@ $( function () {
 							var task = board.record.tasks[task_record.id];
 							task.delete_el();
 						}
+					}
+
+					if ( Object.size( response.data.tasks ) > 0 ) {
+						notify( kanban.text.task_updates, 'success' );
 					}
 				}
 				catch ( err ) {
