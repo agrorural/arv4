@@ -273,7 +273,8 @@ h1{
 
 		&.minagri{	
 			a{
-				background-image: url(../images/logo__minagri--sm.png)!important;
+				width: 289px!important;
+				background-image: url(../images/logo__minagri--sm.jpg)!important;
 			}
 		}
 	}
@@ -317,13 +318,14 @@ h1{
 			}
 			&:hover{}
 			
-			&.agrorural{}
+			&.agrorural{
+				margin-bottom: 10px;
+			}
 
 			&.minagri{	
 				a{
-					background-image: url(../images/logo__minagri--xs.png)!important;
+					background-image: url(../images/logo__minagri--sm.jpg)!important;
 					background-repeat: no-repeat;
-					width: 45px !important;
 				}
 			}
 		}

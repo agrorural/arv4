@@ -47,7 +47,53 @@ function create_my_post_types() {
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
 
+	$labels_banner = array(
+		'name'               => _x( 'Banners', 'post type general name', 'incl' ),
+		'singular_name'      => _x( 'Banner', 'post type singular name', 'incl' ),
+		'menu_name'          => _x( 'Banners', 'admin menu', 'incl' ),
+		'name_admin_bar'     => _x( 'Banner', 'Agregar Nuevo on admin bar', 'incl' ),
+		'add_new'            => _x( 'Agregar Nuevo', 'Banner', 'incl' ),
+		'add_new_item'       => __( 'Agregar Nuevo Banner', 'incl' ),
+		'new_item'           => __( 'Nuevo Banner', 'incl' ),
+		'edit_item'          => __( 'Editar Banner', 'incl' ),
+		'view_item'          => __( 'Ver Banner', 'incl' ),
+		'all_items'          => __( 'Todos', 'incl' ),
+		'search_items'       => __( 'Buscar Banners', 'incl' ),
+		'parent_item_colon'  => __( 'Banner Padre:', 'incl' ),
+		'not_found'          => __( 'Ningún Banner encontrado.', 'incl' ),
+		'not_found_in_trash' => __( 'Ningún Banner encontrado en la Papelera.', 'incl' )
+	);
+ 
+	$args_banner = array(
+		'labels'             => $labels_banner,
+        'description'        => __( 'Banners de AGRO RURAL.', 'incl' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'capability_type' => 'banner',
+			'capabilities' => array(
+				'publish_posts' => 'publish_banners',
+				'edit_posts' => 'edit_banners',
+				'edit_others_posts' => 'edit_others_banners',
+				'delete_posts' => 'delete_banners',
+				'delete_others_posts' => 'delete_others_banners',
+				'read_private_posts' => 'read_private_banners',
+				'edit_post' => 'edit_banner',
+				'delete_post' => 'delete_banner',
+				'read_post' => 'read_banner',
+			),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'rewrite'            => array( 'slug' => 'banners' ),
+		'menu_position'      => 10,
+		'menu_icon'			 => 'dashicons-image-flip-horizontal',
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
+	);
+
 	register_post_type('producto', $args_producto);
+	register_post_type('banners', $args_banner);
 }
 
 add_action( 'init', 'create_my_taxonomies', 0 );
@@ -169,8 +215,38 @@ function create_my_taxonomies() {
 		)
 	);
 
+	$labels_banner_posicion = array(
+		'name'              => _x( 'Posiciones', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Posición', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Posiciones' ),
+		'all_items'         => __( 'Todas las  Posiciones' ),
+		'parent_item'       => __( 'Posición Padre' ),
+		'parent_item_colon' => __( 'Posición Padre:' ),
+		'edit_item'         => __( 'Editar posición' ),
+		'update_item'       => __( 'Actualizar posición' ),
+		'add_new_item'      => __( 'Agregar Nueva posición' ),
+		'new_item_name'     => __( 'Nombre de Nueva posición' ),
+		'menu_name'         => __( 'Posiciones' )
+	);
+
+	$args_banner_posicion = array(
+		'public' 			=> true,
+		'hierarchical'      => false,
+		'labels'            => $labels_banner_posicion,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_posicion',
+			'edit_terms' => 'edit_posicion',
+			'delete_terms' => 'delete_posicion',
+			'assign_terms' => 'assign_posicion'
+		)
+	);
+
 	register_taxonomy( 'productor', 'producto', $args_producto_productor );
 	register_taxonomy( 'marca', 'producto', $args_producto_marca );
 	register_taxonomy( 'lugar', 'producto', $args_producto_lugar );
 	register_taxonomy( 'clasificacion', 'producto', $args_producto_clasificacion );
+	register_taxonomy( 'posiciones', 'banner', $args_banner_posicion );
 }
