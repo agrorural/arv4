@@ -95,7 +95,7 @@ abstract class Kanban_Db
 
 
 
-	protected function _duplicate( $id, $data = array() ) {
+	protected static function _duplicate( $id, $data = array() ) {
 		global $wpdb;
 		$record = (array) self::_get_row( 'id', $id );
 
@@ -138,6 +138,15 @@ abstract class Kanban_Db
 
 	public static function table_name() {
 		return Kanban_Db::format_table_name( static::$table_name );
+	}
+
+
+
+	public static function table_columns () {
+		return apply_filters(
+			'kanban_db_table_columns',
+			static::$table_columns
+		);
 	}
 
 

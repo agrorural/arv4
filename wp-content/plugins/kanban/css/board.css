@@ -202,8 +202,8 @@ sub {
     .task [data-contenteditable="true"] a {
       cursor: pointer; }
   .task .task-menu {
+    border: 1px solid transparent;
     position: absolute;
-    padding: 3px;
     right: 3px;
     top: 3px;
     z-index: 1; }
@@ -313,6 +313,9 @@ sub {
     @media screen and (max-width: 767px) {
       .task .task-handle {
         cursor: default; } }
+
+.alert-task-restore {
+  cursor: pointer; }
 
 .task-placeholder {
   border: 1px dashed #999;

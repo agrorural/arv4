@@ -160,8 +160,10 @@ class Kanban_Option extends Kanban_Db
 				}
 			}
 
+			foreach ( $boards as $board ) {
 
-			foreach ( $boards as $id => $board ) {
+				$id = $board->id;
+
 				if ( ! isset( self::$options_by_board[ $id ] ) ) {
 					self::$options_by_board[ $id ] = array();
 				}
@@ -195,7 +197,7 @@ class Kanban_Option extends Kanban_Db
 		$options = self::get_all( $board_id );
 
 		if ( ! isset( $options[ $name ] ) ) {
-			return null;
+			return self::get_default($name);
 		}
 
 		return $options[ $name ];
@@ -362,7 +364,7 @@ class Kanban_Option extends Kanban_Db
 			array(
 				'message' => urlencode( __( 'Settings saved', 'kanban' ) ),
 			),
-			$_POST['_wp_http_referer']
+			sanitize_text_field( wp_unslash( $_POST[ '_wp_http_referer' ] ) )
 		);
 
 		wp_redirect( $url );
