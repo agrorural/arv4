@@ -23,6 +23,11 @@
         "styles/editor-style.scss"
       ]
     },
+    "directory-map.js": {
+      "files": [
+        "scripts/directory-map.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }

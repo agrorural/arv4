@@ -15,6 +15,7 @@
 	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
   	$post__slug = $post->post_name;
   	$post__slug__up = strtoupper($post__slug);
+  	//var_dump($post);
 ?>
 <article <?php post_class('panel panel-default panel-success'); ?>>
   <header class="panel-heading">

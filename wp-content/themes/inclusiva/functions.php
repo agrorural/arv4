@@ -268,17 +268,66 @@ function custom_breadcrumbs() {
           }
         }
 
-//function to call first uploaded image in functions file
-function default_thumb($size = 'full', $image = 'news-thumb') {
-    global $post, $posts;
-    $image_url = '';
-    ob_start();
-    ob_end_clean();
+    //function to call first uploaded image in functions file
+    function default_thumb($size = 'full', $image = 'news-thumb') {
+        global $post, $posts;
+        $image_url = '';
+        ob_start();
+        ob_end_clean();
 
-    if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
-        $image_url = $matches[1][0];
-    else
-        $image_url = get_bloginfo('template_url') . "/dist/images/". $image .".jpg";
-    return $image_url;
+        if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
+            $image_url = $matches[1][0];
+        else
+            $image_url = get_bloginfo('template_url') . "/dist/images/". $image .".jpg";
+        return $image_url;
 
-}
+    }
+
+    add_action('wp_ajax_directory_map', 'directory_map_callback');
+    add_action('wp_ajax_nopriv_directory_map', 'directory_map_callback');
+
+    function directory_map_callback(){
+      header('Content-Type:application/json');
+
+      $result = array();
+
+      $grupos = "";
+      if(isset($_GET["grupos"])){
+        $grupos = sanitize_text_field( $_GET["grupos"] );
+      }
+
+      $args = array(
+        "post_type" => "directorios",
+        "grupos"    =>  $grupos,
+        "posts_per_page" => -1
+      );
+
+      $the_query = new WP_Query( $args );
+
+      // The Loop
+      if ( $the_query->have_posts() ) {
+
+        while ( $the_query->have_posts() ) {
+          $the_query->the_post();
+          
+          $result[] = array(
+            "id"              =>  get_the_ID(),
+            "title"           => get_the_title(),
+            "permalink"       => get_permalink(), 
+            "dir_responsable" => get_field('dir_responsable'),
+            "dir_cargo"       => get_field('dir_cargo'),
+            "dir_direccion"   => get_field('dir_direccion'),
+            "dir_telefono"    => get_field('dir_telefono'),
+            "dir_correo"      => get_field('dir_correo')
+          );
+        }
+        echo json_encode($result);
+        /* Restore original Post Data */
+        wp_reset_postdata();
+      } else {
+        echo 'No se encontraron entradas...';
+      }
+      
+      //var_dump($the_query);
+      wp_die();
+    }

@@ -74,5 +74,9 @@ function assets() {
 
   //wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
   wp_enqueue_script('sage_js', asset_path('scripts/main.js'), ['jquery'], null, true);
+  if ( is_page( 'directorio-principal' ) ) {
+      wp_enqueue_script('directory_map', asset_path('scripts/directory-map.js'), ['jquery'], null, true);
+      wp_localize_script('directory_map', 'ajax_url', admin_url('admin-ajax.php'));
+    } 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

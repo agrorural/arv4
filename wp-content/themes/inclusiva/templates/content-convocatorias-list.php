@@ -92,9 +92,9 @@
 		        		<p>
 		        		<?php if( $cat__list_slug_1 == 'cas' ){ ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-<?php echo $post__date; ?>.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 07:  FORMULARIO DE CURRICULUM VITAE</a></li>
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/ddjj-<?php echo $post__date; ?>.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 08: Formato de Declaración Jurada (en original) debidamente suscrito </a></li>
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/etiqueta-<?php echo $post__date; ?>.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 07:  FORMULARIO DE CURRICULUM VITAE</a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/ddjj-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 08: Formato de Declaración Jurada (en original) debidamente suscrito </a></li>
+<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/etiqueta-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
 <li><i class="fa-li fa fa-check-square"></i>Copia Simple del DNI o Carné de Extranjería, de ser el caso (vigente y legible)</li>
 </ul>'>Formatos</a> 
 		        		<?php } else { ?>
