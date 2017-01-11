@@ -1,10 +1,10 @@
 === SMTP Mailer ===
 Contributors: naa986
-Donate link: http://wphowto.net/
+Donate link: https://wphowto.net/
 Tags: smtp, mail, mailer, phpmailer, wp_mail, email
-Requires at least: 4.4
-Tested up to: 4.5
-Stable tag: 1.0.1
+Requires at least: 4.7
+Tested up to: 4.7
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Configure a SMTP server to send email from your WordPress site. Configure the wp
 
 == Description ==
 
-SMTP Mailer plugin allows you to configure a mail server which handles all outgoing email from your website. It takes control of the wp_mail function and use SMTP instead.
+[SMTP Mailer](https://wphowto.net/smtp-mailer-plugin-for-wordpress-1482) plugin allows you to configure a mail server which handles all outgoing email from your website. It takes control of the wp_mail function and use SMTP instead.
 
 = SMTP Mailer Settings =
 
@@ -44,11 +44,7 @@ SMTP Mailer should work with any plugin that uses the WordPress Mail function. H
 * Formidable Forms
 * Contact Form by BestWebSoft
 
-For detailed setup instructions please visit the [SMTP Mailer](http://wphowto.net/smtp-mailer-plugin-for-wordpress-1482 "WordPress SMTP Plugin") plugin page.
-
-= Plugin Language Translation =
-
-If you are a non-English speaker please help [translate SMTP Mailer](https://translate.wordpress.org/projects/wp-plugins/smtp-mailer) into your language.
+For detailed setup instructions please visit the [SMTP Mailer](https://wphowto.net/smtp-mailer-plugin-for-wordpress-1482) plugin page.
 
 == Installation ==
 
@@ -65,13 +61,16 @@ Yes.
 
 == Screenshots ==
 
-1. SMTP Mailer Settings
-2. SMTP Mailer Test Email Menu
+For screenshots please visit the [SMTP Mailer](https://wphowto.net/smtp-mailer-plugin-for-wordpress-1482) plugin page
 
 == Upgrade Notice ==
 none
 
 == Changelog ==
+
+= 1.0.2 =
+* SMTP Mailer now supports the "wp_mail_failed" hook which fires after a phpmailerException is caught.
+* Added a new option to bypass this error on some servers where the SSL certificate is not properly configured - Warning: stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed.
 
 = 1.0.1 =
 * First commit

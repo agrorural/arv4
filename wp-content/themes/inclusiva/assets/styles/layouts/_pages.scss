@@ -110,6 +110,37 @@
 						}
 					}
 				}
+
+				.media{
+					.media-left{
+						img{
+							margin-left: 15px;
+						}
+					}
+					.media-body{
+						.media-intro{
+							position: relative;
+							a{
+								color: $gray-light;
+								&:hover{
+									color: $gray;
+								}
+							}
+							ul{
+							    margin-left: -1px;
+								li{
+								    padding: 0 .5em;
+								    text-align: center;
+								    border-left: 1px solid #ccc;
+								    &:first-of-type{
+								    	padding-left: 0;
+								    }
+								}
+							}
+							margin-bottom: 20px;
+						}
+					}
+				}
 			}
 		}
 	}

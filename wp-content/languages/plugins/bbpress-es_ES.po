@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - bbPress - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-11-10 00:17:47+0000\n"
+"PO-Revision-Date: 2016-12-20 09:42:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,36 @@ msgstr ""
 "X-Generator: GlotPress/2.3.0-alpha\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - bbPress - Stable (latest release)\n"
+
+#. translators: user role
+#: includes/common/locale.php:56
+msgctxt "User role"
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. translators: user role
+#: includes/common/locale.php:53
+msgctxt "User role"
+msgid "Spectator"
+msgstr "Espectador"
+
+#. translators: user role
+#: includes/common/locale.php:50
+msgctxt "User role"
+msgid "Participant"
+msgstr "Participante"
+
+#. translators: user role
+#: includes/common/locale.php:47
+msgctxt "User role"
+msgid "Moderator"
+msgstr "Moderador"
+
+#. translators: user role
+#: includes/common/locale.php:44
+msgctxt "User role"
+msgid "Keymaster"
+msgstr "Jefe de claves"
 
 #. Author of the plugin/theme
 msgid "The bbPress Community"
@@ -23,9 +53,9 @@ msgstr "bbPress"
 msgid "bbPress is forum software with a twist from the creators of WordPress."
 msgstr "bbPress es un software para crear foros con un toque de los creadores de WordPress."
 
-#. #-#-#-#-#  tmp-bbpress.pot (bbPress 2.5.11)  #-#-#-#-#
+#. #-#-#-#-#  tmp-bbpress.pot (bbPress 2.5.12)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-bbpress.pot (bbPress 2.5.11)  #-#-#-#-#
+#. #-#-#-#-#  tmp-bbpress.pot (bbPress 2.5.12)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://bbpress.org"
 msgstr "https://bbpress.org"
@@ -1823,7 +1853,7 @@ msgstr "Chat normal"
 msgid "General"
 msgstr "General"
 
-#: includes/core/capabilities.php:523
+#: includes/core/capabilities.php:531
 msgid "Editable forum roles no longer exist."
 msgstr "Ya no existen los perfiles de foro editables."
 

@@ -1,15 +1,15 @@
-# Translation of WordPress - Development - Administration in Spanish (Spain)
-# This file is distributed under the same license as the WordPress - Development - Administration package.
+# Translation of WordPress - 4.7.x - Administration in Spanish (Spain)
+# This file is distributed under the same license as the WordPress - 4.7.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-10 13:06:44+0000\n"
+"PO-Revision-Date: 2016-12-30 11:18:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.3.0-alpha\n"
 "Language: es\n"
-"Project-Id-Version: WordPress - Development - Administration\n"
+"Project-Id-Version: WordPress - 4.7.x - Administration\n"
 
 #. translators: default GMT offset or timezone string. Must be either a valid
 #. offset (-12 to 14) 	   or a valid timezone string (America/New_York). See
@@ -74,7 +74,7 @@ msgstr "Al abrir la funcionalidad de plantilla de página a todos los tipos de c
 
 #: wp-admin/about.php:180
 msgid "Post Type Templates"
-msgstr "Plantillas de tipos de entradas"
+msgstr "Plantillas de tipos de contenido"
 
 #. translators: %s: smiling face with smiling eyes emoji
 #: wp-admin/about.php:173
@@ -318,7 +318,7 @@ msgstr "Original"
 #: wp-admin/upload.php:67 wp-admin/upload.php:211 wp-admin/user-edit.php:56
 #: wp-admin/user-new.php:214 wp-admin/users.php:69 wp-admin/widgets.php:75
 msgid "<a href=\"https://wordpress.org/support/\">Support Forums</a>"
-msgstr "<a href=\"https://es.wordpress.org/support/\">Support Forums</a>"
+msgstr "<a href=\"https://es.wordpress.org/support/\">Foros de soporte</a>"
 
 #. translators: %s: Number of failed updates
 #: wp-admin/includes/update.php:684
@@ -956,7 +956,7 @@ msgstr "Archivo zip del tema"
 msgid "Attach to existing content"
 msgstr "Adjuntar al contenido existente"
 
-#: wp-admin/includes/post.php:1454
+#: wp-admin/includes/post.php:1425
 msgid "Click the image to edit or update"
 msgstr "Haz clic en la imagen para editarla o actualizarla"
 
@@ -1519,11 +1519,11 @@ msgstr "Obtener la versión %s"
 msgid "Toggle panel: %s"
 msgstr "Alternar panel: %s"
 
-#: wp-admin/includes/post.php:1651
+#: wp-admin/includes/post.php:1622
 msgid "Saving revision&hellip;"
 msgstr "Guardando la revisión&hellip;"
 
-#: wp-admin/includes/post.php:1380
+#: wp-admin/includes/post.php:1351
 msgid "Edit permalink"
 msgstr "Editar el enlace permanente"
 
@@ -1936,7 +1936,7 @@ msgstr[1] "%s entradas de este autor"
 #: wp-admin/includes/class-theme-installer-skin.php:69
 #: wp-admin/includes/class-theme-upgrader-skin.php:59
 msgid "Live Preview &#8220;%s&#8221;"
-msgstr "Vista Previa &#8220;%s&#8221;"
+msgstr "Vista previa &#8220;%s&#8221;"
 
 #: wp-admin/includes/class-wp-press-this.php:1486
 msgid "More actions"
@@ -2245,7 +2245,7 @@ msgstr "Para guardar los cambios, es necesario que el archivo tenga permisos de 
 
 #: wp-admin/options-writing.php:171
 msgid "When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see <a href=\"https://codex.wordpress.org/Update_Services\">Update Services</a> on the Codex. Separate multiple service URLs with line breaks."
-msgstr "Cuando publicas una nueva entrada WordPress avisa automáticamente a los siguientes servicios de actualización. Para más información, visita <a href=\"https://codex.wordpress.org/Update_Services\">Servicios de actualización</a> en el Codex. Separa las URLs de los distintos servicios con saltos de línea."
+msgstr "Cuando publicas una nueva entrada WordPress avisa automáticamente a los siguientes servicios de actualización. Para más información revisa los <a href=\"https://codex.wordpress.org/Update_Services\">servicios de actualización</a> en el Codex. Separa las URLs de los distintos servicios con saltos de línea."
 
 #: wp-admin/options-permalink.php:257
 msgid "If your <code>.htaccess</code> file were <a href=\"https://codex.wordpress.org/Changing_File_Permissions\">writable</a>, we could do this automatically, but it isn&#8217;t so these are the mod_rewrite rules you should have in your <code>.htaccess</code> file. Click in the field and press <kbd>CTRL + a</kbd> to select all."
@@ -2393,7 +2393,7 @@ msgstr "Ocultar los ajustes de la entrada"
 
 #: wp-admin/plugin-editor.php:148 wp-admin/theme-editor.php:30
 msgid "In the editing area the Tab key enters a tab character. To move below this area by pressing Tab, press the Esc key followed by the Tab key. In some cases the Esc key will need to be pressed twice before the Tab key will allow you to continue."
-msgstr "En el área de edición la tecla Tab introduce un carácter de tabulación. Para moverse por debajo de esta zona pulsando Tab, pulsa la tecla Esc seguida de la tecla Tab. En algunos casos habrá que presionar dos veces la tecla Esc antes de que la tecla Tab te permita continuar."
+msgstr "En el área de edición la tecla Tab introduce un carácter de tabulación. Para moverse por debajo de esta área pulsando Tab, pulsa la tecla Esc seguida de la tecla Tab. En algunos casos habrá que presionar dos veces la tecla Esc antes de que la tecla Tab te permita continuar."
 
 #: wp-admin/includes/class-wp-screen.php:1139
 msgid "Number of items per page:"
@@ -2515,7 +2515,7 @@ msgstr "j M @ H:i"
 
 #: wp-admin/includes/class-wp-press-this.php:241
 msgid "This category cannot be added. Please change the name and try again."
-msgstr "Esta categoría no puede ser añadida. Cambia el nombre e inténtalo de nuevo."
+msgstr "No pudo añadirse esta categoría. Cambia el nombre e inténtalo de nuevo."
 
 #: wp-admin/includes/class-wp-press-this.php:248
 msgid "Error while adding the category. Please try again later."
@@ -2606,7 +2606,7 @@ msgid ""
 "UPDATE LOG\n"
 "=========="
 msgstr ""
-"ACTUALIZAR LOG\n"
+"REGISTRO DE LA ACTUALIZACIÓN\n"
 "=========="
 
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
@@ -3096,7 +3096,7 @@ msgstr "La relación de aspecto es la proporción entre el ancho y el alto. Pued
 
 #: wp-admin/edit-form-advanced.php:371
 msgid "Keyboard users: When you&#8217;re working in the visual editor, you can use <kbd>Alt + F10</kbd> to access the toolbar."
-msgstr "Usuarios de teclado: Cuando estés trabajando con el editor visual, puede utilizar <kbd>Alt + F10</kbd> para acceder a la Barra de Herramientas"
+msgstr "Usuarios de teclado: Cuando estés trabajando con el editor visual, puede utilizar <kbd>Alt + F10</kbd> para acceder a la barra de herramientas"
 
 #: wp-admin/edit-comments.php:171
 msgid "A red bar on the left means the comment is waiting for you to moderate it."
@@ -3559,11 +3559,11 @@ msgstr "Traducciones"
 msgid "Future security updates will be applied automatically."
 msgstr "Las siguientes actualizaciones de seguridad se aplicarán automáticamente."
 
-#: wp-admin/includes/post.php:1614
+#: wp-admin/includes/post.php:1585
 msgid "If you take over, %s will be blocked from continuing to edit."
 msgstr "Si tomas el control, %s no podrá seguir editando."
 
-#: wp-admin/includes/post.php:1612
+#: wp-admin/includes/post.php:1583
 msgid "This content is currently locked."
 msgstr "Este contenido está actualmente bloqueado."
 
@@ -3704,7 +3704,7 @@ msgstr "Actualizar a una versión más nueva del mismo tema sobrescribirá los c
 
 #: wp-admin/options-media.php:49
 msgid "The sizes listed below determine the maximum dimensions in pixels to use when adding an image to the Media Library."
-msgstr "Los tamaños de la siguiente lista determinan las dimensiones máximas en pixels a usar cuando se añada una imagen a la Biblioteca de medios."
+msgstr "Los tamaños de la siguiente lista determinan las dimensiones máximas en píxeles a usar al añadir una imagen a la biblioteca de medios."
 
 #: wp-admin/options-discussion.php:145
 msgid "Comment must be manually approved"
@@ -4139,7 +4139,7 @@ msgstr "En esta pantalla puedes:"
 msgid "This screen is used for managing your custom navigation menus."
 msgstr "Esta pantalla sirve para gestionar tus menús de navegación personalizados."
 
-#: wp-admin/includes/post.php:1652
+#: wp-admin/includes/post.php:1623
 msgid "Your latest changes were saved as a revision."
 msgstr "Tu últimos cambios se guardaron en una revisión."
 
@@ -4234,7 +4234,7 @@ msgstr "Borrador creado el %1$s a las %2$s"
 msgid "You cannot move this item to the Trash. %s is currently editing."
 msgstr "No puedes mover este elemento a la papelera. %s lo está editando en este momento."
 
-#: wp-admin/includes/post.php:1637
+#: wp-admin/includes/post.php:1608
 msgid "Take over"
 msgstr "Tomar posesión"
 
@@ -4483,7 +4483,7 @@ msgstr "Permitir a los buscadores que indexen el sitio"
 #: wp-admin/options-reading.php:31 wp-admin/options-reading.php:111
 #: wp-admin/options-reading.php:112
 msgid "Search Engine Visibility"
-msgstr "Visibilidad para los buscadores"
+msgstr "Visibilidad en los motores de búsqueda"
 
 #: wp-admin/options-reading.php:25
 msgid "You can also control the display of your content in RSS feeds, including the maximum numbers of posts to display and whether to show full text or a summary."
@@ -5376,7 +5376,7 @@ msgstr "El tema activo está roto. Volviendo al tema por defecto."
 
 #: wp-admin/user-edit.php:269
 msgid "Show Toolbar when viewing site"
-msgstr "Muestra la Barra de Herramientas en el sitio"
+msgstr "Mostrar la barra de herramientas al ver el sitio"
 
 #: wp-admin/credits.php:118
 msgid "Contributing Developers"
@@ -5585,7 +5585,7 @@ msgstr "Publicar por Correo Electrónico"
 
 #: wp-admin/options-discussion.php:22
 msgid "This screen provides many options for controlling the management and display of comments and links to your posts/pages. So many, in fact, they won&#8217;t all fit here! :) Use the documentation links to get information on what each discussion setting does."
-msgstr "Esta pantalla ofrece muchas opciones para controlar la gestión y la visualización de los comentarios y enlaces de tus páginas y entradas. Hay tantas que no todas caben aquí :). Puedes consultar en los enlaces de la documentación para saber qué hace cada opción de discusión."
+msgstr "Esta pantalla ofrece muchas opciones para controlar la gestión y la visualización de los comentarios y enlaces de tus páginas y entradas. Hay tantas que no todas caben aquí :). Puedes consultar en los enlaces de la documentación para saber qué hace cada opción de comentarios."
 
 #: wp-admin/user-edit.php:40
 msgid "You can change your password, turn on keyboard shortcuts, change the color scheme of your WordPress administration screens, and turn off the WYSIWYG (Visual) editor, among other things. You can hide the Toolbar (formerly called the Admin Bar) from the front end of your site, however it cannot be disabled on the admin screens."
@@ -5659,7 +5659,7 @@ msgstr "Borrar enlaces"
 
 #: wp-admin/index.php:47
 msgid "Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful WordPress information."
-msgstr "Enlaces en la Barra de Herramientas en la parte superior de la pantalla conecta tu escritorio y tu sitio, y proporciona acceso a tu perfil e información valiosa de WordPress. "
+msgstr "Los enlaces de la barra de herramientas de la parte superior de la pantalla conectan tu escritorio y tu sitio, y proporcionan acceso a tu perfil e información valiosa de WordPress. "
 
 #: wp-admin/edit-comments.php:172
 msgid "In the <strong>Author</strong> column, in addition to the author&#8217;s name, email address, and blog URL, the commenter&#8217;s IP address is shown. Clicking on this link will show you all the comments made from this IP address."
@@ -6126,7 +6126,7 @@ msgstr "Dirección de correo electrónico"
 
 #: wp-admin/options-discussion.php:47
 msgid "Attempt to notify any blogs linked to from the article"
-msgstr "Tratar de avisar a los sitios enlazados desde el artículo."
+msgstr "Tratar de avisar a los sitios enlazados desde el artículo"
 
 #. translators: 1: Site name, 2: site URL, 3: role
 #: wp-admin/includes/user.php:531
@@ -6933,7 +6933,7 @@ msgstr "Nombre de la función&hellip;"
 
 #: wp-admin/includes/class-plugin-installer-skin.php:55
 msgid "Activate Plugin &amp; Run Importer"
-msgstr "Activar plugin y Comenzar Importación"
+msgstr "Activar plugin y ejecutar el importador"
 
 #: wp-admin/includes/class-plugin-installer-skin.php:65
 msgid "Return to Importers"
@@ -7710,7 +7710,7 @@ msgstr "Widgets disponibles"
 msgid "Error in displaying the widget settings form."
 msgstr "Error al mostrar el formulario con las opciones del widget."
 
-#: wp-admin/includes/misc.php:882 wp-admin/includes/post.php:1814
+#: wp-admin/includes/misc.php:882 wp-admin/includes/post.php:1785
 #: wp-admin/widgets.php:340
 msgid "Error while saving."
 msgstr "Error al guardar los cambios."
@@ -8041,14 +8041,14 @@ msgstr "Ver entrada"
 #: wp-admin/async-upload.php:55 wp-admin/post.php:110 wp-admin/post.php:211
 #: wp-admin/post.php:234 wp-admin/post.php:252
 msgid "Unknown post type."
-msgstr "Tipo de entrada desconocida."
+msgstr "Tipo de contenido desconocido."
 
 #: wp-admin/post.php:120
 msgid "You can&#8217;t edit this item because it is in the Trash. Please restore it and try again."
 msgstr "No puedes editar esto ya que está en la Papelera. Sácala de la Papelera e inténtalo de nuevo."
 
 #: wp-admin/async-upload.php:57 wp-admin/edit-tags.php:154
-#: wp-admin/includes/post.php:1820 wp-admin/media-upload.php:46
+#: wp-admin/includes/post.php:1791 wp-admin/media-upload.php:46
 #: wp-admin/post.php:117 wp-admin/term.php:38
 msgid "Sorry, you are not allowed to edit this item."
 msgstr "Lo siento, no tienes permisos para para editar este elemento."
@@ -8235,7 +8235,7 @@ msgstr "Para publicar entradas por correo electrónico debes configurar una cuen
 
 #: wp-admin/options-writing.php:116
 msgid "Post via email"
-msgstr "Publicar via correo electrónico"
+msgstr "Publicar por correo electrónico"
 
 #: wp-admin/options-writing.php:97
 msgid "Default Link Category"
@@ -8275,7 +8275,7 @@ msgstr "Texto completo"
 
 #: wp-admin/options-reading.php:103 wp-admin/options-reading.php:104
 msgid "For each article in a feed, show"
-msgstr "Mostrar, para cada entrada en el feed,"
+msgstr "Para cada entrada en el feed mostrar"
 
 #: wp-admin/options-reading.php:99
 msgid "Syndication feeds show the most recent"
@@ -8299,7 +8299,7 @@ msgstr "Página de entradas: %s"
 
 #: wp-admin/options-reading.php:83
 msgid "Front page: %s"
-msgstr "Página inicial: %s"
+msgstr "Página de inicio: %s"
 
 #: wp-admin/options-reading.php:79
 msgid "A <a href=\"%s\">static page</a> (select below)"
@@ -8464,15 +8464,15 @@ msgstr "Identicon (autogenerado)"
 
 #: wp-admin/options-discussion.php:226
 msgid "Gravatar Logo"
-msgstr "Logo de Gravatar"
+msgstr "Logotipo de Gravatar"
 
 #: wp-admin/options-discussion.php:225
 msgid "Blank"
-msgstr "Sin avatar"
+msgstr "En blanco"
 
 #: wp-admin/options-discussion.php:220
 msgid "For users without a custom avatar of their own, you can either display a generic logo or a generated one based on their email address."
-msgstr "Para aquellos usuarios que no tengan un avatar personalizado propio puedes mostrar un logotipo genérico o generar uno basado en su dirección de correo electrónico."
+msgstr "Para los usuarios que no tengan un avatar personalizado propio puedes mostrar un logotipo genérico o generar uno basado en su dirección de correo electrónico."
 
 #: wp-admin/options-discussion.php:217 wp-admin/options-discussion.php:218
 msgid "Default Avatar"
@@ -8512,7 +8512,7 @@ msgstr "Mostrar avatares"
 
 #: wp-admin/options-discussion.php:185 wp-admin/options-discussion.php:186
 msgid "Avatar Display"
-msgstr "Visibilidad"
+msgstr "Visibilidad del avatar"
 
 #: wp-admin/options-discussion.php:173
 msgid "Avatars"
@@ -8560,7 +8560,7 @@ msgstr "Enviarme un correo electrónico cuando "
 
 #: wp-admin/options-discussion.php:123
 msgid "Comments should be displayed with the %s comments at the top of each page"
-msgstr "Los comentarios se ordenarán con los %s al principio"
+msgstr "Los comentarios se mostrarán con los comentarios %s al principio de cada página"
 
 #: wp-admin/options-discussion.php:121
 msgid "newer"
@@ -8594,7 +8594,7 @@ msgstr "Cerrar automáticamente los comentarios en las entradas con más de %s d
 
 #: wp-admin/options-discussion.php:67
 msgid "Users must be registered and logged in to comment"
-msgstr "Los usuarios deben registrarse e identificarse para comentar"
+msgstr "Los usuarios deben registrarse y acceder para comentar"
 
 #: wp-admin/options-discussion.php:63
 msgid "Comment author must fill out name and email"
@@ -8606,7 +8606,7 @@ msgstr "Otros ajustes de comentarios"
 
 #: wp-admin/options-discussion.php:57
 msgid "These settings may be overridden for individual articles."
-msgstr "Estos ajustes pueden modificarse para cada entrada en particular."
+msgstr "Estos ajustes pueden modificarse en cada entrada."
 
 #: wp-admin/options-discussion.php:43 wp-admin/options-discussion.php:44
 msgid "Default article settings"
@@ -9188,11 +9188,11 @@ msgstr "Otro sitio más de %s"
 msgid "Just another WordPress site"
 msgstr "Otro sitio realizado con WordPress"
 
-#: wp-admin/includes/post.php:1365
+#: wp-admin/includes/post.php:1336
 msgid "Change Permalinks"
 msgstr "Enlaces permanentes"
 
-#: wp-admin/includes/post.php:1354 wp-admin/includes/post.php:1377
+#: wp-admin/includes/post.php:1325 wp-admin/includes/post.php:1348
 msgid "Permalink:"
 msgstr "Enlace permanente:"
 
@@ -9246,7 +9246,7 @@ msgstr "Puntuación promedio"
 
 #: wp-admin/includes/plugin-install.php:599
 msgid "WordPress.org Plugin Page &#187;"
-msgstr "Página de plugins de WordPress.org &#187;"
+msgstr "Página del plugin en WordPress.org &#187;"
 
 #: wp-admin/includes/plugin-install.php:587
 msgid "Compatible up to:"
@@ -10845,7 +10845,7 @@ msgid "Sorry, you are not allowed to edit comments on this post."
 msgstr "Lo siento, no tienes permisos para editar comentarios en esta entrada."
 
 #: wp-admin/comment.php:61 wp-admin/comment.php:255
-#: wp-admin/includes/post.php:1561
+#: wp-admin/includes/post.php:1532
 msgid "Go back"
 msgstr "Volver atrás"
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - BuddyPress - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-11-15 19:55:56+0000\n"
+"PO-Revision-Date: 2016-12-20 18:43:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,6 +90,11 @@ msgstr "Tiempo transcurrido"
 #: bp-templates/bp-legacy/buddypress/members/single/settings/profile.php:18
 msgid "Profile visibility settings"
 msgstr "Ajustes de visibilidad de perfiles"
+
+#. translators: accessibility text
+#: bp-templates/bp-legacy/buddypress/members/single/settings/notifications.php:14
+msgid "Notification settings"
+msgstr "Ajustes de notificaciones"
 
 #. translators: accessibility text
 #: bp-templates/bp-legacy/buddypress/members/single/settings/general.php:14
@@ -365,10 +370,18 @@ msgstr "Apoyo de la comunidad"
 msgid "2.7 Release Lead"
 msgstr "2.7 Versión creada"
 
+#: bp-core/classes/class-bp-admin.php:784
+msgid "BuddyPress Team"
+msgstr "El equipo de BuddyPress"
+
 #. translators: %s: URL to the BuddyPress Codex article
 #: bp-core/classes/class-bp-admin.php:729
 msgid "<a href=\"%s\">Changelog for BuddyPress 2.7.</a>"
 msgstr "<a href=\"%s\">Registro de cambios de BuddyPress 2.7.</a>"
+
+#: bp-core/classes/class-bp-admin.php:726
+msgid "And so much more!"
+msgstr "¡Y muchísimo más!"
 
 #. translators: %s: bp_get_user_groups()
 #: bp-core/classes/class-bp-admin.php:717
@@ -391,6 +404,39 @@ msgstr "Compatibilidad de búsqueda para grupos por nueva columna %s"
 #: bp-core/classes/class-bp-admin.php:700
 msgid "Improved markup, new modular group management templates, and a new member search form are just some of the enhancements added to the single group admin screens."
 msgstr "Mejoras en el marcado, nuevas plantillas modulares de gestión de grupos, y un nuevo formulario de búsqueda de miembros son algunas de las mejoras añadidas a las pantallas de administración de grupos."
+
+#: bp-core/classes/class-bp-admin.php:699
+msgid "Improvements to a Single Group&#8217;s Management Screens"
+msgstr "Mejoras en las pantallas de gestión de grupo simple"
+
+#: bp-core/classes/class-bp-admin.php:694
+msgid "Provides developers with improved syntax and more control over the rendering of buttons."
+msgstr "Ofrece a los desarrolladores un sintaxis mejorada y más control sobre como se muestran los botones."
+
+#. translators: %s: BP_Button
+#: bp-core/classes/class-bp-admin.php:692
+msgid "Refactored %s Class to Accept New Arguments"
+msgstr "Clase %s remodelada para que acepte nuevos argumentos"
+
+#: bp-core/classes/class-bp-admin.php:685
+msgid "Continued improvements for universal access help make BuddyPress back- and front-end screens usable for everyone (and on more devices)."
+msgstr "Mejoras continuas en el acceso universal ayudan a hacer que las pantallas de portada y administración de BuddyPress las pueda utilizar cualquiera (y en todo tipo de dispositivos). "
+
+#: bp-core/classes/class-bp-admin.php:684
+msgid "Accessibility Updates for the Front End and Back End"
+msgstr "Actualizaciones de accesibilidad tanto en portada como en la administración"
+
+#: bp-core/classes/class-bp-admin.php:679
+msgid "Whatever you choose as the title of your Activity, Sites, Members, or Groups directory pages on the back end, is what you&#8217;ll get as the heading on the front end."
+msgstr "Lo que elijas como título en la administración de tus páginas de Actividad, Sitios, Miembros o Directorio de grupos es lo que verás como encabezado en portada."
+
+#: bp-core/classes/class-bp-admin.php:678
+msgid "Use WP Page Names for Headings of BP Directory Pages"
+msgstr "Usar nombres de página de WP para las cabeceras de las páginas de directorio de BP."
+
+#: bp-core/classes/class-bp-admin.php:673
+msgid "Improve user experience by facilitating the removal of any or all subscriptions via new email tokens and unsubscribe links."
+msgstr "Mejoras en la experiencia de usuario facilitando la retirada de todas o cualquiera de las suscripciones mediante tokens por correo electrónico y enlaces para anular suscripción."
 
 #: bp-core/classes/class-bp-admin.php:672
 msgid "Links to Unsubscribe from Emails"
@@ -477,6 +523,10 @@ msgstr "Mira <a href=\"%s\">la guía del Codex</a> para más información."
 #: bp-core/admin/bp-core-admin-functions.php:1239
 msgid "A BuddyPress update is available, but your system is not compatible."
 msgstr "Una actualización de BuddyPress está disponible, pero tu sistema es incompatible."
+
+#: bp-blogs/bp-blogs-template.php:1115
+msgid "Privacy: I would like my site to appear in search engines, and in public listings around this network"
+msgstr "Privacidad: Me gustaría que mi sitio apareciese en los motores de búsqueda, y en los listados públicos de esta red"
 
 #: bp-blogs/bp-blogs-template.php:399
 msgid "Site icon for %s"
@@ -1131,6 +1181,17 @@ msgid "A member has replied to an activity update that the recipient posted."
 msgstr "Un miembro ha respondido a una actualización que el destinatario publicado."
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3433
+msgid ""
+"Your membership request for the group \"{{group.name}}\" has been rejected.\n"
+"\n"
+"To request membership again, visit: {{{group.url}}}"
+msgstr ""
+"Tu petición de membresía para el grupo \"{{group.name}}\" ha sido rechazada.\n"
+"\n"
+"Para solicitar de nuevo la membresía visita: {{{group.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3431
 msgid "Your membership request for the group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot; has been rejected."
 msgstr "Tu solicitud de membresía para el grupo&quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot; ha sido rechazada."
@@ -1189,6 +1250,21 @@ msgid "[{{{site.name}}}] Verify your new email address"
 msgstr "[{{{site.name}}}] Verifica tu nuevo correo electrónico"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3409
+msgid ""
+"{{sender.name}} sent you a new message: \"{{usersubject}}\"\n"
+"\n"
+"\"{{usermessage}}\"\n"
+"\n"
+"Go to the discussion to reply or catch up on the conversation: {{{message.url}}}"
+msgstr ""
+"{{sender.name}} te envió un mensaje nuevo: \"{{usersubject}}\"\n"
+"\n"
+"\"{{usermessage}}\"\n"
+"\n"
+"Ve al debate para responder o ver la conversación: {{{message.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3407
 msgid ""
 "{{sender.name}} sent you a new message: &quot;{{usersubject}}&quot;\n"
@@ -1209,6 +1285,21 @@ msgid "[{{{site.name}}}] New message from {{sender.name}}"
 msgstr "[{{{site.name}}}] Nuevo mensaje de {{sender.name}}"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3401
+msgid ""
+"{{requesting-user.name}} wants to join the group \"{{group.name}}\". As you are the administrator of this group, you must either accept or reject the membership request.\n"
+"\n"
+"To manage this and all other pending requests, visit: {{{group-requests.url}}}\n"
+"\n"
+"To view {{requesting-user.name}}'s profile, visit: {{{profile.url}}}"
+msgstr ""
+"{{requesting-user.name}} quiere unirse al grupo \"{{group.name}}\". Al ser tú el administrador de este grupo debes aceptar o rechazar su petición de membresía.\n"
+"\n"
+"Para gestionar esta o todas las peticiones pendientes visita: {{{group-requests.url}}}\n"
+"\n"
+"Para ver el perfil de {{requesting-user.name}} visita: {{{profile.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3399
 msgid ""
 "<a href=\"{{{profile.url}}}\">{{requesting-user.name}}</a> wants to join the group &quot;{{group.name}}&quot;. As you are an administrator of this group, you must either accept or reject the membership request.\n"
@@ -1225,6 +1316,17 @@ msgid "[{{{site.name}}}] Membership request for group: {{group.name}}"
 msgstr "[{{{site.name}}}]Solicitud de membresía para el grupo: {{group.name}}"
 
 #. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3393
+msgid ""
+"You have been promoted to {{promoted_to}} in the group: \"{{group.name}}\".\n"
+"\n"
+"To visit the group, go to: {{{group.url}}}"
+msgstr ""
+"Has sido promocionado a {{promoted_to}} en el grupo: \"{{group.name}}\".\n"
+"\n"
+"Para visitar el grupo ve a: {{{group.url}}}"
+
+#. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3391
 msgid "You have been promoted to <b>{{promoted_to}}</b> in the group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;."
 msgstr "Has sido nombrado para <b>{{promoted_to}}</b> en el grupo &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;."
@@ -1233,6 +1335,23 @@ msgstr "Has sido nombrado para <b>{{promoted_to}}</b> en el grupo &quot;<a href=
 #: bp-core/bp-core-functions.php:3389
 msgid "[{{{site.name}}}] You have been promoted in the group: \"{{group.name}}\""
 msgstr "[{{{site.name}}}] Has sido nombrado en el grupo: \"{{group.name}}\""
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3385
+msgid ""
+"{{inviter.name}} has invited you to join the group: \"{{group.name}}\".\n"
+"\n"
+"To accept your invitation, visit: {{{invites.url}}}\n"
+"\n"
+"To learn more about the group, visit {{{group.url}}}.\n"
+"To view {{inviter.name}}'s profile, visit: {{{inviter.url}}}"
+msgstr ""
+"{{inviter.name}} te ha invitado a unirte al grupo: \"{{group.name}}\".\n"
+"\n"
+"Para aceptar su invitación visita: {{{invites.url}}}\n"
+"\n"
+"Para aprender más del grupo visita {{{group.url}}}.\n"
+"Para ver el perfil de {{inviter.name}} visita: {{{inviter.url}}}"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3383
@@ -1544,6 +1663,10 @@ msgstr "Contenido de correo electrónico en texto plano"
 #: bp-core/admin/bp-core-admin-functions.php:929
 msgid "Choose when this email will be sent."
 msgstr "Elegir cuando va a ser enviado este correo electrónico."
+
+#: bp-core/admin/bp-core-admin-functions.php:886
+msgid "Phrases wrapped in braces <code>{{ }}</code> are email tokens. <a href=\"%s\">Learn about tokens on the BuddyPress Codex</a>."
+msgstr "Las frases envueltas con corchetes <code>{{ }}</code> son tokens de correo electrónico. <a href=\"%s\">Aprende sobre los tokens en el codex de BuddyPress</a>."
 
 #: bp-core/admin/bp-core-admin-functions.php:866
 msgid "Are your emails in the wrong language? Go to <a href=\"%s\">BuddyPress Tools and run the \"reinstall emails\"</a> tool."
@@ -2414,9 +2537,9 @@ msgstr "Hubo un error enviado la respuesta, por favor, prueba de nuevo."
 msgid "The BuddyPress Community"
 msgstr "La Comunidad de BuddyPress"
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.3)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.4)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.3)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://buddypress.org/"
 msgstr "https://buddypress.org/"
@@ -6838,17 +6961,37 @@ msgstr ""
 msgid "New bbPress Installation"
 msgstr "Nueva Instalación de bbPress"
 
+#. translators: %s: bb-config.php
+#: bp-forums/deprecated/1.6.php:181
+msgid "A configuration file could not be created. No problem, but you will need to save the text shown below into a file named %s in the root directory of your WordPress installation before you can start using the forum functionality."
+msgstr "No se pudo crear un archivo de configuración. No hay problema, pero tendrás que guardar el texto que se muestra a continuación en un archivo llamado %s del directorio raíz de tu instalación de WordPress antes de poder usar la funcionalidad de foros."
+
 #: bp-forums/deprecated/1.6.php:156 bp-forums/deprecated/1.6.php:193
 msgid "Complete Installation"
 msgstr "Completar Instalación"
+
+#. translators: %s: bb-config.php
+#: bp-forums/deprecated/1.6.php:153
+msgid "BuddyPress can make use of your existing bbPress install. Just provide the location of your %s file, and BuddyPress will do the rest."
+msgstr "BuddyPress puede usar tu instalación existente de bbPress. Simplemente indica la ubicación de tu archivo %s y BuddyPress hará el resto."
 
 #: bp-forums/deprecated/1.6.php:151
 msgid "Existing bbPress Installation"
 msgstr "Instalación existente de bbPress"
 
+#. translators: %s: bb-config.php
+#: bp-forums/deprecated/1.6.php:146
+msgid "BuddyPress will now use its internal copy of bbPress to run the forums on your site. If you wish, you can remove your old bbPress installation files, as long as you keep the %s file in the same location."
+msgstr "BuddyPress usará ahora su propia copia interna de bbPress para ejecutar los foros en tu sitio. Si quieres, puedes borrar los archivos de tu vieja instalación de bbPress, siempre y cuando mantengas el archivo %s en la misma ubicación."
+
 #: bp-forums/deprecated/1.6.php:144
 msgid "Forums were set up correctly using your existing bbPress install!"
 msgstr "Los foros se han configurado correctamente, usando una instalación existente de bbPress."
+
+#. translators: %s: bb-config.php
+#: bp-forums/deprecated/1.6.php:141
+msgid "The %s file was not found at that location. Please try again."
+msgstr "El archivo %s no se encuentra en esa ubicación. Por favor, inténtalo de nuevo."
 
 #: bp-forums/deprecated/1.6.php:100 bp-forums/deprecated/1.6.php:251
 msgid "If you decide to use bbPress, you will need to deactivate the legacy group forum component.  For more info, <a href=\"%s\">read this codex article</a>."
@@ -7569,42 +7712,42 @@ msgstr "El archivo subido excede el tamaño máximo de archivo permitido para es
 msgid "The file was uploaded successfully"
 msgstr "El archivio se ha subido con éxito."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:387
+#: bp-core/classes/class-bp-attachment-avatar.php:399
 #: bp-groups/bp-groups-screens.php:1021
 msgid "The group profile photo was deleted successfully!"
 msgstr "¡La imagen de perfil del grupo fue borrada correctamente!"
 
-#: bp-core/classes/class-bp-attachment-avatar.php:386
+#: bp-core/classes/class-bp-attachment-avatar.php:398
 #: bp-groups/bp-groups-screens.php:1023
 msgid "There was a problem deleting the group profile photo. Please try again."
 msgstr "Ha habido un problema al borrar la foto de perfil del grupo. Por favor, vuelve a intentarlo."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:385
+#: bp-core/classes/class-bp-attachment-avatar.php:397
 #: bp-groups/bp-groups-actions.php:366
 msgid "The group profile photo was uploaded successfully."
 msgstr "La foto de perfil del grupo se ha subido con éxito."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:384
+#: bp-core/classes/class-bp-attachment-avatar.php:396
 #: bp-groups/bp-groups-screens.php:1066
 msgid "There was a problem cropping the group profile photo."
 msgstr "Hubo un problema ajustando el tamaño de la imagen de perfil del grupo."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:369
+#: bp-core/classes/class-bp-attachment-avatar.php:381
 #: bp-xprofile/bp-xprofile-actions.php:40
 msgid "Your profile photo was deleted successfully!"
 msgstr "¡Tu imagen de perfil ha sido borrada correctamente!"
 
-#: bp-core/classes/class-bp-attachment-avatar.php:368
+#: bp-core/classes/class-bp-attachment-avatar.php:380
 #: bp-xprofile/bp-xprofile-actions.php:42
 msgid "There was a problem deleting your profile photo. Please try again."
 msgstr "Ha habido un problema al borrar tu foto de perfil. Por favor, vuelve a intentarlo."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:367
+#: bp-core/classes/class-bp-attachment-avatar.php:379
 #: bp-xprofile/bp-xprofile-screens.php:275
 msgid "Your new profile photo was uploaded successfully."
 msgstr "Tu nueva imagen de perfil fue subida con éxito."
 
-#: bp-core/classes/class-bp-attachment-avatar.php:366
+#: bp-core/classes/class-bp-attachment-avatar.php:378
 #: bp-xprofile/bp-xprofile-screens.php:261
 msgid "There was a problem cropping your profile photo."
 msgstr "Hubo un error ajustando el tamaño de la imagen."
@@ -8551,7 +8694,7 @@ msgstr "Desconectado"
 msgid "Logged-In"
 msgstr "Conectado"
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.3)  #-#-#-#-#
+#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.7.4)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: bp-core/admin/bp-core-admin-functions.php:758
 #: bp-core/classes/class-bp-admin.php:226
