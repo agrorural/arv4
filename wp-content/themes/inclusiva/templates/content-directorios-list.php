@@ -67,8 +67,8 @@
 						<?php if ( $dir_responsable ) echo '<h4 class="media-heading">' . $dir_responsable . '</h4>'; ?>
 						<ul class="list-inline">
 							<?php if ( $dir_resolucion ) echo '<li><a href="'.$dir_resolucion.'"><small>Resolución</small></a></li>'; ?>
-							<?php if ( $dir_cv ) echo '<li><a href="'.$dir_cv.'"><small class="tip" title="Curriculum vitae">C. V</small></a></li>'; ?>
-							<?php if ( $dir_dji ) echo '<li><a href="'.$dir_dji.'"><small class="tip" title="Declaración Jurada de Incompatibilidades">DD. JJ. II</small></a></li>'; ?>
+							<?php if ( $dir_cv ) echo '<li><a href="'.$dir_cv.'" target="_blank"><small class="tip" title="Curriculum vitae">C. V</small></a></li>'; ?>
+							<?php if ( $dir_dji ) echo '<li><a href="'.$dir_dji.'" target="_blank"><small class="tip" title="Declaración Jurada de Incompatibilidades">DD. JJ. II</small></a></li>'; ?>
 						</ul>
 					</section>
 
