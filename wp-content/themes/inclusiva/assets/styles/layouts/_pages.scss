@@ -120,6 +120,10 @@
 					.media-body{
 						.media-intro{
 							position: relative;
+							.media-heading{
+								@include opensans('bold');
+								margin-bottom: 15px;
+							}
 							a{
 								color: $gray-light;
 								&:hover{

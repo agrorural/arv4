@@ -80,7 +80,7 @@ function setup() {
   add_image_size( 'thumb-clasificaciones', 400, 195, array( 'left', 'top' ) );
   add_image_size( 'thumb-productos', 185, 205, array( 'left', 'top' ) );
   add_image_size( 'thumb-vendi-way', 250, 64, array( 'center', 'top' ) );
-  add_image_size( 'thumb-72', 72, 72, array( 'center', 'top' ) );
+  add_image_size( 'thumb-72', 72, 80, array( 'center', 'top' ) );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

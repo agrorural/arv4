@@ -55,9 +55,9 @@
 				<div class="media-left">
 				<?php if ( $dir_correo ) { ?>
 					<?php if($dir_imagen){ ?>
-						<img src="<?php echo $dir_imagen['sizes']['thumb-72']; ?>" alt="" width="72" height="72" />
+						<img src="<?php echo $dir_imagen['sizes']['thumb-72']; ?>" alt="" width="72" height="80" />
 					<?php }else{ ?>
-						<?php echo get_avatar($dir_correo, 72); ?>
+						<img src="<?php echo get_stylesheet_directory_uri() . '/dist/images/default__avatar.jpg'; ?>" width="72" height="80" />
 					<?php } ?>
 				<?php } ?>
 				</div>
