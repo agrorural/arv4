@@ -20,8 +20,10 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <div class="masshead servicios">
-		<?php get_template_part('templates/page', 'header-servicios'); ?>
-	</div>
+      <div class="container">
+        <?php get_template_part('templates/page', 'header-servicios'); ?>
+      </div>
+    </div>
 	
     <?php if (has_nav_menu('servicios_navigation')){ ?>
           <?php get_template_part('templates/nav', 'servicios' ); ?>
