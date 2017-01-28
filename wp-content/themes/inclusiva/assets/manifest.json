@@ -33,6 +33,6 @@
     }
   },
   "config": {
-    "devUrl": "http://agrorural.local"
+    "devUrl": "http://agrorural.dev"
   }
 }
