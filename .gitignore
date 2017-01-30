@@ -28,7 +28,8 @@ node_modules
 
 # WordPress One!
 .htaccess
-.maintenance*
+.maintenance
+.maintenance_
 wp-config.php
 wp-content/plugins/debug-bar
 wp-content/plugins/debug-bar-console
