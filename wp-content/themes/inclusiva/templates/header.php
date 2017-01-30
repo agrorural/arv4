@@ -22,17 +22,16 @@
 <header class="banner navbar navbar-default navbar-static-top navbar-branding" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <h1 class="navbar-brand agrorural"><a href="<?= esc_url(home_url('/')); ?>"><span><?php bloginfo('name'); ?></span></a></h1>
       <h1 class="navbar-brand minagri"><a href="http://www.minagri.gob.pe"><span>Minagri</span></a></h1>
     </div>
 
-    <nav>
-      <?php
-        if (has_nav_menu('social_navigation')) :
-          wp_nav_menu(['theme_location' => 'social_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-social']);
-        endif;
-      ?>
-    </nav>
+    <div class="navbar-header agrorural">
+      <h1 class="navbar-brand agrorural"><a href="<?= esc_url(home_url('/')); ?>"><span><?php bloginfo('name'); ?></span></a></h1>
+    </div>
+
+    <div class="navbar-form">
+      <?php get_search_form(); ?>
+    </div>
   </div>
 </header>
 
@@ -53,9 +52,6 @@
           wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
         endif;
         ?>
-        <div class="navbar-form navbar-right">
-            <?php get_search_form(); ?>
-          </div>
       </nav>
 
   </div>
