@@ -46,6 +46,7 @@ function setup() {
     
     // Resoluciones
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
+    'doc_rda_navigation' => __('Documentos: RDA Navigation', 'sage'), //RDE
     'doc_directivas_navigation' => __('Documentos: Directivas Navigation', 'sage'), //Directivas
     'doc_pac_navigation' => __('Documentos: PAC Navigation', 'sage'), //PAC
     'doc_convenios_navigation' => __('Documentos: Convenios Navigation', 'sage'), //Convenios
