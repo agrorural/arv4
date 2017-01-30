@@ -44,7 +44,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  * Quitando estilos de plugins
  */
 function remove_unwanted_plugins_assets() {
-  wp_dequeue_style('bp-legacy-css');
+  //wp_dequeue_style('bp-legacy-css');
   //wp_dequeue_style( 'tribe-events-full-calendar-style' );
   //wp_dequeue_style( 'tribe-events-calendar-style' );
   //wp_dequeue_style( 'tribe-events-calendar-full-mobile-style' );
