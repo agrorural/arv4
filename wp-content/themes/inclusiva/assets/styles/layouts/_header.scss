@@ -5,6 +5,8 @@ header{
 	}
 	 
 	&.super-header{
+		position: relative;
+		z-index: 1002;
 		border-bottom: 1px solid transparent;
 		.collapse{
 			display: block;
@@ -174,15 +176,31 @@ header{
   		margin-bottom: 0;
   		z-index: 1001;
   		.container{
-  			padding-top: 15px;
-  			padding-bottom: 15px;
   			.navbar-header, .navbar-form{
   				@include make-sm-column(4);
   				float: none;
   			}
+
+  			.navbar-form{
+  				form{
+  					float: right;
+  					padding-top: 15px;
+  				}
+  			}
+  			.navbar-header{
+  				&.minagri, &.agrorural{
+					.navbar-brand{
+						padding-top: 15px;
+    					padding-bottom: 15px;
+					}
+  				}
+  			}
   			.navbar-header{
   				&.agrorural{
   					.navbar-brand{
+						width: 200px;
+					    margin: 0 auto;
+					    background: $white;
   						float: none;
   						a{
   							margin: 0 auto;
@@ -207,7 +225,7 @@ header{
 						display: none;
 						@media(min-width: $screen-sm-min){
 							position: absolute;
-							top: 34px;
+							top: 100%;
 							left: 0;
 							right: 0;
 						}

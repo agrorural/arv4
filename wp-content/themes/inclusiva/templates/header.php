@@ -21,7 +21,7 @@
 
 <header class="banner navbar navbar-default navbar-static-top navbar-branding" role="banner">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header minagri">
       <h1 class="navbar-brand minagri"><a href="http://www.minagri.gob.pe"><span>Minagri</span></a></h1>
     </div>
 
