@@ -177,14 +177,37 @@ header{
   		z-index: 1001;
   		.container{
   			.navbar-header, .navbar-form{
-  				@include make-sm-column(4);
+  				@include make-sm-column(4,0);
   				float: none;
   			}
 
   			.navbar-form{
   				form{
+  					width: 290px;
   					float: right;
   					padding-top: 15px;
+  					.input-group{
+  						width: 100%;
+						.search-field{
+							@include opensans();
+							font-style: italic;
+	  						border-top: 1px solid transparent;
+	  						border-left: 1px solid transparent;
+	  						border-right: 1px solid transparent;
+	  						background-color: transparent;
+	  						color: $white;
+	  						-moz-appearance: textfield;
+					        -webkit-appearance: textfield;
+					        appearance: textfield;
+							box-shadow: none;
+							padding-right: 0;
+							padding-left: 0;
+				        	@include placeholder($white);
+	  					}
+	  					.input-group-btn{
+	  						display: none;
+	  					}
+  					}
   				}
   			}
   			.navbar-header{

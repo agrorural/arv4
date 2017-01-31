@@ -20,8 +20,8 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <?php get_template_part('templates/slider', 'home'); ?>
-    <?php get_template_part('templates/section', 'newsfeed'); ?>
     <?php get_template_part('templates/section', 'multimedia'); ?>
+    <?php get_template_part('templates/section', 'newsfeed'); ?>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
