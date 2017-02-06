@@ -5,9 +5,13 @@
 <header class="super-header">
   <div class="container">
    <nav class="collapse" role="navigation"> 
-      <ul class="nav navbar-nav navbar-date">
-        <li><p class="navbar-brand"><?php echo date_i18n('l, j \d\e F \d\e Y', time()); ?></p></li>
-      </ul>
+  
+    <?php
+      if (has_nav_menu('social_navigation')) :
+      wp_nav_menu(['theme_location' => 'social_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-left navbar-social']);
+      endif;
+    ?>
+
 
       <?php
       if (has_nav_menu('links_navigation')) :

@@ -20,12 +20,13 @@ $brown--lighter:		lighten($brown--light, 15%);
 $black:					#000;
 $black--light:			lighten($black, 15%);
 $green:					#007739;
-$green--light:			lighten($green, 10%);
+$green--light:			lighten($green, 5%);
+$green--light--2:		lighten($green--light, 2.5%);
 $green--dark:			darken($green, 10%);
 $green--accent: 		#b7c72c;
 $purple: 				#604848;
 $cream:					#F0F0D8;
-$orange:				#b5733c;
+$orange:				#c85c19;
 $yellow:				#f1cf00;
 $yellow--light:	lighten($yellow, 35%);
 

@@ -1,7 +1,7 @@
 /* Begin Super Header */
 header{
 	&.super-header, &.banner{
-		@include gradient-horizontal( $green, $green--light, 0%, 100%);
+		background-color: $green--light;
 	}
 	 
 	&.super-header{
@@ -134,7 +134,8 @@ header{
 	}
 
 	&.navbar-main{
-		border-color: $brown;
+		background-color: $green--light--2;
+		border-color: $green;
 		margin-bottom: 0;
 		z-index: 100;
 		.navbar-header{
@@ -171,8 +172,8 @@ header{
 	}
 
 	&.navbar-branding {
-  		background-color: $white;
-  		border-color: $white;
+  		background-color: $green--light--2;
+  		border-color: $green--light;
   		margin-bottom: 0;
   		z-index: 1001;
   		.container{
@@ -185,12 +186,13 @@ header{
   				form{
   					width: 290px;
   					float: right;
-  					padding-top: 15px;
+  					padding-top: 30px;
   					.input-group{
   						width: 100%;
 						.search-field{
 							@include opensans();
 							font-style: italic;
+							height: 40px;
 	  						border-top: 1px solid transparent;
 	  						border-left: 1px solid transparent;
 	  						border-right: 1px solid transparent;
@@ -211,10 +213,16 @@ header{
   				}
   			}
   			.navbar-header{
-  				&.minagri, &.agrorural{
+  				&.agrorural{
 					.navbar-brand{
 						padding-top: 15px;
     					padding-bottom: 15px;
+					}
+  				}
+  				&.minagri{
+					.navbar-brand{
+						padding-top: 37.5px;
+    					padding-bottom: 37.5px;
 					}
   				}
   			}
@@ -222,7 +230,7 @@ header{
   				&.agrorural{
   					.navbar-brand{
 						width: 200px;
-					    margin: 0 auto;
+					    margin: 15px auto;
 					    background: $white;
   						float: none;
   						a{
@@ -329,8 +337,9 @@ h1{
 
 		&.minagri{	
 			a{
-				width: 289px!important;
-				background-image: url(../images/logo__minagri--sm.jpg)!important;
+				width: 210px !important;
+				height: 40px !important;
+				background-image: url(../images/logo__minagri--sm--2.jpg)!important;
 			}
 		}
 	}
@@ -380,7 +389,7 @@ h1{
 
 			&.minagri{	
 				a{
-					background-image: url(../images/logo__minagri--sm.jpg)!important;
+					background-image: url(../images/logo__minagri--sm--2.jpg)!important;
 					background-repeat: no-repeat;
 				}
 			}

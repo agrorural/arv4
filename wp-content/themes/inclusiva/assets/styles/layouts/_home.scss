@@ -201,9 +201,9 @@
 		}
 
 		&.multimedia__banner{
-			background: $brown  url(../images/multimedia__bg.png) repeat-x bottom center; 
+			background: $gray-lighter; 
 			.multimedia{
-				@include make-lg-column(9);
+				@include make-lg-column(12);
 				.page-header{
 					margin: 0;
 					border-bottom: 1px solid $green;
@@ -250,16 +250,19 @@
 							p{ color: $white; }
 
 							.multimedia--1{
-								@include make-lg-column(6);
-								@include make-xs-column(4); 
+								@include make-lg-column(5);
+								@include make-xs-column(3); 
 								figure{ 
 									@include make-lg-column(12);
 									
-									a.format-icon{
-										position: absolute;
-									    left: 50%;
-									    transform: translate(-50%, -50%);
+									a{
+										position: relative;
+										display: block;	
 									    .fa-stack {
+									    	position: absolute;
+									    	top: 50%;
+										    left: 50%;
+										    transform: translate(-50%, -50%);
 									    	.fa-stack-2x{
 									    		color: $black;
 									    	}
@@ -274,25 +277,39 @@
 										}
 										time{
 											@include meta-text();
+											color: $white;
 										}
 									}
 								}
 							}
 							.multimedia--2{
-								@include make-lg-column(6);
-								@include make-xs-column(8);
+								@include make-lg-column(7);
+								@include make-xs-column(9);
 								figure{ 
-									@include make-lg-column(6);
-									@include make-xs-column(6);
-									a.format-icon{
-										position: absolute;
-									    left: 50%;
-									    transform: translate(-50%, -50%);
+									@include make-lg-column(4);
+									@include make-xs-column(4);
+									a{
+										position: relative;
+										display: block;
 									    .fa-stack {
+									    	position: absolute;
+										    left: 50%;
+										    top: 30%;
+										    transform: translate(-50%, -50%);
 									    	.fa-stack-2x{
 									    		color: $black;
 									    	}
 									    }
+									}
+									a{
+										.formatCount{
+											position: absolute;
+											right: 15px;
+    										top: 65px;
+											z-index: 100;
+											color: $white;
+											@include opensans(bold);
+										}
 									}
 									figcaption{
 										h3{
@@ -301,8 +318,7 @@
 										h3, time{
 											margin: 0;
 											color: $gray--light;
-											@include text-on-focus();
-											a{ color: $white; }
+											a{ }
 										}
 										time{
 											@include meta-text();
@@ -639,21 +655,17 @@
 					text-align: center;
 					opacity: 1;
 					background-color: $green--accent; 
-					@include border-radius(0);
-					width: 24px;
-					height: 24px;
+					
 					span{
 						font-size: 12px;
 						line-height: 23px;
 					}
 				}
 				.owl-prev{
-					right: 55px;
 					span{
 					}
 				}
 				.owl-next{
-					right: 15px;
 					span{}
 				}
 			} /* Termina .owl-nav */
@@ -728,36 +740,48 @@
 								position: absolute !important;
 								z-index: 100;
 								@include make-sm-column(6);
-								padding-left: 0;
-								padding-right: 0;
+								background-color: transparent;
+								padding-left: 40px;
+								padding-right: 40px;
 								bottom: 30px;
-  								left: 30px;
+  								left: 0;
+  								right: 0;
   								opacity: 0;
+  								margin: 0 auto;
   								.sl__home__hashtag, .sl__home__title, .sl__home__content, .sl__home__link{
+  									text-align: center;
   								}
   								.sl__home__hashtag{
   									padding-left: 0px;
   									padding-right: 0px;
+  									text-align: center;
+  									text-transform: uppercase;
   									a{	
-  										@include entry-title('xs');
-  										@include text-on-focus();
+  										@include opensans(bold);
+  										width: auto;
+  										background-color: transparent;
+  										font-size: 9PX;
+  										color: $white;
+  										padding: 5px 35px;
+  										border: 1px solid $white;
   										&:hover{
-  											border-bottom: 1px solid $white;
+  											background-color: $blue--tw;
+  											border: 1px solid $blue--tw;
   										}
   									}
   								}
   								.sl__home__title{
   									h3{
-  										@include opensans(light);
-  										@include text-on-focus();                                                                                                                                                                      
+  										@include opensans(bold);                                                                                                                                                                  
   										margin-top: 3px;
   										margin-bottom: 0;
   										padding-top: 15px;
   										padding-bottom: 10px;
-  										font-size: 54px !important;
-  										text-align: left;
+  										font-size: 48px !important;
+  										text-align: center; 
   										a{
-  											color: $white;
+  											@include text-on-focus();
+  											&:hover{}
   										}
   									}
   								}
@@ -765,9 +789,9 @@
   									p{
   										padding-top: 15px;
   										@include text-on-focus();
-  										@include opensans(light);
-  										font-size: 18px;
-  										text-align: left;
+  										@include opensans();
+  										font-size: 16px;
+  										text-align: center;
   									}
   								}
   								.sl__home__content, .sl__home__link{
@@ -780,6 +804,7 @@
   									p{
   										padding-top: 10px;
   										padding-bottom: 0;
+  										text-align: center;
   									}
   								}
 							} 
@@ -815,15 +840,19 @@
 					@include border-radius(0);
 					opacity: 0;
 					background-color: $green--accent; 
-					width: 24px;
-					height: 24px;
+					height:48px;
+     				width:24px;
 					span{
-						font-size: 12px;
-						line-height: 23px;
+						font-size: 14px;
+    					line-height: 48px;
 					}
 				}
 				.owl-prev{
-					left: -5%;
+					
+				     border-radius: 0 48px 48px 0;
+				     -moz-border-radius: 0 48px 48px 0;
+				     -webkit-border-radius: 0 48px 48px 0;
+					left: 0;
 					-webkit-animation-duration: 1s;
 					animation-duration: 1s;
 					-webkit-animation-fill-mode: both;
@@ -834,7 +863,10 @@
 					}
 				}
 				.owl-next{
-					right: -5%;
+					  border-radius: 48px 0 0 48px;
+				     -moz-border-radius: 48px 0 0 48px;
+				     -webkit-border-radius: 48px 0 0 48px;
+					right: 0;
 					-webkit-animation-duration: 1s;
 					animation-duration: 1s;
 					-webkit-animation-fill-mode: both;

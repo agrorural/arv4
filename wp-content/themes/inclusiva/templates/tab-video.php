@@ -1,4 +1,8 @@
 <?php
+$objVideo = get_term_by( 'name', 'post-format-video', 'post_format' );
+?>
+
+<?php
 	$args = array(
 		'post_type' => 'post',
 		'tax_query' => array(
@@ -17,24 +21,27 @@ $query1 = new WP_Query( $args );
 
 // The Loop
 while ( $query1->have_posts() ) { 
-	$query1->the_post(); ?>
+	$query1->the_post(); 
+//var_dump($query1);
+	?>
 <div class="multimedia--1">
 	<figure>
-		<a title="Contiene video" href="<?php the_permalink(); ?>" class="format-icon tip">
+		<a title="Ver video" href="<?php the_permalink(); ?>" class="">
 			<span class="fa-stack fa-lg">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
 			</span>
+		
+			<?php if ( has_post_thumbnail() ){?>
+				<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+			<?php } else { ?>
+				<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
+			<?php } ?>
+			<figcaption>
+				<?php get_template_part('templates/entry-meta'); ?>
+				<h3 class="tab-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			</figcaption>
 		</a>
-		<?php if ( has_post_thumbnail() ){?>
-			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-		<?php } else { ?>
-			<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
-		<?php } ?>
-		<figcaption>
-			<?php get_template_part('templates/entry-meta'); ?>
-			<h3 class="tab-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		</figcaption>
 	</figure>
 </div>
 <?php } ?>
@@ -66,23 +73,33 @@ wp_reset_postdata(); ?>
 <div class="multimedia--2">
 <?php while ( $query2->have_posts() ) { $query2->the_post();  ?>
 	<figure>
-		<a title="Contiene video" href="<?php the_permalink(); ?>" class="format-icon tip">
+		<a title="Ver video" href="<?php the_permalink(); ?>" class="">
 			<span class="fa-stack fa-lg">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
 			</span>
-		</a>
-		<?php if ( has_post_thumbnail() ){?>
-			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-		<?php } else { ?>
-			<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
-		<?php } ?>
-	<figcaption>
-	<?php get_template_part('templates/entry-meta'); ?>
-	<h3 class="tab-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-	</figcaption>
+			<?php if ( has_post_thumbnail() ){?>
+				<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+			<?php } else { ?>
+				<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
+			<?php } ?>
+		<figcaption>
+			<?php get_template_part('templates/entry-meta'); ?>
+			<h3 class="tab-title"><?php the_title(); ?></h3>
+		</figcaption>
+	</a>
 	</figure>
 <?php } ?>
+	<figure>
+		<a title="" href="<?php echo get_post_format_link('video'); ?>">
+			<?php echo '<span class="formatCount">' . $objVideo->count . '+</span>'; ?>
+			<img width="400" height="230" src="<?php echo bloginfo('template_url'); ?>/dist/images/video_gallery__thumb.png" class="img-responsive wp-post-image" alt="">			
+		<figcaption>
+			<time class="updated" datetime="">Ver</time>
+			<h3 class="tab-title">Todos los videos</h3>
+		</figcaption>
+	</a>
+	</figure>
 </div>
 <?php
 // Restore original Post Data
