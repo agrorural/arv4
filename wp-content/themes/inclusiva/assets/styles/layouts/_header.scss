@@ -183,10 +183,12 @@ header{
   			}
 
   			.navbar-form{
+  				margin-top: 0;
+  				margin-bottom: 0;
   				form{
   					width: 290px;
   					float: right;
-  					padding-top: 30px;
+  					padding-top: 52.5px;
   					.input-group{
   						width: 100%;
 						.search-field{
@@ -221,8 +223,8 @@ header{
   				}
   				&.minagri{
 					.navbar-brand{
-						padding-top: 37.5px;
-    					padding-bottom: 37.5px;
+						padding-top: 52.5px;
+    					padding-bottom: 52.5px;
 					}
   				}
   			}
@@ -230,7 +232,7 @@ header{
   				&.agrorural{
   					.navbar-brand{
 						width: 200px;
-					    margin: 15px auto;
+					    margin: 30px auto;
 					    background: $white;
   						float: none;
   						a{
