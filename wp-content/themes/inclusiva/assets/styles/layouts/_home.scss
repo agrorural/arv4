@@ -223,18 +223,18 @@
 						padding-right: 0;
 						li{
 							a{
-								color: $cream;
+								color: $gray;
 								@include border-radius(0);
 								border: 1px solid transparent;
 								margin-bottom: 2px;
 								&:hover{
-									background-color: $gray-light;
+									background-color: $gray-lighter;
 								}
 							}
 							&.active{
 								a{
 									color: $white;
-									background-color: $green;
+									background-color: $gray-dark;
 									border: 1px solid transparent;
 									@include border-radius(0);
 								}
