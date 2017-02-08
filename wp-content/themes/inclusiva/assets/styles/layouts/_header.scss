@@ -1,7 +1,7 @@
 /* Begin Super Header */
 header{
 	&.super-header, &.banner{
-		background-color: $green--light;
+		background-color: $green--dark;
 	}
 	 
 	&.super-header{
@@ -134,7 +134,7 @@ header{
 	}
 
 	&.navbar-main{
-		background-color: $green--light--2;
+		background-color: $green;
 		border-color: $green;
 		margin-bottom: 0;
 		z-index: 100;
@@ -172,8 +172,8 @@ header{
 	}
 
 	&.navbar-branding {
-  		background-color: $green--light--2;
-  		border-color: $green--light;
+  		background-color: $green;
+  		border-color: $green;
   		margin-bottom: 0;
   		z-index: 1001;
   		.container{
@@ -188,7 +188,7 @@ header{
   				form{
   					width: 290px;
   					float: right;
-  					padding-top: 52.5px;
+  					padding-top: 15px;
   					.input-group{
   						width: 100%;
 						.search-field{
@@ -223,25 +223,16 @@ header{
   				}
   				&.minagri{
 					.navbar-brand{
-						padding-top: 52.5px;
-    					padding-bottom: 52.5px;
+						padding-top: 15px;
+    					padding-bottom: 15px;
 					}
   				}
   			}
   			.navbar-header{
-  				&.agrorural{
-  					.navbar-brand{
-						width: 200px;
-					    margin: 30px auto;
-					    background: $white;
-  						float: none;
-  						a{
-  							margin: 0 auto;
-  						}
-  					}
-  				}
+
   			}
   			.navbar-form{
+  				float: right;
 				border-color: transparent !important;
 				form{
 					position: relative;
@@ -306,9 +297,9 @@ header{
 
 h1{
 	&.navbar-brand{
-		margin: 0;
+		margin: 0 auto;
 		padding: 0 0 0 15px;
-		height: 100%;
+		height: auto;
 		a{
 			display: block;
 			width: 140px!important;
@@ -324,17 +315,11 @@ h1{
 			  	padding: 0;
   			}
 		}
-		&:hover{
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;
-			-webkit-animation-name: pulse;
-			animation-name: pulse;
-		}
 		
 		&.agrorural{
 			padding-right: 15px;
+			width: 100%;
+			margin: 0 auto !important;
 		}
 
 		&.minagri{	
@@ -480,8 +465,77 @@ h1{
 	} 
 
 	header{
-		&.super-header{
-			.container{}
+		&.navbar-branding{
+			z-index: 1003;
+			.navbar-header{
+				&.agrorural{
+				position: absolute;
+			    top: -35px;
+			    left: 0;
+			    right: 0;
+			    width: 180px;
+			    text-align: center;
+			    margin: auto;
+					.wrapper{
+						width: 180px;
+						height: 180px;
+					    margin: 0 auto;
+					    background: $white;
+						float: none;
+						-webkit-border-bottom-right-radius: 180px;
+						-webkit-border-bottom-left-radius: 180px;
+						-moz-border-radius-bottomright: 180px;
+						-moz-border-radius-bottomleft: 180px;
+						border-bottom-right-radius: 180px;
+						border-bottom-left-radius: 180px;
+					    transition: height 0.15s ease-out;
+						.navbar-brand{
+							padding-bottom: 0;
+	  						a{
+	  							margin: 0 auto 15px;
+	  						}
+  						}
+  						.ht__brand{	
+  							height: 0;				
+							@include keyframes(fadeOutDown) {
+							  0% {
+							    opacity: .35;
+							    @include transform(translateY(0));
+							  }
+							  100% {
+							    opacity: 0;
+							    @include transform(translateY(20px));
+							  }
+							}
+  							@include fadeOutDown();
+  						}
+  							&:hover{
+							height: 215px;
+							transition: height 0.25s ease-in;
+							.ht__brand{
+								 @include fadeInUp();
+							}
+
+						}
+					}
+  				}
+			}
+		}
+		&.navbar-main{
+			nav{
+				.mega-menu-wrap{
+
+				}
+				#mega-menu-wrap-primary_nav_left{
+					@include make-sm-column(4);
+					clear: left;
+				}
+				#mega-menu-wrap-primary_nav_right{
+					@include make-sm-column(4);
+					@include make-sm-column-offset(4);
+					clear: right;
+				}
+			}
 		}
 	}
 }
