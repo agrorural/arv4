@@ -27,15 +27,14 @@ while ( $query1->have_posts() ) {
 <div class="multimedia--1">
 	<figure>
 		<a title="Ver video" href="<?php the_permalink(); ?>" class="">
-			<span class="fa-stack fa-lg">
-			  <i class="fa fa-circle fa-stack-2x"></i>
-			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
-			</span>
-		
 			<?php if ( has_post_thumbnail() ){?>
-				<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-			<?php } else { ?>
-				<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
+				<div class="figure-thumb">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
+					</span>
+					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+				</div>
 			<?php } ?>
 			<figcaption>
 				<?php get_template_part('templates/entry-meta'); ?>
@@ -74,31 +73,33 @@ wp_reset_postdata(); ?>
 <?php while ( $query2->have_posts() ) { $query2->the_post();  ?>
 	<figure>
 		<a title="Ver video" href="<?php the_permalink(); ?>" class="">
-			<span class="fa-stack fa-lg">
-			  <i class="fa fa-circle fa-stack-2x"></i>
-			  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
-			</span>
 			<?php if ( has_post_thumbnail() ){?>
-				<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-			<?php } else { ?>
-				<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
+				<div class="figure-thumb">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-video fa-stack-1x fa-inverse"></i>
+					</span>
+					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+				</div>
 			<?php } ?>
-		<figcaption>
-			<?php get_template_part('templates/entry-meta'); ?>
-			<h3 class="tab-title"><?php the_title(); ?></h3>
-		</figcaption>
-	</a>
+			<figcaption>
+				<?php get_template_part('templates/entry-meta'); ?>
+				<h3 class="tab-title"><?php the_title(); ?></h3>
+			</figcaption>
+		</a>
 	</figure>
 <?php } ?>
 	<figure>
 		<a title="" href="<?php echo get_post_format_link('video'); ?>">
-			<?php echo '<span class="formatCount">' . $objVideo->count . '+</span>'; ?>
-			<img width="400" height="230" src="<?php echo bloginfo('template_url'); ?>/dist/images/video_gallery__thumb.png" class="img-responsive wp-post-image" alt="">			
-		<figcaption>
-			<time class="updated" datetime="">Ver</time>
-			<h3 class="tab-title">Todos los videos</h3>
-		</figcaption>
-	</a>
+			<div class="figure-thumb">
+				<?php echo '<span class="formatCount">' . $objVideo->count . '+</span>'; ?>
+				<img width="400" height="230" src="<?php echo bloginfo('template_url'); ?>/dist/images/video_gallery__thumb.png" class="img-responsive wp-post-image" alt="">		
+			</div>	
+			<figcaption>
+				<time class="updated" datetime="">Ver</time>
+				<h3 class="tab-title">Todos los videos</h3>
+			</figcaption>
+		</a>
 	</figure>
 </div>
 <?php

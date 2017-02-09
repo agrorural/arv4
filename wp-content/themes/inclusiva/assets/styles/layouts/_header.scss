@@ -168,6 +168,9 @@ header{
 		}
 		nav{
 			border-color: transparent !important;
+			#mega-menu-wrap-primary_nav_left, #mega-menu-wrap-primary_nav_right{
+				display: none;
+			}
 		}
 	}
 
@@ -447,7 +450,14 @@ h1{
 }
 
 @media (min-width: $screen-sm-min) {
-
+	.navbar-main{
+		#mega-menu-wrap-primary_navigation{
+			display: none;
+		}
+		#mega-menu-wrap-primary_nav_left, #mega-menu-wrap-primary_nav_right{
+				display: block !important;
+		}
+	}
 }
 
 @media (min-width: $screen-lg-min) {
@@ -527,13 +537,13 @@ h1{
 
 				}
 				#mega-menu-wrap-primary_nav_left{
-					@include make-sm-column(4);
+					@include make-sm-column(5,0);
 					clear: left;
 				}
 				#mega-menu-wrap-primary_nav_right{
-					@include make-sm-column(4);
-					@include make-sm-column-offset(4);
-					clear: right;
+					@include make-sm-column(5,0);
+					@include make-sm-column-offset(2);
+					clear: right; 
 				}
 			}
 		}

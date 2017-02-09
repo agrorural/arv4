@@ -1,4 +1,7 @@
 <?php
+$objImg = get_term_by( 'name', 'post-format-gallery', 'post_format' );
+?>
+<?php
 	$args = array(
 		'post_type' => 'post',
 		'tax_query' => array(
@@ -20,21 +23,21 @@ while ( $query1->have_posts() ) {
 	$query1->the_post(); ?>
 <div class="multimedia--1">
 	<figure>
-		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="format-icon tip">
-			<span class="fa-stack fa-lg">
-			  <i class="fa fa-circle fa-stack-2x"></i>
-			  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-			</span>
+		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="">
+			<?php if ( has_post_thumbnail() ){?>
+				<div class="figure-thumb">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+					</span>
+					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+				</div>
+			<?php } ?>
+			<figcaption>
+				<?php get_template_part('templates/entry-meta'); ?>
+				<h3 class="tab-title"><?php the_title(); ?></h3>
+			</figcaption>
 		</a>
-		<?php if ( has_post_thumbnail() ){?>
-			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-		<?php } else { ?>
-			<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
-		<?php } ?>
-		<figcaption>
-			<?php get_template_part('templates/entry-meta'); ?>
-			<h3 class="tab-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		</figcaption>
 	</figure>
 </div>
 <?php } ?>
@@ -66,23 +69,35 @@ wp_reset_postdata(); ?>
 <div class="multimedia--2">
 <?php while ( $query2->have_posts() ) { $query2->the_post();  ?>
 	<figure>
-		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="format-icon tip">
-			<span class="fa-stack fa-lg">
-			  <i class="fa fa-circle fa-stack-2x"></i>
-			  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-			</span>
+		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="">
+			<?php if ( has_post_thumbnail() ){?>
+				<div class="figure-thumb">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+					</span>
+					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
+				</div>
+			<?php } ?>
+			<figcaption>
+				<?php get_template_part('templates/entry-meta'); ?>
+				<h3 class="tab-title"><?php the_title(); ?></h3>
+			</figcaption>
 		</a>
-		<?php if ( has_post_thumbnail() ){?>
-			<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-		<?php } else { ?>
-			<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
-		<?php } ?>
-	<figcaption>
-	<?php get_template_part('templates/entry-meta'); ?>
-	<h3 class="tab-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-	</figcaption>
 	</figure>
 <?php } ?>
+<figure>
+		<a title="" href="<?php echo get_post_format_link('gallery'); ?>">
+			<div class="figure-thumb">
+				<?php echo '<span class="formatCount">' . $objImg->count . '+</span>'; ?>
+				<img width="400" height="230" src="<?php echo bloginfo('template_url'); ?>/dist/images/video_gallery__thumb.png" class="img-responsive wp-post-image" alt="">
+			</div>			
+			<figcaption>
+				<time class="updated" datetime="">Ver</time>
+				<h3 class="tab-title">Todas las galerías</h3>
+			</figcaption>
+		</a>
+	</figure>
 </div>
 <?php
 // Restore original Post Data

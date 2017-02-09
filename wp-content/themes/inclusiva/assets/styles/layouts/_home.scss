@@ -256,17 +256,19 @@
 									@include make-lg-column(12);
 									
 									a{
-										position: relative;
-										display: block;	
-									    .fa-stack {
-									    	position: absolute;
-									    	top: 50%;
-										    left: 50%;
-										    transform: translate(-50%, -50%);
-									    	.fa-stack-2x{
-									    		color: $black;
-									    	}
-									    }
+										.figure-thumb{
+											position: relative;
+											display: block;
+											.fa-stack {
+										    	position: absolute;
+										    	top: 50%;
+											    left: 50%;
+											    transform: translate(-50%, -50%);
+										    	.fa-stack-2x{
+										    		color: $black;
+										    	}
+										    }
+										}	
 									}
 									figcaption{
 										h3, time{
@@ -289,26 +291,32 @@
 									@include make-lg-column(4);
 									@include make-xs-column(4);
 									a{
-										position: relative;
-										display: block;
-									    .fa-stack {
-									    	position: absolute;
-										    left: 50%;
-										    top: 30%;
-										    transform: translate(-50%, -50%);
-									    	.fa-stack-2x{
-									    		color: $black;
-									    	}
-									    }
+										.figure-thumb{
+											position: relative;
+											display: block;
+											.fa-stack {
+										    	position: absolute;
+										    	top: 50%;
+											    left: 50%;
+											    transform: translate(-50%, -50%);
+										    	.fa-stack-2x{
+										    		color: $black;
+										    	}
+										    }
+										}	
 									}
 									a{
-										.formatCount{
-											position: absolute;
-											right: 15px;
-    										top: 65px;
-											z-index: 100;
-											color: $white;
-											@include opensans(bold);
+										.figure-thumb{
+											position: relative;
+											display: block;
+											.formatCount{
+												position: absolute;
+												right: 15px;
+	    										top: 65px;
+												z-index: 100;
+												color: $white;
+												@include opensans(bold);
+											}
 										}
 									}
 									figcaption{

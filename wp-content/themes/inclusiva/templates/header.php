@@ -4,7 +4,10 @@
 ?>
 <header class="super-header">
   <div class="container">
-   <nav class="collapse" role="navigation"> 
+   <nav class="collapse" role="navigation">
+   <ul class="nav navbar-nav navbar-date">
+          <li><p class="navbar-brand"><?php echo date_i18n('l, j \d\e F \d\e Y', time()); ?></p></li>
+        </ul> 
       <?php
       if (has_nav_menu('links_navigation')) :
         wp_nav_menu(['theme_location' => 'links_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-links']);
@@ -52,6 +55,11 @@
 <header class="banner navbar navbar-default navbar-static-top navbar-main" role="banner">
   <div class="container">
       <nav class="" role="navigation">
+      <?php
+        if (has_nav_menu('primary_navigation')) :
+          wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
+        endif;
+        ?>
         <?php
         if (has_nav_menu('primary_nav_left')) :
           wp_nav_menu(['theme_location' => 'primary_nav_left', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
