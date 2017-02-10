@@ -40,7 +40,7 @@ header{
 						}
 					}
 				}
-				&.navbar-right{ 
+				&.navbar-right, &.navbar-left{ 
 					background-color: transparent; 
 					li{
 						a{
@@ -307,7 +307,7 @@ h1{
 			display: block;
 			width: 140px!important;
   			height: 55px!important;
-  			background-image: url(../images/logo--sm.jpg)!important;
+  			background-image: url(../images/logo--sm.png)!important;
   			span{
   				position: relative;
 			  	display: block;

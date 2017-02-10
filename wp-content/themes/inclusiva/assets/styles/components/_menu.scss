@@ -104,117 +104,117 @@ ul#menu-navegacion-primaria{
 		}
 	}
 }
-
-ul#menu-super-navegacion{
-	li{
-		&.active, &.current-page-ancestor, &.current-menu-ancestor{
-			a, a:hover{
-				color: $yellow;
-			}
-		}
-		&.dropdown{
-			ul.dropdown-menu{
-				z-index: 1001;
-				@include border-radius(0);
-				li{
-					a{
-						@include opensans(light);
-						font-size: 13px;
-						text-transform: none;
-						color: $gray;
-						padding: 5px 20px; 
-						&:hover{
-							background-color: $yellow--light; 
-						}
-					}
-					&.dropdown-header{
-						font-size: 10px;
-						text-transform: uppercase;
-						@include title-xs();
-						color: $gray--light;
-					}
-					&.active{
-						a, a:hover{
-							background-color: $red--google;
-							color: $white;
-						}
-					}
-				}
-
-				&:hover{
-					li{
-						&.dropdown-header{
-							color: $black;
-						}
-					}
-				}
-			}
-			&:hover{
-				ul.dropdown-menu{ 
-					position: absolute;
-					width: 100%;
-					background-color: $white;
-					li{
-						display: block;
-					}
-				}
-			}
-		}
-		&.menu-icon{
-			padding-right: 3px;
-			a{
-				@include fa-icon();
-				width: 34px;
-				height: 34px;
-				padding: 0;
-				text-align: center;
-				line-height: 34px;
-				@include border-radius(0);
-				span{
-					@include text-hide();
-				}
-				&:before{
-					color: $white;
-				}
-			}
-		}
-		&.pte{
-			a{
-				font-size: 11px;
-				height: auto;
-				line-height: 20px;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				background-color: $green--light;
-				&:hover{
-					background-color: $green--light;
-				}
-				&:before{
-					content: $fa-var-search;
+.super-header{
+	ul{
+		li{
+			&.active, &.current-page-ancestor, &.current-menu-ancestor{
+				a, a:hover{
 					color: $yellow;
 				}
-				@media (min-width: $screen-sm-min){
-					width: auto;
-					padding-left: 10px;
-					padding-right: 10px;
-					span{
-						@include opensans(bold);
-						color: $yellow;
-						font-size: 11px;
-						padding-left: 5px;
-					} 
+			}
+			&.dropdown{
+				ul.dropdown-menu{
+					z-index: 1001;
+					@include border-radius(0);
+					li{
+						a{
+							@include opensans(light);
+							font-size: 13px;
+							text-transform: none;
+							color: $gray;
+							padding: 5px 20px; 
+							&:hover{
+								background-color: $yellow--light; 
+							}
+						}
+						&.dropdown-header{
+							font-size: 10px;
+							text-transform: uppercase;
+							@include title-xs();
+							color: $gray--light;
+						}
+						&.active{
+							a, a:hover{
+								background-color: $red--google;
+								color: $white;
+							}
+						}
+					}
+
+					&:hover{
+						li{
+							&.dropdown-header{
+								color: $black;
+							}
+						}
+					}
 				}
-				@media (max-width: $screen-xs-max){ 
+				&:hover{
+					ul.dropdown-menu{ 
+						position: absolute;
+						width: 100%;
+						background-color: $white;
+						li{
+							display: block;
+						}
+					}
+				}
+			}
+			&.menu-icon{
+				padding-right: 3px;
+				a{
+					@include fa-icon();
 					width: 34px;
+					height: 34px;
+					padding: 0;
+					text-align: center;
+					line-height: 34px;
+					@include border-radius(0);
 					span{
 						@include text-hide();
+					}
+					&:before{
+						color: $white;
+					}
+				}
+			}
+			&.pte{
+				a{
+					font-size: 11px;
+					height: auto;
+					line-height: 20px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					background-color: $green--light;
+					&:hover{
+						background-color: $green--light;
+					}
+					&:before{
+						content: $fa-var-search;
+						color: $yellow;
+					}
+					@media (min-width: $screen-sm-min){
+						width: auto;
+						padding-left: 10px;
+						padding-right: 10px;
+						span{
+							@include opensans(bold);
+							color: $yellow;
+							font-size: 11px;
+							padding-left: 5px;
+						} 
+					}
+					@media (max-width: $screen-xs-max){ 
+						width: 34px;
+						span{
+							@include text-hide();
+						}
 					}
 				}
 			}
 		}
 	}
 }
-
 
 ul#menu-social-navegacion{
 	@include make-row(0);

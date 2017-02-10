@@ -5,12 +5,14 @@
 <header class="super-header">
   <div class="container">
    <nav class="collapse" role="navigation">
-   <ul class="nav navbar-nav navbar-date">
-          <li><p class="navbar-brand"><?php echo date_i18n('l, j \d\e F \d\e Y', time()); ?></p></li>
-        </ul> 
       <?php
-      if (has_nav_menu('links_navigation')) :
-        wp_nav_menu(['theme_location' => 'links_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-links']);
+        if (has_nav_menu('links_nav_left')) :
+          wp_nav_menu(['theme_location' => 'links_nav_left', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-left navbar-links']);
+        endif;
+      ?> 
+      <?php
+      if (has_nav_menu('links_nav_right')) :
+        wp_nav_menu(['theme_location' => 'links_nav_right', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav navbar-right navbar-links']);
       endif;
       ?>
 
