@@ -277,6 +277,14 @@ ul#menu-social-navegacion{
 	}
 }
 
+.mega-menu{
+	.mega-sub-menu{
+		#mega-menu-item-text-3, #mega-menu-item-text-4, #mega-menu-item-text-5, #mega-menu-item-text-6{
+			padding: 0 !important;
+		}
+	}
+}
+
 @media (max-width: $screen-xs-max) {
 	.navbar-branding{
 		.navbar-brand{
