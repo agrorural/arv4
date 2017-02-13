@@ -406,6 +406,14 @@
 				}	
 			}
 		}
+		.owl-nav{
+			.owl-prev{
+				left: 0;
+			}
+			.owl-next{
+				right: 0;
+			}
+		}
 	}
 	.sl__modal-home{
 		.modal-header{
@@ -426,8 +434,6 @@
     					@extend .disabled;
     				}
     			}
-			}
-			.owl-next{
 			}
 		}
 	}

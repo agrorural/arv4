@@ -193,23 +193,15 @@ ul#menu-navegacion-primaria{
 						content: $fa-var-search;
 						color: $yellow;
 					}
-					@media (min-width: $screen-sm-min){
-						width: auto;
-						padding-left: 10px;
-						padding-right: 10px;
-						span{
-							@include opensans(bold);
-							color: $yellow;
-							font-size: 11px;
-							padding-left: 5px;
-						} 
-					}
-					@media (max-width: $screen-xs-max){ 
-						width: 34px;
-						span{
-							@include text-hide();
-						}
-					}
+					width: auto;
+					padding-left: 10px;
+					padding-right: 10px;
+					span{
+						@include opensans(bold);
+						color: $yellow;
+						font-size: 11px;
+						padding-left: 5px;
+					} 
 				}
 			}
 		}
@@ -221,8 +213,10 @@ ul#menu-social-navegacion{
 	width: 100%;
 	margin-right: 0;
 	margin-bottom: 30px;
+	padding: 0 15px;
 	li{
 		@include make-sm-column(4,0);
+		@include make-xs-column(4,0);
 		&.menu-icon{
 			a{
 				@include fa-icon();
@@ -320,5 +314,8 @@ ul#menu-social-navegacion{
 				}
 			}
 		}
+	}
+	ul#menu-social-navegacion{
+		padding: 0;
 	}
 }

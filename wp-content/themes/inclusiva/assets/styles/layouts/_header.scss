@@ -186,11 +186,11 @@ header{
   			}
 
   			.navbar-form{
-  				margin-top: 0;
-  				margin-bottom: 0;
+  				float: none;
+  				margin: 0 auto;
   				form{
-  					width: 290px;
-  					float: right;
+  					width: 100%;
+  					float: none;
   					padding-top: 15px;
   					.input-group{
   						width: 100%;
@@ -223,6 +223,12 @@ header{
 						padding-top: 15px;
     					padding-bottom: 15px;
 					}
+					.ht__brand{
+						position: relative;
+						display: block;
+						text-align: center;
+						clear: both;
+					}
   				}
   				&.minagri{
 					.navbar-brand{
@@ -235,8 +241,8 @@ header{
 
   			}
   			.navbar-form{
-  				float: right;
 				border-color: transparent !important;
+				box-shadow: none;
 				form{
 					position: relative;
 					.input-group{
@@ -450,30 +456,6 @@ h1{
 }
 
 @media (min-width: $screen-sm-min) {
-	.navbar-main{
-		#mega-menu-wrap-primary_navigation{
-			display: none;
-		}
-		#mega-menu-wrap-primary_nav_left, #mega-menu-wrap-primary_nav_right{
-				display: block !important;
-		}
-	}
-}
-
-@media (min-width: $screen-lg-min) {
-	header{
-		&.super-header {
-			.nav{
-				&.navbar-right{
-					margin-right: 0;
-				}
-			}
-		}
-	}
-	.home{
-
-	} 
-
 	header{
 		&.navbar-branding{
 			z-index: 1003;
@@ -505,7 +487,7 @@ h1{
 	  							margin: 0 auto 15px;
 	  						}
   						}
-  						.ht__brand{	
+  						.ht__brand{
   							height: 0;				
 							@include keyframes(fadeOutDown) {
 							  0% {
@@ -530,6 +512,16 @@ h1{
 					}
   				}
 			}
+			.navbar-form{
+				float: right !important;
+  				form{
+  					float: right !important;
+  					.input-group{
+						.search-field{}
+	  					.input-group-btn{}
+  					}
+  				}
+  			}
 		}
 		&.navbar-main{
 			nav{
@@ -546,6 +538,36 @@ h1{
 					clear: right; 
 				}
 			}
+		}
+	}
+
+	.navbar-main{
+		#mega-menu-wrap-primary_navigation{
+			display: none;
+		}
+		#mega-menu-wrap-primary_nav_left, #mega-menu-wrap-primary_nav_right{
+				display: block !important;
+		}
+	}
+}
+
+@media (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-lg-min) {
+	header{
+		&.super-header {
+			.nav{
+				&.navbar-right{
+					margin-right: 0;
+				}
+			}
+		}
+		&.navbar-branding{
+			.navbar-form{
+  				form{
+  					width: 290px !important;
+  				}
+  			}
 		}
 	}
 }
