@@ -141,6 +141,17 @@ p{
   }
 }
 
+.popover{
+  ul{
+    li{
+      a{
+        position: relative;
+        display: block;
+      }
+    }
+  }
+}
+
 /* Format Icons*/
 .icon {
   @include fa-icon();
