@@ -34,6 +34,24 @@
 						clear: right;
 					}
 
+					&.gpoll{
+						&.gpoll_image{
+							.gfield_label{
+								margin: 30px auto 15px;
+							}
+							.ginput_container{
+								ul{
+									@include make-row();
+									li{
+										@extend .col-xs-6;
+										@extend .col-sm-4;
+										@extend .clearfix;
+									}
+								}
+							}
+						}
+					}
+
 					label{
 						@extend .control-label;
 						cursor: pointer;

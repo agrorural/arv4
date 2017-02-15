@@ -16,6 +16,19 @@
 	endif;
 	?>
 </section>
+<?php } else if ( is_page( array ( 'Proceso de Elecciones' ) ) ) {?>
+	<?php if ( is_user_logged_in() ) {
+		echo '<section class="widget text-2 widget_text"><h3>Bienvenido</h3>';
+			$current_user = wp_get_current_user();
+        	printf( '<p class="textwidget">Hola, %s', esc_html( $current_user->user_firstname ), '</p>' );
+        	echo '<p class="textwidget"><a href="' . wp_logout_url() . '">Cerrar Sesión</a></p>';
+		echo '</section>';
+	}else{
+		echo '<section class="widget text-2 widget_text"><h3>Inicia Sesión</h3>';
+			wp_login_form();
+		echo '</section>';
+	} 
+	?>
 <?php } else if ( is_page( array ( 'Contacto'))){ ?>
 
 <section class="widget text-2 widget_text"><h3>La Institución</h3>			<div class="textwidget"><address>

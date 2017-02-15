@@ -16,6 +16,9 @@
 			@include opensans(light);
 			-webkit-font-smoothing: antialiased;
 		}
+
+		#loginform{}
+		
 		.nav{
 			&.nav-sidebar{		
 				margin: 15px 0 0;
@@ -91,7 +94,7 @@
 				}
 			}
 		}
-		.tagcloud, .textwidget{
+		.tagcloud, .textwidget, #loginform{
 			padding: 7px 15px; 
 		}
 		.textwidget{
