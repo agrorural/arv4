@@ -44,8 +44,57 @@
 									@include make-row();
 									li{
 										@extend .col-xs-6;
-										@extend .col-sm-4;
+										@extend .col-sm-3;
+										@extend .col-lg-3;
 										@extend .clearfix;
+										input{
+											display: block;
+										    position: relative;
+										    margin: 0 auto;
+										}
+										label{
+											display: block;
+										    text-align: center;
+										    padding: 0 25px;
+										    @include opensans(bold);
+											span{
+												margin: 5px auto 0;
+												cursor: pointer;
+											    background-size: contain;
+											    background-repeat: no-repeat;
+											    display: block;
+											    width: 72px;
+											    height: 80px;
+											}
+										}
+										&.gchoice_11_1_0{
+											label{
+												span{
+													background-image: url(../images/squispe.JPG);
+												}
+											}
+										}
+										&.gchoice_11_1_1{
+											label{
+												span{
+													background-image: url(../images/ereina.JPG);
+												}
+											}
+										}
+										&.gchoice_11_1_2{
+											label{
+												span{
+													background-image: url(../images/jsuarez.JPG);
+												}
+											}
+										}
+										&.gchoice_11_1_3{
+											label{
+												span{
+													background-image: url(http://www.agrorural.gob.pe/wp-content/themes/inclusiva/dist/images/default__avatar.jpg);
+												}
+											}
+										}
 									}
 								}
 							}

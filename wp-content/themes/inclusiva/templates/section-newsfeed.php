@@ -112,9 +112,6 @@
 						<!-- pagination here -->
 
 						<?php wp_reset_postdata(); ?>
-						
-				<?php else : ?>
-					<?php /* Silence is Golden */  ?>
 				<?php endif; ?>	
 			</aside>
 		</div>
