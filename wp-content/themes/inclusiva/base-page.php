@@ -42,7 +42,33 @@ use Roots\Sage\Wrapper;
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main" role="main">
+        <div class="wrapper">
+          <?php if (is_page('pack-anticorrupcion')){ ?>
+            <?php
+            $pages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+            foreach( $pages as $page ) {    
+              $content = $page->post_content;
+              if ( ! $content ) // Check for empty page
+                continue;
+
+              $content = apply_filters( 'the_content', $content );
+            ?>
+            <div class="inner">
+               <article>
+                  <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
+                  <div class="entry">
+                    <?php echo $content; ?>
+                  </div>
+                </article> 
+            </div>
+              
+            <?php
+            } 
+          ?>
+        </div>
+        <?php }else { ?>
           <?php include Wrapper\template_path(); ?>
+        <?php } ?>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
           <aside class="sidebar" role="complementary">

@@ -183,6 +183,29 @@
 			margin-top: 0;
 		}
 	}
+
+	//Pack Anticorrupción
+	&.pack-anticorrupcion{
+		.wrapper{
+			.inner{
+				@include make-lg-column(4);
+				@include make-xs-column(6);
+				article{
+					@extend .thumbnail;
+					h2{
+						@include opensans(light);
+						font-size: 14px;
+						@media(min-width: $screen-sm-min){
+							font-size: 24px;
+						}
+					}
+					.entry{
+						display: none;
+					}
+				}
+			}
+		}
+	}
 }
 
 
