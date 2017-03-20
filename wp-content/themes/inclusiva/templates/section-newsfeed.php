@@ -39,8 +39,8 @@
 								$banner__vig = get_field('banner__vig');
 								$content = esc_attr(get_the_content());
 
-								if ( $banner__vig && intval ( $banner__vig ) <= intval( $hoy ) ){
-							        change_post_status( $post->ID, 'draft' );
+								if ( $banner__vig && (intval ( $banner__vig ) < intval( $hoy )) ){
+							        change_post_status( $post->ID, 'draft' ); 
 							    } 
 							?>
 								<section class="widget">

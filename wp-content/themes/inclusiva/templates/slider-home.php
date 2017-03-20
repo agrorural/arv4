@@ -4,7 +4,7 @@
 $args  = array(
 	'post_type' => 'Banners', 
 	'posiciones' => 'Slider Home',
-	'post_per_page' => 5
+	'posts_per_page' => 5
 );
 // the query
 $the_query = new WP_Query( $args ); ?>
@@ -22,6 +22,14 @@ $the_query = new WP_Query( $args ); ?>
 			$banner__ht = get_field('banner__ht');
 			$banner__txt = get_field('banner__txt');
 			$banner__ht_url = get_field('banner__ht_url');
+
+			$banner__vig = get_field('banner__vig');
+			$hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
+			//var_dump($hoy);
+
+			if ( $banner__vig && ( intval ( $banner__vig ) < intval( $hoy ) ) ){
+		        change_post_status( $post->ID, 'draft' );
+		    } 
 		?>
 		<div class="item">
 			<figure>
