@@ -137,7 +137,19 @@
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page
+        // JavaScript to be fired on the home page 
+        $('.sl__alerts').owlCarousel({
+            items: 1, 
+            loop: true,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause:true,
+            dots: false,
+            nav: true,
+            navText: ["<i class='fa fa-caret-square-o-left' aria-hidden='true'></i>", "<i class='fa fa-caret-square-o-right' aria-hidden='true'></i>"]
+          });
+
         $('.sl__home').owlCarousel({
             items: 1, 
             loop: true,
@@ -173,6 +185,7 @@
             $('.sl__home figure figcaption').removeClass('hidden');
             $('.sl__home figure img').removeClass('hidden');
             $('.sl__footer').removeClass('hidden');
+            $('.alerts').removeClass('hidden');
             $('.sl__home figure .spinner').remove();
 
             //Si hay Modal, lo muestra

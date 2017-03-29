@@ -1,5 +1,74 @@
 /* Begin Super Header */
 header{
+	&.alerts{
+		@include slideInDown();
+		//@include gradient-vertical($blue--sky, $white--smoke, 0%, 100%);
+		background: $blue--sky url(../images/alerts__bg.png)no-repeat center top;
+		height: 40px; 
+		.container{
+			.alerts__header{
+				@include make-lg-column(2);
+				@include make-sm-column(2);
+				@include make-xs-column(5);
+				background: $blue--sky url(../images/senamhi__bg.png)no-repeat right top;
+				a{
+					@include opensans();
+					font-size: 12px;
+					color: $gray-dark;
+				}
+			}
+			.sl__alerts{
+				@include make-lg-column(10); 
+				@include make-sm-column(10);
+				@include make-xs-column(7);
+					.owl-nav{
+						position: absolute;
+						top: 0;
+						right: 0;
+						height: 40px;
+						line-height: 40px;
+						.owl-next, .owl-prev{
+							float: left;
+							font-size: 18px;
+						}
+						.owl-next{
+
+						}
+						.owl-prev{
+							margin-right: 10px;
+						}
+					}
+					article{
+					border-bottom: 0px solid transparent;
+					padding-top: 0;
+					padding-bottom: 0;
+					.entry-content{
+						//background-color: $white--smoke;
+						margin: 0 auto; 
+						
+						h2{
+							font-size: 9px;
+							line-height: 40px;
+							margin: 0px;
+
+								time{
+									font-size: 14px;
+									color: $gray;
+								} 
+
+							@include opensans();
+							a{
+								color: $gray-dark;
+								&:hover{
+									@include opacity(.85);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	&.super-header, &.banner{
 		background-color: $green--dark;
 	}
@@ -7,8 +76,9 @@ header{
 	&.super-header{
 		position: relative;
 		z-index: 1002;
-		border-bottom: 1px solid transparent;
+		border-bottom: 0px solid transparent;
 		.collapse{
+			@include make-row();
 			display: block;
 			height: 100% !important;
 			.nav{
@@ -46,8 +116,8 @@ header{
 						a{
 	  						font-size: 11px;
 	  						color: $white;
-	  						padding-top: 5px;
-							padding-bottom: 5px;
+	  						padding-top: 4px;
+							padding-bottom: 4px;
 						}
 					}
 					&.navbar-social{
@@ -457,12 +527,28 @@ h1{
 
 @media (min-width: $screen-sm-min) {
 	header{
+		&.alerts{
+			.container{
+				.alerts__header{
+					a{}
+				}
+				.sl__alerts{
+					article{
+						.entry-content{			
+							h2{
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
 		&.navbar-branding{
 			z-index: 1003;
 			.navbar-header{
 				&.agrorural{
 				position: absolute;
-			    top: -35px;
+			    top: -30px;
 			    left: 0;
 			    right: 0;
 			    width: 180px;

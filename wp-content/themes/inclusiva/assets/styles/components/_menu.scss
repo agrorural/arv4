@@ -222,10 +222,10 @@ ul#menu-social-navegacion{
 				@include fa-icon();
 				background-color: $gray;
 				width: 100%;
-				height: 34px;
+				height: 30px;
 				padding: 0;
 				text-align: center;
-				line-height: 34px;
+				line-height: 30px;
 				@include border-radius(0);
 				span{
 					@include text-hide();
@@ -239,9 +239,9 @@ ul#menu-social-navegacion{
 		}
 		&.fb{
 			a{
-				background-color: $gray-lighter;
+				background-color: $white--smoke;
 				&:hover{
-					color: $gray-lighter;
+					color: $white--smoke;
 					background-color: $blue--fb !important;
 				}
 				&:before{
@@ -252,7 +252,7 @@ ul#menu-social-navegacion{
 		}
 		&.tw{
 			a{
-				background-color: $gray-lighter;
+				background-color: $white--smoke;
 				&:hover{
 					background-color: $blue--tw !important;
 				}
@@ -264,7 +264,7 @@ ul#menu-social-navegacion{
 		}
 		&.yt{
 			a{
-				background-color: $gray-lighter;
+				background-color: $white--smoke;
 				&:hover{
 					background-color: $red--google !important;
 				}
