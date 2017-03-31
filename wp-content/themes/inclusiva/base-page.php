@@ -62,7 +62,9 @@ use Roots\Sage\Wrapper;
                <article class="<?php echo $post_name; ?>" style="background: url(<?php echo $image; ?>) no-repeat top center;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
                <?php //var_dump($image); ?>
                  <div class="caption">
-                    <i class="icon fa fa-check-square-o" aria-hidden="true"></i>
+                    <a href="<?php echo get_page_link( $page->ID ); ?>">
+                      <i class="icon fa fa-check-square-o" aria-hidden="true"></i>
+                    </a>
                     <h2>
                       <a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
                     </h2>

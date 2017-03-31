@@ -69,3 +69,10 @@ function wpa54064_inspect_scripts() {
     endforeach;
 }
 add_action( 'wp_print_scripts', __NAMESPACE__ . '\\wpa54064_inspect_scripts' );
+
+function agro_url_shortcode() {
+return get_bloginfo('url');
+}
+add_shortcode('url', __NAMESPACE__ . '\\agro_url_shortcode');
+
+add_filter('widget_text', 'do_shortcode');

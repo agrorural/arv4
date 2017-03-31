@@ -26,7 +26,12 @@ use Roots\Sage\Wrapper;
 			<?php include Wrapper\template_path(); ?>
 		</main><!-- /.main -->
 		<aside class="sidebar" role="complementary">
-			<a href="<?php bloginfo('url')?>/servicios/venta-de-guano-de-la-isla/reportes-2015-2016/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/control-gestion-qr.jpg" class="img-responsive" alt=""></a>
+      <section class="widget">
+      <a href="<?php bloginfo('url')?>/servicios/venta-de-guano-de-la-isla/reportes-2015-2016/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/control-gestion-qr.jpg" class="img-responsive" alt=""></a>
+      </section>
+      <section class="widget">
+      <a href="<?php echo get_template_directory_uri(); ?>/dist/images/censo__aves__ene__mar__2017.pdf" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/abonos__banner.png" class="img-responsive" alt=""></a>
+      </section>
 		</aside><!-- /.sidebar -->
 
       </div><!-- /.content -->
