@@ -154,6 +154,9 @@
 			@include container-fixed();
 			text-align: center;
 			z-index: 1000;
+			@media(min-width: $screen-sm-min){
+				padding: 0 200px;
+			}
 			.proyecto__logo{
 				img{
 					margin: 0 auto;
@@ -166,6 +169,21 @@
 				}
 			}
 		}
+
+		main{
+			.page-header{
+				margin: 0 0 20px;
+				h1{
+					@include opensans(light);
+				}
+			}
+			.breadcrumb{
+				display: none;
+			}
+		}
+		aside{
+
+		}
 	}
 	&.page-template-template-serviagro{
 		.masshead{
@@ -177,7 +195,7 @@
 	}
 	&.consulta-de-compra-de-guano-de-la-isla{
 		main, aside{
-			
+
 		}
 		aside{
 			margin-top: 0;
@@ -286,9 +304,9 @@ article{
 	figure{}
 	header{
 		.entry-title{
-			@include entry-title(); 
+			@include entry-title();
 			margin-top: 0;
-			a{ 
+			a{
 				/*color: $brown; */
 			}
 		}
@@ -302,9 +320,9 @@ article{
 			}
 		}
 	}
-	
+
 	@include clearfix();
-	
+
 	&:last-of-type{
 		border-bottom: 3px solid $brown--lighter;
 	}
@@ -338,7 +356,7 @@ article{
 
 @media(max-width: $screen-xs-max){
 	.page-template-template-proyectos, .page-template-template-proyectos-subpage{
-		.proyecto{	
+		.proyecto{
 			@include make-sm-column(6);
 			padding: 30px 0;
 			.proyecto__descripcion{
@@ -352,13 +370,13 @@ article{
 
 @media(min-width: $screen-sm-min){
 	.page-template-template-proyectos, .page-template-template-proyectos-subpage{
-		.proyecto{	
+		.proyecto{
 			position: absolute;
 			bottom: 15px;
 			left: 0;
 			right: 0;
 			.proyecto__descripcion{
-				
+
 				h1{
 					@include entry-title('lg');
 				}

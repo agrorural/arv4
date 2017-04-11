@@ -25,6 +25,9 @@ use Roots\Sage\Wrapper;
 		$pry__tag = get_field('pry__tag'); 
 		$tag_by_ID = get_term_by('id', $pry__tag, 'post_tag');
     $tag__slug = $tag_by_ID->slug;
+    // echo '<pre>';
+    // var_dump($tag__slug);
+    // echo '</pre>';
     ?>
 
     <?php if (has_post_thumbnail( $post->ID ) ){ ?>

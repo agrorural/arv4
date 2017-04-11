@@ -75,17 +75,17 @@ body{
       margin-bottom: 60px;
       .page-header{
         margin: 70px 0 20px;
-        border-bottom: 2px solid $brown--light;
+        border-bottom: 0px solid transparent;
         h1{
-          @include opensans(); 
-          font-size: 36px;  
+          @include opensans();
+          font-size: 36px;
           color: $brown;
           small{
             font-size: 13px;
-            @include opensans(); 
+            @include opensans();
             a{
               color: $red--google;
-            } 
+            }
           }
         }
       }
@@ -235,6 +235,10 @@ ol{
   }
 }
 
+header.navbar-sub{
+  background-color: transparent !important;
+}
+
 article, figure{
   img{
     border:1px solid $gray--light;
@@ -278,6 +282,7 @@ article, figure{
     .modal-footer{}
   }
 }
+
 
 /* Páginas Especiales */
 
@@ -330,7 +335,7 @@ article, figure{
           position: absolute;
           bottom: 0;
           left: 0;
-          right: 0;      
+          right: 0;
         }
       }
     }
@@ -379,7 +384,7 @@ article, figure{
             padding: 0;
             border: 0;
             width: 100%;
-            
+
             @media(min-width: $screen-sm-min){
               width: auto;
             }
@@ -408,7 +413,7 @@ article, figure{
 main{
   section{
     .page-header{
-      margin-top: 44px !important;
+
     }
   }
 }
@@ -479,7 +484,7 @@ SHARING
         background-color: $green;
       }
       @media(min-width: $screen-sm-min){
-        display: none; 
+        display: none;
       }
     }
 
@@ -507,7 +512,7 @@ article{
       @include meta-text();
       font-size: 13px;
       display: block;
-      position: relative; 
+      position: relative;
       margin-bottom: 5px;
     }
   }
@@ -607,7 +612,7 @@ article{
   padding: 0 15px !important;
   .cta__link{
     margin: 0;
-    padding: 12px 0; 
+    padding: 12px 0;
   }
   .sharing-list{
     margin-top: 4px;
@@ -626,7 +631,7 @@ article{
     position: relative;
     display: block;
     z-index: 0;
-    
+
     figcaption{
       position: absolute;
       bottom: 0;
@@ -639,7 +644,7 @@ article{
       }
       h4{
         @include opensans(bold);
-        font-size: 16px; 
+        font-size: 16px;
         margin: 0 auto;
       }
       p, ul li a, p a{
@@ -650,7 +655,7 @@ article{
         margin-bottom: 0;
       }
     }
-  
+
     &.shadow{
       @include focus-shadow();
     }
@@ -829,7 +834,7 @@ article{
           float: none;
           display: block;
           padding-top: 3px;
-          font-size: 11px; 
+          font-size: 11px;
         }
       }
     }
