@@ -190,15 +190,17 @@ ul#menu-navegacion-primaria{
 						background-color: $green--light;
 					}
 					&:before{
-						content: $fa-var-search;
-						color: $yellow;
+						position: absolute;
+						top: 2px;
+						left: -10px;
+						content: url('../images/pte__icon.png');
 					}
 					width: auto;
 					padding-left: 10px;
 					padding-right: 10px;
 					span{
 						@include opensans(bold);
-						color: $yellow;
+						color: $white;
 						font-size: 11px;
 						padding-left: 5px;
 					} 
