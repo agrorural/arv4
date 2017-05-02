@@ -13,7 +13,7 @@ ul#menu-navegacion-primaria{
 			color: $brown--lighter;
 			font-size: 13px;
 			&:hover{
-				color: $red--google--hover; 
+				color: $red--google--hover;
 			}
 		}
 
@@ -29,7 +29,7 @@ ul#menu-navegacion-primaria{
 						font-size: 14px;
 						text-transform: none;
 						color: $gray;
-						padding: 5px 20px; 
+						padding: 5px 20px;
 						&:hover{
 							background-color: $red--google--light;
 						}
@@ -80,8 +80,8 @@ ul#menu-navegacion-primaria{
 					}
 
 					&:hover{
-						ul.dropdown-menu{ 
-							display: block; 
+						ul.dropdown-menu{
+							display: block;
 							top: 0;
 							left: 100%;
 							right: auto;
@@ -122,9 +122,9 @@ ul#menu-navegacion-primaria{
 							font-size: 13px;
 							text-transform: none;
 							color: $gray;
-							padding: 5px 20px; 
+							padding: 5px 20px;
 							&:hover{
-								background-color: $yellow--light; 
+								background-color: $yellow--light;
 							}
 						}
 						&.dropdown-header{
@@ -150,7 +150,7 @@ ul#menu-navegacion-primaria{
 					}
 				}
 				&:hover{
-					ul.dropdown-menu{ 
+					ul.dropdown-menu{
 						position: absolute;
 						width: 100%;
 						background-color: $white;
@@ -191,7 +191,7 @@ ul#menu-navegacion-primaria{
 					}
 					&:before{
 						position: absolute;
-						top: 2px;
+						top: 4px;
 						left: -10px;
 						content: url('../images/pte__icon.png');
 					}
@@ -203,7 +203,7 @@ ul#menu-navegacion-primaria{
 						color: $white;
 						font-size: 11px;
 						padding-left: 5px;
-					} 
+					}
 				}
 			}
 		}
@@ -319,7 +319,7 @@ ul#menu-social-navegacion{
 	ul#menu-navegacion-primaria, ul#menu-super-navegacion{
 		li.dropdown{
 			&:hover{
-				ul.dropdown-menu{ 
+				ul.dropdown-menu{
 					width: auto;
 				}
 			}
