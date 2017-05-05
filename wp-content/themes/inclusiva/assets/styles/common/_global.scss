@@ -243,6 +243,9 @@ article, figure{
   img{
     border:1px solid $gray--light;
   }
+  &.panel{
+    padding-top: 0px;
+  }
 }
 
 .alert{

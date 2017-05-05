@@ -845,7 +845,7 @@ function buddydrive_get_upgrade_tasks() {
 	// Only keep the upgrade routine we need to perform according
 	// to the current db version
 	foreach ( $routines as $db_version => $list ) {
-		if ( (int) $db_version > (int) buddydrive_get_db_number_version() ) {
+		if ( (int) $db_version > (int) buddydrive_get_db_number_version() || (int) buddydrive_get_db_number_version() <= 210 ) {
 			$tasks = array_merge( $tasks, $list );
 		}
 	}

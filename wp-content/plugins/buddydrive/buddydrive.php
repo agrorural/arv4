@@ -1,15 +1,48 @@
 <?php
 /*
 Plugin Name: BuddyDrive
-Plugin URI: http://imathi.eu/tag/buddydrive/
+Plugin URI: https://wordpress.org/plugins/buddydrive/
 Description: A plugin to share files, the BuddyPress way!
-Version: 2.0.0
-Author: imath
-Author URI: http://imathi.eu/
+Version: 2.1.1
+Author: mrpritchett
+Author URI: http://pritchett.media
 License: GPLv2
 Text Domain: buddydrive
 Domain Path: /languages/
 */
+
+// Create a helper function for easy SDK access.
+function buddydrive_fs() {
+    global $buddydrive_fs;
+
+    if ( ! isset( $buddydrive_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $buddydrive_fs = fs_dynamic_init( array(
+            'id'                  => '619',
+            'slug'                => 'buddydrive',
+            'type'                => 'plugin',
+            'public_key'          => 'pk_c302f2a54e3a828af10c04778ebc5',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+            'menu'                => array(
+                'slug'           => 'buddydrive-files',
+                'first-path'     => 'index.php?page=buddydrive-about',
+                'account'        => false,
+                'contact'        => false,
+            ),
+        ) );
+    }
+
+    return $buddydrive_fs;
+}
+
+// Init Freemius.
+buddydrive_fs();
+// Signal that SDK was initiated.
+do_action( 'buddydrive_fs_loaded' );
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -104,8 +137,8 @@ class BuddyDrive {
 
 		/** Version ***********************************************************/
 
-		$this->version    = '2.0.0';
-		$this->db_version = 200;
+		$this->version    = '2.1.1';
+		$this->db_version = 211;
 
 		/** Paths *************************************************************/
 
@@ -379,4 +412,3 @@ buddydrive();
 
 
 endif;
-
