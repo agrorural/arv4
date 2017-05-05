@@ -39,7 +39,6 @@
     <?php }else{ ?>
       <button type="button" class="cta__link" disabled="disabled">No Disponible</button>
     <?php } ?>
-
     <?php get_template_part('templates/sharing'); ?>
   </div>
 </article>

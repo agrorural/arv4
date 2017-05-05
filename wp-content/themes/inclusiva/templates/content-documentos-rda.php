@@ -2,8 +2,6 @@
 	$rde_link = get_field('rde_link');
 	$upload_dir = wp_upload_dir();
 	$dir = $upload_dir["baseurl"];
-	$doc_ane__nom = get_field('doc_ane__nom');
-	$doc_ane__desc = get_field('doc_ane__desc');
 
 	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all"));
   $post__slug = $post->post_name;
@@ -11,13 +9,7 @@
 ?>
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
-	 <a href="<?php the_permalink(); ?>">
-	 <?php if($doc_ane__nom){?>
-	 	<?php echo $doc_ane__nom; ?>
-	 <?php }else { ?>
-	 	<?php the_title(); ?>
-	 <?php } ?>
-	 </a>
+	 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
   </header>
       <!-- Table -->
   <table class="table">
@@ -28,15 +20,11 @@
     </tbody>
   </table>
   <div class="entry-summary panel-body">
-  	<?php if($doc_ane__desc){?>
-	 	<?php echo $doc_ane__desc; ?>
-	 <?php }else { ?>
-    	<?php the_content(); ?>
-    <?php } ?>
+    <?php the_content(); ?>
   </div>
   <div class="panel-footer">
     <?php if($rde_link == 'Publicado') {?>
-      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>" target="_blank"><i class="fa fa-file-o"></i> Descargar archivo</a>
+      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rda/'.$post__slug__up.'.PDF'; ?>" target="_blank"><i class="fa fa-file-o"></i> Descargar archivo</a>
     <?php }else{ ?>
       <button type="button" class="cta__link" disabled="disabled">No Disponible</button>
     <?php } ?>
