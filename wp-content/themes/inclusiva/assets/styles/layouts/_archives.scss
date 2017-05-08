@@ -156,7 +156,7 @@
 						@include make-xs-column(6);
 					}
 			}
-			@media(min-width: $screen-sm-min){ 
+			@media(min-width: $screen-sm-min){
 				figure.producto{
 					@include make-xs-column(3);
 					.thumbnail{
@@ -250,8 +250,8 @@
 					color: $gray--light;
 					@include text-shadow();
 				}
-				p{ 
-					color: $gray--light;  
+				p{
+					color: $gray--light;
 					@include text-shadow();
 				}
 			}
@@ -298,7 +298,7 @@
 				time{
 					@include opensans();
 					font-size: 11px;
-					color: $white; 
+					color: $white;
 					@include text-shadow();
 				}
 			}
@@ -320,8 +320,6 @@
 		background-image: url('../images/masshead--servicios.jpg');
 		@include full-bg();
 		.page-header{
-			margin: 0 auto;
-			padding: 0;
 		}
 	}
 	&.videos-de-capacitacion{
@@ -332,7 +330,7 @@
 					@include make-sm-column(3);
 					@include make-xs-column(12);
 					.thumbnail{
-						@inclide border-radius(0);
+						@include border-radius(0);
     					padding: 0;
     					img{
     						margin: 0;
@@ -342,7 +340,7 @@
     						a{
     							margin: 7px auto 3px;
     							padding: 0;
-    							font-size: 14px; 
+    							font-size: 14px;
     							@include opensans(bold);
     						}
     					}

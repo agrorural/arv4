@@ -697,6 +697,11 @@ article{
       }
       th{
        @include opensans(semibold);
+       span{
+         @include opensans(regular);
+         font-size: 12px;
+         font-weight: normal;
+       }
       }
       td{
         font-size: 12px;

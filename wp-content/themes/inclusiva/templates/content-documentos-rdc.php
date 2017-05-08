@@ -1,9 +1,19 @@
 <?php
   $rde_link = get_field('rde_link');
+
+  $rdc__titular = get_field('rdc__titular');
+  $rdc__doc = get_field('rdc__doc');
+
+  $dateformat = "d/m/Y";
+
+  $rdc__fec_inicio = get_field('rdc__fec_inicio');
+  $rdc__fec_inicio = new DateTime($rdc__fec_inicio);
+
+  $rdc__fec_fin = get_field('rdc__fec_fin');
+  $rdc__fec_fin = new DateTime($rdc__fec_fin);
+
   $upload_dir = wp_upload_dir();
   $dir = $upload_dir["baseurl"];
-  $doc_ane__nom = get_field('doc_ane__nom');
-  $doc_ane__desc = get_field('doc_ane__desc');
   $term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all"));
   $post__slug = $post->post_name;
   $post__slug__up = strtoupper($post__slug);
@@ -11,34 +21,61 @@
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
    <a href="<?php the_permalink(); ?>">
-   <?php if($doc_ane__nom){?>
-    <?php echo $doc_ane__nom; ?>
-   <?php }else { ?>
     <?php the_title(); ?>
-   <?php } ?>
    </a>
   </header>
-      <!-- Table -->
-  <table class="table">
-    <tbody>
-          <tr>
-            <td><?php get_template_part('templates/entry-meta'); ?></td>
-          </tr>
-    </tbody>
-  </table>
-  <div class="entry-summary panel-body">
-    <?php if($doc_ane__desc){?>
-    <?php echo $doc_ane__desc; ?>
-   <?php }else { ?>
-      <?php the_content(); ?>
-    <?php } ?>
-  </div>
+  <!-- Table -->
+<table class="table table-hover table-condensed">
+  <thead></thead>
+  <tbody>
+    <tr>
+      <th scope="row">Titular</th>
+      <td>
+        <?php if ($rdc__titular) : ?>
+          <?php echo $rdc__titular; ?>
+        <?php else : ?>
+          No disponible
+        <?php endif; ?>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Documento de desingnación</th>
+      <td>
+        <?php if ($rdc__doc) : ?>
+          <?php echo $rdc__doc; ?>
+        <?php else : ?>
+          No disponible
+        <?php endif; ?>
+      </td>
+    </tr>
+    <tr rowspan="2">
+      <th scope="row">
+        <strong>Inicio de periodo</strong>
+        <br>
+          <?php if ($rdc__fec_inicio) : ?>
+            <?php echo '<span>' . $rdc__fec_inicio->format('d/m/Y') . '</span>'; ?>
+          <?php else : ?>
+            No disponible
+          <?php endif; ?>
+      </th>
+      <th scope="row">
+        <strong>Fin de periodo</strong>
+        <br>
+          <?php if ($rdc__fec_fin) : ?>
+            <?php echo '<span>' . $rdc__fec_fin->format('d/m/Y') . '</span>'; ?>
+          <?php else : ?>
+            No disponible
+          <?php endif; ?>
+      </th>
+    </tr>
+  </tbody>
+</table>
   <div class="panel-footer">
     <?php if($rde_link == 'Publicado') {?>
-      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[1]->slug.'/'.$post__slug__up.'.PDF'; ?>" target="_blank"><i class="fa fa-file-o"></i> Descargar archivo</a>
+      <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar informe</a>
     <?php }else{ ?>
       <button type="button" class="cta__link" disabled="disabled">No Disponible</button>
     <?php } ?>
-    <?php get_template_part('templates/sharing'); ?>
+    <?php /* get_template_part('templates/sharing'); */ ?>
   </div>
 </article>
