@@ -27,7 +27,7 @@
 		echo '<section class="widget text-2 widget_text"><h3>Inicia Sesión</h3>';
 			wp_login_form();
 		echo '</section>';
-	} 
+	}
 	?>
 <?php } else if ( is_page( array ( 'Contacto'))){ ?>
 
@@ -44,20 +44,38 @@
 </address></div>
 		</section>
 
-<?php } elseif ( is_page( array ( 
-									'objetivos', 
+<?php } elseif ( is_page( array (
+									'objetivos',
 									'el-proyecto',
-									'ambito-de-intervencion-y-grupo-objetivo', 
+									'ambito-de-intervencion-y-grupo-objetivo',
 									'componentes',
 									'componente-1',
 									'componente-2',
 									'componente-3',
 									'componente-4'
-								) 
-						) 
-				) 
+								)
+						)
+				)
 {?>
-    <?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
+    	<?php get_template_part('templates/sidebar', 'proyecto-pssa'); ?>
+		<?php } elseif ( is_page( array (
+											'formulario-de-solicitud-de-acceso-a-la-informacion-publica'
+										)
+								)
+						)
+		{?>
+			<section class="widget">
+				<h3>Sobre este formulario</h3>
+				<div class="textwidget">
+					<p>Este formulario está disponible en días laborables desde las 8:30 a.m. hasta las 4:30 p.m. Cualquier envío posterior se contabilizará la atención desde las 8:30 a.m. del siguiente día laborable.</p>
+				</div>
+			</section>
+			<section class="widget">
+				<h3>Recuerde que...</h3>
+				<div class="textwidget">
+					<p>También puede presentar este formulario a través de mesa de partes de forma física descargando el formato desde el <a href="<?php echo bloginfo('url'); ?>/wp-content/uploads/transparencia/oaj/SolicituddeAcceso.doc">siguiente link</a>.</p>
+				</div>
+			</section>
 <?php } else {?>
 	<?php dynamic_sidebar('sidebar-primary'); ?>
 <?php } ?>

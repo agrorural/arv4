@@ -26,6 +26,14 @@ function populate_aip__num( $value ) {
     return $unique;
 }
 
+add_filter( 'gform_field_value_aip__link', 'populate_aip__link' );
+function populate_aip__link( $value ) {
+    $weburl = get_bloginfo('url');
+    $form_posts = $weburl . '/wp-admin/admin.php?page=gf_entries&id=12';
+
+    return $form_posts;
+}
+
 add_filter( 'gform_field_value_fec_reclamacion', 'populate_fec_reclamacion' );
 function populate_fec_reclamacion( $value ) {
 
