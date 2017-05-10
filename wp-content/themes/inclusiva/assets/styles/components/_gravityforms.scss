@@ -4,7 +4,7 @@
 			@extend .alert;
 			@extend .alert-danger;
 		}
-		.gform_body{			
+		.gform_body{
 			.gform_fields{
 				@include make-row();
 				@extend .list-unstyled;
@@ -12,6 +12,14 @@
 					@extend .col-sm-12;
 					@extend .clearfix;
 					@extend .form-group;
+					.alert{
+						margin-bottom: 0;
+					}
+					&.gfield_visibility_hidden, &.gf_invisible{
+						visibility: hidden;
+				    position: absolute;
+				    left: -9999px;
+					}
 					&.gsection{
 						margin-top: 15px;
 						.gsection_title{
@@ -106,6 +114,12 @@
 						cursor: pointer;
 					}
 					.ginput_container{
+						&.ginput_container_name{
+							@extend .row;
+							.name_first, .name_last{
+								@extend .col-sm-6;
+							}
+						}
 						input[type="text"], select, textarea{
 							@extend .form-control;
 						}
@@ -160,7 +174,7 @@
 			padding-top: 15px;
 			.gform_button{
 				@extend .btn;
-				@extend .btn-success;				
+				@extend .btn-success;
 			}
 		}
 	}
