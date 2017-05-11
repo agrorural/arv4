@@ -33,12 +33,12 @@
 				    left: -9999px;
 					}
 					&.gsection{
-						margin-top: 15px;
 						.gsection_title{
 							@include title-xs();
 							font-size: 13px;
 							padding-bottom: 7px;
 							border-bottom: 1px solid $gray--light;
+							margin-top: 0;
 						}
 					}
 					&.gf_left_third, &.gf_middle_third, &.gf_right_third{
@@ -151,6 +151,23 @@
 							.address_line_1{
 								label{
 									display: none;
+								}
+							}
+						}
+
+						&.ginput_container_textarea{
+							textarea{
+								&.small{
+									height: 80px;
+							    width: 100%;
+								}
+								&.medium{
+									height: 120px;
+							    width: 100%;
+								}
+								&.large{
+									height: 160px;
+							    width: 100%;
 								}
 							}
 						}
