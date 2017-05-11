@@ -12,9 +12,21 @@
 					@extend .col-sm-12;
 					@extend .clearfix;
 					@extend .form-group;
+
 					.alert{
 						margin-bottom: 0;
 					}
+
+					&.gf_clearfix{
+							margin-bottom: 0;
+					}
+
+					&.gf_no_field{
+						.gfield_label{
+							display: none;
+						}
+					}
+
 					&.gfield_visibility_hidden, &.gf_invisible{
 						visibility: hidden;
 				    position: absolute;
@@ -118,8 +130,31 @@
 							@extend .row;
 							.name_first, .name_last{
 								@extend .col-sm-6;
+								label{
+									@include opensans();
+									color: $gray-dark;
+									@extend .control-label;
+									cursor: pointer;
+									font-size: 14px;
+    							line-height: 1.6;
+									font-weight: 700;
+									padding: 0;
+									margin-bottom: 5px;
+									&:after{
+										content: '*';
+									}
+								}
 							}
 						}
+
+						&.ginput_container_address{
+							.address_line_1{
+								label{
+									display: none;
+								}
+							}
+						}
+
 						input[type="text"], select, textarea{
 							@extend .form-control;
 						}
@@ -130,6 +165,7 @@
 							span{
 								label{
 									@include meta-text();
+									margin-bottom: 0;
 								}
 							}
 						}
