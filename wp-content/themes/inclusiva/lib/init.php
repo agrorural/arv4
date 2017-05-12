@@ -15,7 +15,7 @@ function setup() {
   // Enable plugins to manage the document title
   // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
   add_theme_support('title-tag');
-  
+
   // Enable custom logo support
   add_theme_support( 'custom-logo' );
 
@@ -41,19 +41,20 @@ function setup() {
     // Proyectos
     'pry_pssa_navigation' => __('Proyecto PSSA Navigation', 'sage'), //PSSA
       'pry_pssa_cmp_navigation' => __('Componentes Proyecto PSSA Navigation', 'sage'), //PSSA - Componentes
-    
+
     'pry_aliados-ii_navigation' => __('Proyecto Aliados II Navigation', 'sage'), //Aliados II
     'pry_sierra-sur-ii_navigation' => __('Proyecto Sierra Sur II Navigation', 'sage'), //PSSA
     'pry_aiaf_navigation' => __('Proyecto AIAF Navigation', 'sage'), //AIAF
     'pry_csst_navigation' => __('Proyecto CSST Navigation', 'sage'), //CSST
-    
-    // Resoluciones
+
+    // Documentos
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
     'doc_rda_navigation' => __('Documentos: RDA Navigation', 'sage'), //RDE
     'doc_directivas_navigation' => __('Documentos: Directivas Navigation', 'sage'), //Directivas
     'doc_pac_navigation' => __('Documentos: PAC Navigation', 'sage'), //PAC
     'doc_convenios_navigation' => __('Documentos: Convenios Navigation', 'sage'), //Convenios
     'doc_rd_navigation' => __('Documentos: RD Navigation', 'sage'), //RD
+    'doc_pack_navigation' => __('Documentos: Pack Anticorrupción Navigation', 'sage'), //RD
 
     // Convocatorias
     'cnv_cas_navigation' => __('Convocatorias CAS Navigation', 'sage'), //CAS

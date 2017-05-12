@@ -16,3 +16,20 @@
 		</section>
 	<?php } ?>
 <?php endif; ?>
+
+<?php if( is_page (
+									array(
+													'rendicion-de-cuentas'
+												)
+									)
+				) :
+?>
+
+	<?php if (has_nav_menu('doc_pack_navigation')) { ?>
+		<section class="widget">
+		<h3>Pack Anticorrupción</h3>
+		<?php wp_nav_menu(['theme_location' => 'doc_pack_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']); ?>
+		</section>
+	<?php } ?>
+
+<?php endif; ?>

@@ -354,7 +354,11 @@ article, figure{
   .form-control{
   }
 }
-
+nav{
+  .navbar-nav{
+    margin: 7.5px 0; 
+  }
+}
 /* Navegación Secundaria*/
 .navbar-sub{
   min-height: 38px;
