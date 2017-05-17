@@ -28,6 +28,10 @@ node_modules
 
 #macOS Files
 .DS_Store
+wp-content/.DS_Store
+wp-content/themes/.DS_Store
+wp-content/themes/inclusiva/.DS_Store
+wp-content/themes/inclusiva/assets/.DS_Store
 .Trashes
 Thumbs.db
 

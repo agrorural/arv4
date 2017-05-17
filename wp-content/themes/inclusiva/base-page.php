@@ -42,13 +42,7 @@ use Roots\Sage\Wrapper;
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main" role="main">
-        <div class="wrapper">
-          <?php if (is_page('pack-anticorrupcion')) : ?>
-            <?php get_template_part('templates/content', 'page-pack-anticorrupcion'); ?>
-          <?php else : ?>
             <?php include Wrapper\template_path(); ?>
-          <?php endif; ?>
-        </div>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
           <aside class="sidebar" role="complementary">

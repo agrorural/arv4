@@ -140,7 +140,10 @@ p{
     }
   }
 }
-
+.page .wrapper{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
 .popover{
   ul{
     li{
@@ -293,7 +296,9 @@ article, figure{
     position: relative;
     z-index: 0;
     .page-header{
-      position: relative;
+      @extend .col-lg-12;
+      @extend .col-sm-12;
+      @extend .col-xs-12; 
       z-index: 10;
       border-bottom: 1px solid transparent !important;
       figure{
@@ -837,6 +842,9 @@ article{
 /* Termina Tabs */
 
 @media(max-width: $screen-sm-max){
+  .navbar-nav{
+    margin: 7.5px 0;
+  }
   .page, .archive, .single{
     .page-header{
       h1{
