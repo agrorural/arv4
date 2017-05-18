@@ -5,6 +5,8 @@
 
  //Listado de sub-páginas
  $pages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+
+ //var_dump($pages);
 ?>
 
 <div class="page-container">
