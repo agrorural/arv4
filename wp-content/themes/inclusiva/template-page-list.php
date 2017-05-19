@@ -4,9 +4,18 @@
  */
 
  //Listado de sub-páginas
- $pages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
-
- //var_dump($pages);
+ $pages = get_pages( array(
+   'child_of' => $post->ID,
+   'parent' => $post->ID,
+   'hierarchical' => 0,
+   'sort_column' => 'post_date',
+   'sort_order' => 'desc',
+   'post_type' => 'page',
+	 'post_status' => 'publish'
+) );
+// echo '<pre>';
+//  var_dump($pages);
+//  echo '</pre>';
 ?>
 
 <div class="page-container">
