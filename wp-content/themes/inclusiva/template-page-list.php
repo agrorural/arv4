@@ -13,9 +13,6 @@
    'post_type' => 'page',
 	 'post_status' => 'publish'
 ) );
-// echo '<pre>';
-//  var_dump($pages);
-//  echo '</pre>';
 ?>
 
 <div class="page-container">

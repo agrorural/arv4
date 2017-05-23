@@ -5,7 +5,7 @@
 ?>
 
 <section class="ap__list">
-	<?php if ($term__slug && $term__slug == 'rdc'){ ?>
+	<?php if ( $term__slug && $term__slug == 'rdc' || $term__slug && $term__slug == 'ira' || $term__slug && $term__slug == 'add' ){ ?>
 		<?php get_template_part('templates/view', 'documentos-pack-list'); ?>
 	<?php }else{ ?>
 		<?php get_template_part('templates/view', 'documentos-list'); ?>

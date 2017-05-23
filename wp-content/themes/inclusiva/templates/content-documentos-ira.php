@@ -1,9 +1,6 @@
 <?php
   $rde_link = get_field('rde_link');
 
-  $rdc__titular = get_field('rdc__titular');
-  $rdc__doc = get_field('rdc__doc');
-
   $dateformat = "d/m/Y";
 
   $pack__fec_inicio = get_field('pack__fec_inicio');
@@ -29,29 +26,9 @@
 <table class="table table-hover table-condensed">
   <thead></thead>
   <tbody>
-    <tr>
-      <th scope="row">Titular</th>
-      <td>
-        <?php if ($rdc__titular) : ?>
-          <?php echo $rdc__titular; ?>
-        <?php else : ?>
-          No disponible
-        <?php endif; ?>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Documento de desingnación</th>
-      <td>
-        <?php if ($rdc__doc) : ?>
-          <?php echo $rdc__doc; ?>
-        <?php else : ?>
-          No disponible
-        <?php endif; ?>
-      </td>
-    </tr>
     <tr rowspan="2">
       <th scope="row">
-        <strong>Inicio de periodo</strong>
+        <strong>Inicio de Seguimiento</strong>
         <br>
           <?php if ($pack__fec_inicio) : ?>
             <?php echo '<span>' . $pack__fec_inicio->format('d/m/Y') . '</span>'; ?>
@@ -60,7 +37,7 @@
           <?php endif; ?>
       </th>
       <th scope="row">
-        <strong>Fin de periodo</strong>
+        <strong>Fin de Seguimiento</strong>
         <br>
           <?php if ($pack__fec_fin) : ?>
             <?php echo '<span>' . $pack__fec_fin->format('d/m/Y') . '</span>'; ?>
