@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - BuddyPress - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-05-02 07:17:04+0000\n"
+"PO-Revision-Date: 2017-05-28 13:04:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,9 +11,85 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - BuddyPress - Stable (latest release)\n"
 
+#: bp-xprofile/bp-xprofile-admin.php:687
+msgctxt "Delete field link"
+msgid "Delete"
+msgstr "Borrar"
+
+#: bp-xprofile/bp-xprofile-admin.php:682
+msgctxt "Edit field link"
+msgid "Edit"
+msgstr "Editar"
+
+#: bp-xprofile/bp-xprofile-admin.php:369
+msgctxt "Profile fields group was deleted successfully"
+msgid "The group was deleted successfully."
+msgstr "El grupo se borró correctamente."
+
+#: bp-xprofile/bp-xprofile-admin.php:366
+msgctxt "Error when deleting profile fields group"
+msgid "There was an error deleting the group. Please try again."
+msgstr "Hubo un error al borrar el grupo. Por favor, inténtalo de nuevo."
+
+#: bp-xprofile/bp-xprofile-admin.php:275
+msgctxt "Add New Profile Fields Group"
+msgid "Add New Group"
+msgstr "Añadir nuevo grupo"
+
+#: bp-xprofile/bp-xprofile-admin.php:274
+msgctxt "You have no profile fields groups."
+msgid "You have no groups."
+msgstr "No tienes grupos."
+
+#: bp-xprofile/bp-xprofile-admin.php:199
+msgctxt "Delete Profile Fields Group"
+msgid "Delete Group"
+msgstr "Borrar grupo"
+
+#: bp-xprofile/bp-xprofile-admin.php:194
+msgctxt "Edit Profile Fields Group"
+msgid "Edit Group"
+msgstr "Editar grupo"
+
+#: bp-templates/bp-legacy/buddypress-functions.php:303
+msgid "Show all comments (%d)"
+msgstr "Mostrar todos los comentarios (%d)"
+
+#: bp-loader.php:65
+msgid "Please update your server or deactivate BuddyPress."
+msgstr "Por favor, actualiza tu servidor o desactiva BuddyPress."
+
+#. translators: 1: current PHP version, 2: required PHP version
+#: bp-loader.php:64
+msgid "Your site is currently running PHP version %1$s, while BuddyPress requires version %2$s or greater."
+msgstr "Tu sitio está actualmente ejecutando la versión PHP %1$s pero BuddyPress requiere la versión %2$s o superior."
+
+#: bp-loader.php:62
+msgid "Your site does not support BuddyPress."
+msgstr "Tu sitio no es compatible con BuddyPress."
+
+#: bp-groups/classes/class-bp-groups-widget.php:27
+msgid "A dynamic list of recently active, popular, newest, or alphabetical groups"
+msgstr "Una lista dinámica de los grupos recientemente activos, populares, por orden alfabético o más nuevos."
+
+#: bp-groups/bp-groups-admin.php:1161
+msgctxt "Group members pagination in group admin"
+msgid "Viewing %1$s - %2$s of %3$s member"
+msgid_plural "Viewing %1$s - %2$s of %3$s members"
+msgstr[0] "Viendo %1$s - %2$s de %3$s miembros"
+msgstr[1] "Viendo %1$s - %2$s de %3$s miembros"
+
+#: bp-forums/deprecated/1.7.php:24
+msgid "Forums (Legacy)"
+msgstr "Foros (heredado)"
+
 #: bp-core/classes/class-bp-admin.php:706
 msgid "We continue to improve our localization internals, making it easier for translation editors to ensure that BuddyPress will be available for everyone in their own language."
 msgstr "Seguimos facilitando a los traductores su trabajo, asegurando que BuddyPress esté disponible para todos en su idioma."
+
+#: bp-core/classes/class-bp-admin.php:702
+msgid "More under the hood &#8230;"
+msgstr "Más bajo el capó &#8230;"
 
 #. translators: %s: PHPMailer
 #: bp-core/classes/class-bp-admin.php:694
@@ -53,6 +129,15 @@ msgstr "Más ganchos para mensajes"
 #: bp-core/classes/class-bp-admin.php:657
 msgid "Full-width BuddyPress layout for Twenty Seventeen theme."
 msgstr "BuddyPress con ancho completo con la plantilla Twenty Seventeen."
+
+#. translators: %s: List-Unsubscribe
+#: bp-core/classes/class-bp-admin.php:638
+msgid "Support for %s header in emails"
+msgstr "Compatibilidad con cabecera %s en los correos electrónicos"
+
+#: bp-core/classes/class-bp-admin.php:613
+msgid "Modernizing the Codebase"
+msgstr "Modernizando el código base"
 
 #. Description of the plugin/theme
 msgid "BuddyPress helps site builders and WordPress developers add community features to their websites, with user profile fields, activity streams, messaging, and notifications."
@@ -338,9 +423,17 @@ msgstr "Directorio de sitios"
 msgid "Sites directory secondary navigation"
 msgstr "Navegación secundaria de directorio de sitios"
 
+#: bp-templates/bp-legacy/buddypress/blogs/index.php:60
+msgid "Sites directory main navigation"
+msgstr "Navegación principal por el directorio de sitios"
+
 #: bp-templates/bp-legacy/buddypress/activity/index.php:143
 msgid "Activity secondary navigation"
 msgstr "Actividad navegación secundaria"
+
+#: bp-templates/bp-legacy/buddypress/activity/index.php:47
+msgid "Sitewide activities navigation"
+msgstr "Navegación de actividades en todo el sitio"
 
 #. translators: 1: user profile link, 2: user name, 3: activity permalink, 4:
 #. ISO8601 timestamp, 5: activity relative timestamp
@@ -365,9 +458,19 @@ msgstr "Hubo un error mientras se cambiaba el tipo de usuario. Por favor, intén
 msgid "No Member Type"
 msgstr "Ningún tipo de miembro"
 
+#: bp-members/classes/class-bp-members-admin.php:2166
+#: bp-members/classes/class-bp-members-admin.php:2168
+msgid "Change member type to&hellip;"
+msgstr "Cambiar tipo de miembro a&hellip;"
+
 #: bp-groups/classes/class-bp-groups-list-table.php:782
 msgid "No Group Type"
 msgstr "Ningún tipo de grupo"
+
+#: bp-groups/classes/class-bp-groups-list-table.php:772
+#: bp-groups/classes/class-bp-groups-list-table.php:774
+msgid "Change group type to&hellip;"
+msgstr "Cambiar el tipo de grupo a&hellip;"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:699
 msgctxt "Label for the WP groups table group type column"
@@ -377,6 +480,13 @@ msgstr "Tipo de grupo"
 #: bp-groups/bp-groups-template.php:5307
 msgid "Viewing groups of the type: %s"
 msgstr "Viendo los grupos del tipo: %s"
+
+#: bp-groups/bp-groups-template.php:4477
+#: bp-templates/bp-legacy/buddypress/groups/single/activity.php:10
+#: bp-templates/bp-legacy/buddypress/groups/single/admin.php:10
+#: bp-templates/bp-legacy/buddypress/groups/single/forum.php:24
+msgid "Group secondary navigation"
+msgstr "Navegación secundaria del grupo"
 
 #: bp-groups/bp-groups-template.php:235
 msgid "Group Types:"
@@ -395,6 +505,10 @@ msgstr "El tipo de grupo ha cambiado con éxito."
 msgid "There was an error while changing group type. Please try again."
 msgstr "Hubo un error mientras se cambiaba el tipo de grupo. Por favor, inténtalo de nuevo."
 
+#: bp-groups/bp-groups-admin.php:1058
+msgid "(Not available on the front end)"
+msgstr "(No disponible en portada)"
+
 #: bp-core/classes/class-bp-admin.php:931
 msgid "Thank you for installing BuddyPress! BuddyPress helps site builders and WordPress developers add community features to their websites, with user profile fields, activity streams, messaging, and notifications."
 msgstr "¡Gracias por instalar BuddyPress! BuddyPress ayuda a los creadores de sitios y a los desarrolladores de WordPress a añadir funcionalidades de comunidad a sus sitios web, con sus campos de perfil de usuario, flujo de actividad, mensajes y notificaciones."
@@ -404,6 +518,10 @@ msgstr "¡Gracias por instalar BuddyPress! BuddyPress ayuda a los creadores de s
 #: bp-core/classes/class-bp-admin.php:820
 msgid "Community Support"
 msgstr "Apoyo de la comunidad"
+
+#: bp-core/classes/class-bp-admin.php:775
+msgid "2.8 Release Lead"
+msgstr "Líder de la versión 2.8"
 
 #: bp-core/classes/class-bp-admin.php:770
 msgid "BuddyPress Team"
@@ -425,6 +543,10 @@ msgstr "Puedes cambiar esta u otras preferencias de notificación de correos ele
 msgid "Please go to your notifications settings to unsubscribe from emails."
 msgstr "Por favor ve a los ajustes de notificaciones para cancelar la suscripción de correos electrónicos."
 
+#: bp-core/bp-core-functions.php:3681 bp-core/bp-core-functions.php:3687
+msgid "Please log in and go to your settings to unsubscribe from notification emails."
+msgstr "Por favor, accede y ve a tus ajustes para anular la suscripción a los avisos por correo electrónico."
+
 #: bp-core/bp-core-functions.php:3680 bp-core/bp-core-functions.php:3686
 #: bp-core/bp-core-functions.php:3691
 msgid "Something has gone wrong."
@@ -441,6 +563,10 @@ msgstr "No recibirás correos electrónicos cuando te envíe alguien un mensaje.
 #: bp-core/bp-core-functions.php:3606
 msgid "You will no longer receive emails when someone requests to be a member of your group."
 msgstr "No recibirás correos electrónicos cuando alguien te pida ser miembro de tu grupo."
+
+#: bp-core/bp-core-functions.php:3590 bp-core/bp-core-functions.php:3598
+msgid "You will no longer receive emails when you have been promoted in a group."
+msgstr "Ya no recibirás correos electrónicos cuando se te acepte en un grupo."
 
 #: bp-core/bp-core-functions.php:3582
 msgid "You will no longer receive emails when you are invited to join a group."
@@ -465,6 +591,14 @@ msgstr "No recibirás correos electrónicos cuando alguien te mencione en una ac
 #: bp-core/bp-core-functions.php:3508 bp-core/bp-core-functions.php:3516
 msgid "You will no longer receive emails when someone replies to an update or comment you posted."
 msgstr "No recibirás correos electrónicos cuando alguien conteste a una actualización o comentario que hayas publicado."
+
+#: bp-core/admin/bp-core-admin-slugs.php:193
+msgid "Registration is currently disabled.  Before associating a page is allowed, please enable registration by clicking on the \"Anyone can register\" checkbox on <a href=\"%s\">this page</a>."
+msgstr "El registro está actualmente desactivado. Antes de permitir la asociación a una página, por favor, activa el registro haciendo clic en la casilla \"Cualquier puede registrarse\" en <a href=\"%s\">esta página</a>."
+
+#: bp-core/admin/bp-core-admin-slugs.php:191
+msgid "Registration is currently disabled.  Before associating a page is allowed, please enable registration by selecting either the \"User accounts may be registered\" or \"Both sites and user accounts can be registered\" option on <a href=\"%s\">this page</a>."
+msgstr "El registro está actualmente desactivado. Antes de permitir la asociación a una página, por favor, activa el registro seleccionando la opción \"Se pueden registrar cuentas de usuario\" o la opción \"Se pueden registrar cuentas de usuario y sitios\" en <a href=\"%s\">esta página</a>."
 
 #: bp-core/deprecated/2.8.php:194
 msgid "Your site is currently running PHP version %s, while BuddyPress 2.8 will require version 5.3+."
@@ -773,6 +907,10 @@ msgstr "Navegación de listado de grupos"
 msgctxt "email post type description"
 msgid "BuddyPress emails"
 msgstr "Correos electrónicos de BuddyPress"
+
+#: bp-core/classes/class-bp-admin.php:932
+msgid "Thank you for updating! BuddyPress %s has many new improvements that you will enjoy."
+msgstr "¡Gracias por actualizar! BuddyPress %s tiene muchas nuevas mejoras que disfrutarás."
 
 #: bp-core/classes/class-bp-admin.php:903
 msgid "&#x1f496;With our thanks to these Open Source projects&#x1f496;"
@@ -1290,6 +1428,23 @@ msgstr "Has sido nombrado para <b>{{promoted_to}}</b> en el grupo &quot;<a href=
 #: bp-core/bp-core-functions.php:3436
 msgid "[{{{site.name}}}] You have been promoted in the group: \"{{group.name}}\""
 msgstr "[{{{site.name}}}] Has sido nombrado en el grupo: \"{{group.name}}\""
+
+#. translators: do not remove {} brackets or translate its contents.
+#: bp-core/bp-core-functions.php:3432
+msgid ""
+"{{inviter.name}} has invited you to join the group: \"{{group.name}}\".\n"
+"\n"
+"To accept your invitation, visit: {{{invites.url}}}\n"
+"\n"
+"To learn more about the group, visit: {{{group.url}}}.\n"
+"To view {{inviter.name}}'s profile, visit: {{{inviter.url}}}"
+msgstr ""
+"{{inviter.name}} te ha invitado a unirte al grupo: \"{{group.name}}\".\n"
+"\n"
+"Para aceptar su invitación visita: {{{invites.url}}}\n"
+"\n"
+"Para aprender más del grupo visita {{{group.url}}}.\n"
+"Para ver el perfil de {{inviter.name}} visita: {{{inviter.url}}}"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3430
@@ -6116,6 +6271,11 @@ msgctxt "Groups admin Last Active column header"
 msgid "Last Active"
 msgstr "Activo por última vez"
 
+#: bp-groups/classes/class-bp-groups-list-table.php:398
+msgctxt "Groups admin Members column header"
+msgid "Members"
+msgstr "Miembros"
+
 #: bp-groups/classes/class-bp-groups-list-table.php:397
 msgctxt "Groups admin Privacy Status column header"
 msgid "Status"
@@ -7353,7 +7513,7 @@ msgstr "Correo electrónico"
 
 #: bp-members/classes/class-bp-members-admin.php:2082
 msgid "Display Name"
-msgstr "Nombre a Mostrar"
+msgstr "Nombre a mostrar"
 
 #: bp-settings/classes/class-bp-settings-component.php:111
 #: bp-settings/classes/class-bp-settings-component.php:188
