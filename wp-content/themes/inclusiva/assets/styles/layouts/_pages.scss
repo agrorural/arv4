@@ -148,7 +148,7 @@
 			}
 		}
 	}
-	&.page-template-template-proyectos, &.page-template-template-proyectos-subpage{
+	&.page-template-template-proyectos, &.page-template-template-proyectos-subpage, &.page-template-template-media{
 		.proyecto{
 			@include container-fixed();
 			text-align: center;
@@ -178,6 +178,28 @@
 			}
 			.breadcrumb{
 				display: none;
+			}
+
+			.multimedia{
+				@extend .row;
+				figure{
+					@extend .col-lg-6;
+					@extend .col-sm-6;
+					@extend .col-xs-12;
+					padding-bottom: 30px;
+					a{
+						i{}
+						figcaption{
+							time{}
+							h3{
+								font-size: 14px;
+								@media(min-width: $screen-xs-min){
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 		aside{
@@ -350,7 +372,7 @@ article{
 }
 
 @media(max-width: $screen-xs-max){
-	.page-template-template-proyectos, .page-template-template-proyectos-subpage{
+	.page-template-template-proyectos,.page-template-template-media, .page-template-template-proyectos-subpage{
 		.proyecto{
 			@include make-sm-column(6);
 			padding: 30px 0;
@@ -364,7 +386,7 @@ article{
 }
 
 @media(min-width: $screen-sm-min){
-	.page-template-template-proyectos, .page-template-template-proyectos-subpage{
+	.page-template-template-proyectos, .page-template-template-proyectos-subpage, &.page-template-template-media{
 		.proyecto{
 			position: absolute;
 			bottom: 15px;

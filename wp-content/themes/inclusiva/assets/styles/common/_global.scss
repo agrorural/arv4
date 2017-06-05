@@ -58,6 +58,10 @@
        color: $black;
 }
 
+html, body{
+  height: 100%;
+}
+
 html{
   overflow-y: scroll;
   overflow-x: hidden;
@@ -298,7 +302,7 @@ article, figure{
     .page-header{
       @extend .col-lg-12;
       @extend .col-sm-12;
-      @extend .col-xs-12; 
+      @extend .col-xs-12;
       z-index: 10;
       border-bottom: 1px solid transparent !important;
       figure{
@@ -573,30 +577,26 @@ article{
       }
     }
   }
-  figure{
+}
+
+figure{
+  a{
     position: relative;
-    display: block;
-    float: left;
-    margin-right: 15px;
-    overflow: hidden;
-    a.format-icon{
-      position: absolute;
-      bottom: -8px;
-      right: -8px;
-      .fa-stack{
-        .fa-stack-2x{
-          color: $black;
-          @include opacity(.35);
-        }
-        .fa-stack-1x{
-          font-size: 13px;
-        }
+    @include text-on-focus();
+    figcaption{
+      time, h3{
+        position: relative;
+        margin: 0 auto;
+        z-index: 999;
       }
-    }
-  }
-  &:hover{
-    a.format-icon{
-      @include bounceIn();
+      time{
+        display: none;
+        @include meta-text();
+      }
+      h3{
+        @include entry-title(sm);
+      }
+      @include focus-shadow();
     }
   }
 }

@@ -28,10 +28,10 @@ use Roots\Sage\Wrapper;
       wp_footer();
     ?>
 
-  <?php 
+  <?php
     // Argumentos
     $args  = array(
-      'post_type' => 'Banners', 
+      'post_type' => 'Banners',
       'posiciones' => 'Modal Home',
       'post_per_page' => 5
     );

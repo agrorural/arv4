@@ -1,14 +1,12 @@
 <figure <?php post_class(); ?>>
-	<div class="thumbnail">
-		<a href="<?php the_permalink(); ?>" class="multimedia--2__icon"><i class="fa fa-picture-o"></i></a>
+		<a href="<?php the_permalink(); ?>">
+			<i class="fa fa-camera"></i>
 			<?php if ( has_post_thumbnail() ){?>
 				<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
-			<?php } else { ?>
-				<img src="http://lorempixel.com/400/230/sports/1/" class="img-responsive" />
 			<?php } ?>
-		<figcaption class="multimedia--2__caption">
-			<?php get_template_part('templates/entry-meta'); ?>
-			<h3 class="multimedia--2__caption__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		</figcaption>
-	</div>
+			<figcaption>
+				<?php get_template_part('templates/entry-meta'); ?>
+				<h3><?php the_title(); ?></h3>
+			</figcaption>
+		</a>
 </figure>

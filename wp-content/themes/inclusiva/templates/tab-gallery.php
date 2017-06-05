@@ -19,17 +19,14 @@ $objImg = get_term_by( 'name', 'post-format-gallery', 'post_format' );
 $query1 = new WP_Query( $args );
 
 // The Loop
-while ( $query1->have_posts() ) { 
+while ( $query1->have_posts() ) {
 	$query1->the_post(); ?>
 <div class="multimedia--1">
 	<figure>
 		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="">
 			<?php if ( has_post_thumbnail() ){?>
-				<div class="figure-thumb">
-					<span class="fa-stack fa-lg">
-					  <i class="fa fa-circle fa-stack-2x"></i>
-					  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-					</span>
+				<div class="media-img">
+					<i class="fa fa-camera"></i>
 					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 				</div>
 			<?php } ?>
@@ -43,9 +40,9 @@ while ( $query1->have_posts() ) {
 <?php } ?>
 <?php
 
-/* Restore original Post Data 
- * NB: Because we are using new WP_Query we aren't stomping on the 
- * original $wp_query and it does not need to be reset with 
+/* Restore original Post Data
+ * NB: Because we are using new WP_Query we aren't stomping on the
+ * original $wp_query and it does not need to be reset with
  * wp_reset_query(). We just need to set the post data back up with
  * wp_reset_postdata().
  */
@@ -71,11 +68,8 @@ wp_reset_postdata(); ?>
 	<figure>
 		<a title="Contiene falería" href="<?php the_permalink(); ?>" class="">
 			<?php if ( has_post_thumbnail() ){?>
-				<div class="figure-thumb">
-					<span class="fa-stack fa-lg">
-					  <i class="fa fa-circle fa-stack-2x"></i>
-					  <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-					</span>
+				<div class="media-img">
+					<i class="fa fa-camera"></i>
 					<?php the_post_thumbnail('thumb-videos', array('class' => 'img-responsive')); ?>
 				</div>
 			<?php } ?>
@@ -91,7 +85,7 @@ wp_reset_postdata(); ?>
 			<div class="figure-thumb">
 				<?php echo '<span class="formatCount">' . $objImg->count . '+</span>'; ?>
 				<img width="400" height="230" src="<?php echo bloginfo('template_url'); ?>/dist/images/video_gallery__thumb.png" class="img-responsive wp-post-image" alt="">
-			</div>			
+			</div>
 			<figcaption>
 				<time class="updated" datetime="">Ver</time>
 				<h3 class="tab-title">Todas las galerías</h3>

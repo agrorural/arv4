@@ -361,7 +361,7 @@
 	}
 }
 
-@media(min-width: $screen-sm-min){
+@media(max-width: $screen-sm-max){
 	.archive{
 		.multimedia--2{
 			figure{
