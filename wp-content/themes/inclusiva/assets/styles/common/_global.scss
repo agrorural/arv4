@@ -148,6 +148,31 @@ p{
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
+
+/* Page Nav*/
+.wp-pagenavi{
+	position: relative;
+	display: block;
+	clear: both;
+	padding: 30px 0;
+	@include opensans();
+	span{
+		border: 0 none;
+		padding: 5px 10px;
+		margin: 0 10px;
+		&.current{
+			background-color: $red;
+			@include border-radius(4px);
+			@include opensans();
+			color: $white;
+		}
+	}
+	a{
+		border: 0 none;
+		margin: 0 10px;
+	}
+}
+
 .popover{
   ul{
     li{
@@ -583,6 +608,16 @@ figure{
   a{
     position: relative;
     @include text-on-focus();
+    .media-img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+        i{
+          position: absolute;
+          font-size: 24px;
+        }
+    }
     figcaption{
       time, h3{
         position: relative;
@@ -840,6 +875,8 @@ figure{
 }
 
 /* Termina Tabs */
+
+
 
 @media(max-width: $screen-sm-max){
   .navbar-nav{

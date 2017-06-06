@@ -62,7 +62,6 @@
 			}
 		}
 	}
-
 	&.contacto{
 		.masshead{
 			&:after{
@@ -304,70 +303,48 @@
 
 		}
 	}
-}
 
-
-
-.archive, .noticias{
-	.masshead{
-		background-image: url('../images/masshead--1.jpg');
+	.archive, .noticias{
+		.masshead{
+			background-image: url('../images/masshead--1.jpg');
+		}
 	}
-}
 
-article{
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid $brown--lighter;
-	figure{}
-	header{
-		.entry-title{
-			@include entry-title();
-			margin-top: 0;
-			a{
-				/*color: $brown; */
+	article{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $brown--lighter;
+		figure{
+			float: left;
+			padding-right: 15px;
+		}
+		header{
+			.entry-title{
+				@include entry-title();
+				margin-top: 0;
+				a{
+					/*color: $brown; */
+				}
 			}
 		}
-	}
-	.entry-summary{
-		p{
-			@include opensans();
-			a.read-more{
-				display: block;
-				padding-top: 10px;
+		.entry-summary{
+			p{
+				@include opensans();
+				a.read-more{
+					display: block;
+					padding-top: 10px;
+				}
 			}
 		}
-	}
 
-	@include clearfix();
+		@include clearfix();
 
-	&:last-of-type{
-		border-bottom: 3px solid $brown--lighter;
-	}
-	&.panel{
-		padding-bottom: 0;
-	}
-}
-
-.wp-pagenavi{
-	position: relative;
-	display: block;
-	clear: both;
-	padding: 30px 0;
-	@include opensans();
-	span{
-		border: 0 none;
-		padding: 5px 10px;
-		margin: 0 10px;
-		&.current{
-			background-color: $red;
-			@include border-radius(4px);
-			@include opensans();
-			color: $white;
+		&:last-of-type{
+			border-bottom: 3px solid $brown--lighter;
 		}
-	}
-	a{
-		border: 0 none;
-		margin: 0 10px;
+		&.panel{
+			padding-bottom: 0;
+		}
 	}
 }
 

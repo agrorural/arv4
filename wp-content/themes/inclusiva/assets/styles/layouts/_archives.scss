@@ -225,90 +225,82 @@
 			}
 		}
 	}
-	.multimedia--1{
-		@include make-row();
-		margin: 0 0 30px;
-		figure{
-			@include gradient-vertical( $black, $gray--text--dark, 0%, 100% );
-			padding: 30px 15px;
-			.multimedia--1__video{
-				@include make-sm-column(8);
-			}
-			.multimedia--1__caption{
-				@include make-sm-column(4);
-				.multimedia--1__caption__title{
-					@include opensans();
-					a{
-						color: $gray--lighter;
-						@include text-shadow();
-					}
-				}
-				time{
-					display: block;
-					padding-bottom: 15px;
-					@include opensans(semibold);
-					color: $gray--light;
-					@include text-shadow();
-				}
-				p{
-					color: $gray--light;
-					@include text-shadow();
-				}
-			}
-			@include clearfix();
-		}
-	}
-	.multimedia--2{
-		@include make-row();
-		figure{
-			@include make-xs-column(6);
-			margin-bottom: 30px;
-			.multimedia--2__icon{
-				color: $black--light;
-				position: absolute;
-				top: 15px;
-				left: 30px;
-				@include opacity(.75);
-				i{
-					font-size: 24px;
-				}
-			}
-			.multimedia--2__caption{
-				position: absolute;
-				bottom: 0;
-				left: 15px;
-				right: 15px;
-				padding: 15px;
-				opacity: .8;
-				background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,.001)),color-stop(100%,#000));
-				background: -webkit-linear-gradient(top,rgba(0,0,0,.001) 0,#000 100%);
-				background: -o-linear-gradient(top,rgba(0,0,0,.001) 0,#000 100%);
-				background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.001)),to(black));
-				background: linear-gradient(to bottom,rgba(0,0,0,.001) 0,#000 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0 );
-				.multimedia--2__caption__title{
-					margin: 0;
-					font-size: 14px;
-					@include opensans(bold);
-					a{
-						color: $white;
-						@include text-shadow();
-					}
-				}
-				time{
-					@include opensans();
-					font-size: 11px;
-					color: $white;
-					@include text-shadow();
-				}
-			}
-		}
-	}
-	&.term-post-format-gallery{
-		.multimedia--2{
+
+	&.term-post-format-video{
+		.multimedia--1{
+			@include make-row();
+			margin: 0 0 30px;
 			figure{
-				.thumbnail{
-					margin-bottom: 0;
+				@include gradient-vertical( $black, $gray--text--dark, 0%, 100% );
+				padding: 30px 15px;
+				.multimedia--1__video{
+					@include make-sm-column(8);
+					@include make-xs-column(12);
+				}
+				.multimedia--1__caption{
+					@include make-sm-column(4);
+					@include make-xs-column(12);
+					.multimedia--1__caption__title{
+						@include opensans();
+						a{
+							color: $gray--lighter;
+							@include text-shadow();
+						}
+					}
+					time{
+						display: block;
+						padding-bottom: 15px;
+						@include opensans(semibold);
+						color: $gray--light;
+						@include text-shadow();
+					}
+					p{
+						color: $gray--light;
+						@include text-shadow();
+					}
+				}
+				@include clearfix();
+			}
+		}
+	}
+	&.term-post-format-video, &.term-post-format-gallery{
+		.multimedia--2{
+			@include make-row();
+			figure{
+				@media(max-width: $screen-xs-max){
+					@include make-xs-column(12);
+				}
+				@media(max-width: $screen-sm-max){
+					@include make-sm-column(6);
+				}
+				@media(min-width: $screen-md-min){
+					@include make-md-column(4);
+				}
+				margin-bottom: 30px;
+				a{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					height: 100%;
+					.media-img{
+							i{
+								position: absolute;
+								font-size: 24px;
+							}
+					}
+					figcaption{
+						position: absolute;
+						top: inherit !important;
+						bottom: 0;
+						padding: 15px;
+						@include focus-shadow();
+
+						h3{
+							@include text-on-focus();
+							@include entry-title(sm);
+						}
+					}
 				}
 			}
 		}
@@ -362,21 +354,12 @@
 }
 
 @media(max-width: $screen-sm-max){
-	.archive{
-		.multimedia--2{
-			figure{
-				@include make-sm-column(6);
-			}
-		}
-	}
+	.archive{}
 }
 
 @media(min-width: $screen-lg-min){
 	.archive{
 		.multimedia--2{
-			figure{
-				@include make-lg-column(4);
-			}
 		}
 	}
 }
