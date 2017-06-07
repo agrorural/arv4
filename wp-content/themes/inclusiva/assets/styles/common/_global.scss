@@ -634,6 +634,15 @@ figure{
       @include focus-shadow();
     }
   }
+  .popover{
+    a{
+      color: $red--google;
+      text-shadow: none;
+      &:hover{
+        color: $red--google--hover;
+      }
+    }
+  }
 }
 
 .hidden{

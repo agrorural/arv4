@@ -18,10 +18,10 @@ function create_my_post_types() {
 		'not_found'          => __( 'Ningún Producto encontrado.', 'incl' ),
 		'not_found_in_trash' => __( 'Ningún Producto encontrado en la Papelera.', 'incl' )
 	);
- 
+
 	$args_producto = array(
 		'labels'             => $labels_producto,
-        'description'        => __( 'Productos de AGRO RURAL.', 'incl' ),
+    'description'        => __( 'Productos de AGRO RURAL.', 'incl' ),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -63,7 +63,7 @@ function create_my_post_types() {
 		'not_found'          => __( 'Ningún Banner encontrado.', 'incl' ),
 		'not_found_in_trash' => __( 'Ningún Banner encontrado en la Papelera.', 'incl' )
 	);
- 
+
 	$args_banner = array(
 		'labels'             => $labels_banner,
         'description'        => __( 'Banners de AGRO RURAL.', 'incl' ),
@@ -92,8 +92,192 @@ function create_my_post_types() {
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
 	);
 
+	$labels_documentos = array(
+		'name'               => _x( 'Documentos', 'post type general name', 'incl' ),
+		'singular_name'      => _x( 'Documento', 'post type singular name', 'incl' ),
+		'menu_name'          => _x( 'Documentos', 'admin menu', 'incl' ),
+		'name_admin_bar'     => _x( 'Documento', 'Agregar Nuevo on admin bar', 'incl' ),
+		'add_new'            => _x( 'Agregar Nuevo', 'Documento', 'incl' ),
+		'add_new_item'       => __( 'Agregar Nuevo Documento', 'incl' ),
+		'new_item'           => __( 'Nuevo Documento', 'incl' ),
+		'edit_item'          => __( 'Editar Documento', 'incl' ),
+		'view_item'          => __( 'Ver Documento', 'incl' ),
+		'all_items'          => __( 'Todos', 'incl' ),
+		'search_items'       => __( 'Buscar Documentos', 'incl' ),
+		'parent_item_colon'  => __( 'Documento Padre:', 'incl' ),
+		'not_found'          => __( 'Ningún Documento encontrado.', 'incl' ),
+		'not_found_in_trash' => __( 'Ningún Documento encontrado en la Papelera.', 'incl' )
+	);
+
+	$args_documentos = array(
+		'labels'             => $labels_documentos,
+		'description'        => __( 'Documentos de AGRO RURAL.', 'incl' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'capability_type' => 'documento',
+			'capabilities' => array(
+				'publish_posts' => 'publish_documentos',
+				'edit_posts' => 'edit_documentos',
+				'edit_others_posts' => 'edit_others_documentos',
+				'delete_posts' => 'delete_documentos',
+				'delete_others_posts' => 'delete_others_documentos',
+				'read_private_posts' => 'read_private_documentos',
+				'edit_post' => 'edit_documento',
+				'delete_post' => 'delete_documento',
+				'read_post' => 'read_documento',
+			),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'rewrite'            => array( 'slug' => 'documentos' ),
+		'menu_position'      => 10,
+		'menu_icon'			 => 'dashicons-archive',
+		'supports'           => array( 'title', 'editor', 'author', 'revisions' )
+	);
+
+	$labels_convocatorias = array(
+		'name'               => _x( 'Convocatorias', 'post type general name', 'incl' ),
+		'singular_name'      => _x( 'Convocatoria', 'post type singular name', 'incl' ),
+		'menu_name'          => _x( 'Convocatorias', 'admin menu', 'incl' ),
+		'name_admin_bar'     => _x( 'Convocatoria', 'Agregar Nueva on admin bar', 'incl' ),
+		'add_new'            => _x( 'Agregar Nueva', 'Convocatoria', 'incl' ),
+		'add_new_item'       => __( 'Agregar Nueva Convocatoria', 'incl' ),
+		'new_item'           => __( 'Nueva Convocatoria', 'incl' ),
+		'edit_item'          => __( 'Editar Convocatoria', 'incl' ),
+		'view_item'          => __( 'Ver Convocatoria', 'incl' ),
+		'all_items'          => __( 'Todas', 'incl' ),
+		'search_items'       => __( 'Buscar Convocatorias', 'incl' ),
+		'parent_item_colon'  => __( 'Convocatoria Padre:', 'incl' ),
+		'not_found'          => __( 'Ninguna Convocatoria encontrado.', 'incl' ),
+		'not_found_in_trash' => __( 'Ninguna Convocatoria encontrado en la Papelera.', 'incl' )
+	);
+
+	$args_convocatorias = array(
+		'labels'             => $labels_convocatorias,
+		'description'        => __( 'Convocatorias de AGRO RURAL.', 'incl' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'capability_type' => 'convocatoria',
+			'capabilities' => array(
+				'publish_posts' => 'publish_convocatorias',
+				'edit_posts' => 'edit_convocatorias',
+				'edit_others_posts' => 'edit_others_convocatorias',
+				'delete_posts' => 'delete_convocatorias',
+				'delete_others_posts' => 'delete_others_convocatorias',
+				'read_private_posts' => 'read_private_convocatorias',
+				'edit_post' => 'edit_convocatoria',
+				'delete_post' => 'delete_convocatoria',
+				'read_post' => 'read_convocatoria',
+			),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'rewrite'            => array( 'slug' => 'convocatorias' ),
+		'menu_position'      => 5,
+		'menu_icon'			 => 'dashicons-nametag',
+		'supports'           => array( 'title', 'editor', 'author', 'revisions' )
+	);
+
+	$labels_servicios = array(
+		'name'               => _x( 'Servicios', 'post type general name', 'incl' ),
+		'singular_name'      => _x( 'Servicio', 'post type singular name', 'incl' ),
+		'menu_name'          => _x( 'Servicios', 'admin menu', 'incl' ),
+		'name_admin_bar'     => _x( 'Servicio', 'Agregar Nueva on admin bar', 'incl' ),
+		'add_new'            => _x( 'Agregar Nuevo', 'Servicio', 'incl' ),
+		'add_new_item'       => __( 'Agregar Nuevo Servicio', 'incl' ),
+		'new_item'           => __( 'Nuevo Servicio', 'incl' ),
+		'edit_item'          => __( 'Editar Servicio', 'incl' ),
+		'view_item'          => __( 'Ver Servicio', 'incl' ),
+		'all_items'          => __( 'Todos', 'incl' ),
+		'search_items'       => __( 'Buscar Servicios', 'incl' ),
+		'parent_item_colon'  => __( 'Servicio Padre:', 'incl' ),
+		'not_found'          => __( 'Ningún Servicio encontrado.', 'incl' ),
+		'not_found_in_trash' => __( 'Ningún Servicio encontrado en la Papelera.', 'incl' )
+	);
+
+	$args_servicios = array(
+		'labels'             => $labels_servicios,
+		'description'        => __( 'Servicios de AGRO RURAL.', 'incl' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'capability_type' => 'servicio',
+			'capabilities' => array(
+				'publish_posts' => 'publish_servicios',
+				'edit_posts' => 'edit_servicios',
+				'edit_others_posts' => 'edit_others_servicios',
+				'delete_posts' => 'delete_servicios',
+				'delete_others_posts' => 'delete_others_servicios',
+				'read_private_posts' => 'read_private_servicios',
+				'edit_post' => 'edit_servicio',
+				'delete_post' => 'delete_servicio',
+				'read_post' => 'read_servicio',
+			),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'rewrite'            => array( 'slug' => 'servicios' ),
+		'menu_position'      => 5,
+		'menu_icon'			 => 'dashicons-businessman',
+		'supports'           => array( 'title', 'editor', 'author', 'revisions', 'thumbnail' )
+	);
+
+	$labels_directorios = array(
+		'name'               => _x( 'Directorios', 'post type general name', 'incl' ),
+		'singular_name'      => _x( 'Directorio', 'post type singular name', 'incl' ),
+		'menu_name'          => _x( 'Directorios', 'admin menu', 'incl' ),
+		'name_admin_bar'     => _x( 'Directorio', 'Agregar Nuevo on admin bar', 'incl' ),
+		'add_new'            => _x( 'Agregar Nuevo', 'Directorio', 'incl' ),
+		'add_new_item'       => __( 'Agregar Nuevo Directorio', 'incl' ),
+		'new_item'           => __( 'Nuevo Directorio', 'incl' ),
+		'edit_item'          => __( 'Editar Directorio', 'incl' ),
+		'view_item'          => __( 'Ver Directorio', 'incl' ),
+		'all_items'          => __( 'Todos', 'incl' ),
+		'search_items'       => __( 'Buscar Directorios', 'incl' ),
+		'parent_item_colon'  => __( 'Directorio Padre:', 'incl' ),
+		'not_found'          => __( 'Ningún Directorio encontrado.', 'incl' ),
+		'not_found_in_trash' => __( 'Ningún Directorio encontrado en la Papelera.', 'incl' )
+	);
+
+	$args_directorios = array(
+		'labels'             => $labels_directorios,
+		'description'        => __( 'Directorios de AGRO RURAL.', 'incl' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'capability_type' => 'directorio',
+			'capabilities' => array(
+				'publish_posts' => 'publish_directorios',
+				'edit_posts' => 'edit_directorios',
+				'edit_others_posts' => 'edit_others_directorios',
+				'delete_posts' => 'delete_directorios',
+				'delete_others_posts' => 'delete_others_directorios',
+				'read_private_posts' => 'read_private_directorios',
+				'edit_post' => 'edit_directorio',
+				'delete_post' => 'delete_directorio',
+				'read_post' => 'read_directorio',
+			),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'rewrite'            => array( 'slug' => 'directorios' ),
+		'menu_position'      => 5,
+		'menu_icon'			 => 'dashicons-groups',
+		'supports'           => array( 'title', 'editor', 'author', 'revisions' )
+	);
+
 	register_post_type('producto', $args_producto);
 	register_post_type('banners', $args_banner);
+	register_post_type('documentos', $args_documentos);
+	register_post_type('convocatorias', $args_convocatorias);
+	register_post_type('servicios', $args_servicios);
+	register_post_type('directorios', $args_directorios);
 }
 
 add_action( 'init', 'create_my_taxonomies', 0 );
@@ -231,7 +415,7 @@ function create_my_taxonomies() {
 
 	$args_banner_posicion = array(
 		'public' 			=> true,
-		'hierarchical'      => false,
+		'hierarchical'      => true,
 		'labels'            => $labels_banner_posicion,
 		'show_ui'           => true,
 		'show_admin_column' => true,
@@ -244,9 +428,159 @@ function create_my_taxonomies() {
 		)
 	);
 
+	$labels_documentos_tipos = array(
+		'name'              => _x( 'Tipos', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Tipo', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Tipos' ),
+		'all_items'         => __( 'Todos los  Tipos' ),
+		'parent_item'       => __( 'Tipo Padre' ),
+		'parent_item_colon' => __( 'Tipo Padre:' ),
+		'edit_item'         => __( 'Editar Tipo' ),
+		'update_item'       => __( 'Actualizar Tipo' ),
+		'add_new_item'      => __( 'Agregar Nuevo Tipo' ),
+		'new_item_name'     => __( 'Nombre de Nuevo Tipo' ),
+		'menu_name'         => __( 'Tipos' )
+	);
+
+	$args_documentos_tipos = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_documentos_tipos,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_tipo',
+			'edit_terms' => 'edit_tipo',
+			'delete_terms' => 'delete_tipo',
+			'assign_terms' => 'assign_tipo'
+		)
+	);
+
+	$labels_convocatorias_categorias = array(
+		'name'              => _x( 'Categorías', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Categoría', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Categorías' ),
+		'all_items'         => __( 'Todas las  Categorías' ),
+		'parent_item'       => __( 'Categoría Padre' ),
+		'parent_item_colon' => __( 'Categoría Padre:' ),
+		'edit_item'         => __( 'Editar Categoría' ),
+		'update_item'       => __( 'Actualizar Categoría' ),
+		'add_new_item'      => __( 'Agregar Nueva Categoría' ),
+		'new_item_name'     => __( 'Nombre de Nueva Categoría' ),
+		'menu_name'         => __( 'Categorías' )
+	);
+
+	$args_convocatorias_categorias = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_convocatorias_categorias,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_cat-convocatorias',
+			'edit_terms' => 'edit_cat-convocatorias',
+			'delete_terms' => 'delete_cat-convocatorias',
+			'assign_terms' => 'assign_cat-convocatorias'
+		)
+	);
+
+	$labels_convocatorias_estados = array(
+		'name'              => _x( 'Estados', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Estado', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Estados' ),
+		'all_items'         => __( 'Todas los  Estados' ),
+		'parent_item'       => __( 'Estado Padre' ),
+		'parent_item_colon' => __( 'Estado Padre:' ),
+		'edit_item'         => __( 'Editar Estado' ),
+		'update_item'       => __( 'Actualizar Estado' ),
+		'add_new_item'      => __( 'Agregar Nuevo Estado' ),
+		'new_item_name'     => __( 'Nombre de Nuevo Estado' ),
+		'menu_name'         => __( 'Estados' )
+	);
+
+	$args_convocatorias_estados = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_convocatorias_estados,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_est-convocatorias',
+			'edit_terms' => 'edit_est-convocatorias',
+			'delete_terms' => 'delete_est-convocatorias',
+			'assign_terms' => 'assign_est-convocatorias'
+		)
+	);
+
+	$labels_servicios_condiciones = array(
+		'name'              => _x( 'Condiciones', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Condición', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Condiciones' ),
+		'all_items'         => __( 'Todas las  Condiciones' ),
+		'parent_item'       => __( 'Condición Padre' ),
+		'parent_item_colon' => __( 'Condición Padre:' ),
+		'edit_item'         => __( 'Editar Condición' ),
+		'update_item'       => __( 'Actualizar Condición' ),
+		'add_new_item'      => __( 'Agregar Nueva Condición' ),
+		'new_item_name'     => __( 'Nombre de Nueva Condición' ),
+		'menu_name'         => __( 'Condiciones' )
+	);
+
+	$args_servicios_condiciones = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_servicios_condiciones,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_condiciones',
+			'edit_terms' => 'edit_condiciones',
+			'delete_terms' => 'delete_condiciones',
+			'assign_terms' => 'assign_condiciones'
+		)
+	);
+
+	$labels_directorios_grupos = array(
+		'name'              => _x( 'Grupos', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Grupo', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar Grupos' ),
+		'all_items'         => __( 'Todos los  Grupos' ),
+		'parent_item'       => __( 'Grupo Padre' ),
+		'parent_item_colon' => __( 'Grupo Padre:' ),
+		'edit_item'         => __( 'Editar Grupo' ),
+		'update_item'       => __( 'Actualizar Grupo' ),
+		'add_new_item'      => __( 'Agregar Nuevo Grupo' ),
+		'new_item_name'     => __( 'Nombre de Nuevo Grupo' ),
+		'menu_name'         => __( 'Grupos' )
+	);
+
+	$args_directorios_grupos = array(
+		'public' 			=> true,
+		'hierarchical'      => true,
+		'labels'            => $labels_directorios_grupos,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'capabilities'		=> array(
+			'manage_terms' => 'manage_grupos',
+			'edit_terms' => 'edit_grupos',
+			'delete_terms' => 'delete_grupos',
+			'assign_terms' => 'assign_grupos'
+		)
+	);
+
 	register_taxonomy( 'productor', 'producto', $args_producto_productor );
 	register_taxonomy( 'marca', 'producto', $args_producto_marca );
 	register_taxonomy( 'lugar', 'producto', $args_producto_lugar );
 	register_taxonomy( 'clasificacion', 'producto', $args_producto_clasificacion );
-	register_taxonomy( 'posiciones', 'banner', $args_banner_posicion );
+	register_taxonomy( 'posiciones', 'banners', $args_banner_posicion );
+	register_taxonomy( 'tipos', 'documentos', $args_documentos_tipos );
+	register_taxonomy( 'cat-convocatorias', 'convocatorias', $args_convocatorias_categorias );
+	register_taxonomy( 'est-convocatorias', 'convocatorias', $args_convocatorias_estados );
+	register_taxonomy( 'condiciones', 'servicios', $args_convocatorias_estados );
+	register_taxonomy( 'grupos', 'directorios', $args_directorios_grupos );
 }
