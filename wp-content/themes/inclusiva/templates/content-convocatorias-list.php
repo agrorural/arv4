@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$upload_dir = wp_upload_dir();
 	$dir = $upload_dir["baseurl"];
 	$post__date = mysql2date("Y", $post->post_date_gmt);
@@ -9,8 +9,8 @@
 	$ev_curricular = get_field('ev_curricular');
 	$ev_curricular_fec = get_field('ev_curricular_fec');
 	$ev_curricular_fec_uts = strtotime( $ev_curricular_fec );
-	
-	$ev_psicologica_fec = get_field('ev_psicologica_fec');	
+
+	$ev_psicologica_fec = get_field('ev_psicologica_fec');
 	$ev_psicologica_fec_uts = strtotime( $ev_psicologica_fec );
 	$ev_psicologica = get_field('ev_psicologica');
 
@@ -21,24 +21,24 @@
 	$re_final_fec = get_field('re_final_fec');
 	$re_final_fec_uts = strtotime( $re_final_fec );
 	$re_final = get_field('re_final');
-	
-	$cat__list = wp_get_post_terms($post->ID, 'cat-convocatorias', array("fields" => "all")); 
+
+	$cat__list = wp_get_post_terms($post->ID, 'cat-convocatorias', array("fields" => "all"));
 	$cat__list_slug_1 = $cat__list[0]->slug; //CAS o CAP
 	$cat__list_slug_up_1 = strtoupper($cat__list_slug_1);
-	
-	$cat__list_slug_2 = $cat__list[1]->slug; 
+
+	$cat__list_slug_2 = $cat__list[1]->slug;
 	$cat__list_slug_up_2 = strtoupper($cat__list_slug_2);
 
-	$est__list = wp_get_post_terms($post->ID, 'est-convocatorias', array("fields" => "all")); 
+	$est__list = wp_get_post_terms($post->ID, 'est-convocatorias', array("fields" => "all"));
 	$est__list_name = $est__list[0]->name;
-	$est__list_slug = $est__list[0]->slug; 
+	$est__list_slug = $est__list[0]->slug;
 
 	$post__slug = $post->post_name;
 	$post__slug__up = strtoupper($post__slug);
 
 	$estado__cnv = get_term_link( $est__list_slug, 'est-convocatorias' );
 	$estado__cnv__default = get_term_link( 'en-espera', 'est-convocatorias' );
-?>	
+?>
 
 	<?php if( $est__list_name == 'Finalizada' )
 	{
@@ -73,7 +73,7 @@
 	  <div class="progress-bar progress-bar-<?php echo $status; ?>" role="progressbar" aria-valuenow="<?php echo $progress; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $progress; ?>%">
 	    <span class="sr-only"><?php echo $progress.'% completado'; ?></span>
 	  </div>
-	</div>  
+	</div>
   <!-- Table -->
 	<table class="table table-condensed">
 		<thead>
@@ -91,12 +91,7 @@
 		        	<td>
 		        		<p>
 		        		<?php if( $cat__list_slug_1 == 'cas' ){ ?>
-		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 07:  FORMULARIO DE CURRICULUM VITAE</a></li>
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/ddjj-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Formato 08: Formato de Declaración Jurada (en original) debidamente suscrito </a></li>
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/etiqueta-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Etiqueta para la presentación de sobres </a></li>
-<li><i class="fa-li fa fa-check-square"></i>Copia Simple del DNI o Carné de Extranjería, de ser el caso (vigente y legible)</li>
-</ul>'>Formatos</a> 
+		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='Los procesos de convocatoria para el año 2017 se realizarán de forma online. Los links para acceder al proceso se publicarán según cronograma.'>Formatos</a> 
 		        		<?php } else { ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
 <li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-cap-<?php echo $post__date; ?>.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 1. Ficha Curricular </a></li>
@@ -124,7 +119,7 @@
 		            	<?php } ?>
 		            <?php } ?>
 		        <?php } ?>
-		        
+
 		        <?php if($en_personal == 'Publicado'){ ?>
 		        	<td><a href="<?php echo $dir.'/transparencia/convocatorias/E-'.$post__slug__up.'-'.$cat__list_slug_up_2.'.pdf'; ?>">Descargar archivo</a></td>
 		        <?php } else { ?>
