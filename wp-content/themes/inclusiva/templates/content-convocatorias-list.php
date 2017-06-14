@@ -93,7 +93,6 @@
 		        		<?php if( $cat__list_slug_1 == 'cas' ){ ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='Los procesos de convocatoria para el año 2017 se realizarán de forma online. Puede acceder a las convocatorias y al proceso desde el <a href="http://intranet.agrorural.gob.pe/convocatorias/externo/convocatorias/Inicio.aspx">siguiente link</a>.<br /><br /><ul class="fa-ul">
 <li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/a1-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 1</a></li>
-<li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/a7-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 7</a></li>
 <li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/a8-<?php echo $post__date; ?>.doc" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 8</a></li>
 </ul>'>Formatos</a>
 		        		<?php } else { ?>
