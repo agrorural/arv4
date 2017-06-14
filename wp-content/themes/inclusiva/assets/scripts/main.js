@@ -26,10 +26,10 @@
         $('.sl__footer').owlCarousel({
         loop: true,
         margin: 0,
-        nav: true, 
+        nav: true,
         lazyLoad: true,
         navText: ["<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>", "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"],
-        dots: false,      
+        dots: false,
           responsive:{
               0:{
                   items: 3
@@ -43,20 +43,8 @@
           }
         });
 
-        //Colorbox Settings
-        var cbSettings = {
-          rel: 'cboxElement',
-          width: '95%',
-          height: 'auto',
-          maxWidth: '660',
-          maxHeight: 'auto',
-          title: function() {
-            return $(this).find('img').attr('alt');
-          }
-        };     
-
-        //Initialize jQuery Colorbox   
-        $('.gallery a[href$=".jpg"], .gallery a[href$=".jpeg"], .gallery a[href$=".png"], .gallery a[href$=".gif"]').colorbox(cbSettings);
+        //Initialize lightbox
+        $('.gallery a[href$=".jpg"], .gallery a[href$=".jpeg"], .gallery a[href$=".png"], .gallery a[href$=".gif"]').attr('data-lightbox','lightbox');
 
         //Read only Gravity Forms
         $(".gform_wrapper .gf_disabled input").attr("readonly", "");
@@ -71,30 +59,18 @@
           });
 
             if (arr.length > 0) {
-              $('input[id="'+ inputID +'"]').prop('placeholder', 'Buscar en' + arr);  
+              $('input[id="'+ inputID +'"]').prop('placeholder', 'Buscar en' + arr);
             }else{
               $('input[id="'+ inputID +'"]').prop('placeholder', 'Ingrese su búsqueda');
             }
 
             console.log(arr);
-    
+
           };
 
           $('#searchform input[name="post_type[]"]').click(function(){
             getCheckedCheckBoxes('searchform', 'post_type[]', 'cb__', 's');
           });
-
-          //$('#searchform-advanced input[name="post_type[]"]').click(function(){
-            //getCheckedCheckBoxes('searchform-advanced', 'post_type[]', 'cba__', 'sa');
-          //});
-
-          //Home search form
-          //$( ".search-icon a" ).click(function(event) {
-          //  event.preventDefault();
-          //  $('.section.search-header').toggleClass( "show hidden" );
-          //  $('.section.search-header #sa').focus();
-          //  $(this).parent().toggleClass("active");
-          //});
 
         // Sharing buttons
         $('.single .sharing-list ul').click(function(){
@@ -118,17 +94,10 @@
           $(this).toggleClass( "opened" );
         });
 
-        //Keep lightbox responsive on screen resize
-        $(window).on('resize', function() {
-            $.colorbox.resize({
-            width: window.innerWidth > parseInt(cbSettings.maxWidth) ? cbSettings.maxWidth : cbSettings.width
-          }); 
-        });
-        
         $(window).load(function () {
             $('.sl__footer').removeClass('hidden');
         });
-        
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -137,9 +106,9 @@
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page 
+        // JavaScript to be fired on the home page
         $('.sl__alerts').owlCarousel({
-            items: 1, 
+            items: 1,
             loop: true,
             margin: 0,
             autoplay: true,
@@ -151,7 +120,7 @@
           });
 
         $('.sl__home').owlCarousel({
-            items: 1, 
+            items: 1,
             loop: true,
             margin: 0,
             autoplay: true,
@@ -165,7 +134,7 @@
         var owl_sl__modal_home = $('.sl__modal-home');
 
         owl_sl__modal_home.owlCarousel({
-            items: 1, 
+            items: 1,
             margin: 0,
             autoplay: true,
             autoHeight: true,
@@ -207,7 +176,7 @@
       init: function() {
         // JavaScript to be fired on the about us page
         //Fuerza a los tabs a mostrar los maps de myTabs
-        $('#myTabs li a').click('show', function(e) {  
+        $('#myTabs li a').click('show', function(e) {
             paneID = $(e.target).attr('href');
             src = $(paneID).attr('data-src');
             // if the iframe hasn't already been loaded once
