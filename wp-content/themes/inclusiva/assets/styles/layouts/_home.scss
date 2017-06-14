@@ -847,7 +847,7 @@
 						bottom: 0;
 						padding: 15px;
 						@include focus-shadow();
-
+						width: 100%;
 						h3{
 							@include text-on-focus();
 							@include entry-title(sm);

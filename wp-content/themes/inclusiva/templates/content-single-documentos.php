@@ -1,10 +1,10 @@
 <?php while (have_posts()) : the_post(); ?>
-	<?php 
+	<?php
 		$rde_link = get_field('rde_link');
 		$upload_dir = wp_upload_dir();
 		$dir = $upload_dir["baseurl"];
 
-		$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
+		$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all"));
 		$post__slug = $post->post_name;
 		$post__slug__up = strtoupper($post__slug);
 

@@ -6,11 +6,11 @@
 
   $dateformat = "d/m/Y";
 
-  $pack__fec_inicio = get_field('pack__fec_inicio');
-  $pack__fec_inicio = new DateTime($pack__fec_inicio);
+  $pa__fec_inicio = get_field('pa__fec_inicio');
+  $pa__fec_inicio = new DateTime($pa__fec_inicio);
 
-  $pack__fec_fin = get_field('pack__fec_fin');
-  $pack__fec_fin = new DateTime($pack__fec_fin);
+  $pa__fec_fin = get_field('pa__fec_fin');
+  $pa__fec_fin = new DateTime($pa__fec_fin);
 
   $upload_dir = wp_upload_dir();
   $dir = $upload_dir["baseurl"];
@@ -53,8 +53,8 @@
       <th scope="row">
         <strong>Inicio de periodo</strong>
         <br>
-          <?php if ($pack__fec_inicio) : ?>
-            <?php echo '<span>' . $pack__fec_inicio->format('d/m/Y') . '</span>'; ?>
+          <?php if ($pa__fec_inicio) : ?>
+            <?php echo '<span>' . $pa__fec_inicio->format('d/m/Y') . '</span>'; ?>
           <?php else : ?>
             No disponible
           <?php endif; ?>
@@ -62,8 +62,8 @@
       <th scope="row">
         <strong>Fin de periodo</strong>
         <br>
-          <?php if ($pack__fec_fin) : ?>
-            <?php echo '<span>' . $pack__fec_fin->format('d/m/Y') . '</span>'; ?>
+          <?php if ($pa__fec_fin) : ?>
+            <?php echo '<span>' . $pa__fec_fin->format('d/m/Y') . '</span>'; ?>
           <?php else : ?>
             No disponible
           <?php endif; ?>

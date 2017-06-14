@@ -91,7 +91,7 @@
 		        	<td>
 		        		<p>
 		        		<?php if( $cat__list_slug_1 == 'cas' ){ ?>
-		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='Los procesos de convocatoria para el año 2017 se realizarán de forma online. Los links para acceder al proceso se publicarán según cronograma.'>Formatos</a> 
+		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='Los procesos de convocatoria para el año 2017 se realizarán de forma online. Puede acceder a las convocatorias y al proceso desde el <a href="http://intranet.agrorural.gob.pe/convocatorias/externo/convocatorias/Inicio.aspx">siguiente link</a>.'>Formatos</a> 
 		        		<?php } else { ?>
 		        			<a tabindex="0" class="over" role="button" data-toggle="popover" data-trigger="focus" title="Formatos" data-content='<ul class="fa-ul">
 <li><a href="<?php echo $dir.'/transparencia/convocatorias/formatos';?>/cv-cap-<?php echo $post__date; ?>.pdf" target="_blank"><i class="fa-li fa fa-check-square"></i>Anexo Nº 1. Ficha Curricular </a></li>
