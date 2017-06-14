@@ -20,10 +20,12 @@
 
 	$med__tipo = get_field( "med__tipo" );
 
-	if ($med__tipo == 'Fotos') {
+	if ($med__tipo == 'gallery') {
 		$med__tipo = 'post-format-gallery';
-	}else{
+	}elseif($med__tipo == 'video'){
 		$med__tipo = 'post-format-video';
+	}else {
+	  $med__tipo = 'post-format-audio';
 	}
 ?>
 

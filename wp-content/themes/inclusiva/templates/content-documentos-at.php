@@ -3,8 +3,9 @@
 
   $dateformat = "d/m/Y";
 
-  $pa__fec_inicio = get_field('pa__fec_inicio');
+  $pa__titular = get_field('pa__titular');
 
+  $pa__fec_inicio = get_field('pa__fec_inicio');
   $pa__fec_inicio = new DateTime($pa__fec_inicio);
 
   $pa__fec_fin = get_field('pa__fec_fin');
@@ -55,116 +56,122 @@
   $pa__at__20_1 = get_field('pa__at__20_1');
   $pa__at__21 = get_field('pa__at__21');
 
-  if ($pa__at__1){ $count = $count + 2.5;}
-  if ($pa__at__2){$count = $count + 2.5;}
-  if ($pa__at__3){
-    $count = $count +  2;
+  if ($pa__at__1 == true){ $count += 2.5;}
+  if ($pa__at__2 == true){$count += 2.5;}
+  if ($pa__at__3 == true){
+    $count += 2;
   }
-
   if($pa__at__3_1){
     for ($i=0; $i < count($pa__at__3_1); $i++) {
       $count++;
     }
   }
-  if ($pa__at__4){$count = $count + 5;}
-  if ($pa__at__5){$count = $count + 5;}
-  if ($pa__at__6){$count = $count + 5;}
-  if ($pa__at__7){$count = $count + 5;}
-  if ($pa__at__8){$count = $count + 5;}
+  if ($pa__at__4 == true){$count += 5;}
+  if ($pa__at__5 == true){$count += 5;}
+  if ($pa__at__6 == true){$count += 5;}
+  if ($pa__at__7 == true){$count += 5;}
+  if ($pa__at__8 == true){$count += 5;}
   if ($pa__at__9){
     for ($i=0; $i < count($pa__at__9); $i++) {
       $count++;
     }
   }
-  if ($pa__at__10){$count = $count + 1;}
+  if ($pa__at__10){$count += 3;}
   if($pa__at__10_1){
     for ($i=0; $i < count($pa__at__10_1); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
   if($pa__at__10_2){
     for ($i=0; $i < count($pa__at__10_2); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
   if($pa__at__10_3){
     for ($i=0; $i < count($pa__at__10_3); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
   if($pa__at__10_4){
     for ($i=0; $i < count($pa__at__10_4); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
   if($pa__at__10_5){
     for ($i=0; $i < count($pa__at__10_5); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
-  if ($pa__at__11){$count = $count + 1;}
+  if ($pa__at__11 == true){$count += 2;}
   if($pa__at__11_1){
     for ($i=0; $i < count($pa__at__11_1); $i++) {
-      $count++;
+      $count += 0.25;
     }
   }
   if($pa__at__11_2){
     for ($i=0; $i < count($pa__at__11_2); $i++) {
-      $count++;
+      $count += 0.25;
     }
   }
   if($pa__at__11_3){
     for ($i=0; $i < count($pa__at__11_3); $i++) {
-      $count++;
+      $count += 0.25;
     }
   }
-  if ($pa__at__12){$count = $count + 1;}
-  if ($pa__at__13){$count = $count + 1;}
-  if ($pa__at__14){$count = $count + 1;}
+  if ($pa__at__12 == true){$count += 5;}
+  if ($pa__at__13 == true){$count += 5;}
+  if ($pa__at__14 == true){$count += 2;}
   if($pa__at__14_1){
     for ($i=0; $i < count($pa__at__14_1); $i++) {
-      $count++;
+      $count+= 0.5;
     }
   }
   if($pa__at__14_2){
     for ($i=0; $i < count($pa__at__14_2); $i++) {
-      $count++;
+      $count+= 0.5;
     }
   }
-  if ($pa__at__15){$count = $count + 1;}
+  if ($pa__at__15 == true){$count += 2;}
   if($pa__at__15_1){
     for ($i=0; $i < count($pa__at__15_1); $i++) {
-      $count++;
+      $count+= 0.2;
     }
   }
-  if ($pa__at__16){$count = $count + 1;}
+  if ($pa__at__16 == true){$count += 3;}
   if($pa__at__16_1){
-      $count++;
+      $count += 2;
   }
-  if ($pa__at__17){$count = $count + 1;}
-  if ($pa__at__18){$count = $count + 1;}
+  if ($pa__at__17 == true){$count += 5;}
+  if ($pa__at__18 == true){$count += 2;}
   if($pa__at__18_1){
     for ($i=0; $i < count($pa__at__18_1); $i++) {
-      $count++;
+      $count+= 0.5;
     }
   }
-  if ($pa__at__19){$count = $count + 1;}
+  if ($pa__at__19 == true){$count += 2;}
   if($pa__at__19_1){
     for ($i=0; $i < count($pa__at__19_1); $i++) {
       $count++;
     }
   }
-  if ($pa__at__20){$count = $count + 1;}
+  if ($pa__at__20 == true){$count += 2;}
   if($pa__at__20_1){
     for ($i=0; $i < count($pa__at__20_1); $i++) {
-      $count++;
+      $count+= 0.5;
     }
   }
-  if ($pa__at__21){$count = $count + 1;}
+  if ($pa__at__21 == true){$count += 5;}
 
-  echo '<pre>';
-    var_dump($count);
-  echo '</pre>';
+  if ($count >= 0 && $count <= 24) {
+    $status = 'danger';
+  }elseif ($count >= 25 && $count <= 50) {
+    $status = 'warning';
+  }else {
+		$status = 'success';
+  }
+  // echo '<pre>';
+  // var_dump($count);
+  // echo '</pre>';
 ?>
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
@@ -172,6 +179,14 @@
     <?php the_title(); ?>
    </a>
   </header>
+  <div class="entry-summary panel-body">
+    <?php if ( $pa__titular ) echo 'Titular de La Entidad: ' . $pa__titular; ?>
+  </div>
+  <div class="progress tip" title="<?php echo $count.'% completado'; ?>">
+	  <div class="progress-bar progress-bar-<?php echo $status; ?>" role="progressbar" aria-valuenow="<?php echo $count; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $count; ?>%">
+	    <span class="sr-only"><?php echo $count.'% completado'; ?></span>
+	  </div>
+	</div>
   <!-- Table -->
 <table class="table table-hover table-condensed">
   <thead></thead>
