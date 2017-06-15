@@ -187,8 +187,17 @@
 					@extend .col-xs-12;
 					padding-bottom: 30px;
 					a{
-						i{}
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-direction: column;
+						height: 100%;
 						figcaption{
+							position: absolute;
+							top: inherit!important;
+							bottom: 0;
+							padding: 15px;
+							width: 100%;
 							time{}
 							h3{
 								font-size: 14px;

@@ -1,6 +1,6 @@
 .sidebar{
 	.widget{
-		border-left: 1px solid $gray--lighter; 
+		border-left: 1px solid $gray--lighter;
 		margin-bottom: 30px;
 		background-color: $white;
 		.form-control{
@@ -11,23 +11,23 @@
 			padding: 13px 15px 12px 15px;
 			margin: 0;
 			font-size: 24px;
-			/* text-transform: uppercase; */ 
+			/* text-transform: uppercase; */
 			letter-spacing: 1.25px;
 			@include opensans(light);
 			-webkit-font-smoothing: antialiased;
 		}
 
 		#loginform{}
-		
+
 		.nav{
-			&.nav-sidebar{		
+			&.nav-sidebar{
 				margin: 15px 0 0;
 				padding: 0;
 				list-style-type: none;
 				li{
 					time{
 						@include meta-text();
-						padding: 3px 15px 0; 
+						padding: 3px 15px 0;
 					}
 					a{
 						display: block;
@@ -72,7 +72,13 @@
 			padding: 0;
 			list-style-type: none;
 			&.related-posts{
+				padding: 7px 15px;
 				li{
+					padding-bottom: 15px;
+					time{
+						display: block;
+						@include meta-text();
+					}
 					a{
 						padding-top: 1px;
 						color: $red--google;
@@ -81,7 +87,7 @@
 						}
 					}
 					p{
-						padding: 7px 15px; 
+						padding: 7px 15px;
 					}
 				}
 			}
@@ -95,7 +101,7 @@
 			}
 		}
 		.tagcloud, .textwidget, #loginform{
-			padding: 7px 15px; 
+			padding: 7px 15px;
 		}
 		.textwidget{
 			h3{
@@ -103,7 +109,7 @@
 			}
 		}
 		select{
-			margin: 7px 15px; 
+			margin: 7px 15px;
 		}
 
 	&.banner{
