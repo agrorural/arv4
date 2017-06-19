@@ -4,12 +4,14 @@
   $dateformat = "d/m/Y";
 
   $pa__titular = get_field('pa__titular');
+  $pa__rt = get_field('pa__rt');
+  $pa__rt__rde = get_field('pa__rt__rde');
 
   $pa__fec_inicio = get_field('pa__fec_inicio');
-  $pa__fec_inicio = new DateTime($pa__fec_inicio);
+  if ($pa__fec_inicio) {$pa__fec_inicio = new DateTime($pa__fec_inicio);}
 
   $pa__fec_fin = get_field('pa__fec_fin');
-  $pa__fec_fin = new DateTime($pa__fec_fin);
+  if ($pa__fec_fin) {$pa__fec_fin = new DateTime($pa__fec_fin);}
 
   $upload_dir = wp_upload_dir();
   $dir = $upload_dir["baseurl"];
@@ -169,10 +171,8 @@
   }else {
 		$status = 'success';
   }
-  // echo '<pre>';
-  // var_dump($count);
-  // echo '</pre>';
 ?>
+
 <article <?php post_class('panel panel-default'); ?>>
   <header class="panel-heading">
    <a href="<?php the_permalink(); ?>">
@@ -180,7 +180,7 @@
    </a>
   </header>
   <div class="entry-summary panel-body">
-    <?php if ( $pa__titular ) echo 'Titular de La Entidad: ' . $pa__titular; ?>
+    Según la presente autoevaluación del cumplimiento de publicaciones en el Portal de Transparencia Estándar se ha logrado cumplir con el <strong><?php echo $count; ?>%</strong> de la meta.
   </div>
   <div class="progress tip" title="<?php echo $count.'% completado'; ?>">
 	  <div class="progress-bar progress-bar-<?php echo $status; ?>" role="progressbar" aria-valuenow="<?php echo $count; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $count; ?>%">
@@ -191,24 +191,41 @@
 <table class="table table-hover table-condensed">
   <thead></thead>
   <tbody>
+    <tr>
+      <th>Titular de la Entidad</th>
+      <td><?php if($pa__titular) echo $pa__titular; else echo 'No Disponible'; ?></td>
+    </tr>
+    <tr>
+      <th>Reponsable de Transparencia</th>
+      <td>
+        <?php if($pa__rt) echo $pa__rt; else echo 'No Disponible'; ?><br />
+        <small>
+          <?php if($pa__rt__rde) echo '<a href="' . $pa__rt__rde . '">Resolución</a>'; else echo 'No Disponible'; ?>
+        </small>
+      </td>
+    </tr>
     <tr rowspan="2">
       <th scope="row">
         <strong>Inicio de Seguimiento</strong>
         <br>
-          <?php if ($pa__fec_inicio) : ?>
-            <?php echo '<span>' . $pa__fec_inicio->format('d/m/Y') . '</span>'; ?>
-          <?php else : ?>
-            No disponible
-          <?php endif; ?>
+          <span>
+            <?php if ($pa__fec_inicio) : ?>
+              <?php echo $pa__fec_inicio->format('d/m/Y'); ?>
+              <?php else : ?>
+                No disponible
+            <?php endif; ?>
+          </span>
       </th>
       <th scope="row">
         <strong>Fin de Seguimiento</strong>
         <br>
-          <?php if ($pa__fec_fin) : ?>
-            <?php echo '<span>' . $pa__fec_fin->format('d/m/Y') . '</span>'; ?>
-          <?php else : ?>
-            No disponible
-          <?php endif; ?>
+          <span>
+            <?php if ($pa__fec_fin) : ?>
+              <?php echo $pa__fec_fin->format('d/m/Y'); ?>
+              <?php else : ?>
+                No disponible
+              <?php endif; ?>
+          </span>
       </th>
     </tr>
   </tbody>
