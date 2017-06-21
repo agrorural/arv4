@@ -50,7 +50,7 @@ footer{
 				}
 				h3{
 					font-size: 11px;
-					@include opensans(light);
+					@include font-family(opensans, light);
 					text-transform: uppercase;
 					letter-spacing: 0.1em;
 					margin: 0 0 16px;
@@ -64,7 +64,7 @@ footer{
 						a{
 							display: block;
 							padding: 0px;
-							@include opensans(semibold);
+							@include font-family(opensans, semibold);
 							font-size: 12px;
 						}
 						ul.sub-menu{
@@ -73,7 +73,7 @@ footer{
 							li{
 								padding-bottom: 3px;
 								a{
-									@include opensans();
+									@include font-family();
 									color: $brown;
 									font-size: 11px;
 									&:hover{
@@ -100,9 +100,6 @@ footer{
 				&.minagri, &.peru{
 					a{
 						@include img-replace();
-						span{
-							@include img-replace-span();
-						}
 					}
 				}
 				&.minagri{

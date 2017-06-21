@@ -9,7 +9,7 @@
 			padding: 0;
 				.caption{
 					h3{
-						@include opensans(light);
+						@include font-family(opensans, light);
 						font-size: 24px;
 					}
 					p{
@@ -26,7 +26,7 @@
 							a{
 								padding: 0;
 								background-color: transparent;
-								@include opensans(semibold);
+								@include font-family(opensans, semibold);
 								.caret{
 									display: none;
 									visibility: hidden;
@@ -44,7 +44,7 @@
 								padding: 0;
 								li{
 									a{
-										@include opensans();
+										@include font-family();
 										font-size: 12px;
 										margin: 0;
 										background-color: transparent;
@@ -120,7 +120,7 @@
 						.media-intro{
 							position: relative;
 							.media-heading{
-								@include opensans('bold');
+								@include font-family(opensans, bold);
 								margin-bottom: 15px;
 							}
 							a{
@@ -162,8 +162,7 @@
 			}
 			.proyecto__descripcion{
 				h1{
-					color: $white;
-					@include text-shadow();
+					@include text-on-focus();
 				}
 			}
 		}
@@ -172,7 +171,7 @@
 			.page-header{
 				margin: 0 0 20px;
 				h1{
-					@include opensans(light);
+					@include font-family(opensans, light);
 				}
 			}
 			.breadcrumb{
@@ -182,7 +181,7 @@
 			.multimedia{
 				@extend .row;
 				figure{
-					@extend .col-lg-6;
+					@extend .col-lg-4;
 					@extend .col-sm-6;
 					@extend .col-xs-12;
 					padding-bottom: 30px;
@@ -262,7 +261,7 @@
 									color: white;
 							}
 							h2{
-								@include opensans(bold);
+								@include font-family(opensans, bold);
 								font-size: 115%;
 								color: $white;
 								margin: 0;
@@ -320,41 +319,98 @@
 	}
 
 	article{
-		padding-top: 20px;
+		min-height: 150px;
+    margin-bottom: 40px;
+		.entry-container{
+			background: $white;
+			@include shadow-box();
+			overflow: hidden;
+				header{
+						@include make-row(0);
+						img{
+								@extend .pull-left;
+						}
+				}
+				.entry-left{
+						width: 100%;
+						height: 185px;
+						display: block;
+						.entry-left-container{
+								@include flex();
+								width: 100%;
+								height: 100%;
+								a{
+									@include font-size(32);
+									@include text-on-focus();
+								}
+						}
+				}
+				.entry-body{
+          padding-left: 30px !important;
+          padding-right: 30px !important;
+           @include make-sm-column(12, 0);
+          h2{
+              @include font-family(opensans, bold)
+							@media (max-width: $screen-xs-max){
+              	@include font-size(18, 23);
+							}
+              padding-bottom: 15px;
+              a{
+                  color: $gray-dark;
+                  &:hover{
+										color: $red--google;
+                  }
+              }
+							padding-bottom: 0;
+          }
+					time{
+						@include meta-text();
+					}
+      }
+			.post-meta{
+          position: relative;
+          width: 100%;
+          height: 40px;
+          border-top: 1px solid $gray-lighter;
+          @extend .clearfix;
+					margin-top: 30px;
+          .post-date{
+              float: left;
+							line-height: 40px;
+
+          }
+          .post-comments{
+              float: right;
+          }
+      }
+		}
+
+		@media (min-width: $screen-sm-min){
+			&.has-post-thumbnail{
+					.entry-left, .entry-body{
+							@include make-sm-column(6, 0);
+							height: 300px;
+					}
+			}
+			.entry-body{
+					height: 300px;
+					h2{
+							@include font-size(24, 30);
+					}
+			}
+
+			.post-meta{
+					position: absolute !important;
+					width: 100%;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					padding-left: 30px;
+					padding-right: 30px;
+			}
+	}
 		&.panel{
 			padding-top: 0;
-		}
-		padding-bottom: 20px;
-		border-bottom: 1px solid $brown--lighter;
-		figure{
-			float: left;
-			padding-right: 15px;
-		}
-		header{
-			.entry-title{
-				@include entry-title();
-				margin-top: 0;
-				a{
-					/*color: $brown; */
-				}
-			}
-		}
-		.entry-summary{
-			p{
-				@include opensans();
-				a.read-more{
-					display: block;
-					padding-top: 10px;
-				}
-			}
-		}
-
-		@include clearfix();
-
-		&:last-of-type{
-			border-bottom: 3px solid $brown--lighter;
-		}
-		&.panel{
 			padding-bottom: 0;
 		}
 	}

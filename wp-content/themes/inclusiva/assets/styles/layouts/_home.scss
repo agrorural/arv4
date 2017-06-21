@@ -4,7 +4,7 @@
 			margin: 0;
 			h3{
 				margin-top: 0;
-				@include opensans('light');
+				@include font-family(opensans, light);
 				padding: 13px 0px 9pt;
 				letter-spacing: 1.25px;
 				small{
@@ -15,7 +15,7 @@
 						@extend .btn;
 						@extend .btn-xs;
 						@include button-variant($gray-light, transparent, $gray-light);
-						@include opensans();
+						@include font-family();
 						font-size: 8px;
 						@include border-radius(16px);
 						i, span{
@@ -107,7 +107,7 @@
 							position: relative;
 							overflow: hidden;
 							&:before{
-								@include fa();
+								@include fa-icon();
 								content: "\f073";
 								margin-right: 0px;
 								position: absolute;
@@ -139,7 +139,7 @@
 												border-bottom: 1px solid $brown--light;
 											}
 											.date-day{
-												@include opensans('bold');
+												@include font-family(opensans, bold);
 												background-color: transparent;
 												color: $brown;
 												padding: 1px 10px;
@@ -159,7 +159,7 @@
 											}
 										}
 										time{
-											@include opensans('light');
+											@include font-family(opensans, light);
 											@extend .small;
 											font-size: 10px;
 											line-height: 1;
@@ -175,7 +175,7 @@
 								a{
 									text-transform: uppercase;
 									font-size: 11px;
-									@include opensans(bold);
+									@include font-family(opensans, bold);
 									color: $yellow;
 								}
 							}
@@ -303,7 +303,7 @@
 	    										top: 65px;
 												z-index: 100;
 												color: $white;
-												@include opensans(bold);
+												@include font-family(opensans, bold);
 											}
 										}
 									}
@@ -482,7 +482,7 @@
 									.sl__home__hashtag{
 										a{
 											color: $white;
-											@include opensans(semibold);
+											@include font-family(opensans, semibold);
 											text-transform: uppercase;
 											font-size: 10px;
 										}
@@ -490,7 +490,7 @@
 									.sl__home__title{
 										h3{
 											text-transform: uppercase;
-											@include opensans();
+											@include font-family();
 											color: $white;
 											margin-top: 0px;
 											margin-bottom: 0;
@@ -653,7 +653,7 @@
   									text-align: center;
   									text-transform: uppercase;
   									a{
-  										@include opensans(bold);
+  										@include font-family(opensans, bold);
   										width: auto;
   										background-color: transparent;
   										font-size: 9PX;
@@ -668,7 +668,7 @@
   								}
   								.sl__home__title{
   									h3{
-  										@include opensans(bold);
+  										@include font-family(opensans, bold);
   										margin-top: 3px;
   										margin-bottom: 0;
   										padding-top: 15px;
@@ -685,7 +685,7 @@
   									p{
   										padding-top: 15px;
   										@include text-on-focus();
-  										@include opensans();
+  										@include font-family();
   										font-size: 16px;
   										text-align: center;
   									}

@@ -4,7 +4,7 @@ header{
 		@include slideInDown();
 		//@include gradient-vertical($blue--sky, $white--smoke, 0%, 100%);
 		background: $blue--sky url(../images/alerts__bg.png)no-repeat center top;
-		height: 40px; 
+		height: 40px;
 		.container{
 			.alerts__header{
 				@include make-lg-column(2);
@@ -12,13 +12,13 @@ header{
 				@include make-xs-column(5);
 				background: $blue--sky url(../images/senamhi__bg.png)no-repeat right top;
 				a{
-					@include opensans();
+					@include font-family();
 					font-size: 12px;
 					color: $gray-dark;
 				}
 			}
 			.sl__alerts{
-				@include make-lg-column(10); 
+				@include make-lg-column(10);
 				@include make-sm-column(10);
 				@include make-xs-column(7);
 					.owl-nav{
@@ -44,8 +44,8 @@ header{
 					padding-bottom: 0;
 					.entry-content{
 						//background-color: $white--smoke;
-						margin: 0 auto; 
-						
+						margin: 0 auto;
+
 						h2{
 							font-size: 9px;
 							line-height: 40px;
@@ -54,9 +54,9 @@ header{
 								time{
 									font-size: 14px;
 									color: $gray;
-								} 
+								}
 
-							@include opensans();
+							@include font-family();
 							a{
 								color: $gray-dark;
 								&:hover{
@@ -72,7 +72,7 @@ header{
 	&.super-header, &.banner{
 		background-color: $green--dark;
 	}
-	 
+
 	&.super-header{
 		position: relative;
 		z-index: 1002;
@@ -110,8 +110,8 @@ header{
 						}
 					}
 				}
-				&.navbar-right, &.navbar-left{ 
-					background-color: transparent; 
+				&.navbar-right, &.navbar-left{
+					background-color: transparent;
 					li{
 						a{
 	  						font-size: 11px;
@@ -147,7 +147,7 @@ header{
 							}
 							&.menu-item-11085{
 								a{
-									background-color: $blue--tw;  
+									background-color: $blue--tw;
 									&:hover{
 										background-color: $blue--tw--hover;
 									}
@@ -155,20 +155,20 @@ header{
 							}
 							&.menu-item-11084{
 								a{
-									background-color: $red--google;  
+									background-color: $red--google;
 									&:hover{
 										background-color: $red--google--hover;
 									}
 								}
 							}
 						}
-					} /*  Fin .navbar-social */			
+					} /*  Fin .navbar-social */
 					&.navbar-links{
 						li{
 							a{
 								background-color: transparent;
 								&:hover{
-									color: $yellow; 
+									color: $yellow;
 								}
 							}
 						}
@@ -187,10 +187,10 @@ header{
 	  				padding: 0;
 	  				margin: 0;
 	  			}
-				
+
 				.search-form{
-					.form-control{						
-						@media (min-width: $screen-lg-min){				
+					.form-control{
+						@media (min-width: $screen-lg-min){
 							&:focus, &:active{
 							}
 							&:active{
@@ -265,7 +265,7 @@ header{
   					.input-group{
   						width: 100%;
 						.search-field{
-							@include opensans();
+							@include font-family();
 							font-style: italic;
 							height: 40px;
 	  						border-top: 1px solid transparent;
@@ -346,7 +346,7 @@ header{
 							}
 							padding-bottom: 0;
 							h4{
-								@include title-xs();
+								@include entry-title(xs);
 								line-height: 1.85em;
 							}
 						}
@@ -372,7 +372,7 @@ header{
 }
 
 
-				
+
 
 h1{
 	&.navbar-brand{
@@ -394,14 +394,14 @@ h1{
 			  	padding: 0;
   			}
 		}
-		
+
 		&.agrorural{
 			padding-right: 15px;
 			width: 100%;
 			margin: 0 auto !important;
 		}
 
-		&.minagri{	
+		&.minagri{
 			a{
 				width: 210px !important;
 				height: 40px !important;
@@ -427,7 +427,7 @@ h1{
 					margin-top: 7px;
 				}
 			}
-		} /* Termina .super-header */	
+		} /* Termina .super-header */
 		&.banner{
 			ul#menu-navegacion-primaria{
 				li{
@@ -440,7 +440,7 @@ h1{
 			}
 		}
 	} /* Termina header*/
-	
+
 	h1{
 		&.navbar-brand{
 
@@ -448,19 +448,19 @@ h1{
 	  			span{}
 			}
 			&:hover{}
-			
+
 			&.agrorural{
 				margin-bottom: 10px;
 			}
 
-			&.minagri{	
+			&.minagri{
 				a{
 					background-image: url(../images/logo__minagri--sm--2.jpg)!important;
 					background-repeat: no-repeat;
 				}
 			}
 		}
-	}	
+	}
 
 		.home{
 		.sl__home{
@@ -473,17 +473,17 @@ h1{
 							figcaption{
   								padding-top: 30px !important;
   								.sl__home__hashtag, .sl__home__title, .sl__home__content, .sl__home__link{
-  									
+
   								}
   								.sl__home__hashtag{
-  									a{	
+  									a{
   										color: $white;
-  										@include opensans(semibold);
+  										@include font-family(opensans, semibold);
   										text-transform: inherit !important;
   										font-size: 10px;
   									}
   								}
-  								.sl__home__title{ 
+  								.sl__home__title{
   									h3{
   										@include entry-title('sm');
 										text-transform: inherit !important;
@@ -511,12 +511,12 @@ h1{
   										a{
   											@include button-variant( $green--accent, transparent, transparent );
   											text-transform: uppercase;
-  											@include opensans(bold);
+  											@include font-family(opensans, bold);
   											font-size: 11px;
   										}
   									}
   								}
-							} 
+							}
 						}
 					}
 				}
@@ -534,7 +534,7 @@ h1{
 				}
 				.sl__alerts{
 					article{
-						.entry-content{			
+						.entry-content{
 							h2{
 								font-size: 18px;
 							}
@@ -574,7 +574,7 @@ h1{
 	  						}
   						}
   						.ht__brand{
-  							height: 0;				
+  							height: 0;
 							@include keyframes(fadeOutDown) {
 							  0% {
 							    opacity: .35;
@@ -621,7 +621,7 @@ h1{
 				#mega-menu-wrap-primary_nav_right{
 					@include make-sm-column(5,0);
 					@include make-sm-column-offset(2);
-					clear: right; 
+					clear: right;
 				}
 			}
 		}

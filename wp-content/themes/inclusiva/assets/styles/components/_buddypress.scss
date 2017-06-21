@@ -11,7 +11,7 @@
 		}
 		main{
 			.page-header{
-				margin-top: 0; 
+				margin-top: 0;
 			}
 			.alert{
 				margin-top: 20px;
@@ -40,24 +40,24 @@
 							font-size: 10px !important;
 						}
 					}
-				}	
+				}
 				#item-nav, .dir-form{
 					.item-list-tabs{
 						background-color: $red--google--hover;
 						ul{
 							li{
 								a{
-									@include opensans(bold);
+									@include font-family(opensans, bold);
 									font-size: 11px;
 									text-transform: uppercase;
 									color: $white;
 									@include opacity(0.8);
-									
+
 									&:hover{
 										@include opacity(1);
 									}
 								}
-							
+
 								&.current.selected, &.selected{
 									a{
 										background-color: $red--google;
@@ -77,7 +77,7 @@
 							ul{
 								li{
 									label, a{
-										@include opensans(light);
+										@include font-family(opensans, light);
 										font-size: 12px;
 										font-weight: normal;
 									}
@@ -85,7 +85,7 @@
 									&.current.selected{
 										a{
 											background-color: transparent;
-											@include opensans(light);
+											@include font-family(opensans, light);
 											font-weight: normal;
 										}
 									}
@@ -115,20 +115,20 @@
 					padding-bottom: 30px;
 				}
 			}
-		}	
+		}
 
 		aside{
 			.bp-login-widget-user-avatar{
 				padding-left: 15px;
 			}
 			.bp-login-widget-user-links{
-				padding: 0px 15px 0 0; 
+				padding: 0px 15px 0 0;
 				.bp-login-widget-user-link{
 					margin-bottom: 1px;
 				}
 				.bp-login-widget-user-logout{
 					a{
-						@include opensans(light);
+						@include font-family(opensans, light);
 						font-size: 10px;
 						font-weight: normal;
 					}

@@ -178,7 +178,7 @@
 								padding-right: 15px;
 								padding-top: 10px;
 								padding-bottom: 0;
-								@include opensans(semibold);
+								@include font-family(opensans, semibold);
 								a{
 									&:hover{
 										color: $green--light;
@@ -241,22 +241,19 @@
 					@include make-sm-column(4);
 					@include make-xs-column(12);
 					.multimedia--1__caption__title{
-						@include opensans();
+						@include font-family();
 						a{
-							color: $gray--lighter;
-							@include text-shadow();
+							@include text-on-focus($gray--lighter);
 						}
 					}
 					time{
 						display: block;
 						padding-bottom: 15px;
-						@include opensans(semibold);
-						color: $gray--light;
-						@include text-shadow();
+						@include font-family(opensans, semibold);
+						@include text-on-focus($gray--light);
 					}
 					p{
-						color: $gray--light;
-						@include text-shadow();
+						@include text-on-focus($gray--light);
 					}
 				}
 				@include clearfix();
@@ -333,7 +330,7 @@
     							margin: 7px auto 3px;
     							padding: 0;
     							font-size: 14px;
-    							@include opensans(bold);
+    							@include font-family(opensans, bold);
     						}
     					}
 					}

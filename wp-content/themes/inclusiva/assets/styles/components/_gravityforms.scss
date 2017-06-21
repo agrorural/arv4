@@ -34,7 +34,7 @@
 					}
 					&.gsection{
 						.gsection_title{
-							@include title-xs();
+							@include entry-title(xs);
 							font-size: 13px;
 							padding-bottom: 7px;
 							border-bottom: 1px solid $gray--light;
@@ -76,7 +76,7 @@
 											display: block;
 										    text-align: center;
 										    padding: 0 25px;
-										    @include opensans(bold);
+										    @include font-family(opensans, bold);
 											span{
 												margin: 5px auto 0;
 												cursor: pointer;
@@ -131,7 +131,7 @@
 							.name_first, .name_last{
 								@extend .col-sm-6;
 								label{
-									@include opensans();
+									@include font-family();
 									color: $gray-dark;
 									@extend .control-label;
 									cursor: pointer;

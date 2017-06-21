@@ -68,7 +68,7 @@ html{
 }
 
 body{
-  @include opensans();
+  @include font-family();
   font-size: 14px;
   line-height: 1.6;
   &.page, &.archive, &.single{
@@ -81,12 +81,12 @@ body{
         margin: 70px 0 20px;
         border-bottom: 0px solid transparent;
         h1{
-          @include opensans();
+          @include font-family();
           font-size: 36px;
           color: $brown;
           small{
             font-size: 13px;
-            @include opensans();
+            @include font-family();
             a{
               color: $red--google;
             }
@@ -133,7 +133,7 @@ a, button.btn-link{
 p{
   text-align: justify;
   &.entry-summary{
-    @include opensans(light);
+    @include font-family(opensans, light);
     font-size: 16px;
     margin: 15px auto;
   }
@@ -155,7 +155,9 @@ p{
 	display: block;
 	clear: both;
 	padding: 30px 0;
-	@include opensans();
+	@include font-family();
+  @include shadow-box();
+  background-color: $white;
 	span{
 		border: 0 none;
 		padding: 5px 10px;
@@ -163,7 +165,7 @@ p{
 		&.current{
 			background-color: $red;
 			@include border-radius(4px);
-			@include opensans();
+			@include font-family();
 			color: $white;
 		}
 	}
@@ -339,7 +341,7 @@ article, figure{
       }
 
       h1{
-        @include opensans(light);
+        @include font-family(opensans, light);
         @include text-on-focus();
         a{
           @include text-on-focus();
@@ -352,7 +354,7 @@ article, figure{
       }
       p, p a{
         float: none !important;
-        @include opensans();
+        @include font-family();
         @include text-on-focus();
         text-align: center;
         @include make-sm-column(8);
@@ -394,14 +396,14 @@ article, figure{
   min-height: 38px;
   border-top: 3px solid $red--google !important;
   @include border-radius(0);
-  @include shadow--2dp();
+  @include shadow-box();
   .container{
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     ul.nav{
       li{
         a{
-          @include opensans(semibold);
+          @include font-family(opensans, semibold);
           text-transform: uppercase;
           color: $brown;
           font-size: 12px;
@@ -415,7 +417,7 @@ article, figure{
 
         &.dropdown{
           ul.dropdown-menu{
-            @include shadow--2dp();
+            @include shadow-box();
             @include border-radius(0);
             margin: 0;
             padding: 0;
@@ -428,7 +430,7 @@ article, figure{
 
             li{
               a{
-                @include opensans();
+                @include font-family();
                 padding-top: 10px;
                 padding-bottom: 10px;
                 text-transform: none;
@@ -538,7 +540,53 @@ SHARING
     }
   }
 }
-
+.sharing-caring{
+  ul{
+    @extend .list-inline;
+    margin-left: 0;
+    margin-bottom: 0;
+    li{
+      a{
+        @include font-size(24);
+        line-height: inherit;
+      }
+      &#fb{
+        a{
+          color: $blue--fb;
+        }
+      }
+      &#tw{
+        a{
+          color: $blue--tw;
+        }
+      }
+      &#gp{
+        a{
+          color: $red--google;
+        }
+      }
+      &#wa{
+        a{
+          color: $green;
+        }
+        @media(min-width: $screen-sm-min){
+          display: none;
+        }
+      }
+    }
+    li.share-social{
+      z-index: 0;
+      @media(min-width: $screen-sm-min){
+        a{
+          @include opacity(.9);
+          &:hover{
+            @include opacity(1);
+          }
+        }
+      }
+    }
+  }
+}
 article{
   header{
     h2, h3, h4{
@@ -555,7 +603,7 @@ article{
   }
   .entry-summary{
     .cta__link{
-      @include opensans();
+      @include font-family();
       text-transform: none;
     }
   }
@@ -697,13 +745,13 @@ figure{
         @include text-on-focus();
       }
       h4{
-        @include opensans(bold);
+        @include font-family(opensans, bold);
         font-size: 16px;
         margin: 0 auto;
       }
       p, ul li a, p a{
         font-size: 11px;
-        @include opensans();
+        @include font-family();
       }
       p{
         margin-bottom: 0;
@@ -722,7 +770,7 @@ figure{
   .panel-heading{
     @include entry-title();
     .label{
-      @include title-xs();
+      @include entry-title(xs);
       padding: 5px 10px;
       letter-spacing: 0;
       line-height: 15px;
@@ -745,9 +793,9 @@ figure{
         padding: 5px 15px 5px;
       }
       th{
-       @include opensans(semibold);
+       @include font-family(opensans, semibold);
        span{
-         @include opensans(regular);
+         @include font-family(opensans, regular);
          font-size: 12px;
          font-weight: normal;
        }

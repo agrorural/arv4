@@ -7,17 +7,28 @@
 @mixin border-radius($radius) {
   border-radius: $radius;
 }
-@mixin shadow--2dp(){
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+
+@mixin shadow-box(){
+  box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #e9eff3;
 }
 
-@mixin opensans($variation: 'regular'){
-  font-family: 'opensans#{$variation}', sans-serif;
+@mixin flex($disposition: center){
+  display: flex;
+  align-items: $disposition;
+  justify-content: $disposition;
+  height: 100%;
+}
+
+@mixin font-family($font: 'opensans',$variation: 'regular'){
+  font-family: '#{$font}#{$variation}', sans-serif;
   @include text-render();
 }
 
-@mixin text-shadow(){
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5){
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: ($sizeValue / 10) + rem;
+  line-height: ($line / 10) + rem;
 }
 
 @mixin focus-shadow(){
@@ -41,41 +52,10 @@
   }
 }
 
-@mixin text-on-focus(){
-  color: $white;
+@mixin text-on-focus($color: $white){
+  color: $color;
   text-shadow: 1px 2px 2px rgba(0,0,0,.3);
 }
-
-@mixin photo-credit( $photo: 'AGRO RURAL' ){
-  &:before{
-    position: absolute;
-    content: 'Foto: #{$photo}';
-    @include opensans();
-    top: 15px;
-    right: 15px;
-    z-index: 15;
-    color: $white;
-    font-size: 8px;
-    @include opacity(.5);
-  }
-}
-
-@mixin title-xs($variant: 'light'){
-  font-size: 10px;
-    @include opensans( $variant );
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-@mixin fa (){
-  display: inline-block;
-    font: normal normal normal 14px/20px FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 
 @mixin btn() {
   display: inline-block;
@@ -176,7 +156,7 @@
 @mixin cta($type : 'link' ){
   @include btn();
   @extend %btn-#{$type};
-  @include opensans(bold);
+  @include font-family(opensans, bold);
   text-transform: uppercase;
   margin-bottom: 8px;
   margin-top: 8px;
@@ -205,18 +185,9 @@
       padding: 0;
     }
 }
-@mixin img-replace-span(){
-  position: relative;
-    display: block;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
 
 @mixin placeholder( $color : $gray ){
-  @include opensans();
+  @include font-family();
   &::-webkit-input-placeholder {
     color:  $color;
   }
@@ -240,13 +211,13 @@
 }
 
 @mixin meta-text( $color: $gray--light ){
-  @include opensans(light);
+  @include font-family(opensans, light);
   font-size: 10px;
   color: $color;
 }
 
 @mixin entry-title($titleVariant: 'default', $fontVariant: 'regular' ){
-  @include opensans($fontVariant);
+  @include font-family(opensans, $fontVariant);
     @if $titleVariant == 'default' {
       font-size: 20px;
       line-height: 24px;

@@ -1,8 +1,8 @@
 .sidebar{
 	.widget{
-		border-left: 1px solid $gray--lighter;
-		margin-bottom: 30px;
+		@include shadow-box();
 		background-color: $white;
+		margin-bottom: 30px;
 		.form-control{
 			with: 100%;
 			padding: 7px 15px;
@@ -13,7 +13,7 @@
 			font-size: 24px;
 			/* text-transform: uppercase; */
 			letter-spacing: 1.25px;
-			@include opensans(light);
+			@include font-family(opensans, light);
 			-webkit-font-smoothing: antialiased;
 		}
 
@@ -45,7 +45,7 @@
 							background-color: transparent;
 							color: $red--google;
 							border-left: 3px solid $red--google;
-							@include opensans(bold);
+							@include font-family(opensans, bold);
 						}
 					}
 					&.dropdown{
