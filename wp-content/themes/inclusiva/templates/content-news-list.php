@@ -24,13 +24,13 @@
 		<?php if ( has_post_thumbnail() ){ ?>
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); ?>
     	<header class="entry-left" style="">
-    		<div class="entry-left-container" style="background: url('<?php echo $image[0]; ?>')  no-repeat top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-					<?php if ( $has__format ){ ?>
-	    			<a href="<?php the_permalink(); ?>">
+    		<a href="<?php the_permalink(); ?>">
+	    		<div class="entry-left-container" style="background-image: url('<?php echo $image[0]; ?>'); background-repeat:  no-repeat; background-position: top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+						<?php if ( $has__format ){ ?>			
 							<i class="fa fa-<?php echo $format__icon; ?>"></i>
-						</a>
-					<?php } ?>
-    		</div>
+						<?php } ?>
+	    		</div>
+    		</a>
     	</header>
 		<?php } ?>
 		<div class="entry-body ">

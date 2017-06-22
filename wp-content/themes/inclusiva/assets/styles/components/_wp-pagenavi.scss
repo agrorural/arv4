@@ -1,0 +1,32 @@
+/* Page Nav*/
+.wp-pagenavi{
+	position: relative;
+	display: block;
+	clear: both;
+	padding: 30px 0;
+	@include font-family();
+  @include shadow-box();
+  background-color: $white;
+  text-align: center;
+	span{
+		border: 0 none;
+		padding: 5px 10px;
+		margin: 0 10px;
+		&.current{
+			background-color: $red;
+			@include border-radius(4px);
+			@include font-family();
+			color: $white;
+		}
+	}
+	a{
+		border: 0 none;
+		margin: 0 10px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+  .wp-pagenavi a.first, span.extend,
+    a.page.smaller, a.page.larger, a.larger.page,
+    a.last { display: none; }
+}

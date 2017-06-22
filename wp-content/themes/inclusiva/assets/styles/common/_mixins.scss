@@ -210,9 +210,9 @@
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-@mixin meta-text( $color: $gray--light ){
+@mixin meta-text( $color: $gray-light ){
   @include font-family(opensans, light);
-  font-size: 10px;
+  @include font-size(12);
   color: $color;
 }
 
