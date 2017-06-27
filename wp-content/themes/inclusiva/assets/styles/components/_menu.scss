@@ -121,7 +121,7 @@ ul#menu-navegacion-primaria{
 							@include font-family(opensans, light);
 							font-size: 13px;
 							text-transform: none;
-							color: $gray;
+							color: $gray !important;
 							padding: 5px 20px;
 							&:hover{
 								background-color: $yellow--light;
@@ -316,7 +316,7 @@ ul#menu-social-navegacion{
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-sm-min) {
-	ul#menu-navegacion-primaria, ul#menu-super-navegacion{
+	ul#menu-navegacion-primaria, ul#menu-super-navegacion-izquierda{
 		li.dropdown{
 			&:hover{
 				ul.dropdown-menu{

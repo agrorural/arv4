@@ -36,9 +36,8 @@ wp-content/themes/inclusiva/assets/.DS_Store
 Thumbs.db
 
 # WordPress One!
-.htaccess
-.maintenance
-.maintenance_
+.htaccess*
+.maintenance*
 wp-config.php
 wp-content/themes/inclusiva/bower_components
 wp-content/themes/inclusiva/node_modules
