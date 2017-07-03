@@ -11,3 +11,6 @@ readme.md
 composer.json
 customs.json
 secret.json
+.gitignore
+build
+package-lock.json

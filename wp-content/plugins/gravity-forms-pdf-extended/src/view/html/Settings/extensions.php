@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Navigation - Welcome Screen View
+ * Extensions Settings View
  *
  * @package     Gravity PDF
  * @copyright   Copyright (c) 2016, Blue Liquid Designs
@@ -36,17 +36,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<h2 class="nav-tab-wrapper">
+<?php $this->tabs(); ?>
 
-	<a class="nav-tab <?php echo $args['selected'] == 'gfpdf-getting-started' ? 'nav-tab-active' : ''; ?>"
-	   href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'gfpdf-getting-started' ), 'index.php' ) ) ); ?>">
 
-		<?php esc_html_e( 'Getting Started', 'gravity-forms-pdf-extended' ); ?>
-	</a>
+<div id="pdfextended-settings">
+	<h3>
+		<span>
+		    <i class="fa fa-cogs"></i>
+			<?php esc_html_e( 'Extensions Settings', 'gravity-forms-pdf-extended' ); ?>
+		</span>
+	</h3>
 
-	<a class="nav-tab <?php echo $args['selected'] == 'gfpdf-update' ? 'nav-tab-active' : ''; ?>"
-	   href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'gfpdf-update' ), 'index.php' ) ) ); ?>">
+	<form method="post" action="options.php">
+		<?php settings_fields( 'gfpdf_settings' ); ?>
 
-		<?php esc_html_e( "What's New", 'gravity-forms-pdf-extended' ); ?>
-	</a>
-</h2>
+		<table id="pdf-extensions" class="form-table">
+			<?php do_settings_fields( 'gfpdf_settings_extensions', 'gfpdf_settings_extensions' ); ?>
+		</table>
+
+		<?php
+			if ( $args['edit_cap'] ) {
+				submit_button();
+			}
+		?>
+	</form>
+
+	<?php
+	/* @TODO */
+	do_action( 'gfpdf_post_extensions_settings_page' );
+	?>
+</div>

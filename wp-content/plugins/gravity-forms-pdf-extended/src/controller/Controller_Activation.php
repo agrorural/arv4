@@ -50,18 +50,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Controller_Activation {
 	/**
-	 * Run plugin activation functionality
-	 *
-	 * @since 4.0
-	 *
-	 * @return void
-	 */
-	public static function activation() {
-		/* Add Upgraded From Option */
-		set_transient( '_gravitypdf_activation_redirect', true, 30 );
-	}
-
-	/**
 	 * Run plugin deactivation functionality
 	 *
 	 * @since 4.0
@@ -75,21 +63,36 @@ class Controller_Activation {
 			return null;
 		}
 
-		/**
+		/*
 		 * Remove our rewrite rules
 		 * As deactivation hook fires much earlier than flush_rewrite_rules() can be called we'll manually remove our rules from the database
 		 */
 		$data  = GPDFAPI::get_data_class();
 		$rules = get_option( 'rewrite_rules' );
 
-		if ( false !== $rules && isset( $rules[ $data->permalink ] ) ) {
-			unset( $rules[ $data->permalink ] );
-			update_option( 'rewrite_rules', $rules );
+		if ( false !== $rules ) {
+			global $wp_rewrite;
+
+			/* Create two regex rules to account for users with "index.php" in the URL */
+			$query = [
+				'^' . $data->permalink,
+				'^' . $wp_rewrite->root . $data->permalink,
+			];
+
+			$match = false;
+			foreach ( $query as $rule ) {
+				if ( isset( $rules[ $rule ] ) ) {
+					unset( $rules[ $rule ] );
+					$match = true;
+				}
+			}
+
+			if( $match ) {
+				update_option( 'rewrite_rules', $rules );
+			}
 		}
 
-		/**
-		 * Remove our scheduled tasks
-		 */
+		/* Remove our scheduled tasks */
 		wp_clear_scheduled_hook( 'gfpdf_cleanup_tmp_dir' );
 	}
 }

@@ -55,6 +55,7 @@ class Helper_Options_Fields extends Helper_Abstract_Options implements Helper_In
 
 		/* Conditionally enable specific fields */
 		add_filter( 'gfpdf_form_settings_advanced', [ $this, 'get_advanced_template_field' ] );
+		add_filter( 'gfpdf_form_settings_advanced', [ $this, 'get_master_password_field' ] );
 
 		parent::add_filters();
 	}
@@ -171,17 +172,17 @@ class Helper_Options_Fields extends Helper_Abstract_Options implements Helper_In
 						'tooltip' => '<h6>' . esc_html__( 'Entry View', 'gravity-forms-pdf-extended' ) . '</h6>' . esc_html__( 'Choose to view the PDF in your web browser or download the document to your computer.', 'gravity-forms-pdf-extended' ),
 					],
 
-					'update_screen_action' => [
-						'id'      => 'update_screen_action',
-						'name'    => esc_html__( "Show What's New", 'gravity-forms-pdf-extended' ),
-						'desc'    => "When updating to a new release we'll redirect you to our What's New page.",
+					'shortcode_debug_messages' => [
+						'id'      => 'shortcode_debug_messages',
+						'name'    => esc_html__( 'Shortcode Debug Message', 'gravity-forms-pdf-extended' ),
 						'type'    => 'radio',
 						'options' => [
-							'Enable'  => esc_html__( 'Enable', 'gravity-forms-pdf-extended' ),
-							'Disable' => esc_html__( 'Disable', 'gravity-forms-pdf-extended' ),
+							'Yes' => esc_html__( 'Enable', 'gravity-forms-pdf-extended' ),
+							'No'  => esc_html__( 'Disable', 'gravity-forms-pdf-extended' ),
 						],
-						'std'     => 'Enable',
-						'tooltip' => '<h6>' . esc_html__( "Show What's New Page", 'gravity-forms-pdf-extended' ) . '</h6>' . esc_html__( "When upgrading Gravity PDF to a new major release (4.x) we'll automatically redirect you to our What's New page so you can see the changes. Bug fix and security releases are excluded (4.x.x).", 'gravity-forms-pdf-extended' ),
+						'std'     => 'No',
+						'desc'    => esc_html__( 'When enabled and an error occurs, admins will be shown an error message in place of the shortcode.' ),
+						'tooltip' => '<h6>' . esc_html__( 'Shortcode Debug Message', 'gravity-forms-pdf-extended' ) . '</h6>' . sprintf( esc_html__( 'Users with the %sgravityforms_view_entries%s capability (the Administrator Role by default) will be shown debug messages when the [gravitypdf] shortcode cannot be generated. When disabled, no content is shown with an error.' ), '<code>', '</code>' ),
 					],
 				]
 			),
@@ -334,7 +335,6 @@ class Helper_Options_Fields extends Helper_Abstract_Options implements Helper_In
 						'type'  => 'hidden',
 						'class' => 'gfpdf-hidden',
 					],
-
 				]
 			),
 
@@ -505,6 +505,12 @@ class Helper_Options_Fields extends Helper_Abstract_Options implements Helper_In
 						'placeholder' => esc_html__( 'Select End User PDF Privileges', 'gravity-forms-pdf-extended' ),
 					],
 
+					'master_password' => [
+						'id'    => 'master_password',
+						'type'  => 'hidden',
+						'class' => 'gfpdf-hidden',
+					],
+
 					'image_dpi' => [
 						'id'      => 'image_dpi',
 						'name'    => esc_html__( 'Image DPI', 'gravity-forms-pdf-extended' ),
@@ -591,6 +597,40 @@ class Helper_Options_Fields extends Helper_Abstract_Options implements Helper_In
 				'No'  => esc_html__( 'No', 'gravity-forms-pdf-extended' ),
 			],
 			'std'     => esc_html__( 'No', 'gravity-forms-pdf-extended' ),
+		];
+
+		return $settings;
+	}
+
+	/**
+	 * Enable the Master Password field.
+	 *
+	 * This isn't enabled by default because it's very simple for end users to bypass if needed.
+	 * If you need to prevent unauthorised access to the generated PDFs you should
+	 * use the standard password instead as that will prevent the PDF being viewed by anyone without your password.
+	 *
+	 * @param  array $settings The 'form_settings_advanced' array
+	 *
+	 * @return array
+	 *
+	 * @since 4.2
+	 */
+	public function get_master_password_field( $settings ) {
+
+		/**
+		 * Use the filter below to return 'true' which will enable the master password field
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_enable_master_password_field/ for usage
+		 */
+		if( ! apply_filters( 'gfpdf_enable_master_password_field', false, $settings ) ) {
+			return $settings;
+		}
+
+		$settings['master_password'] = [
+			'id'         => 'master_password',
+			'name'       => esc_html__( 'Master Password', 'gravity-forms-pdf-extended' ),
+			'type'       => 'text',
+			'desc'       => 'Set the PDF Owner Password which is used to prevent the PDF privileges being changed.',
+			'inputClass' => 'merge-tag-support mt-hide_all_fields',
 		];
 
 		return $settings;

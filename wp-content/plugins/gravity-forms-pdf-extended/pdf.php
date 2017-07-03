@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Gravity PDF
-Version: 4.1.1
+Version: 4.2.1
 Description: Automatically generate highly-customisable PDF documents using Gravity Forms.
 Author: Gravity PDF
 Author URI: https://gravitypdf.com
@@ -37,8 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
  * Set base constants we'll use throughout the plugin
  */
-
-define( 'PDF_EXTENDED_VERSION', '4.1.1' ); /* the current plugin version */
+define( 'PDF_EXTENDED_VERSION', '4.2.1' ); /* the current plugin version */
 define( 'PDF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) ); /* plugin directory path */
 define( 'PDF_PLUGIN_URL', plugin_dir_url( __FILE__ ) ); /* plugin directory url */
 define( 'PDF_PLUGIN_BASENAME', plugin_basename( __FILE__ ) ); /* the plugin basename */
@@ -47,8 +46,6 @@ define( 'PDF_PLUGIN_BASENAME', plugin_basename( __FILE__ ) ); /* the plugin base
  * Add our activation hook and deactivation hooks
  */
 require_once PDF_PLUGIN_DIR . 'src/controller/Controller_Activation.php';
-
-register_activation_hook( __FILE__, array( 'Controller_Activation', 'activation' ) );
 register_deactivation_hook( __FILE__, array( 'Controller_Activation', 'deactivation' ) );
 
 /**
@@ -103,7 +100,7 @@ class GFPDF_Major_Compatibility_Checks {
 	 *
 	 * @since 4.0
 	 */
-	public $required_wp_version = '4.2';
+	public $required_wp_version = '4.4';
 
 	/**
 	 * The plugin's required PHP version

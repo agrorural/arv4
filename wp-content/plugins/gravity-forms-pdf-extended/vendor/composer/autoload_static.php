@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3c045153f0426753986c6dc7ee742664
+class ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31
 {
     public static $files = array (
         'e9b046393eb3376a21bcc1a30bd2fe64' => __DIR__ . '/..' . '/querypath/querypath/src/qp_functions.php',
@@ -25,6 +25,7 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
             'GFPDF\\View\\' => 11,
             'GFPDF\\Test\\' => 11,
             'GFPDF\\Model\\' => 12,
+            'GFPDF\\Helper\\Licensing\\' => 23,
             'GFPDF\\Helper\\Fields\\' => 20,
             'GFPDF\\Helper\\' => 13,
             'GFPDF\\Controller\\' => 17,
@@ -56,6 +57,10 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
         'GFPDF\\Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/model',
+        ),
+        'GFPDF\\Helper\\Licensing\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/helper/licensing',
         ),
         'GFPDF\\Helper\\Fields\\' => 
         array (
@@ -157,6 +162,7 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
         'GFPDF\\Helper\\Fields\\Field_v3_List' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_List.php',
         'GFPDF\\Helper\\Fields\\Field_v3_Products' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_Products.php',
         'GFPDF\\Helper\\Fields\\Field_v3_Section' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_Section.php',
+        'GFPDF\\Helper\\Helper_Abstract_Addon' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Addon.php',
         'GFPDF\\Helper\\Helper_Abstract_Controller' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Controller.php',
         'GFPDF\\Helper\\Helper_Abstract_Fields' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Fields.php',
         'GFPDF\\Helper\\Helper_Abstract_Form' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Form.php',
@@ -169,8 +175,10 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
         'GFPDF\\Helper\\Helper_Form' => __DIR__ . '/../..' . '/src/helper/Helper_Form.php',
         'GFPDF\\Helper\\Helper_Interface_Actions' => __DIR__ . '/../..' . '/src/helper/interface/Helper_Interface_Actions.php',
         'GFPDF\\Helper\\Helper_Interface_Config' => __DIR__ . '/../..' . '/src/helper/interface/Helper_Interface_Config.php',
+        'GFPDF\\Helper\\Helper_Interface_Extension_Settings' => __DIR__ . '/../..' . '/src/helper/interface/Helper_Interface_Extension_Settings.php',
         'GFPDF\\Helper\\Helper_Interface_Filters' => __DIR__ . '/../..' . '/src/helper/interface/Helper_Interface_Filters.php',
         'GFPDF\\Helper\\Helper_Interface_Setup_TearDown' => __DIR__ . '/../..' . '/src/helper/interface/Helper_Interface_Setup_TearDown.php',
+        'GFPDF\\Helper\\Helper_Logger' => __DIR__ . '/../..' . '/src/helper/Helper_Logger.php',
         'GFPDF\\Helper\\Helper_Migration' => __DIR__ . '/../..' . '/src/helper/Helper_Migration.php',
         'GFPDF\\Helper\\Helper_Misc' => __DIR__ . '/../..' . '/src/helper/Helper_Misc.php',
         'GFPDF\\Helper\\Helper_Notices' => __DIR__ . '/../..' . '/src/helper/Helper_Notices.php',
@@ -180,6 +188,7 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
         'GFPDF\\Helper\\Helper_QueryPath' => __DIR__ . '/../..' . '/src/helper/Helper_QueryPath.php',
         'GFPDF\\Helper\\Helper_Singleton' => __DIR__ . '/../..' . '/src/helper/Helper_Singleton.php',
         'GFPDF\\Helper\\Helper_Templates' => __DIR__ . '/../..' . '/src/helper/Helper_Templates.php',
+        'GFPDF\\Helper\\Licensing\\EDD_SL_Plugin_Updater' => __DIR__ . '/../..' . '/src/helper/licensing/EDD_SL_Plugin_Updater.php',
         'GFPDF\\Model\\Model_Actions' => __DIR__ . '/../..' . '/src/model/Model_Actions.php',
         'GFPDF\\Model\\Model_Form_Settings' => __DIR__ . '/../..' . '/src/model/Model_Form_Settings.php',
         'GFPDF\\Model\\Model_Install' => __DIR__ . '/../..' . '/src/model/Model_Install.php',
@@ -374,10 +383,10 @@ class ComposerStaticInit3c045153f0426753986c6dc7ee742664
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3c045153f0426753986c6dc7ee742664::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3c045153f0426753986c6dc7ee742664::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit3c045153f0426753986c6dc7ee742664::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit3c045153f0426753986c6dc7ee742664::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$classMap;
 
         }, null, ClassLoader::class);
     }

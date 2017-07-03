@@ -653,7 +653,11 @@ class Model_PDF extends Helper_Abstract_Model {
 			}
 		}
 
-		return $args;
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_get_pdf_display_list/ for usage
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_get_pdf_display_list', $args, $entry, $form );
 	}
 
 	/**
@@ -734,7 +738,10 @@ class Model_PDF extends Helper_Abstract_Model {
 			$url = esc_url( $url );
 		}
 
-		return $url;
+		/**
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_get_pdf_url', $url, $pid, $id, $download, $print, $esc );
 	}
 
 	/**
@@ -758,7 +765,11 @@ class Model_PDF extends Helper_Abstract_Model {
 			}
 		}
 
-		return $filtered;
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_get_active_pdfs/ for usage
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_get_active_pdfs', $filtered, $pdfs, $entry, $form );
 	}
 
 	/**
@@ -772,8 +783,15 @@ class Model_PDF extends Helper_Abstract_Model {
 	 */
 	public function process_and_save_pdf( Helper_PDF $pdf ) {
 
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_override_pdf_bypass/ for usage
+		 *
+		 * @since 4.2
+		 */
+		$pdf_override = apply_filters( 'gfpdf_override_pdf_bypass', false, $pdf );
+
 		/* Check that the PDF hasn't already been created this session */
-		if ( ! $this->does_pdf_exist( $pdf ) ) {
+		if ( $pdf_override || ! $this->does_pdf_exist( $pdf ) ) {
 
 			/* Ensure Gravity Forms depedancy loaded */
 			$this->misc->maybe_load_gf_entry_detail_class();
@@ -786,7 +804,7 @@ class Model_PDF extends Helper_Abstract_Model {
 			$settings = $pdf->get_settings();
 			$form     = $this->gform->get_form( $entry['form_id'] );
 
-			$args     = $this->templates->get_template_arguments(
+			$args = $this->templates->get_template_arguments(
 				$form,
 				$this->misc->get_fields_sorted_by_id( $form['id'] ),
 				$entry,
@@ -943,7 +961,7 @@ class Model_PDF extends Helper_Abstract_Model {
 				/* Reset the variables each loop */
 				$filename = $tier_2_filename = '';
 
-				if ( $this->maybe_attach_to_notification( $notifications, $settings ) ) {
+				if ( $this->maybe_attach_to_notification( $notifications, $settings, $entry, $form ) ) {
 
 					/* Generate our PDF */
 					$filename = $this->generate_and_save_pdf( $entry, $settings );
@@ -969,20 +987,27 @@ class Model_PDF extends Helper_Abstract_Model {
 	 *
 	 * @param  array $notification The Gravity Form Notification currently being processed
 	 * @param  array $settings     The current Gravity PDF Settings
+	 * @param  array $form         Added to 4.2
+	 * @param  array $entry        Added to 4.2
 	 *
 	 * @return boolean
 	 *
 	 * @since 4.0
 	 */
-	public function maybe_attach_to_notification( $notification, $settings ) {
+	public function maybe_attach_to_notification( $notification, $settings, $entry = [], $form = [] ) {
 
+		$attach = false;
 		if ( isset( $settings['notification'] ) && is_array( $settings['notification'] ) ) {
 			if ( in_array( $notification['id'], $settings['notification'] ) ) {
-				return true;
+				$attach = true;
 			}
 		}
 
-		return false;
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_maybe_attach_to_notification/ for usage
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_maybe_attach_to_notification', $attach, $notification, $settings, $entry, $form );
 	}
 
 	/**
@@ -995,11 +1020,16 @@ class Model_PDF extends Helper_Abstract_Model {
 	 * @since 4.0
 	 */
 	public function maybe_always_save_pdf( $settings ) {
+
+		$save = false;
 		if ( isset( $settings['save'] ) && strtolower( $settings['save'] ) == 'yes' ) {
-			return true;
+			$save = true;
 		}
 
-		return false;
+		/**
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_maybe_always_save_pdf', $save, $settings );
 	}
 
 	/**
@@ -1069,7 +1099,7 @@ class Model_PDF extends Helper_Abstract_Model {
 
 				/* Fix to allow filemtime to work on directories too */
 				if ( is_dir( $file ) ) {
-					$file .= '.';
+					$file      .= '.';
 					$directory = true;
 				}
 
@@ -1157,8 +1187,8 @@ class Model_PDF extends Helper_Abstract_Model {
 	 *
 	 * @return array We tapped into a filter so we need to return the form object
 	 */
-	public function resend_notification_pdf_cleanup( $form, $leads ) {
-		foreach ( $leads as $entry_id ) {
+	public function resend_notification_pdf_cleanup( $form, $entries ) {
+		foreach ( $entries as $entry_id ) {
 			$entry = $this->gform->get_entry( $entry_id );
 			$this->cleanup_pdf( $entry, $form );
 		}
@@ -1202,11 +1232,8 @@ class Model_PDF extends Helper_Abstract_Model {
 	public function set_current_pdf_font( $path, $font ) {
 
 		/* If the current font doesn't exist in mPDF core we'll look in our font folder */
-		if ( ! is_file( $path ) ) {
-
-			if ( is_file( $this->data->template_font_location . $font ) ) {
-				$path = $this->data->template_font_location . $font;
-			}
+		if ( ! is_file( $path ) && is_file( $this->data->template_font_location . $font ) ) {
+			$path = $this->data->template_font_location . $font;
 		}
 
 		return $path;
@@ -1280,13 +1307,13 @@ class Model_PDF extends Helper_Abstract_Model {
 	 */
 	public function get_form_data( $entry ) {
 
-		if ( ! isset( $entry['form_id']) ) {
+		if ( ! isset( $entry['form_id'] ) ) {
 			return [];
 		}
 
 		$form = $this->gform->get_form( $entry['form_id'] );
 
-		if( ! is_array( $form ) ) {
+		if ( ! is_array( $form ) ) {
 			return [];
 		}
 
@@ -1383,7 +1410,11 @@ class Model_PDF extends Helper_Abstract_Model {
 			'data' => $data,
 		] );
 
-		return $data;
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_form_data/ for usage
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_form_data', $data, $entry, $form );
 	}
 
 	/**
@@ -1856,6 +1887,143 @@ class Model_PDF extends Helper_Abstract_Model {
 			$args['settings']['first_footer'] = $this->misc->fix_header_footer( $args['settings']['first_footer'] );
 		}
 
-		return $args;
+		/**
+		 * @since 4.2
+		 */
+		return apply_filters( 'gfpdf_preprocess_template_arguments', $args );
+	}
+
+	/**
+	 * Skip over any fields with a class of "exclude"
+	 *
+	 * @param bool     $action
+	 * @param GF_Field $field
+	 * @param array    $entry
+	 * @param array    $form
+	 * @param array    $config
+	 *
+	 * @return bool
+	 *
+	 * @since 4.2
+	 */
+	public function field_middle_exclude( $action, $field, $entry, $form, $config ) {
+		if ( $action === false ) {
+			$skip_marked_fields = ( isset( $config['meta']['exclude'] ) ) ? $config['meta']['exclude'] : true;
+
+			if ( $skip_marked_fields !== false && strpos( $field->cssClass, 'exclude' ) !== false ) {
+				return true;
+			}
+		}
+
+		return $action;
+	}
+
+	/**
+	 * Determine if we should skip fields hidden with conditional logic
+	 *
+	 * @param bool     $action
+	 * @param GF_Field $field
+	 * @param array    $entry
+	 * @param array    $form
+	 * @param array    $config
+	 *
+	 * @return bool
+	 *
+	 * @since 4.2
+	 */
+	public function field_middle_conditional_fields( $action, $field, $entry, $form, $config ) {
+		if ( $action === false ) {
+			$skip_conditional_fields = ( isset( $config['meta']['conditional'] ) ) ? $config['meta']['conditional'] : true;
+			if ( $skip_conditional_fields === true && GFFormsModel::is_field_hidden( $form, $field, [], $entry ) ) {
+				return true;
+			}
+		}
+
+		return $action;
+	}
+
+	/**
+	 * Determine if we should skip product fields (by default they are grouped at the end of the form)
+	 *
+	 * @param bool     $action
+	 * @param GF_Field $field
+	 * @param array    $entry
+	 * @param array    $form
+	 * @param array    $config
+	 *
+	 * @return bool
+	 *
+	 * @since 4.2
+	 */
+	public function field_middle_product_fields( $action, $field, $entry, $form, $config ) {
+		if ( $action === false ) {
+			$show_individual_product_fields = ( isset( $config['meta']['individual_products'] ) ) ? $config['meta']['individual_products'] : false;
+			if ( $show_individual_product_fields === false && GFCommon::is_product_field( $field->type ) ) {
+				return true;
+			}
+		}
+
+		return $action;
+	}
+
+	/**
+	 * Determine if we should skip HTML fields
+	 *
+	 * @param bool     $action
+	 * @param GF_Field $field
+	 * @param array    $entry
+	 * @param array    $form
+	 * @param array    $config
+	 *
+	 * @return bool
+	 *
+	 * @since 4.2
+	 */
+	public function field_middle_html_fields( $action, $field, $entry, $form, $config ) {
+		if ( $action === false ) {
+			$show_html_fields = ( isset( $config['meta']['html_field'] ) ) ? $config['meta']['html_field'] : false;
+			if ( $show_html_fields === false && $field->type == 'html' ) {
+				return true;
+			}
+		}
+
+		return $action;
+	}
+
+	/**
+	 * Check if the field is on our blacklist and skip
+	 *
+	 * @param bool           $action
+	 * @param GF_Field       $field
+	 * @param array          $entry
+	 * @param array          $form
+	 * @param array          $config
+	 * @param Field_Products $products
+	 * @param array          $blacklisted
+	 *
+	 * @return bool
+	 *
+	 * @since 4.2
+	 */
+	public function field_middle_blacklist( $action, $field, $entry, $form, $config, $products, $blacklisted ) {
+		if ( $action === false ) {
+			if ( in_array( $field->get_input_type(), $blacklisted ) ) {
+				return true;
+			}
+		}
+
+		return $action;
+	}
+
+	/**
+	 * @param array $ignored
+	 *
+	 * @since 4.2
+	 */
+	public function fix_gravityview_frontpage_conflict( $ignored ) {
+		$ignored[] = 'lid';
+		$ignored[] = 'action';
+
+		return $ignored;
 	}
 }

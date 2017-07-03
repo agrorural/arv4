@@ -485,7 +485,7 @@ class Helper_Templates {
 
 			return $this->load_template_config_file( $class_path );
 		} catch ( Exception $e ) {
-			$this->log->addError( $e->getMessage() );
+			$this->log->addWarning( $e->getMessage() );
 		}
 
 		/* If class still empty it's either a legacy template or doesn't have a config. Check for legacy templates which support certain fields */
@@ -534,7 +534,7 @@ class Helper_Templates {
 		}
 
 		/* Insure the class we are trying to load exists and impliments our Helper_Interface_Config interface */
-		if ( class_exists( $fqcn ) && in_array( 'GFPDF\Helper\Helper_Interface_Config', class_implements( $fqcn ) ) ) {
+		if ( class_exists( $fqcn ) ) {
 			return new $fqcn();
 		}
 

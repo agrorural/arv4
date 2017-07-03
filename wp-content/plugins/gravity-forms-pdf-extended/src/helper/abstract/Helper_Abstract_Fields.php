@@ -94,7 +94,7 @@ abstract class Helper_Abstract_Fields {
 	 *
 	 * @since 4.0
 	 */
-	private $cached_results;
+	protected $cached_results;
 
 	/**
 	 * As come fields can have multiple field types we'll use $fieldObject to store the object
@@ -113,7 +113,7 @@ abstract class Helper_Abstract_Fields {
 	 *
 	 * @since 4.0
 	 */
-	protected $misc;
+	public $misc;
 
 	/**
 	 * Set up the object
@@ -229,6 +229,20 @@ abstract class Helper_Abstract_Fields {
 	}
 
 	/**
+	 * Return the current field label
+	 *
+	 * @return string
+	 *
+	 * @since 4.2
+	 */
+	final public function get_label() {
+		/*
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_field_label/ for usage
+		 */
+		return apply_filters( 'gfpdf_field_label', $this->field->label, $this->field, $this->entry );
+	}
+
+	/**
 	 * Used to check if the current field has a value
 	 *
 	 * @since    4.0
@@ -259,7 +273,7 @@ abstract class Helper_Abstract_Fields {
 	public function form_data() {
 
 		$value    = $this->value();
-		$label    = GFFormsModel::get_label( $this->field );
+		$label    = $this->get_label();
 		$field_id = (int) $this->field->id;
 		$data     = [];
 
@@ -287,12 +301,30 @@ abstract class Helper_Abstract_Fields {
 	 */
 	public function html( $value = '', $show_label = true ) {
 
-		$value = $this->encode_tags( $value, $this->field->type ); /* Prevent shortcodes and merge tags being processed from user input */
-		$value = apply_filters( 'gfpdf_field_content', $value, $this->field, GFFormsModel::get_lead_field_value( $this->entry, $this->field ), $this->entry['id'], $this->form['id'] ); /* Backwards compat */
+		/*
+		 * Prevent shortcodes and merge tags being processed from user input fields
+		 * We'll allow them in administrative fields (not hidden fields) and HTML and Section fields
+		 *
+		 * @since 4.2 Skipping Administrative fields was added
+		 */
+		$skip_fields = apply_filters( 'gfpdf_skip_encode_mergetags_on_fields', [ 'html', 'section' ], $this->field, $this->entry, $this->form );
+		if ( ( empty( $this->field->visibility ) || $this->field->visibility !== 'administrative' ) &&
+		     ! in_array( $this->field->type, $skip_fields ) ) {
+			$value = $this->encode_tags( $value );
+		}
 
-		$label = esc_html( GFFormsModel::get_label( $this->field ) );
+		/* Backwards compat */
+		$value = apply_filters( 'gfpdf_field_content', $value, $this->field, GFFormsModel::get_lead_field_value( $this->entry, $this->field ), $this->entry['id'], $this->form['id'] );
 
-		$type = ( ! empty( $this->field->inputType ) ) ? $this->field->inputType : $this->field->type;
+		/**
+		 * See https://gravitypdf.com/documentation/v4/gfpdf_pdf_field_content/ for usage
+		 * @since 4.2
+		 */
+		$value = apply_filters( 'gfpdf_pdf_field_content', $value, $this->field, $this->entry, $this->form );
+		$value = apply_filters( 'gfpdf_pdf_field_content_' . $this->field->get_input_type(), $value, $this->field, $this->entry, $this->form );
+
+		$label = esc_html( $this->get_label() );
+		$type  = $this->field->get_input_type();
 
 		$html = '<div id="field-' . $this->field->id . '" class="gfpdf-' . $type . ' gfpdf-field ' . $this->field->cssClass . '">
 					<div class="inner-container">';
@@ -326,23 +358,15 @@ abstract class Helper_Abstract_Fields {
 	 * Prevent user-data shortcodes from being processed by the PDF templates
 	 *
 	 * @param  string $value The text to be converted
-	 * @param  string $type  The field type
 	 *
 	 * @return string
 	 *
 	 * @since 4.0
 	 */
-	public function encode_tags( $value, $type ) {
+	public function encode_tags( $value ) {
+		$find      = [ '[', ']', '{', '}' ];
+		$converted = [ '&#91;', '&#93;', '&#123;', '&#125;' ];
 
-		$skip_fields = [ 'html', 'signature', 'section' ];
-
-		if ( ! in_array( $type, $skip_fields ) ) {
-
-			$find      = [ '[', ']', '{', '}' ];
-			$converted = [ '&#91;', '&#93;', '&#123;', '&#125;' ];
-			$value     = str_replace( $find, $converted, $value );
-		}
-
-		return $value;
+		return str_replace( $find, $converted, $value );
 	}
 }

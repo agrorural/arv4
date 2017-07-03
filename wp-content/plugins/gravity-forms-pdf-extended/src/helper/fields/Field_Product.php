@@ -56,7 +56,7 @@ class Field_Product extends Helper_Abstract_Fields {
 	 *
 	 * @var \GFPDF\Helper\Helper_Abstract_fields
 	 */
-	private $products;
+	protected $products;
 
 	/**
 	 * Store our products class for later user
@@ -70,6 +70,15 @@ class Field_Product extends Helper_Abstract_Fields {
 	}
 
 	/**
+	 * @return Helper_Abstract_fields
+	 *
+	 * @since 4.2
+	 */
+	public function get_products() {
+		return $this->products;
+	}
+
+	/**
 	 * Return the HTML form data
 	 *
 	 * @return array
@@ -80,7 +89,7 @@ class Field_Product extends Helper_Abstract_Fields {
 
 		$value    = $this->value();
 		$field    = $this->field;
-		$label    = GFFormsModel::get_label( $field );
+		$label    = $this->get_label();
 		$field_id = (int) $field->id;
 		$data     = [];
 		$name     = $price = '';
@@ -191,7 +200,6 @@ class Field_Product extends Helper_Abstract_Fields {
 			case 'product':
 				if ( isset( $value['name'] ) ) {
 					$html .= esc_html( $value['name'] . ' - ' . $value['price'] );
-					$html .= $this->get_option_html( $value['options'] );
 				}
 			break;
 

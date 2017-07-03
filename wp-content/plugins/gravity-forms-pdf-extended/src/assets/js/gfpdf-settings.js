@@ -79,6 +79,9 @@
 
         /* Setup our template loader, if needed */
         this.setupDynamicTemplateFields()
+
+        /* Setup license deactivation, if needed */
+        this.setupLicenseDeactivation()
       }
 
       /**
@@ -99,12 +102,14 @@
         }
 
         /*
+         * Backwards compatibility support prior to Gravity Forms 2.3
+         *
          * Override the gfMergeTagsObj.getTargetElement prototype to better handle CSS special characters in selectors
          * This is because Gravity Forms doesn't correctly espace meta-characters such a [ and ] (which we use extensively as IDs)
          * This functionality assists with the merge tag loader
          * @since 4.0
          */
-        if (typeof form != 'undefined') {
+        if (window.gfMergeTags && typeof form != 'undefined') {
           window.gfMergeTags.getTargetElement = this.resetGfMergeTags
         }
       }
@@ -257,10 +262,10 @@
 
             if ($(this).val() === GFPDF.no || format !== GFPDF.standard) {
               /* hide security password / privileges */
-              $secTable.find('tr:nth-child(3),tr:nth-child(4)').hide()
+              $secTable.find('tr:nth-child(3),tr:nth-child(4),tr:nth-child(5):not(.gfpdf-hidden)').hide()
             } else {
               /* show security password / privileges */
-              $secTable.find('tr:nth-child(3),tr:nth-child(4)').show()
+              $secTable.find('tr:nth-child(3),tr:nth-child(4),tr:nth-child(5):not(.gfpdf-hidden)').show()
             }
 
             if (format !== GFPDF.standard) {
@@ -675,9 +680,12 @@
             /* Only process if the response is valid */
             if (response.fields) {
 
-              /* Remove any existing mergetag-marked inputs so they aren't processed twice after we add our new fields to the DOM */
-              $('.merge-tag-support').removeClass('merge-tag-support')
-              $('.all-merge-tags a.open-list').off('click')
+              /* Backwards compatibility support prior to Gravity Forms 2.3 */
+              if (window.gfMergeTags) {
+                /* Remove any existing mergetag-marked inputs so they aren't processed twice after we add our new fields to the DOM */
+                $('.merge-tag-support').removeClass('merge-tag-support')
+                $('.all-merge-tags a.open-list').off('click')
+              }
 
               /* Remove any previously loaded editors to prevent conflicts loading an editor with same name */
               $.each(response.editors, function (index, value) {
@@ -716,6 +724,57 @@
               self.toggleFontAppearance(response.template_type)
             }
           })
+        })
+      }
+
+      /**
+       * Handles individual add-on license key deactivation via AJAX
+       * @since 4.2
+       */
+      this.setupLicenseDeactivation = function () {
+        $('.gfpdf-deactivate-license').click(function () {
+          /* Do AJAX call so user can deactivate license */
+          var $container = $(this).parent()
+          $container.find('.gf_settings_description label').html('')
+
+          /* Add spinner */
+          var $spinner = $('<img alt="' + GFPDF.spinnerAlt + '" src="' + GFPDF.spinnerUrl + '" class="gfpdf-spinner" />')
+
+          /* Add our spinner */
+          $(this).append($spinner)
+
+          /* Set up ajax data */
+          var slug = $(this).data('addon-name')
+
+          var data = {
+            'action': 'gfpdf_deactivate_license',
+            'addon_name': slug,
+            'license': $(this).data('license'),
+            'nonce': $(this).data('nonce'),
+          }
+
+          /* Do ajax call */
+          self.ajax(data, function (response) {
+
+            /* Remove our loading spinner */
+            $spinner.remove()
+
+            if (response.success) {
+              /* cleanup inputs */
+              $('#gfpdf_settings\\[license_' + slug + '\\]').val('')
+              $('#gfpdf_settings\\[license_' + slug + '_message\\]').val('')
+              $('#gfpdf_settings\\[license_' + slug + '_status\\]').val('')
+              $container.find('i').remove()
+              $container.find('a').remove()
+
+              $container.find('.gf_settings_description label').html(response.success)
+            } else {
+              /* Show error message */
+              $container.find('.gf_settings_description label').html(response.error)
+            }
+          })
+
+          return false
         })
       }
 
@@ -872,9 +931,18 @@
        * @since 4.0
        */
       this.doMergetags = function () {
-        if (typeof form != 'undefined') {
+
+        /* Backwards compatibility support prior to Gravity Forms 2.3 */
+        if (window.gfMergeTags && typeof form != 'undefined') {
           window.gfMergeTags = new gfMergeTagsObj(form)
           window.gfMergeTags.getTargetElement = this.resetGfMergeTags
+        }
+
+        /* Gravity Forms 2.3+ Merge tag support */
+        if (!window.gfMergeTags && typeof form != 'undefined' && $('.merge-tag-support').length >= 0) {
+          $('.merge-tag-support').each(function () {
+            new gfMergeTagsObj(form, $(this))
+          });
         }
       }
 
