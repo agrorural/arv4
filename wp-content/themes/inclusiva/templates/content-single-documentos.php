@@ -8,7 +8,11 @@
 		$post__slug = $post->post_name;
 		$post__slug__up = strtoupper($post__slug);
 
-    $count = count($term_list);
+    	$count = count($term_list);
+
+    	echo '<pre>';
+    	var_dump($count);
+    	echo '</pre>';
 		if($term_list[0]->slug == 'at'){
 			$pa__at__1 = get_field_object('pa__at__1');
 			$pa__at__2 = get_field_object('pa__at__2');
@@ -22,11 +26,13 @@
 				var_dump($pa__at__3_1__values);
 
 			echo '</pre>';
+
+			for ($i=0; $i < count($pa__at__3_1__values); $i++) {
+				echo '<li>'. $pa__at__3_1__values[$i] .'</li>';
+			}
 		}
 
-		for ($i=0; $i < count($pa__at__3_1__values); $i++) {
-			echo '<li>'. $pa__at__3_1__values[$i] .'</li>';
-		}
+
 
 	?>
 
@@ -63,7 +69,11 @@
     <footer>
       <?php if($rde_link == 'Publicado') {?>
         <?php if ( $count > 1 ) { ?>
-          <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+        	<?php if ( $term_list[0]->slug == 'pac' ) { ?>
+          		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rda/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+          	<?php }else{?>
+          		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+          	<?php } ?>
         <?php }else{ ?>
           <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
         <?php } ?>

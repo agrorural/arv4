@@ -245,15 +245,15 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: src/helper/Helper_Data.php:249, src/helper/Helper_Templates.php:409
+#: src/helper/Helper_Data.php:249
 msgid "Version"
 msgstr ""
 
-#: src/helper/Helper_Data.php:250, src/helper/Helper_Templates.php:413
+#: src/helper/Helper_Data.php:250
 msgid "Group"
 msgstr ""
 
-#: src/helper/Helper_Data.php:251, src/helper/Helper_Templates.php:415
+#: src/helper/Helper_Data.php:251
 msgid "Tags"
 msgstr ""
 
@@ -921,26 +921,6 @@ msgstr ""
 msgid "Legacy"
 msgstr ""
 
-#: src/helper/Helper_Templates.php:408
-msgid "Template Name"
-msgstr ""
-
-#: src/helper/Helper_Templates.php:410
-msgid "Description"
-msgstr ""
-
-#: src/helper/Helper_Templates.php:411
-msgid "Author"
-msgstr ""
-
-#: src/helper/Helper_Templates.php:412
-msgid "Author URI"
-msgstr ""
-
-#: src/helper/Helper_Templates.php:414
-msgid "Required PDF Version"
-msgstr ""
-
 #: src/model/Model_Actions.php:347
 msgid "No configuration.php file found for site #%s"
 msgstr ""
@@ -1341,75 +1321,75 @@ msgstr ""
 msgid "User-Defined Fonts"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1072
+#: src/helper/abstract/Helper_Abstract_Options.php:1075
 msgid "Copy"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1073
+#: src/helper/abstract/Helper_Abstract_Options.php:1076
 msgid "Print - Low Resolution"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1074
+#: src/helper/abstract/Helper_Abstract_Options.php:1077
 msgid "Print - High Resolution"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1075
+#: src/helper/abstract/Helper_Abstract_Options.php:1078
 msgid "Modify"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1076
+#: src/helper/abstract/Helper_Abstract_Options.php:1079
 msgid "Annotate"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1077
+#: src/helper/abstract/Helper_Abstract_Options.php:1080
 msgid "Fill Forms"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1078
+#: src/helper/abstract/Helper_Abstract_Options.php:1081
 msgid "Extract"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1079
+#: src/helper/abstract/Helper_Abstract_Options.php:1082
 msgid "Assemble"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1204
+#: src/helper/abstract/Helper_Abstract_Options.php:1207
 msgid "Settings updated."
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1334, src/helper/abstract/Helper_Abstract_Options.php:1342, src/helper/abstract/Helper_Abstract_Options.php:1350
+#: src/helper/abstract/Helper_Abstract_Options.php:1356, src/helper/abstract/Helper_Abstract_Options.php:1364, src/helper/abstract/Helper_Abstract_Options.php:1372
 msgid "PDF Settings could not be saved. Please enter all required information below."
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1666
+#: src/helper/abstract/Helper_Abstract_Options.php:1688
 msgid "Deactivate License"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1957, src/helper/abstract/Helper_Abstract_Options.php:1958
+#: src/helper/abstract/Helper_Abstract_Options.php:1979, src/helper/abstract/Helper_Abstract_Options.php:1980
 msgid "Select Media"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:1959
+#: src/helper/abstract/Helper_Abstract_Options.php:1981
 msgid "Upload File"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:2116
+#: src/helper/abstract/Helper_Abstract_Options.php:2138
 msgid "Width"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:2117
+#: src/helper/abstract/Helper_Abstract_Options.php:2139
 msgid "Height"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:2120
+#: src/helper/abstract/Helper_Abstract_Options.php:2142
 msgid "mm"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:2121
+#: src/helper/abstract/Helper_Abstract_Options.php:2143
 msgid "inches"
 msgstr ""
 
-#: src/helper/abstract/Helper_Abstract_Options.php:2181
+#: src/helper/abstract/Helper_Abstract_Options.php:2203
 msgid "The callback used for the %s setting is missing."
 msgstr ""
 

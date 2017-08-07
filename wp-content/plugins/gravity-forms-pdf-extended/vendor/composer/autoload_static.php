@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31
+class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
 {
     public static $files = array (
         'e9b046393eb3376a21bcc1a30bd2fe64' => __DIR__ . '/..' . '/querypath/querypath/src/qp_functions.php',
@@ -383,10 +383,10 @@ class ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitfe9e5b51941cafd836fe28a6375b8e31::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -173,7 +173,7 @@ class CPM_Notification {
             $file_name = 'emails/update-project.php';
 
 
-            $subject = sprintf( __( '[%s] Updated Project Invitation: %s', 'cpm' ), $this->get_site_name(), get_post_field( 'post_title', $project_id ) );
+            $subject = sprintf( __( '[%s] Project Update Invitation: %s', 'cpm' ), $this->get_site_name(), get_post_field( 'post_title', $project_id ) );
 
             // cutoff at 78th character
             if ( cpm_strlen( $subject ) > 78 ) {
@@ -317,7 +317,7 @@ class CPM_Notification {
         $this->check_email_url();
         $file_name   = 'emails/update-comment.php';
         $parent_post = get_comment( $comment_id );
-        $subject     = sprintf( __( '[%s][%s] Uudate Comment on: %s', 'cpm' ), $this->get_site_name(), get_post_field( 'post_title', $project_id ), get_post_field( 'post_title', $parent_post->comment_post_ID ) );
+        $subject     = sprintf( __( '[%s][%s] Update Comment on: %s', 'cpm' ), $this->get_site_name(), get_post_field( 'post_title', $project_id ), get_post_field( 'post_title', $parent_post->comment_post_ID ) );
 
         // cutoff at 78th character
         if ( cpm_strlen( $subject ) > 78 ) {
@@ -365,11 +365,12 @@ class CPM_Notification {
         if ( cpm_strlen( $subject ) > 78 ) {
             $subject = substr( $subject, 0, 78 ) . '...';
         }
-        $assign_user =  (!is_array ($_POST['task_assign']) ) ? explode( ',', $_POST['task_assign'] ) : $_POST['task_assign'] ;
+        $assign_user =  (!is_array ($_POST['task_assign']) ) ? explode( ',', $_POST['task_assign'] ) : $_POST['task_assign'];
+
         foreach ( $assign_user as $key => $user_id ) {
             $user = get_user_by( 'id', intval( $user_id ) );
 
-            if ( ! $this->filter_email( $user_id ) ) {
+            if ( ! $user || ! $this->filter_email( $user_id ) ) {
                 continue;
             }
 

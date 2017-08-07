@@ -390,6 +390,15 @@ var cpm_task_store = {
 
         inline_display: function(state, inline_display) {
             state.inline_display = inline_display;
+        },
+
+        loading_effect: function(state, effect) {
+            state.loading = effect.mode;
+        },
+
+        afterUpdateTaskElement: function(state, task) {
+            jQuery.extend(true, state.lists[task.list_index].tasks[task.task_index], task.task);
+            state.lists[task.list_index].tasks[task.task_index].assigned_to = task.task.assigned_to;
         }
 
     }

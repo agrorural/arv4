@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - BuddyPress - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-05-28 13:04:35+0000\n"
+"PO-Revision-Date: 2017-06-24 21:54:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,10 +130,44 @@ msgstr "Más ganchos para mensajes"
 msgid "Full-width BuddyPress layout for Twenty Seventeen theme."
 msgstr "BuddyPress con ancho completo con la plantilla Twenty Seventeen."
 
+#. translators: 1: Link to the Codex article, 2: functions.php
+#: bp-core/classes/class-bp-admin.php:650
+msgid "To change the default two-column page layout to a full-width layout as seen in the image, add the <a href=\"%1$s\">following code</a> to the  %2$s file of your Twenty Seventeen child theme."
+msgstr "Para cambiar la estructura por defecto de página a dos columnas a una estructura de ancho completo como se ve en la imagen añade el <a href=\"%1$s\">siguiente código</a> al archivo %2$s de tu tema hijo de Twenty Seventeen."
+
+#: bp-core/classes/class-bp-admin.php:647
+msgid "BuddyPress looks great in WordPress's latest default theme with the new Twenty Seventeen companion stylesheet."
+msgstr "BuddyPress se ve fantástico en el último tema por defecto de WordPress con la nueva hoja de estilos adicional de Twenty Seventeen."
+
+#: bp-core/classes/class-bp-admin.php:642
+msgid "Allow users to unsubscribe from BuddyPress email notifications in some email clients such as Gmail (web), when properly configured."
+msgstr "Permite que los usuarios anulen la suscripción de los avisos por correo electrónico de BuddyPress en algunos clientes de correo como Gmail (web), si está bien configurado."
+
+#: bp-core/classes/class-bp-admin.php:641
+msgid "Email header showing the list-unsubscribe feature."
+msgstr "Cabecera del correo electrónico que se muestra en la funcionalidad de anular la suscripción a la lista."
+
 #. translators: %s: List-Unsubscribe
 #: bp-core/classes/class-bp-admin.php:638
 msgid "Support for %s header in emails"
 msgstr "Compatibilidad con cabecera %s en los correos electrónicos"
+
+#: bp-core/classes/class-bp-admin.php:632
+msgid "When you click on the username on the \"Users > Manage Signups\" page, you can now view profile data entered by the user at the time of registration."
+msgstr "Cuando haces clic en el nombre de usuario en la página de \"Usuarios > Gestionar altas\" ahora puedes ver los datos del perfil introducidos por el usuario en el momento en el que es registró."
+
+#: bp-core/classes/class-bp-admin.php:631
+msgid "The improved pending account screen."
+msgstr "La mejorada pantalla de cuentas pendientes."
+
+#: bp-core/classes/class-bp-admin.php:630
+msgid "More helpful \"Activate Pending Accounts\" screen"
+msgstr "Pantalla de \"Activar cuentas pendientes\" más útil"
+
+#. translators: 1: BP REST API, 2: Link to Codex article
+#: bp-core/classes/class-bp-admin.php:616
+msgid "To continue the migration of legacy code to modern standards and techniques necessary for the %1$s project and other new features moving forward, <a href=\"%2$s\">BuddyPress 2.8 requires at least PHP 5.3</a>. This will allow us to build better, robust, and secure code, benefitting developers and users now and in the future."
+msgstr "Para seguir con la migración del código heredado a los modernos estándares y técnicas necesarias para el proyecto %1$s y otras nuevas funcionalidades en marcha  <a href=\"%2$s\">BuddyPress 2.8 requiere al menos PHP 5.3</a>. Esto nos permitirá crear un código mejor, más robusto y seguro, beneficiando a desarrolladores, ahora y en el futuro."
 
 #: bp-core/classes/class-bp-admin.php:613
 msgid "Modernizing the Codebase"
@@ -747,6 +781,18 @@ msgstr "¡Todo listo! Los ajustes de configuración han sido guardados en el arc
 msgid "%s file location:"
 msgstr "Ubicación del archivo %s:"
 
+#: bp-core/classes/class-bp-core-bp-options-nav-backcompat.php:40
+#: bp-core/classes/class-bp-core-bp-options-nav-backcompat.php:80
+msgid "These globals should not be used directly and are deprecated. Please use the BuddyPress nav functions instead."
+msgstr "Estas globales no deben usarse directamente ya que son obsoletas. Por favor, usa en su lugar las funciones nav de BuddyPress."
+
+#: bp-core/classes/class-bp-core-bp-nav-backcompat.php:66
+#: bp-core/classes/class-bp-core-bp-nav-backcompat.php:100
+#: bp-core/classes/class-bp-core-bp-nav-backcompat.php:125
+#: bp-core/classes/class-bp-core-bp-nav-backcompat.php:151
+msgid "The bp_nav and bp_options_nav globals should not be used directly and are deprecated. Please use the BuddyPress nav functions instead."
+msgstr "Las globales bp_nav y bp_options_nav no deberían usarse directamente ya que son obsoletas. Por favor, usa en su lugar las funciones nav de BuddyPress."
+
 #: bp-core/classes/class-bp-admin.php:986
 msgctxt "Email post type"
 msgid "Situations"
@@ -766,6 +812,10 @@ msgstr "Has publicado una palabra inapropiada."
 msgid "You have posted too many links"
 msgstr "Has publicado demasiados enlaces"
 
+#: bp-core/admin/bp-core-admin-tools.php:488
+msgid "It looks like you have more sites to record. Resume recording by checking the \"Repopulate site tracking records\" option."
+msgstr "Parece que tienes más sitios que grabar. Revisa lo hecho marcando la opción \"Repoblar los registros de seguimiento del sitio\"."
+
 #: bp-core/admin/bp-core-admin-functions.php:305
 msgid "The following active BuddyPress Components do not have associated WordPress Pages: %s."
 msgstr "Los siguientes componentes de Buddypress no tienen asociada una página en wordpress: %s"
@@ -784,6 +834,10 @@ msgstr "<a href=\"%1$s\">Acceder</a> como \"%2$s\" utilizando tu contraseña exi
 msgid "%s is your new site."
 msgstr "%s es tu nuevo sitio."
 
+#: bp-activity/classes/class-bp-activity-oembed-extension.php:194
+msgid "Embedded Activity Item"
+msgstr "Elemento incrustado en la actividad"
+
 #. translators: %s: Unread mention count for the current user
 #: bp-activity/classes/class-bp-activity-component.php:268
 msgctxt "Toolbar Mention logged in user"
@@ -797,6 +851,10 @@ msgstr "%1$s respondió a uno de tus comentarios de actividad"
 #: bp-activity/bp-activity-notifications.php:70
 msgid "You have %1$d new comment replies"
 msgstr "Tienes %1$d nuevas respuestas a comentarios"
+
+#: bp-activity/bp-activity-notifications.php:65
+msgid "New Activity comment reply"
+msgstr "Nueva respuesta a comentarios en la actividad"
 
 #: bp-activity/bp-activity-notifications.php:59
 msgid "%1$s commented on one of your updates"
@@ -923,6 +981,10 @@ msgstr "&#x1f31f;Rockstars recientes&#x1f31f;"
 #: bp-core/classes/class-bp-admin.php:705
 msgid "Localization Improvements"
 msgstr "Mejoras en la localización"
+
+#: bp-core/classes/class-bp-admin.php:646
+msgid "Twenty Seventeen Companion Stylesheet"
+msgstr "Hoja de estilos adicional de Twenty Seventeen"
 
 #: bp-core/classes/class-bp-admin.php:353
 #: bp-core/classes/class-bp-admin.php:354
@@ -5393,7 +5455,7 @@ msgstr "Perfil extendido"
 #: bp-members/classes/class-bp-members-admin.php:484
 #: bp-members/classes/class-bp-members-admin.php:485
 msgid "Manage Signups"
-msgstr "Administrar Inscripciones"
+msgstr "Gestionar altas"
 
 #: bp-members/classes/class-bp-members-admin.php:412
 #: bp-xprofile/bp-xprofile-screens.php:166
@@ -7126,7 +7188,7 @@ msgstr "Integración de @ menciones"
 
 #: bp-forums/deprecated/1.6.php:75 bp-forums/deprecated/1.6.php:225
 msgid "Activity Stream Integration"
-msgstr "Integración del seguimiento de actualizaciones"
+msgstr "Integración de la cronología de actividad"
 
 #: bp-forums/deprecated/1.6.php:74 bp-forums/deprecated/1.6.php:224
 msgid "Member Profile Integration"
@@ -8425,6 +8487,10 @@ msgctxt "About screen, website links"
 msgid "Learn more:"
 msgstr "Aprende más"
 
+#: bp-core/classes/class-bp-admin.php:710
+msgid "Regular updates to inline code documentation make it easier for developers to understand how BuddyPress works."
+msgstr "Las actualizaciones habituales de la documentación del código incluido facilitan a los desarrolladores comprender cómo funciona BuddyPress."
+
 #: bp-core/classes/class-bp-admin.php:709
 msgid "Developer Reference"
 msgstr "Referencia de desarrollador"
@@ -8451,7 +8517,7 @@ msgstr "Gestionar grupos"
 
 #: bp-core/classes/class-bp-admin.php:591
 msgid "Moderate Activity Streams"
-msgstr "Moderar Actividad"
+msgstr "Moderar cronología de actividad"
 
 #: bp-core/classes/class-bp-admin.php:589
 msgid "Manage User Signups"
@@ -8727,15 +8793,15 @@ msgstr "Habilitar la sincronización de perfil de BuddyPress a Wordpress."
 
 #: bp-core/admin/bp-core-admin-settings.php:97
 msgid "Automatically check for new items while viewing the activity stream"
-msgstr "Comprobar automáticamente nuevos elementos cuando se está viendo el flujo de actividad"
+msgstr "Comprobar automáticamente nuevos elementos cuando se está viendo la cronología de actividad"
 
 #: bp-core/admin/bp-core-admin-settings.php:83
 msgid "Allow activity stream commenting on blog and forum posts"
-msgstr "Permite el flujo de actividad en los comentarios de los artículos del Blog y del Foro"
+msgstr "Permite la cronología de actividad en los comentarios de los artículos del Blog y del Foro"
 
 #: bp-core/admin/bp-core-admin-settings.php:69
 msgid "Allow Akismet to scan for activity stream spam"
-msgstr "Permitir a Akismet escanear buscando actividad que sea spam"
+msgstr "Permitir a Akismet escanear buscando spam en la cronología de actividad"
 
 #: bp-core/admin/bp-core-admin-settings.php:45
 msgid "Allow registered members to delete their own accounts"
@@ -8907,7 +8973,7 @@ msgstr "Foros de grupo (Obsoleto)"
 
 #: bp-core/bp-core-functions.php:2498
 msgid "Groups allow your users to organize themselves into specific public, private or hidden sections with separate activity streams and member listings."
-msgstr "Los grupos permiten que sus usuarios se organicen en secciones específicas en modo público, privado u oculto con flujos de actividad y lista de miembros separada."
+msgstr "Los grupos permiten que sus usuarios se organicen en secciones específicas en modo público, privado u oculto con cronologías de actividad y lista de miembros separada."
 
 #: bp-core/bp-core-functions.php:2497
 msgid "User Groups"
@@ -8915,7 +8981,7 @@ msgstr "Grupos del usuario"
 
 #: bp-core/bp-core-functions.php:2490
 msgid "Global, personal, and group activity streams with threaded commenting, direct posting, favoriting, and @mentions, all with full RSS feed and email notification support."
-msgstr "Flujos de actividad globales, personales y de grupo con comentarios anidados, publicaciones directas, favoritos y @menciones, todos con RSS feeds completos y soporte de aviso por correo electrónico."
+msgstr "Cronologías de actividad globales, personales y de grupo con comentarios anidados, publicaciones directas, favoritos y @menciones, todos con RSS feeds completos y soporte de aviso por correo electrónico."
 
 #: bp-core/bp-core-functions.php:2486
 msgid "Allow your users to talk to each other directly and in private. Not just limited to one-on-one discussions, messages can be sent between any number of members."
@@ -9587,7 +9653,7 @@ msgstr "Actividad global"
 #: bp-activity/classes/class-bp-activity-component.php:30
 #: bp-core/bp-core-functions.php:2489
 msgid "Activity Streams"
-msgstr "Seguimiento de Actividades"
+msgstr "Cronologías de actividad"
 
 #: bp-activity/bp-activity-functions.php:3150
 msgid "Thumbnail"
@@ -10007,7 +10073,7 @@ msgstr "<a href=\"https://buddypress.org/support/\">Foros de soporte</a>"
 
 #: bp-activity/bp-activity-admin.php:243
 msgid "<a href=\"https://codex.buddypress.org/administrator-guide/activity-stream-management-panels/\">Managing Activity</a>"
-msgstr "<a href=\"https://codex.buddypress.org/administrator-guide/activity-stream-management-panels/\">Administrando la actividad</a>"
+msgstr "<a href=\"https://codex.buddypress.org/administrator-guide/activity-stream-management-panels/\">Administrando la cronología</a>"
 
 #: bp-activity/bp-activity-admin.php:242 bp-activity/bp-activity-admin.php:294
 #: bp-core/admin/bp-core-admin-functions.php:494

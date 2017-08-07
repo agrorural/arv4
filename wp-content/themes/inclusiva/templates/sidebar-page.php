@@ -31,18 +31,63 @@
 	?>
 <?php } else if ( is_page( array ( 'Contacto'))){ ?>
 
-<section class="widget text-2 widget_text"><h3>La Institución</h3>			<div class="textwidget"><address>
-  <strong><a href="<?php echo bloginfo('url'); ?>">AGRO RURAL</a></strong><br>
-<a href="https://www.google.com.pe/maps/place/AGRO+RURAL/@-12.0796521,-77.0425728,15z/data=!4m2!3m1!1s0x0:0x6f311078be8946fa">Av. Salaverry 1388,<br>
-  Jesús María, Lima 11, PE</a><br>
-  <abbr title="Teléfono">T:</abbr> (511) 205-8030
-</address>
+<section class="widget text-2 widget_text">
+	<h3>Sedes</h3>	
+	<div class="textwidget">
+		<?php
+			global $paged;
+			global $wp_query;
+			$temp = $wp_query; 
+			$wp_query = null; 
+			$wp_query = new WP_Query(); 
+			$wp_query->query('post_type=directorios&posts_per_page=1&grupos=organos-de-direccion&paged='.$paged);
+			while ($wp_query->have_posts()) : $wp_query->the_post(); 
 
-<address>
-  <strong>Contacto</strong><br>
-  <a href="mailto:webmaster@agrorural.gob.pe">webmaster@agrorural.gob.pe</a>
-</address></div>
-		</section>
+			$dir_direccion = get_field('dir_direccion'); 
+			
+		?>
+
+		<address>
+			<strong>Sede Central</strong><br>
+			<a href="https://www.google.com.pe/maps/place/AGRO+RURAL/@-12.0796521,-77.0425728,15z/data=!4m2!3m1!1s0x0:0x6f311078be8946fa"><?php echo $dir_direccion; ?></a><br>
+			<abbr title="Teléfono">T:</abbr> (511) 205-8030 
+		</address>
+
+		<?php endwhile; ?>
+
+		<?php 
+		  $wp_query = null; 
+		  $wp_query = $temp; 
+		?>
+
+		<?php
+		global $paged;
+		global $wp_query;
+		$temp = $wp_query; 
+		$wp_query = null; 
+		$wp_query = new WP_Query(); 
+		$wp_query->query('post_type=directorios&posts_per_page=-1&grupos=organos-desconcentrados&paged='.$paged);
+		while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
+		$dir_direccion = get_field('dir_direccion'); 
+		$dir_telefono = get_field('dir_telefono');
+	?>
+
+		<address>
+			<strong>Sede <?php echo the_title(); ?></strong><br>
+			<?php echo $dir_direccion; ?><br>
+			<abbr title="Teléfono">T:</abbr> <?php echo $dir_telefono; ?>
+		</address>
+
+	<?php endwhile; ?>
+
+	<?php 
+	  $wp_query = null; 
+	  $wp_query = $temp; 
+	?>
+
+	</div>
+</section>
 
 <?php } elseif ( is_page( array (
 									'objetivos',

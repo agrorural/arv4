@@ -1,5 +1,5 @@
 === WP Project Manager ===
-Contributors: tareq1988, wedevs, asaquzzaman, wpasikur
+Contributors: tareq1988, wedevs, asaquzzaman, wpasikur, mdmamun-1
 Donate Link: https://tareq.co/donate/
 Tags: project, manager, project manager, project management, todo, todo list, task, basecamp, milestone, message, file, comment, client, team, tracking, planning, lists, reporting, project management plugin for wordpress, project manager, project manager plugin for wordpress, wordpress project management
 Requires at least: 4.0
@@ -121,6 +121,38 @@ A. Found any bugs? Please create an [issue](https://github.com/tareq1988/wp-proj
 13. Project Settings -> Email Settings Tab
 
 == Changelog ==
+
+= 1.6.7 - August 01, 2017 =
+
+ * [new] Js Tiptip library has been added.
+ * [update] Condition applied when showing calender on setting tast start date.
+ * [update] Date icon has been shown if no date was set.
+ * [update] Description icon has been shown if no description was set.
+ * [update] Co-Worker icon has been shown if no Co-Worker was set in the task.
+ * [fix] Double date picker shown at task date update time.
+ * [fix] Undefined index errors.
+
+= 1.6.6 - July 31, 2017 =
+
+ * [new] Task title update from single task page.
+ * [new] Task privacy update from single task page.
+ * [new] Task description update from single task page.
+ * [new] Task start and end date update from single task page.
+ * [new] Add user/co-worker/client from single task page.
+ * [fix] Unable to complete task.
+ * [fix] When complete a task then this completed task shown double in the to-do list.
+ * [fix] Double "New To-Do" button shown.
+ * [update] 'Get porject id' function always return false.
+ * [update] Design change for single task page. 
+
+= 1.6.5 - July 6, 2017 =
+
+ * [fix] Co-worker can not show the list corner menu.
+ * [fix] Co-Worker could not notifying when add or update project.
+ * [fix] Double "New To-Do" button shown and also cpm-new-todolist-form has shown when clicked "New To-Do" List button.
+ * [fix] Project create permission.
+ * [fix] Get complete and incomplete task query
+ * [fix] Change routing effect at todo-list page to another page
 
 = 1.6.4 - June 22, 2017 =
 

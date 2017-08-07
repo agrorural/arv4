@@ -5,7 +5,7 @@
  * Description: WordPress Project Management plugin. Manage your projects and tasks, get things done.
  * Author: Tareq Hasan
  * Author URI: https://tareq.co
- * Version: 1.6.4
+ * Version: 1.6.7
  * License: GPL2
  */
 /**
@@ -34,6 +34,9 @@
  * **********************************************************************
  */
 
+// don't call the file directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Project Manager bootstrap class
  *
@@ -46,7 +49,7 @@ class WeDevs_CPM {
      *
      * @var string
      */
-    public $version = '1.6.4';
+    public $version = '1.6.7';
 
      /**
      * Plugin Database version
@@ -150,7 +153,7 @@ class WeDevs_CPM {
 
         //Execute only plugin install time
         register_activation_hook( __FILE__, array( $this, 'install' ) );
-
+        
         //Do some thing after load this plugin
         do_action( 'cpm_loaded' );
     }
@@ -173,7 +176,7 @@ class WeDevs_CPM {
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
         add_action( 'plugins_loaded', array( $this, 'cpm_content_filter' ) );
         add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-        add_action( 'wp_enqueue_scripts', array( $this, 'admin_scripts' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
         add_action( 'admin_footer', array( $this, 'admin_js_templates' ) );
     }
 
@@ -187,13 +190,16 @@ class WeDevs_CPM {
      * @return array
      */
     function plugin_action_links( $links, $file ) {
-
         if ( $file == plugin_basename( __FILE__ ) ) {
             $new_links = array(
-                sprintf( '<a href="%s">%s</a>', 'http://wedevs.com/plugin/wp-project-manager/', __( 'Pro Version', 'cpm' ) ),
-                sprintf( '<a href="%s">%s</a>', 'http://wedevs.com/wp-project-manager-add-ons/', __( 'Add-ons', 'cpm' ) ),
+                sprintf( '<a href="%s">%s</a>', 'https://wedevs.com/wp-project-manager-pro/pricing/', __( 'Pro Version', 'cpm' ) ),
+                sprintf( '<a href="%s">%s</a>', 'https://wedevs.com/wp-project-manager-pro/extensions/', __( 'Add-ons', 'cpm' ) ),
                 sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=cpm_settings' ), __( 'Settings', 'cpm' ) )
             );
+
+            if ( cpm_is_pro() ) {
+                unset( $new_links[0] );
+            }
 
             return array_merge( $new_links, $links );
         }
@@ -429,7 +435,7 @@ class WeDevs_CPM {
 
         wp_register_script( 'cpm-vue-multiselect', CPM_URL . '/assets/js/vue-multiselect/vue-multiselect.min.js', array ( 'jquery' ), false, true );
         wp_register_script( 'cpm-toastr', CPM_URL . '/assets/js/toastr/toastr.min.js', array ( 'jquery' ), false, true );
-        wp_register_script( 'cpm-vue-focus', CPM_URL . '/assets/js/vue/vue.focus.min.js', array ( 'cpm-vue' ), false, true );
+        //wp_register_script( 'cpm-vue-focus', CPM_URL . '/assets/js/vue/vue.focus.min.js', array ( 'cpm-vue' ), false, true );
         wp_register_script( 'cpm-tiny-mce-component', CPM_URL. '/assets/js/text-editor/text-editor.js', array ( 'jquery' ), false, true );
         wp_register_script( 'cpm-task-mixin', CPM_URL . '/assets/js/task-component-mixin.js', array ( 'jquery' ), false, true );
         wp_register_script( 'cpm-task-store', CPM_URL . '/assets/js/task-store.js', array ( 'jquery' ), false, true );
