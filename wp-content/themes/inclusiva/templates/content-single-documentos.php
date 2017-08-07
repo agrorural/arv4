@@ -10,9 +10,9 @@
 
     	$count = count($term_list);
 
-    	echo '<pre>';
-    	var_dump($count);
-    	echo '</pre>';
+    	//echo '<pre>';
+    	//var_dump($count);
+    	//echo '</pre>';
 		if($term_list[0]->slug == 'at'){
 			$pa__at__1 = get_field_object('pa__at__1');
 			$pa__at__2 = get_field_object('pa__at__2');
