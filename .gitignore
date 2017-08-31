@@ -26,7 +26,7 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-#macOS Files
+# macOS Files
 .DS_Store
 wp-content/.DS_Store
 wp-content/themes/.DS_Store
@@ -34,6 +34,9 @@ wp-content/themes/inclusiva/.DS_Store
 wp-content/themes/inclusiva/assets/.DS_Store
 .Trashes
 Thumbs.db
+
+# PStorm
+.idea
 
 # WordPress One!
 .htaccess*

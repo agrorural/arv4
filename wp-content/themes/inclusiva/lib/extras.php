@@ -76,3 +76,71 @@ return get_bloginfo('url');
 add_shortcode('url', __NAMESPACE__ . '\\agro_url_shortcode');
 
 add_filter('widget_text', 'do_shortcode');
+
+//Buscador en ajax
+function insta_search(){
+    ob_start();
+    ?>
+    <div id="insta-search">
+        <form class="form-inline" action="" method="GET">
+            <div class="form-group">
+                <?php $currentYear = date('Y'); ?>
+
+                <label for="txtKeyword">Palabra</label>
+                <input type="text" id="txtKeyword" class="form-control" name="txtKeyword">
+
+                <label for="optMonth">Mes</label>
+                <select id="optMonth" class="form-control" name="optMonth">
+                    <option value="">Todos</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+                <label for="optYear">Año</label>
+                <select id="optYear" class="form-control" name="optYear">
+                    <option value="<?php echo $currentYear; ?>"><?php echo $currentYear; ?></option>
+                    <?php
+                        for ($i = $currentYear -1; $i >= 2009; $i--) {
+                            echo ' <option value="' . $i .'">' . $i . '</option>';
+                        }
+                    ?>
+                </select>
+
+                <label for="optPerPage">Listar</label>
+                <select id="optPerPage" class="form-control" name="optPerPage">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+
+                <label for="optPage">Página</label>
+                <select id="optPage" class="form-control" name="optPage">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <button id="btnDocumento" type="submit" class="btn btn-default">Buscar</button>
+        </form>
+
+        <ul></ul>
+        <div class="wp-pagenavi"></div>
+    </div>
+
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('instasearch', __NAMESPACE__ . '\\insta_search');

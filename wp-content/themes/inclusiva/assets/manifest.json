@@ -28,6 +28,11 @@
         "scripts/directory-map.js"
       ]
     },
+    "is.js": {
+      "files": [
+        "scripts/is.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }

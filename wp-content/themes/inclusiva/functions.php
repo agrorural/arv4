@@ -331,3 +331,91 @@ function custom_breadcrumbs() {
       //var_dump($the_query);
       wp_die();
     }
+
+
+    // Ajax para busqueda de documentos
+    add_action('wp_ajax_insta_search', 'insta_search_callback');
+    add_action('wp_ajax_nopriv_insta_search', 'insta_search_callback');
+
+    function insta_search_callback(){
+        header('Content-Type:application/json');
+
+        // print_r($_GET);
+
+        // die();
+
+        $txtKeyword = "";
+        $optYear = 0;
+        $optMonth = 0;
+        $optPerPage = 10;
+        $optPage = 1;
+        $offset = (optPage * optPerPage) +1;
+
+        if(isset($_GET['txtKeyword'])){
+            $txtKeyword = sanitize_text_field( $_GET['txtKeyword'] );
+        }
+
+        if(isset($_GET['optYear'])){
+            $optYear = intval( sanitize_text_field( $_GET['optYear'] ) );
+        }
+
+        if(isset($_GET['optMonth'])){
+            $optMonth = intval( sanitize_text_field( $_GET['optMonth'] ) );
+        }
+
+        if(isset($_GET['optPerPage'])){
+            $optPerPage = intval( sanitize_text_field( $_GET['optPerPage'] ) );
+        }
+
+        if(isset($_GET['optPage'])){
+            $optPage = intval( sanitize_text_field( $_GET['optPage'] ) );
+        }
+
+        if(isset($_GET['offset'])){
+            $offset = intval( sanitize_text_field( $_GET['offset'] ) );
+        }
+
+        $result = array();
+
+        $args = array(
+            "post_type" => "documentos",
+            "tipos" => "RDE",
+            "posts_per_page" => $optPerPage,
+            "s" => $txtKeyword,
+            "offset" => $offset,
+            'date_query' => array(
+                array(
+                    'year'  => $optYear,
+                    'month' => $optMonth
+                ),
+            ),
+        );
+
+        $the_query = new WP_Query( $args );
+
+        // The Loop
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+
+                
+                $result[] = array(
+                    "id"              =>  get_the_ID(),
+                    "title"           => get_the_title(),
+                    "permalink"       => get_permalink(),
+                    "date"            => get_the_date()
+                );
+
+            }
+
+            echo json_encode($result);
+
+            /* Restore original Post Data */
+            wp_reset_postdata();
+        } else {
+            echo 'No se encontraron entradas...';
+        }
+
+        //var_dump($the_query);
+        wp_die();
+    }
