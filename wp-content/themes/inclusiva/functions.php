@@ -340,53 +340,72 @@ function custom_breadcrumbs() {
     function insta_search_callback(){
         header('Content-Type:application/json');
 
-        // print_r($_GET);
+        class objectToSend
+        {
+            var $action;
+            var $postType;
+            var $postTax;
+            var $postTerm;
+            var $txtKeyword;
+            var $optMonth;
+            var $optYear;
+            var $optPerPage;
+            var $max_num_pages; 
+            var $response;
+            var $bError;
+            var $vMensaje;
+            var $paged;
 
-        // die();
-
-        $txtKeyword = "";
-        $optYear = 0;
-        $optMonth = 0;
-        $optPerPage = 10;
-        $optPage = 1;
-        $offset = (optPage * optPerPage) +1;
-
-        if(isset($_GET['txtKeyword'])){
-            $txtKeyword = sanitize_text_field( $_GET['txtKeyword'] );
+            function __construct($action, $postType, $postTax, $postTerm, $txtKeyword, $optMonth, $optYear, $optPerPage, $max_num_pages, $response, $bError, $vMensaje, $paged) {
+               $this->action = $action; 
+               $this->postType = $postType; 
+               $this->postTax = $postTax; 
+               $this->postTerm = $postTerm; 
+               $this->txtKeyword = $txtKeyword; 
+               $this->optMonth = $optMonth; 
+               $this->optYear = $optYear; 
+               $this->optPerPage = $optPerPage; 
+               $this->max_num_pages = $max_num_pages; 
+               $this->response = $response; 
+               $this->bError = $bError; 
+               $this->vMensaje = $vMensaje; 
+               $this->paged = $paged; 
+              }
         }
 
-        if(isset($_GET['optYear'])){
-            $optYear = intval( sanitize_text_field( $_GET['optYear'] ) );
-        }
-
-        if(isset($_GET['optMonth'])){
-            $optMonth = intval( sanitize_text_field( $_GET['optMonth'] ) );
-        }
-
-        if(isset($_GET['optPerPage'])){
-            $optPerPage = intval( sanitize_text_field( $_GET['optPerPage'] ) );
-        }
-
-        if(isset($_GET['optPage'])){
-            $optPage = intval( sanitize_text_field( $_GET['optPage'] ) );
-        }
-
-        if(isset($_GET['offset'])){
-            $offset = intval( sanitize_text_field( $_GET['offset'] ) );
-        }
-
-        $result = array();
+        $objectToSend = new objectToSend(
+          'insta_search',
+          isset($_GET['postType'])?sanitize_text_field( $_GET['postType'] ) :'',
+          isset($_GET['postTax'])?sanitize_text_field( $_GET['postTax'] ) :'',
+          isset($_GET['postTerm'])?sanitize_text_field( $_GET['postTerm'] ) :'', 
+          isset($_GET['txtKeyword'])?sanitize_text_field( $_GET['txtKeyword'] ):'', 
+          isset($_GET['optMonth'])?intval( sanitize_text_field( $_GET['optMonth'] ) ):0, 
+          isset($_GET['optYear'])?intval( sanitize_text_field( $_GET['optYear'] ) ):0, 
+          isset($_GET['optPerPage'])?intval( sanitize_text_field( $_GET['optPerPage'] ) ):10, 
+          isset($_GET['max_num_pages'])?intval( sanitize_text_field( $_GET['max_num_pages'] ) ):0, 
+          array(),
+          false,
+          '',
+          isset($_GET['paged'])?intval( sanitize_text_field( $_GET['paged'] ) ):1
+        );
 
         $args = array(
-            "post_type" => "documentos",
-            "tipos" => "RDE",
-            "posts_per_page" => $optPerPage,
-            "s" => $txtKeyword,
-            "offset" => $offset,
+            "post_type" => $objectToSend->postType,
+            'tax_query' => array(
+              array(
+                'taxonomy' => $objectToSend->postTax,
+                'field'    => 'slug',
+                'terms'    => $objectToSend->postTerm,
+              ),
+            ),
+            "posts_per_page" => $objectToSend->optPerPage,
+            "s" => $objectToSend->txtKeyword,
+            'paged' => $objectToSend->paged,
+            'post_status'=> 'publish',
             'date_query' => array(
                 array(
-                    'year'  => $optYear,
-                    'month' => $optMonth
+                    'year'  => $objectToSend->optYear,
+                    'month' => $objectToSend->optMonth
                 ),
             ),
         );
@@ -397,23 +416,34 @@ function custom_breadcrumbs() {
         if ( $the_query->have_posts() ) {
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
-
                 
-                $result[] = array(
+                $objectToSend->response[] = array(
                     "id"              =>  get_the_ID(),
                     "title"           => get_the_title(),
+                    "slug"            =>  get_post_field( 'post_name', get_post() ),
                     "permalink"       => get_permalink(),
-                    "date"            => get_the_date()
+                    "content"       => get_the_content(),
+                    "date"            => get_the_date(),
+                    "doc_link"        => get_field('rde_link')
                 );
 
             }
 
-            echo json_encode($result);
+            $objectToSend->bError = false;
+            $objectToSend->vMensaje = $the_query;
+            $objectToSend->max_num_pages = $the_query->max_num_pages;
+
+            echo json_encode($objectToSend);
 
             /* Restore original Post Data */
             wp_reset_postdata();
         } else {
-            echo 'No se encontraron entradas...';
+            $objectToSend->bError = true;
+            $objectToSend->vMensaje = 'No se encontraron documentos...';
+            //$objectToSend->vMensaje = $the_query;
+
+            echo json_encode($objectToSend);
+            wp_reset_postdata();
         }
 
         //var_dump($the_query);

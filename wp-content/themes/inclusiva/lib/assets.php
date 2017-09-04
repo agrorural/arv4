@@ -78,9 +78,15 @@ function assets() {
       wp_enqueue_script('directory_map', asset_path('scripts/directory-map.js'), ['jquery'], null, true);
       wp_localize_script('directory_map', 'ajax_url', admin_url('admin-ajax.php'));
     }
-    if ( is_page( 'insta-search' ) ) {
+    if ( is_page( 'resoluciones-directorales-ejecutivas' ) ) {
+        $array_is = array(
+          'ajax_url' => admin_url('admin-ajax.php'),
+          'pt'  => is_page_template(),
+          'term' => get_term( get_field('doc__tipo'), '', ARRAY_A),
+          'upload_dir' => wp_upload_dir()
+        );
         wp_enqueue_script('insta_search', asset_path('scripts/is.js'), ['jquery'], null, true);
-        wp_localize_script('insta_search', 'ajax_url', admin_url('admin-ajax.php'));
+        wp_localize_script('insta_search', 'ajax_is', $array_is);
     }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

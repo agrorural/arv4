@@ -118,24 +118,17 @@ function insta_search(){
 
                 <label for="optPerPage">Listar</label>
                 <select id="optPerPage" class="form-control" name="optPerPage">
-                    <option value="10">10</option>
+                    <option value="20">20</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
-                </select>
-
-                <label for="optPage">Página</label>
-                <select id="optPage" class="form-control" name="optPage">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
                 </select>
             </div>
 
             <button id="btnDocumento" type="submit" class="btn btn-default">Buscar</button>
         </form>
-
-        <ul></ul>
+        <div class="wp-pagenavi"></div>
+        <div class="search-result"></div>
         <div class="wp-pagenavi"></div>
     </div>
 

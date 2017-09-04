@@ -410,6 +410,22 @@
 					padding-right: 30px;
 			}
 		}
+		
+		&.documentos{
+			.entry-body{
+				height: auto;
+				.post-meta{
+					position: relative !important;
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+				.post-comments{
+					line-height: 40px; 
+				}
+			}
+			
+		}
+
 		&.panel{
 			padding-top: 0;
 			padding-bottom: 0;

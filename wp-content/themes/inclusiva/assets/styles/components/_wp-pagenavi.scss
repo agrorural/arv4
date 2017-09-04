@@ -3,6 +3,7 @@
 	position: relative;
 	display: block;
 	clear: both;
+	overflow: auto;
 	padding: 30px 0;
 	@include font-family();
   @include shadow-box();

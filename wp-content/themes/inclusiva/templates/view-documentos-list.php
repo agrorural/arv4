@@ -1,35 +1,56 @@
 <?php
 	// ACF Archive Page
-	$doc__tipo = get_field('doc__tipo');
-	$term = get_term( $doc__tipo, 'tipos' );
-	$term__slug = $term->slug;
-	$post__date = mysql2date("Y", $post->post_date_gmt);
-	global $paged;
-	global $wp_query;
-	$temp = $wp_query;
-	$wp_query = null;
-	$wp_query = new WP_Query();
-	$wp_query->query('post_type=documentos&posts_per_page=10&year='.$post__date.'&tipos='. $term->slug .'&paged='.$paged);
-	while ($wp_query->have_posts()) : $wp_query->the_post();
-?>
-<?php if ($term__slug && $term__slug == 'directivas'){ ?>
-	<?php get_template_part('templates/content', 'documentos-directivas'); ?>
-<?php } else if ($term__slug && $term__slug == 'pac'){ ?>
-	<?php get_template_part('templates/content', 'documentos-pac'); ?>
-<?php } else if ($term__slug && $term__slug == 'rde'){ ?>
-	<?php get_template_part('templates/content', 'documentos-rde'); ?>
-<?php } else if ($term__slug && $term__slug == 'rda'){ ?>
-		<?php get_template_part('templates/content', 'documentos-rda'); ?>
-<?php } else if ($term__slug && $term__slug == 'rdc'){ ?>
-		<?php get_template_part('templates/content', 'documentos-rdc'); ?>
-<?php } else { ?>
-	<?php get_template_part('templates/content', 'documentos-list'); ?>
-<?php } ?>
-<?php endwhile; ?>
+	//Consume datos desde ajax en /scripts/is.js
 
-    <?php wp_pagenavi(); ?>
-
-<?php
-  $wp_query = null;
-  $wp_query = $temp;
 ?>
+
+    <div id="insta-search">
+        <form class="form-inline" action="" method="GET">
+            <div class="form-group">
+                <?php $currentYear = date('Y'); ?>
+				
+                <label for="txtKeyword">Palabra</label>
+                <input type="text" id="txtKeyword" class="form-control" name="txtKeyword">
+
+                <label for="optMonth">Mes</label>
+                <select id="optMonth" class="form-control" name="optMonth">
+                    <option value="">Todos</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+                <label for="optYear">Año</label>
+                <select id="optYear" class="form-control" name="optYear">
+                    <option value="<?php echo $currentYear; ?>"><?php echo $currentYear; ?></option>
+                    <?php
+                        for ($i = $currentYear -1; $i >= 2009; $i--) {
+                            echo ' <option value="' . $i .'">' . $i . '</option>';
+                        }
+                    ?>
+                </select>
+
+                <label for="optPerPage">Listar</label>
+                <select id="optPerPage" class="form-control" name="optPerPage">
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+
+            <button id="btnDocumento" type="submit" class="btn btn-default" data-loading-text="Buscando..." >Buscar</button>
+        </form>
+        <div class="wp-pagenavi"></div>
+        <div class="search-result"></div>
+        <div class="wp-pagenavi"></div>
+    </div>
