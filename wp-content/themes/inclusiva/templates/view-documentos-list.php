@@ -55,7 +55,7 @@
 			<div class="form-group col-sm-2 pull-left">
             	<button id="btnDocumento" type="submit" class="btn btn-success" data-loading-text="Buscando..." ><i class="fa fa-filter"></i> Buscar</button>
             </div>
-            <div class="form-group col-sm-2 pull-right">
+            <div class="form-group col-sm-2 pull-right" style="text-align: right">
             	<button id="btnLimpiar" type="submit" class="btn btn-default" data-loading-text="Limpiando..." ><i class="fa fa-refresh"></i> Limpiar</button>
             </div>
         </form>

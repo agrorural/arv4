@@ -1,5 +1,6 @@
 (function($) {
     var instaSearch = $('#insta-search');
+    var searchResult = $('#search-result');
     var termPath = '';
     var customPostTitle = '';
     var customPostContent = '';
@@ -113,7 +114,6 @@
 
                 if (instaSearch.find(".wp-pagenavi").hasClass('hidden')){
                    instaSearch.find(".wp-pagenavi").removeClass('hidden');
-                   console.log('Removio la clase hidden');
                 }
                 
              }
@@ -153,7 +153,7 @@
     listarDocumentos(objectToSend);
 
     $("#txtKeyword").keyup(function () {
-        objectToSend.txtKeyword=$("#txtKeyword").val();
+        objectToSend.txtKeyword = $("#txtKeyword").val();
         listarDocumentos(objectToSend);
     });
 
@@ -168,7 +168,7 @@
     });
 
     $("#optPerPage").change(function () {
-        objectToSend.optPerPage=$("#optPerPage").val();
+        objectToSend.optPerPage=$("#optPerPage").val(); 
         listarDocumentos(objectToSend);
     });
 
