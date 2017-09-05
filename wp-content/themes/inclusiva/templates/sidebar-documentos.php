@@ -16,6 +16,7 @@
 			$term__name = $term_list[0]->name;
 		}
 	}
+	//var_dump(is_page_template( 'template-documentos.php' ));
 ?>
 <?php if( $term_list ) : ?>
 	<?php if (has_nav_menu('doc_'.$term__slug.'_navigation')) { ?>
@@ -26,12 +27,7 @@
 	<?php } ?>
 <?php endif; ?>
 
-<?php if( is_page (
-									array(
-													'rendicion-de-cuentas'
-												)
-									)
-				) :
+<?php if( is_page ( array( 'rendicion-de-cuentas' ) ) ) :
 ?>
 
 	<?php if (has_nav_menu('doc_pack_navigation')) { ?>
@@ -41,4 +37,15 @@
 		</section>
 	<?php } ?>
 
+<?php endif; ?>
+
+<?php if( is_page_template( 'template-documentos.php' ) ) : ?>
+	<section class="widget">
+		<h3>Documentos</h3>
+	    <?php
+		if (has_nav_menu('doc_navigation')) :
+			wp_nav_menu(['theme_location' => 'doc_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav nav-sidebar']);
+		endif;
+		?>
+	</section>
 <?php endif; ?>

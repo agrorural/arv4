@@ -48,6 +48,7 @@ function setup() {
     'pry_csst_navigation' => __('Proyecto CSST Navigation', 'sage'), //CSST
 
     // Documentos
+    'doc_navigation' => __('Documentos', 'sage'), //RDE
     'doc_rde_navigation' => __('Documentos: RDE Navigation', 'sage'), //RDE
     'doc_rda_navigation' => __('Documentos: RDA Navigation', 'sage'), //RDE
     'doc_directivas_navigation' => __('Documentos: Directivas Navigation', 'sage'), //Directivas

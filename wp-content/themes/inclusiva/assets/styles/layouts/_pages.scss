@@ -412,6 +412,8 @@
 		}
 		
 		&.documentos{
+			margin-bottom: 20px;
+			min-height: 1px;
 			.entry-body{
 				height: auto;
 				.post-meta{
@@ -443,6 +445,8 @@
 		}
 	}
 }
+
+
 
 @media(max-width: $screen-xs-max){
 	.page-template-template-proyectos,.page-template-template-media, .page-template-template-proyectos-subpage{

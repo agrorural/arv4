@@ -78,7 +78,7 @@ function assets() {
       wp_enqueue_script('directory_map', asset_path('scripts/directory-map.js'), ['jquery'], null, true);
       wp_localize_script('directory_map', 'ajax_url', admin_url('admin-ajax.php'));
     }
-    if ( is_page( 'resoluciones-directorales-ejecutivas' ) ) {
+    if ( is_page_template( 'template-documentos.php' ) ) {
         $array_is = array(
           'ajax_url' => admin_url('admin-ajax.php'),
           'pt'  => is_page_template(),

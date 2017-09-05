@@ -422,9 +422,11 @@ function custom_breadcrumbs() {
                     "title"           => get_the_title(),
                     "slug"            =>  get_post_field( 'post_name', get_post() ),
                     "permalink"       => get_permalink(),
-                    "content"       => get_the_content(),
+                    "content"         => get_the_content(),
                     "date"            => get_the_date(),
-                    "doc_link"        => get_field('rde_link')
+                    "doc_link"        => get_field('rde_link'),
+                    "doc_ane__nom"    => get_field('doc_ane__nom'),
+                    "doc_ane__desc"   => get_field('doc_ane__desc')
                 );
 
             }
@@ -439,7 +441,7 @@ function custom_breadcrumbs() {
             wp_reset_postdata();
         } else {
             $objectToSend->bError = true;
-            $objectToSend->vMensaje = 'No se encontraron documentos...';
+            $objectToSend->vMensaje = 'No se encontraron resultados';
             //$objectToSend->vMensaje = $the_query;
 
             echo json_encode($objectToSend);
