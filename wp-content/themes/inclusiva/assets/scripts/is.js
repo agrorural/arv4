@@ -1,6 +1,5 @@
 (function($) {
     var instaSearch = $('#insta-search');
-    var searchResult = $('#search-result');
     var termPath = '';
     var customPostTitle = '';
     var customPostContent = '';
@@ -37,31 +36,51 @@
           $('#optYear').prop('disabled', true);
           $('#optPerPage').prop('disabled', true);
           $("#btnDocumento").button('loading');
+          $("#btnLimpiar").button('loading');
+
+          // Preloading
+          instaSearch.find('.preloaded').removeClass('hidden');
+          instaSearch.find('.hentry').addClass('hidden');
         },
         complete: function(){
           $('#optMonth').prop('disabled', false);
           $('#optYear').prop('disabled', false);
           $('#optPerPage').prop('disabled', false);
           $("#btnDocumento").button('reset');
+          $("#btnLimpiar").button('reset');
           //debugger;
 
-          //Se quita el preloader
-          $('.hentry .entry-title').removeClass('is-preloaded');
-          $('.hentry .entry-content').removeClass('is-preloaded');
-          $('.hentry .post-meta').removeClass('is-preloaded');
-          $('.hentry').removeClass('preloaded');
+          //Highlight
+          var hentryHTML = $('.hentry').html();
+          var termino = objectToSend.txtKeyword;
+          
+          termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
+
+          var pattern = new RegExp("("+termino+")", "gi");
+
+          hentryHTML = hentryHTML.replace(pattern, "<mark>$1</mark>");
+          hentryHTML = hentryHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
+          
+          if (termino.length > 3) {
+            $('.hentry').html(hentryHTML);
+          }
+          
+          // Preloading
+          instaSearch.find('.preloaded').addClass('hidden');
+          instaSearch.find('.hentry').removeClass('hidden');
         },
          success : function (response) {
             objectToSend = response;
+
             instaSearch.find(".search-result").empty();
             instaSearch.find(".wp-pagenavi").empty();
 
             if (objectToSend.bError) {
               var html3 = '';
-                html3 = '<article class="hentry preloaded">';
+                html3 = '<article class="hentry hidden">';
                   html3 += '<div class="entry-container">';
                     html3 += '<div class="entry-body">';
-                      html3 += '<h2 class="entry-title is-preloaded">'; 
+                      html3 += '<h2 class="entry-title">'; 
                         html3 += objectToSend.vMensaje;
                       html3 += '</h2>';
                       html3 += '<p>Intente con otros parámetros de búsqueda...</p>'; 
@@ -71,21 +90,22 @@
                 instaSearch.find(".wp-pagenavi").addClass('hidden');
                 instaSearch.find(".search-result").append(html3);
             }else{
+
               for (var i = 0; i < objectToSend.response.length; i++){
                 var html = ''; 
 
-                html += '<article class="post-' + objectToSend.response[i].id + ' status-publish hentry tipos-rde documentos preloaded">';
+                html += '<article class="post-' + objectToSend.response[i].id + ' status-publish hentry tipos-rde documentos hidden">';
                   html += '<div class="entry-container">';
                     html += '<div class="entry-body ">';
                       customPostTitle = objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
                       customPostContent= objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
 
-                      html += '<h2 class="entry-title is-preloaded">';
+                      html += '<h2 class="entry-title">';
                         html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
                       html += '</h2>';
                       
-                      html += '<div class="entry-content is-preloaded">' + customPostContent + '</div>';
-                      html += '<div class="post-meta is-preloaded">';
+                      html += '<div class="entry-content">' + customPostContent + '</div>';
+                      html += '<div class="post-meta">';
                         html += '<div class="post-date">';
                           html += '<time class="updated">' + objectToSend.response[i].date + '</time>';
                         html += '</div>';
@@ -152,28 +172,44 @@
 
     listarDocumentos(objectToSend);
 
-    $("#txtKeyword").keyup(function () {
-        objectToSend.txtKeyword = $("#txtKeyword").val();
+    $("#txtKeyword").keypress(function (e) {
+      if(e.which === 13) {
+        objectToSend.txtKeyword = $(this).val();
+        objectToSend.paged = 1;
+
         listarDocumentos(objectToSend);
+      }
     });
 
     $("#optMonth").change(function () {
-        objectToSend.optMonth=$("#optMonth").val();
+        objectToSend.txtKeyword = $("#txtKeyword").val();
+        objectToSend.optMonth = $("#optMonth").val();
+        objectToSend.paged = 1;
+
         listarDocumentos(objectToSend);
     });
 
     $("#optYear").change(function () {
+        objectToSend.txtKeyword = $("#txtKeyword").val();
         objectToSend.optYear=$("#optYear").val();
+        objectToSend.paged = 1;
+
         listarDocumentos(objectToSend);
     });
 
     $("#optPerPage").change(function () {
-        objectToSend.optPerPage=$("#optPerPage").val(); 
+        objectToSend.txtKeyword = $("#txtKeyword").val();
+        objectToSend.optPerPage = $("#optPerPage").val(); 
+
         listarDocumentos(objectToSend);
     });
 
     $("#btnDocumento").click(function (e) {
         e.preventDefault();
+
+        objectToSend.txtKeyword = $("#txtKeyword").val();
+        objectToSend.paged = 1;
+
         listarDocumentos(objectToSend);
     });
 

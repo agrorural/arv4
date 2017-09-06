@@ -53,13 +53,35 @@
                 </select>
             </div>
 			<div class="form-group col-sm-2 pull-left">
-            	<button id="btnDocumento" type="submit" class="btn btn-success" data-loading-text="Buscando..." ><i class="fa fa-filter"></i> Buscar</button>
+            	<button id="btnDocumento" type="submit" class="btn btn-success" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Buscando..." ><i class="fa fa-filter"></i> Buscar</button>
             </div>
             <div class="form-group col-sm-2 pull-right" style="text-align: right">
-            	<button id="btnLimpiar" type="submit" class="btn btn-default" data-loading-text="Limpiando..." ><i class="fa fa-refresh"></i> Limpiar</button>
+            	<button id="btnLimpiar" type="submit" class="btn btn-default" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Ejecutando..." ><i class="fa fa-refresh"></i> Limpiar</button>
             </div>
         </form>
         <div class="wp-pagenavi"></div>
+
+        <article class="preloaded hidden">
+        	<div class="entry-container">
+        		<div class="entry-body ">
+        			<div class="entry-title">
+        				<p class="is-preloaded"></p>
+        				<p class="is-preloaded"></p>
+        			</div>
+
+        			<div class="entry-content">
+        				<p class="is-preloaded"></p>
+        				<p class="is-preloaded"></p>
+        				<p class="is-preloaded"></p>
+        			</div>
+
+        			<div class="post-meta">
+        				<p class="is-preloaded"></p>
+        			</div>
+        		</div>
+        	</div>
+        </article>
+
         <div class="search-result" style="margin-top: 20px"></div>
         <div class="wp-pagenavi"></div>
     </div>
