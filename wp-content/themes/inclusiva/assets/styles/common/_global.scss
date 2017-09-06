@@ -58,6 +58,11 @@
        color: $black;
 }
 
+mark{
+  background-color: $yellow--light;
+  padding: inherit;
+}
+
 html, body{
   height: 100%;
 }

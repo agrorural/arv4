@@ -61,7 +61,7 @@
           hentryHTML = hentryHTML.replace(pattern, "<mark>$1</mark>");
           hentryHTML = hentryHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
           
-          if (termino.length > 3) {
+          if (termino.length > 1) {
             $('.hentry').html(hentryHTML);
           }
           
