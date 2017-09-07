@@ -51,19 +51,19 @@
           //debugger;
 
           //Highlight
-          var hentryHTML = $('.hentry').html();
-          var termino = objectToSend.txtKeyword;
+          // var hentryHTML = $('.hentry').html();
+          // var termino = objectToSend.txtKeyword;
           
-          termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
+          // termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
 
-          var pattern = new RegExp("("+termino+")", "gi");
+          // var pattern = new RegExp("("+termino+")", "gi");
 
-          hentryHTML = hentryHTML.replace(pattern, "<mark>$1</mark>");
-          hentryHTML = hentryHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
+          // hentryHTML = hentryHTML.replace(pattern, "<mark>$1</mark>");
+          // hentryHTML = hentryHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
           
-          if (termino.length > 1) {
-            $('.hentry').html(hentryHTML);
-          }
+          // if (termino.length > 1) {
+          //   $('.hentry').html(hentryHTML);
+          // }
           
           // Preloading
           instaSearch.find('.preloaded').addClass('hidden');
