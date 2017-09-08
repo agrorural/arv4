@@ -51,19 +51,19 @@
           //debugger;
 
           //Highlight
-          var bodyHTML = $('.hentry .entry-content-all').html();
-          var termino = objectToSend.txtKeyword;
+          // var bodyHTML = $('.hentry .entry-content-all').html();
+          // var termino = objectToSend.txtKeyword;
           
-          termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
+          // termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
 
-          var pattern = new RegExp("("+termino+")", "gi");
+          // var pattern = new RegExp("("+termino+")", "gi");
 
-          bodyHTML = bodyHTML.replace(pattern, "<mark>$1</mark>");
-          bodyHTML = bodyHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
+          // bodyHTML = bodyHTML.replace(pattern, "<mark>$1</mark>");
+          // bodyHTML = bodyHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
           
-          if (termino.length > 1) {
-            $('.hentry .entry-content-all').html(bodyHTML);
-          }
+          // if (termino.length > 1) {
+          //   $('.hentry .entry-content-all').html(bodyHTML);
+          // }
 
           // console.log(bodyHTML);
           
