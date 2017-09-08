@@ -51,19 +51,21 @@
           //debugger;
 
           //Highlight
-          // var hentryHTML = $('.hentry').html();
-          // var termino = objectToSend.txtKeyword;
+          var bodyHTML = $('.hentry .entry-content-all').html();
+          var termino = objectToSend.txtKeyword;
           
-          // termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
+          termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
 
-          // var pattern = new RegExp("("+termino+")", "gi");
+          var pattern = new RegExp("("+termino+")", "gi");
 
-          // hentryHTML = hentryHTML.replace(pattern, "<mark>$1</mark>");
-          // hentryHTML = hentryHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
+          bodyHTML = bodyHTML.replace(pattern, "<mark>$1</mark>");
+          bodyHTML = bodyHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
           
-          // if (termino.length > 1) {
-          //   $('.hentry').html(hentryHTML);
-          // }
+          if (termino.length > 1) {
+            $('.hentry .entry-content-all').html(bodyHTML);
+          }
+
+          // console.log(bodyHTML);
           
           // Preloading
           instaSearch.find('.preloaded').addClass('hidden');
@@ -77,13 +79,19 @@
 
             if (objectToSend.bError) {
               var html3 = '';
-                html3 = '<article class="hentry hidden">';
+                html3 = '<article class="hentry documentos hidden">';
                   html3 += '<div class="entry-container">';
                     html3 += '<div class="entry-body">';
-                      html3 += '<h2 class="entry-title">'; 
-                        html3 += objectToSend.vMensaje;
-                      html3 += '</h2>';
-                      html3 += '<p>Intente con otros parámetros de búsqueda...</p>'; 
+                    
+                      html3 += '<div class="entry-content-all">';
+                        html3 += '<h2 class="entry-title">'; 
+                          html3 += objectToSend.vMensaje;
+                        html3 += '</h2>';
+                        html3 += '<div class="entry-content">';
+                          html3 += '<p>Intente con otros parámetros de búsqueda...</p>'; 
+                        html3 += '</div>';
+                      html3 += '</div>';
+
                     html3 += '</div>';
                   html3 += '</div>';
                 html3 += '</article>';
@@ -100,11 +108,16 @@
                       customPostTitle = objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
                       customPostContent= objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
 
-                      html += '<h2 class="entry-title">';
-                        html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
-                      html += '</h2>';
-                      
-                      html += '<div class="entry-content">' + customPostContent + '</div>';
+                      html += '<div class="entry-content-all">';
+
+                        html += '<h2 class="entry-title">';
+                          html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
+                        html += '</h2>';
+                        
+                        html += '<div class="entry-content">' + customPostContent + '</div>';
+
+                      html += '</div>';
+
                       html += '<div class="post-meta">';
                         html += '<div class="post-date">';
                           html += '<time class="updated">' + objectToSend.response[i].date + '</time>';
@@ -114,6 +127,8 @@
                           termPath = objectToSend.postTerm === 'Directivas' ? 'RDE' :
                                      objectToSend.postTerm === 'PAC' ? 'RDA' :
                                      objectToSend.postTerm;
+
+                          //objectToSend.response[i].doc_link = 'No disponible';
 
                           if ( objectToSend.response[i].doc_link === 'Publicado' ) {
                             html += '<a href="' + ajax_is.upload_dir.baseurl + docPath + termPath.toLowerCase() + '/' + objectToSend.response[i].slug.toUpperCase() + '.PDF" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar</a>';
@@ -197,7 +212,8 @@
 
     $("#optPerPage").change(function () {
         objectToSend.txtKeyword = $("#txtKeyword").val();
-        objectToSend.optPerPage = $("#optPerPage").val(); 
+        objectToSend.optPerPage = $("#optPerPage").val();
+        objectToSend.paged = 1; 
 
         listarDocumentos(objectToSend);
     });
