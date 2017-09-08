@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
+class ComposerStaticInitGravityPDFPlugin
 {
     public static $files = array (
         'e9b046393eb3376a21bcc1a30bd2fe64' => __DIR__ . '/..' . '/querypath/querypath/src/qp_functions.php',
@@ -71,6 +71,7 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
             0 => __DIR__ . '/../..' . '/src/helper',
             1 => __DIR__ . '/../..' . '/src/helper/abstract',
             2 => __DIR__ . '/../..' . '/src/helper/interface',
+            3 => __DIR__ . '/../..' . '/src/helper/trait',
         ),
         'GFPDF\\Controller\\' => 
         array (
@@ -126,6 +127,7 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
         'GFPDF\\Helper\\Fields\\Field_CreditCard' => __DIR__ . '/../..' . '/src/helper/fields/Field_Creditcard.php',
         'GFPDF\\Helper\\Fields\\Field_Date' => __DIR__ . '/../..' . '/src/helper/fields/Field_Date.php',
         'GFPDF\\Helper\\Fields\\Field_Default' => __DIR__ . '/../..' . '/src/helper/fields/Field_Default.php',
+        'GFPDF\\Helper\\Fields\\Field_Discount' => __DIR__ . '/../..' . '/src/helper/fields/Field_Discount.php',
         'GFPDF\\Helper\\Fields\\Field_Email' => __DIR__ . '/../..' . '/src/helper/fields/Field_Email.php',
         'GFPDF\\Helper\\Fields\\Field_Fileupload' => __DIR__ . '/../..' . '/src/helper/fields/Field_Fileupload.php',
         'GFPDF\\Helper\\Fields\\Field_Hidden' => __DIR__ . '/../..' . '/src/helper/fields/Field_Hidden.php',
@@ -135,6 +137,7 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
         'GFPDF\\Helper\\Fields\\Field_Multiselect' => __DIR__ . '/../..' . '/src/helper/fields/Field_Multiselect.php',
         'GFPDF\\Helper\\Fields\\Field_Name' => __DIR__ . '/../..' . '/src/helper/fields/Field_Name.php',
         'GFPDF\\Helper\\Fields\\Field_Number' => __DIR__ . '/../..' . '/src/helper/fields/Field_Number.php',
+        'GFPDF\\Helper\\Fields\\Field_Option' => __DIR__ . '/../..' . '/src/helper/fields/Field_Option.php',
         'GFPDF\\Helper\\Fields\\Field_Phone' => __DIR__ . '/../..' . '/src/helper/fields/Field_Phone.php',
         'GFPDF\\Helper\\Fields\\Field_Poll' => __DIR__ . '/../..' . '/src/helper/fields/Field_Poll.php',
         'GFPDF\\Helper\\Fields\\Field_Post_Category' => __DIR__ . '/../..' . '/src/helper/fields/Field_Post_Category.php',
@@ -146,24 +149,30 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
         'GFPDF\\Helper\\Fields\\Field_Post_Title' => __DIR__ . '/../..' . '/src/helper/fields/Field_Post_Title.php',
         'GFPDF\\Helper\\Fields\\Field_Product' => __DIR__ . '/../..' . '/src/helper/fields/Field_Product.php',
         'GFPDF\\Helper\\Fields\\Field_Products' => __DIR__ . '/../..' . '/src/helper/fields/Field_Products.php',
+        'GFPDF\\Helper\\Fields\\Field_Quantity' => __DIR__ . '/../..' . '/src/helper/fields/Field_Quantity.php',
         'GFPDF\\Helper\\Fields\\Field_Quiz' => __DIR__ . '/../..' . '/src/helper/fields/Field_Quiz.php',
         'GFPDF\\Helper\\Fields\\Field_Radio' => __DIR__ . '/../..' . '/src/helper/fields/Field_Radio.php',
         'GFPDF\\Helper\\Fields\\Field_Rank' => __DIR__ . '/../..' . '/src/helper/fields/Field_Rank.php',
         'GFPDF\\Helper\\Fields\\Field_Rating' => __DIR__ . '/../..' . '/src/helper/fields/Field_Rating.php',
         'GFPDF\\Helper\\Fields\\Field_Section' => __DIR__ . '/../..' . '/src/helper/fields/Field_Section.php',
         'GFPDF\\Helper\\Fields\\Field_Select' => __DIR__ . '/../..' . '/src/helper/fields/Field_Select.php',
+        'GFPDF\\Helper\\Fields\\Field_Shipping' => __DIR__ . '/../..' . '/src/helper/fields/Field_Shipping.php',
         'GFPDF\\Helper\\Fields\\Field_Signature' => __DIR__ . '/../..' . '/src/helper/fields/Field_Signature.php',
+        'GFPDF\\Helper\\Fields\\Field_Subtotal' => __DIR__ . '/../..' . '/src/helper/fields/Field_Subtotal.php',
         'GFPDF\\Helper\\Fields\\Field_Survey' => __DIR__ . '/../..' . '/src/helper/fields/Field_Survey.php',
+        'GFPDF\\Helper\\Fields\\Field_Tax' => __DIR__ . '/../..' . '/src/helper/fields/Field_Tax.php',
         'GFPDF\\Helper\\Fields\\Field_Text' => __DIR__ . '/../..' . '/src/helper/fields/Field_Text.php',
         'GFPDF\\Helper\\Fields\\Field_Textarea' => __DIR__ . '/../..' . '/src/helper/fields/Field_Textarea.php',
         'GFPDF\\Helper\\Fields\\Field_Time' => __DIR__ . '/../..' . '/src/helper/fields/Field_Time.php',
         'GFPDF\\Helper\\Fields\\Field_Tos' => __DIR__ . '/../..' . '/src/helper/fields/Field_Tos.php',
+        'GFPDF\\Helper\\Fields\\Field_Total' => __DIR__ . '/../..' . '/src/helper/fields/Field_Total.php',
         'GFPDF\\Helper\\Fields\\Field_Website' => __DIR__ . '/../..' . '/src/helper/fields/Field_Website.php',
         'GFPDF\\Helper\\Fields\\Field_v3_List' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_List.php',
         'GFPDF\\Helper\\Fields\\Field_v3_Products' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_Products.php',
         'GFPDF\\Helper\\Fields\\Field_v3_Section' => __DIR__ . '/../..' . '/src/helper/fields/Field_v3_Section.php',
         'GFPDF\\Helper\\Helper_Abstract_Addon' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Addon.php',
         'GFPDF\\Helper\\Helper_Abstract_Controller' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Controller.php',
+        'GFPDF\\Helper\\Helper_Abstract_Field_Products' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Field_Products.php',
         'GFPDF\\Helper\\Helper_Abstract_Fields' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Fields.php',
         'GFPDF\\Helper\\Helper_Abstract_Form' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Form.php',
         'GFPDF\\Helper\\Helper_Abstract_Model' => __DIR__ . '/../..' . '/src/helper/abstract/Helper_Abstract_Model.php',
@@ -188,6 +197,7 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
         'GFPDF\\Helper\\Helper_QueryPath' => __DIR__ . '/../..' . '/src/helper/Helper_QueryPath.php',
         'GFPDF\\Helper\\Helper_Singleton' => __DIR__ . '/../..' . '/src/helper/Helper_Singleton.php',
         'GFPDF\\Helper\\Helper_Templates' => __DIR__ . '/../..' . '/src/helper/Helper_Templates.php',
+        'GFPDF\\Helper\\Helper_Trait_Logger' => __DIR__ . '/../..' . '/src/helper/trait/Helper_Trait_Logger.php',
         'GFPDF\\Helper\\Licensing\\EDD_SL_Plugin_Updater' => __DIR__ . '/../..' . '/src/helper/licensing/EDD_SL_Plugin_Updater.php',
         'GFPDF\\Model\\Model_Actions' => __DIR__ . '/../..' . '/src/model/Model_Actions.php',
         'GFPDF\\Model\\Model_Form_Settings' => __DIR__ . '/../..' . '/src/model/Model_Form_Settings.php',
@@ -383,10 +393,10 @@ class ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit11ca64afadb515307ce04aaa5c3263ad::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitGravityPDFPlugin::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitGravityPDFPlugin::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitGravityPDFPlugin::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitGravityPDFPlugin::$classMap;
 
         }, null, ClassLoader::class);
     }

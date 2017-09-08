@@ -7,7 +7,7 @@ use GFPDF\Helper\Fields\Field_v3_Products;
  * Deprecated Functionality / Classes
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -142,7 +142,7 @@ class PDFRender extends GFPDF_Deprecated_Abstract {
 	public function savePDF( $raw_pdf_string, $filename, $id ) {
 
 		/* create our path */
-		$path = PDF_SAVE_LOCATION . $id . '/';
+		$path = apply_filters( 'gfpdf_legacy_save_path', PDF_SAVE_LOCATION . $id . '/', $filename, $id );
 		if ( ! is_dir( $path ) ) {
 			if ( ! wp_mkdir_p( $path ) ) {
 				throw new Exception( sprintf( 'Could not create directory: %s' ), esc_html( $path ) );
@@ -155,7 +155,6 @@ class PDFRender extends GFPDF_Deprecated_Abstract {
 		}
 
 		/* return the path to the PDF */
-
 		return $path . $filename;
 	}
 

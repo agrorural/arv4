@@ -83,14 +83,14 @@
                   html3 += '<div class="entry-container">';
                     html3 += '<div class="entry-body">';
                     
-                      html3 += '<div class="entry-content-all">';
+ 
                         html3 += '<h2 class="entry-title">'; 
                           html3 += objectToSend.vMensaje;
                         html3 += '</h2>';
                         html3 += '<div class="entry-content">';
                           html3 += '<p>Intente con otros parámetros de búsqueda...</p>'; 
                         html3 += '</div>';
-                      html3 += '</div>';
+
 
                     html3 += '</div>';
                   html3 += '</div>';
@@ -108,15 +108,12 @@
                       customPostTitle = objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
                       customPostContent= objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
 
-                      html += '<div class="entry-content-all">';
-
                         html += '<h2 class="entry-title">';
                           html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
                         html += '</h2>';
                         
                         html += '<div class="entry-content">' + customPostContent + '</div>';
 
-                      html += '</div>';
 
                       html += '<div class="post-meta">';
                         html += '<div class="post-date">';

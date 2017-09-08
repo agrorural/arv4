@@ -11,7 +11,7 @@ use stdClass;
  * Handles all the template-related functionality
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.1
  */
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -70,18 +70,29 @@ class Helper_Templates {
 	protected $data;
 
 	/**
+	 * Holds the abstracted Gravity Forms API specific to Gravity PDF
+	 *
+	 * @var \GFPDF\Helper\Helper_Form
+	 *
+	 * @since 4.3
+	 */
+	protected $gform;
+
+	/**
 	 * Setup our class by injecting all our dependancies
 	 *
-	 * @param \Monolog\Logger|LoggerInterface $log  Our logger class
-	 * @param \GFPDF\Helper\Helper_Data       $data Our plugin data store
+	 * @param \Monolog\Logger|LoggerInterface    $log  Our logger class
+	 * @param \GFPDF\Helper\Helper_Data          $data Our plugin data store
+	 * @param \GFPDF\Helper\Helper_Abstract_Form $gform
 	 *
 	 * @since 4.1
 	 */
-	public function __construct( LoggerInterface $log, Helper_Data $data ) {
+	public function __construct( LoggerInterface $log, Helper_Data $data, Helper_Abstract_Form $gform ) {
 
 		/* Assign our internal variables */
-		$this->log  = $log;
-		$this->data = $data;
+		$this->log   = $log;
+		$this->data  = $data;
+		$this->gform = $gform;
 	}
 
 	/**
@@ -479,6 +490,16 @@ class Helper_Templates {
 	 * @since 4.1
 	 */
 	public function get_config_class( $template_id ) {
+
+		/* Allow a user to change the current tempalte configuration file if they have the appropriate capabilities */
+		if ( rgget( 'template' ) && is_user_logged_in() && $this->gform->has_capability( 'gravityforms_edit_settings' ) ) {
+			$template_id = rgget( 'template' );
+
+			/* Handle legacy v3 URL structure and strip .php from the end of the template */
+			if ( isset( $_GET['gf_pdf'] ) && isset( $_GET['fid'] ) && isset( $_GET['lid'] ) ) {
+				$template_id = substr( $template_id, 0, -4 );
+			}
+		}
 
 		try {
 			$class_path = $this->get_config_path_by_id( $template_id );

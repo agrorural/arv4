@@ -14,7 +14,7 @@ use GFPDF_Core;
  * The bootstrap is loaded on WordPress 'plugins_loaded' functionality
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -205,7 +205,7 @@ class Router implements Helper\Helper_Interface_Actions, Helper\Helper_Interface
 		$this->notices->init();
 
 		/* Setup our template helper */
-		$this->templates = new Helper\Helper_Templates( $this->log, $this->data );
+		$this->templates = new Helper\Helper_Templates( $this->log, $this->data, $this->gform );
 
 		/* Set up our options object - this is initialised on admin_init but other classes need to access its methods before this */
 		$this->options = new Helper\Helper_Options_Fields(

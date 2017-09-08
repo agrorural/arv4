@@ -14,7 +14,7 @@ return array(
     'GFPDF\\Model\\' => array($baseDir . '/src/model'),
     'GFPDF\\Helper\\Licensing\\' => array($baseDir . '/src/helper/licensing'),
     'GFPDF\\Helper\\Fields\\' => array($baseDir . '/src/helper/fields'),
-    'GFPDF\\Helper\\' => array($baseDir . '/src/helper', $baseDir . '/src/helper/abstract', $baseDir . '/src/helper/interface'),
+    'GFPDF\\Helper\\' => array($baseDir . '/src/helper', $baseDir . '/src/helper/abstract', $baseDir . '/src/helper/interface', $baseDir . '/src/helper/trait'),
     'GFPDF\\Controller\\' => array($baseDir . '/src/controller'),
     'GFPDF\\' => array($baseDir . '/src'),
 );

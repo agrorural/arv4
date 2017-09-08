@@ -17,7 +17,7 @@ use Exception;
  * Common Functions shared throughour Gravity PDF
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -150,13 +150,6 @@ class Helper_Misc {
 	 * @since 4.0
 	 */
 	public function get_field_class( $type ) {
-
-		/* change our product field types to use a single master product class */
-		$convert_product_type = [ 'quantity', 'option', 'shipping', 'total' ];
-
-		if ( in_array( strtolower( $type ), $convert_product_type ) ) {
-			$type = 'product';
-		}
 
 		/* Format the type name correctly */
 		$typeArray = explode( '_', $type );

@@ -6,7 +6,7 @@ use GFPDF\Helper\Helper_Abstract_Model;
 use GFPDF\Helper\Helper_PDF;
 
 use GFPDF\Helper\Helper_Abstract_Fields;
-use GFPDF\Helper\Fields\Field_Product;
+use GFPDF\Helper\Helper_Abstract_Field_Products;
 use GFPDF\Helper\Fields\Field_Default;
 use GFPDF\Helper\Fields\Field_Products;
 
@@ -35,7 +35,7 @@ use Exception;
  * PDF Display Model, including the $form_data array
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -710,9 +710,15 @@ class Model_PDF extends Helper_Abstract_Model {
 	public function get_pdf_url( $pid, $id, $download = false, $print = false, $esc = true ) {
 		global $wp_rewrite;
 
+		/*
+		 * Patch for WPML which can include the default language as a GET parameter
+		 * See https://github.com/GravityPDF/gravity-pdf/issues/550
+		 */
+		$home_url = strtok( home_url(), '?' );
+
 		/* Check if permalinks are enabled, otherwise fall back to our ugly link structure for 4.0 (not the same as our v3 links) */
 		if ( $wp_rewrite->using_permalinks() ) {
-			$url = home_url() . '/' . $wp_rewrite->root; /* Handle "almost pretty" permalinks - fix for IIS servers without modrewrite  */
+			$url = $home_url . '/' . $wp_rewrite->root; /* Handle "almost pretty" permalinks - fix for IIS servers without modrewrite  */
 			$url .= 'pdf/' . $pid . '/' . $id . '/';
 
 			if ( $download ) {
@@ -723,7 +729,7 @@ class Model_PDF extends Helper_Abstract_Model {
 				$url .= '?print=1';
 			}
 		} else {
-			$url = home_url() . '/?gpdf=1&pid=' . $pid . '&lid=' . $id;
+			$url = $home_url . '/?gpdf=1&pid=' . $pid . '&lid=' . $id;
 
 			if ( $download ) {
 				$url .= '&action=download';
@@ -902,6 +908,7 @@ class Model_PDF extends Helper_Abstract_Model {
 
 		$pdf_generator = new Helper_PDF( $entry, $settings, $this->gform, $this->data, $this->misc, $this->templates );
 		$pdf_generator->set_filename( $this->get_pdf_name( $settings, $entry ) );
+		$pdf_generator = apply_filters( 'gfpdf_pdf_generator_pre_processing', $pdf_generator );
 
 		if ( $this->process_and_save_pdf( $pdf_generator ) ) {
 			$pdf_path = $pdf_generator->get_full_pdf_path();
@@ -1306,6 +1313,8 @@ class Model_PDF extends Helper_Abstract_Model {
 	 * @since 4.0
 	 */
 	public function get_form_data( $entry ) {
+
+		$entry = apply_filters( 'gfpdf_entry_pre_form_data', $entry );
 
 		if ( ! isset( $entry['form_id'] ) ) {
 			return [];
@@ -1780,21 +1789,18 @@ class Model_PDF extends Helper_Abstract_Model {
 				 * To make your life more simple you should either use the same namespace as the field classes (\GFPDF\Helper\Fields) or import the class directly (use \GFPDF\Helper\Fields\Field_Text)
 				 * We've tried to make the fields as modular as possible. If you have any feedback about this approach please submit a ticket on GitHub (https://github.com/GravityPDF/gravity-pdf/issues)
 				 */
-				if ( GFCommon::is_product_field( $field->type ) ) {
 
-					/* Product fields are handled through a single function */
-					$product = new Field_Product( $field, $entry, $this->gform, $this->misc );
-					$product->set_products( $products );
+				$class = new $class_name( $field, $entry, $this->gform, $this->misc );
 
-					$class = apply_filters( 'gfpdf_field_product_class', $product, $field, $entry, $form );
-				} else {
-					/*
-					 * Load the selected class
-					 * See https://gravitypdf.com/documentation/v4/gfpdf_field_class/ for more details about these filters
-					 */
-					$class = apply_filters( 'gfpdf_field_class', new $class_name( $field, $entry, $this->gform, $this->misc ), $field, $entry, $form );
-					$class = apply_filters( 'gfpdf_field_class_' . $field->type, $class, $field, $entry, $form );
+				if ( $class instanceof Helper_Abstract_Field_Products ) {
+					$class->set_products( $products );
 				}
+
+				/*
+				 * See https://gravitypdf.com/documentation/v4/gfpdf_field_class/ for more details about these filters
+				 */
+				$class = apply_filters( 'gfpdf_field_class', $class, $field, $entry, $form );
+				$class = apply_filters( 'gfpdf_field_class_' . $field->type, $class, $field, $entry, $form );
 			}
 
 			if ( empty( $class ) || ! ( $class instanceof Helper_Abstract_Fields ) ) {

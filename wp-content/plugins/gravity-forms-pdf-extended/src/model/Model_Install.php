@@ -16,7 +16,7 @@ use GFCommon;
  * Welcome Screen Model
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -542,5 +542,16 @@ class Model_Install extends Helper_Abstract_Model {
 			wp_safe_redirect( admin_url( 'index.php' ) );
 		}
 		exit;
+	}
+
+	/**
+	 * In preparation for the removal of the Mpdf fonts we'll copy them all to our
+	 * PDF Working Directory during an update
+	 *
+	 * @since 4.3
+	 */
+	public function copy_fonts_to_working_directory() {
+		$mpdf_dir = PDF_PLUGIN_DIR . 'vendor/blueliquiddesigns/mpdf/ttfonts/';
+		$this->misc->copyr( $mpdf_dir, $this->data->template_font_location );
 	}
 }

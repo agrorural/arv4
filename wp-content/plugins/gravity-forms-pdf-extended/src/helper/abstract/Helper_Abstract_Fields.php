@@ -13,7 +13,7 @@ use Exception;
  * Abstract Helper Fields
  *
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2016, Blue Liquid Designs
+ * @copyright   Copyright (c) 2017, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       4.0
  */
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
     This file is part of Gravity PDF.
 
-    Gravity PDF – Copyright (C) 2016, Blue Liquid Designs
+    Gravity PDF – Copyright (C) 2017, Blue Liquid Designs
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -320,8 +320,8 @@ abstract class Helper_Abstract_Fields {
 		 * See https://gravitypdf.com/documentation/v4/gfpdf_pdf_field_content/ for usage
 		 * @since 4.2
 		 */
-		$value = apply_filters( 'gfpdf_pdf_field_content', $value, $this->field, $this->entry, $this->form );
-		$value = apply_filters( 'gfpdf_pdf_field_content_' . $this->field->get_input_type(), $value, $this->field, $this->entry, $this->form );
+		$value = apply_filters( 'gfpdf_pdf_field_content', $value, $this->field, $this->entry, $this->form, $this );
+		$value = apply_filters( 'gfpdf_pdf_field_content_' . $this->field->get_input_type(), $value, $this->field, $this->entry, $this->form, $this );
 
 		$label = esc_html( $this->get_label() );
 		$type  = $this->field->get_input_type();

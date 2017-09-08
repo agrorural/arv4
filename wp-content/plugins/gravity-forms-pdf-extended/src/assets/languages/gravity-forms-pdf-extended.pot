@@ -89,15 +89,15 @@ msgstr ""
 msgid "View Gravity PDF Documentation"
 msgstr ""
 
-#: src/bootstrap.php:333
+#: src/bootstrap.php:333, src/helper/abstract/Helper_Abstract_Addon.php:645
 msgid "Docs"
 msgstr ""
 
-#: src/bootstrap.php:334
+#: src/bootstrap.php:334, src/helper/abstract/Helper_Abstract_Addon.php:648
 msgid "Get Help and Support"
 msgstr ""
 
-#: src/bootstrap.php:334
+#: src/bootstrap.php:334, src/helper/abstract/Helper_Abstract_Addon.php:648
 msgid "Support"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "There was a problem processing the action. Please try again."
 msgstr ""
 
-#: src/controller/Controller_Install.php:235
+#: src/controller/Controller_Install.php:238
 msgid "There was a problem uninstalling Gravity PDF. Please try again."
 msgstr ""
 
@@ -913,11 +913,11 @@ msgstr ""
 msgid "This form doesn't have any PDFs. Let's go %screate one%s."
 msgstr ""
 
-#: src/helper/Helper_Templates.php:218
+#: src/helper/Helper_Templates.php:229
 msgid "Requires Gravity PDF"
 msgstr ""
 
-#: src/helper/Helper_Templates.php:381, src/view/View_PDF.php:560
+#: src/helper/Helper_Templates.php:392, src/view/View_PDF.php:560
 msgid "Legacy"
 msgstr ""
 
@@ -989,11 +989,11 @@ msgstr ""
 msgid "You do not have access to view this PDF."
 msgstr ""
 
-#: src/model/Model_PDF.php:925
+#: src/model/Model_PDF.php:932
 msgid "The PDF could not be saved."
 msgstr ""
 
-#: src/model/Model_PDF.php:1856
+#: src/model/Model_PDF.php:1862
 msgid "Could not find PDF configuration requested"
 msgstr ""
 
@@ -1083,6 +1083,14 @@ msgstr ""
 
 #: src/view/View_Settings.php:350
 msgid "Apache and Litespeed servers automatically disable public access to the Gravity PDF temporary directory using a %s.htaccess%s file, but other web servers like Nginx do not support this feature. We will check if your PDFs are automatically protected, and let you know what you can do to protect your data if they are not."
+msgstr ""
+
+#: src/helper/abstract/Helper_Abstract_Addon.php:610
+msgid "%sRegister your copy of %s%s to receive access to automatic upgrades and support. Need a license key? %sPurchase one now%s."
+msgstr ""
+
+#: src/helper/abstract/Helper_Abstract_Addon.php:645
+msgid "View plugin Documentation"
 msgstr ""
 
 #: src/helper/abstract/Helper_Abstract_Options.php:403, src/helper/abstract/Helper_Abstract_Options.php:419
@@ -1397,11 +1405,11 @@ msgstr ""
 msgid "Cannot find file %s"
 msgstr ""
 
-#: src/helper/fields/Field_Products.php:191
+#: src/helper/fields/Field_Products.php:230
 msgid "Subtotal"
 msgstr ""
 
-#: src/helper/fields/Field_Products.php:196
+#: src/helper/fields/Field_Products.php:235
 msgid "Shipping (%s)"
 msgstr ""
 

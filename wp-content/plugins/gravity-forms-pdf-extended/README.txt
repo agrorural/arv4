@@ -5,7 +5,7 @@ Donate link: https://gravitypdf.com/donate-to-plugin/
 Tags: gravity, forms, pdf, automation, attachment, email
 Requires at least: 4.4
 Tested up to: 4.8
-Stable tag: 4.2.2
+Stable tag: 4.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl.txt
 
@@ -84,6 +84,19 @@ Also, if you enjoy using the software [we'd love it if you could give us a revie
 18. Blank Slate provides a print-friendly template focusing solely on the user-submitted data.
 
 == Changelog ==
+
+= 4.3.0 =
+* Feature: Add support for Gravity Perks E-Commerce Add-on (GH#671)
+* Dev Feature: Add GPDFAPI::get_pdf_fonts() method
+* Dev Feature: Add 'gfpdf_pdf_generator_pre_processing' filter
+* Dev Feature: Add 'gfpdf_entry_pre_form_data' filter
+* Dev Feature: Add Helper_Trait_Logger class to make it easier to inject our logger into new classes (GH#677)
+* Dev Enhancement: Include the current object as a 5th parameter to 'gfpdf_pdf_field_content' filter
+* Dev Enhancement: Include update message / additonal link helper functions for registered Gravity PDF add-ons (GH#673)
+* Dev Enhancement: Update Easy Digital Download Licensing class to version 1.6.14
+* Future Feature: After plugin updates, copy shipped Mpdf fonts to PDF Working Directory (preparation for removal of all fonts in future release) (GH#676)
+* Bug: Strip URL parameters from home_url(), if any, when building PDF URL (GH#674)
+* Bug: Load the correct PDF Template Configuration file when using 'template' helper param (GH#675)
 
 = 4.2.2 =
 * Bug: Fix empty Master Sassword regression introduced in 4.2 (GH#664)
