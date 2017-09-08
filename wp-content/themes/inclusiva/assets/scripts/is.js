@@ -23,7 +23,7 @@
 
     objectToSend.postType = ajax_is.pt === '1' ? 'documentos' : 'post';
     objectToSend.postTax = ajax_is.term ? ajax_is.term.taxonomy : 'category';
-    objectToSend.postTerm = ajax_is.term ? ajax_is.term.name : 'AGRO RURAL';
+    objectToSend.postTerm = ajax_is.term ? ajax_is.term.slug : 'agro-rural';
 
     var docPath = '/transparencia/documentos/';
 
@@ -114,8 +114,6 @@
                           termPath = objectToSend.postTerm === 'Directivas' ? 'RDE' :
                                      objectToSend.postTerm === 'PAC' ? 'RDA' :
                                      objectToSend.postTerm;
-
-                          //objectToSend.response[i].doc_link = 'No disponible';
 
                           if ( objectToSend.response[i].doc_link === 'Publicado' ) {
                             html += '<a href="' + ajax_is.upload_dir.baseurl + docPath + termPath.toLowerCase() + '/' + objectToSend.response[i].slug.toUpperCase() + '.PDF" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar</a>';
