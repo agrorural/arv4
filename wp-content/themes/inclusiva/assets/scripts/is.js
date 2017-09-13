@@ -42,7 +42,7 @@
           instaSearch.find('.preloaded').removeClass('hidden');
           instaSearch.find('.hentry').addClass('hidden');
         },
-        complete: function(){
+        complete: function(response){
           $('#optMonth').prop('disabled', false);
           $('#optYear').prop('disabled', false);
           $('#optPerPage').prop('disabled', false);
@@ -51,7 +51,7 @@
           //debugger;
 
           //Highlight
-          // var bodyHTML = $('.hentry .entry-content-all').html();
+          //var bodyHTML = $('.hentry .entry-title').html(); 
           // var termino = objectToSend.txtKeyword;
           
           // termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
@@ -62,10 +62,10 @@
           // bodyHTML = bodyHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
           
           // if (termino.length > 1) {
-          //   $('.hentry .entry-content-all').html(bodyHTML);
+          //   $('.hentry .entry-title').html(bodyHTML);
           // }
 
-          // console.log(bodyHTML);
+          //console.log(bodyHTML);
           
           // Preloading
           instaSearch.find('.preloaded').addClass('hidden');
@@ -105,8 +105,8 @@
                 html += '<article class="post-' + objectToSend.response[i].id + ' status-publish hentry tipos-rde documentos hidden">';
                   html += '<div class="entry-container">';
                     html += '<div class="entry-body ">';
-                      customPostTitle = objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
-                      customPostContent= objectToSend.postTerm === 'Directivas' || objectToSend.postTerm === 'PAC' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
+                      customPostTitle = objectToSend.postTerm === 'directivas' || objectToSend.postTerm === 'pac' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
+                      customPostContent= objectToSend.postTerm === 'directivas' || objectToSend.postTerm === 'pac' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
 
                         html += '<h2 class="entry-title">';
                           html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
@@ -121,8 +121,8 @@
                         html += '</div>';
                         html += '<div class="post-comments">';
 
-                          termPath = objectToSend.postTerm === 'Directivas' ? 'RDE' :
-                                     objectToSend.postTerm === 'PAC' ? 'RDA' :
+                          termPath = objectToSend.postTerm === 'directivas' ? 'rde' :
+                                     objectToSend.postTerm === 'pac' ? 'rda' :
                                      objectToSend.postTerm;
 
                           //objectToSend.response[i].doc_link = 'No disponible';
