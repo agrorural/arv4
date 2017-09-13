@@ -426,7 +426,8 @@ function custom_breadcrumbs() {
                     "date"            => get_the_date(),
                     "doc_link"        => get_field('rde_link'),
                     "doc_ane__nom"    => get_field('doc_ane__nom'),
-                    "doc_ane__desc"   => get_field('doc_ane__desc')
+                    "doc_ane__desc"   => get_field('doc_ane__desc'),
+                    "html"            => ''
                 );
 
             }

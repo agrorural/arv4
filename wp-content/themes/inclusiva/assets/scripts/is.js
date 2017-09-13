@@ -48,24 +48,6 @@
           $('#optPerPage').prop('disabled', false);
           $("#btnDocumento").button('reset');
           $("#btnLimpiar").button('reset');
-          //debugger;
-
-          //Highlight
-          //var bodyHTML = $('.hentry .entry-title').html(); 
-          // var termino = objectToSend.txtKeyword;
-          
-          // termino = termino.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
-
-          // var pattern = new RegExp("("+termino+")", "gi");
-
-          // bodyHTML = bodyHTML.replace(pattern, "<mark>$1</mark>");
-          // bodyHTML = bodyHTML.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
-          
-          // if (termino.length > 1) {
-          //   $('.hentry .entry-title').html(bodyHTML);
-          // }
-
-          //console.log(bodyHTML);
           
           // Preloading
           instaSearch.find('.preloaded').addClass('hidden');
@@ -77,70 +59,76 @@
             instaSearch.find(".search-result").empty();
             instaSearch.find(".wp-pagenavi").empty();
 
+            var errorMessage = objectToSend.vMensaje;
+
             if (objectToSend.bError) {
-              var html3 = '';
-                html3 = '<article class="hentry documentos hidden">';
-                  html3 += '<div class="entry-container">';
-                    html3 += '<div class="entry-body">';
+            objectToSend.vMensaje = '';
+
+                objectToSend.vMensaje = '<article class="hentry documentos hidden">';
+                  objectToSend.vMensaje += '<div class="entry-container">';
+                    objectToSend.vMensaje += '<div class="entry-body">';
                     
  
-                        html3 += '<h2 class="entry-title">'; 
-                          html3 += objectToSend.vMensaje;
-                        html3 += '</h2>';
-                        html3 += '<div class="entry-content">';
-                          html3 += '<p>Intente con otros parámetros de búsqueda...</p>'; 
-                        html3 += '</div>';
+                        objectToSend.vMensaje += '<h2 class="entry-title">'; 
+                          objectToSend.vMensaje += errorMessage;
+                        objectToSend.vMensaje += '</h2>';
+                        objectToSend.vMensaje += '<div class="entry-content">';
+                          objectToSend.vMensaje += '<p>Intente con otros parámetros de búsqueda...</p>'; 
+                        objectToSend.vMensaje += '</div>';
 
 
-                    html3 += '</div>';
-                  html3 += '</div>';
-                html3 += '</article>';
+                    objectToSend.vMensaje += '</div>';
+                  objectToSend.vMensaje += '</div>';
+                objectToSend.vMensaje += '</article>';
                 instaSearch.find(".wp-pagenavi").addClass('hidden');
-                instaSearch.find(".search-result").append(html3);
+                instaSearch.find(".search-result").append(objectToSend.vMensaje);
             }else{
 
               for (var i = 0; i < objectToSend.response.length; i++){
-                var html = ''; 
 
-                html += '<article class="post-' + objectToSend.response[i].id + ' status-publish hentry tipos-rde documentos hidden">';
-                  html += '<div class="entry-container">';
-                    html += '<div class="entry-body ">';
+                objectToSend.response[i].html = '';
+                objectToSend.response[i].html += '<article class="post-' + objectToSend.response[i].id + ' status-publish hentry tipos-rde documentos hidden">';
+                  objectToSend.response[i].html += '<div class="entry-container">';
+                    objectToSend.response[i].html += '<div class="entry-body ">';
                       customPostTitle = objectToSend.postTerm === 'directivas' || objectToSend.postTerm === 'pac' ? objectToSend.response[i].doc_ane__nom : customPostTitle = objectToSend.response[i].title;
                       customPostContent= objectToSend.postTerm === 'directivas' || objectToSend.postTerm === 'pac' ? objectToSend.response[i].doc_ane__desc: customPostContent = objectToSend.response[i].content;
 
-                        html += '<h2 class="entry-title">';
-                          html += '<a href="' + objectToSend.response[i].permalink  + '">' + customPostTitle + '</a>';
-                        html += '</h2>';
+                        objectToSend.response[i].html += '<h2 class="entry-title">';
+                          objectToSend.response[i].html += '<a href="' + objectToSend.response[i].permalink  + '">';
+                          objectToSend.response[i].html += objectToSend.txtKeyword.length >= 1 ? (customPostTitle.replace(new RegExp("("+ objectToSend.txtKeyword.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*") +")", "gi"), "<mark>$1</mark>")).replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4") : customPostTitle; 
+                           objectToSend.response[i].html += '</a>';
+                        objectToSend.response[i].html += '</h2>';
                         
-                        html += '<div class="entry-content">' + customPostContent + '</div>';
+                        objectToSend.response[i].html += '<div class="entry-content">';
+                          objectToSend.response[i].html += objectToSend.txtKeyword.length >= 1 ? (customPostContent.replace(new RegExp("("+ objectToSend.txtKeyword.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*") +")", "gi"), "<mark>$1</mark>")).replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4") : customPostContent; 
+                        objectToSend.response[i].html += '</div>';
 
 
-                      html += '<div class="post-meta">';
-                        html += '<div class="post-date">';
-                          html += '<time class="updated">' + objectToSend.response[i].date + '</time>';
-                        html += '</div>';
-                        html += '<div class="post-comments">';
+                      objectToSend.response[i].html += '<div class="post-meta">';
+                        objectToSend.response[i].html += '<div class="post-date">';
+                          objectToSend.response[i].html += '<time class="updated">' + objectToSend.response[i].date + '</time>';
+                        objectToSend.response[i].html += '</div>';
+                        objectToSend.response[i].html += '<div class="post-comments">';
 
                           termPath = objectToSend.postTerm === 'directivas' ? 'rde' :
                                      objectToSend.postTerm === 'pac' ? 'rda' :
                                      objectToSend.postTerm;
-
-                          //objectToSend.response[i].doc_link = 'No disponible';
+                          
 
                           if ( objectToSend.response[i].doc_link === 'Publicado' ) {
-                            html += '<a href="' + ajax_is.upload_dir.baseurl + docPath + termPath.toLowerCase() + '/' + objectToSend.response[i].slug.toUpperCase() + '.PDF" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar</a>';
+                            objectToSend.response[i].html += '<a href="' + ajax_is.upload_dir.baseurl + docPath + termPath.toLowerCase() + '/' + objectToSend.response[i].slug.toUpperCase() + '.PDF" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar</a>';
                           }else{
-                            html += 'No disponible';
+                            objectToSend.response[i].html += 'No disponible';
                           }
 
-                        html += '</div>';
-                      html += '</div>';
-                    html += '</div>';
-                  html += '</div>';
-                html += '</article>';
+                        objectToSend.response[i].html += '</div>';
+                      objectToSend.response[i].html += '</div>';
+                    objectToSend.response[i].html += '</div>';
+                  objectToSend.response[i].html += '</div>';
+                objectToSend.response[i].html += '</article>';
                 
 
-                instaSearch.find(".search-result").append(html);
+                instaSearch.find(".search-result").append(objectToSend.response[i].html);
 
                 if (instaSearch.find(".wp-pagenavi").hasClass('hidden')){
                    instaSearch.find(".wp-pagenavi").removeClass('hidden');
@@ -149,18 +137,18 @@
              }
 
              for (var j = 1; j <= objectToSend.max_num_pages; j++) {
-              var html2 = '<a href="page/' + j + '" class="page navi" data-id="' + j + '">' + j + '</a>';
+              var html = '<a href="page/' + j + '" class="page navi" data-id="' + j + '">' + j + '</a>';
               
               if(objectToSend.paged === j){
-                html2 = '<span class="current">' + j + '</span>';
+                html = '<span class="current">' + j + '</span>';
               }
                
-               instaSearch.find(".wp-pagenavi").append(html2);
+               instaSearch.find(".wp-pagenavi").append(html);
              }
 
             }
 
-             console.log(response);
+             //console.log(response);
          }, 
          error: function(error){
           console.log('Error inesperado');
