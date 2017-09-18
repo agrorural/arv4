@@ -2,7 +2,9 @@
   $rde_link = get_field('rde_link');
 
   $rdc__titular = get_field('rdc__titular');
-  $rdc__doc = get_field('rdc__doc');
+  $pa__rdc__doc = get_field('pa__rdc__doc');
+
+  var_dump($pa__rdc__doc);
 
   $dateformat = "d/m/Y";
 
@@ -42,8 +44,8 @@
     <tr>
       <th scope="row">Documento de desingnación</th>
       <td>
-        <?php if ($rdc__doc) : ?>
-          <?php echo $rdc__doc; ?>
+        <?php if ($pa__rdc__doc) : ?>
+          <?php echo $pa__rdc__doc; ?>
         <?php else : ?>
           No disponible
         <?php endif; ?>
