@@ -4,7 +4,7 @@
   $rdc__titular = get_field('rdc__titular');
   $pa__rdc__doc = get_field('pa__rdc__doc');
 
-  var_dump($pa__rdc__doc);
+  //var_dump($pa__rdc__doc);
 
   $dateformat = "d/m/Y";
 
