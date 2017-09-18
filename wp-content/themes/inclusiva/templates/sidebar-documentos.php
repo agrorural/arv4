@@ -16,7 +16,7 @@
 			$term__name = $term_list[0]->name;
 		}
 	}
-	//var_dump(is_page_template( 'template-documentos.php' ));
+	//var_dump(term_list);
 ?>
 <?php if( $term_list ) : ?>
 	<?php if (has_nav_menu('doc_'.$term__slug.'_navigation')) { ?>
@@ -27,7 +27,7 @@
 	<?php } ?>
 <?php endif; ?>
 
-<?php if( is_page ( array( 'rendicion-de-cuentas' ) ) ) :
+<?php if( is_page ( array( 'autoevaluacion-transparencia', 'rendicion-de-cuentas', 'recomendaciones-de-auditoria', 'control-previo' ) ) ) :
 ?>
 
 	<?php if (has_nav_menu('doc_pack_navigation')) { ?>
@@ -39,7 +39,7 @@
 
 <?php endif; ?>
 
-<?php if( is_page_template( 'template-documentos.php' ) ) : ?>
+<?php if( is_page_template( 'template-documentos.php' ) &&  !is_page ( array( 'rendicion-de-cuentas', 'autoevaluacion-transparencia', 'recomendaciones-de-auditoria', 'control-previo' ) ) ) : ?>
 	<section class="widget">
 		<h3>Documentos</h3>
 	    <?php
