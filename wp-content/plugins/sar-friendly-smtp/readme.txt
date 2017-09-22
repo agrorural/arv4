@@ -3,8 +3,9 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
 Requires at least: 3.9.3
-Tested up to: 4.7.4
-Stable tag: 1.2
+Tested up to: 4.8.2
+Stable tag: 1.2.3
+Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -35,6 +36,7 @@ If you're happy with the plugin [please don't forget to give it a good rating](h
 
 = Requirements =
 
+* PHP 5.6 or higher.
 * WordPress 3.9.3 or higher.
 * SMTP server :)
 
@@ -44,7 +46,7 @@ Just install in your WordPress like any other plugin, activate it and fill setti
 
 = Developers =
 
-If you want to contribute to the development of this plugin fixing a bug or **suggesting** any improvement, there's a [Github repository available](https://github.com/samuelaguilera/sar-friendly-smtp)
+If you want to contribute to the development of this plugin fixing a bug or **suggesting** any improvement, feel free to submit a pull request to this repo.
 
 == Installation ==
 
@@ -54,9 +56,9 @@ If you want to contribute to the development of this plugin fixing a bug or **su
 
 = I can't receive emails sent by my WordPress, what happen? =
 
-This plugin is just a way to tell WordPress something like: "Please dear WordPress, use my SMTP server to send the emails, don't use the web server."
+This plugin is just a way to tell WordPress something like: "Please dear WordPress, use my SMTP server to send the emails, not the web server."
 
-That means that **this plugin don't send you emails**, WordPress sends your emails using **your SMTP server**.
+That means that **this plugin doesn't send you emails**, when the plugin is enabled WordPress sends your emails using **your SMTP server**.
 
 If you're having trouble sending your emails, you can activate the debug mode in settings page. That activates the logging of the commands and data between WordPress and your SMTP server, and **most of the time** you will find useful information in your PHP error_log file.
 
@@ -81,12 +83,21 @@ Gmail/Google Apps (and probably other servers too) only allows you to send email
 
 = My emails are sent, debug log looks ok, but they're lost in the cyberspace, never reach the destination! Why life is so cruel with me? I'm going to cry! =
 
-Be happy man, life is life... Sending an email sucessfully does not guarantee you that it will reach the destination, an email goes thru many email servers before reach the recipient email inbox. And finally, if your email reach the server that handles the inbox for the destination email address, it's this server who has the last word to decide if your email is going to be delivered to the recipient or not.
+Be happy man, life is life... Sending an email successfully does not guarantee you that it will reach the destination, an email goes thru many email servers before reaching the recipient email inbox. And finally, if your email reach the server that handles the inbox for the destination email address, it's this server who has the last word to decide if your email is going to be delivered to the recipient or not.
 
 Lots of things can be considered to reject your emails in destination without any notice: Content of the email triggering spam filters (i.e. too many links in your email content) or recipient server policy, bad reputation of your domain or SMTP IP, missing recommendations (i.e. SPF record)... It's a whole world man!
 
-Services like http://mandrill.com/ or https://sendgrid.com/ can help you to improve your email delivery.
+I would recommend you to check any of the services below, all of them provide a SMTP server to use and can help you to improve your email delivery.
 
+[Mailgun](https://www.mailgun.com/)
+[Sendgrid](https://sendgrid.com/)
+[Mailjet](https://mailjet.com/)
+[SparkPost](https://www.sparkpost.com/)
+[Elastic Email](https://elasticemail.com/)
+[MailRelay](https://mailrelay.com/)
+[Pepipost](https://pepipost.com/)
+[Sendinblue](https://sendinblue.com/)
+   
 = What means error messages displayed on send email test screen? =
 
 SMTP Error: Could not authenticate -> This indicates the server refused your authentication data, probably due to incorrect username or password, but other incorrect settings can cause this too (like a bad port or encryption). Double check you have entered correct information in settings and contact with your SMTP server support if all is ok from your side.
@@ -123,6 +134,12 @@ define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );`
 This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
 
 == Changelog ==
+
+= 1.2.3 =
+
+* Added missing closing div tag in settings page.
+* Fixed saving From Name in settings page when single quotes are used (e.g. O'Brian).
+* Shortened menu title in dashboard menu to "SMTP".
 
 = 1.2 =
 

@@ -4,7 +4,7 @@ Plugin Name: SAR Friendly SMTP
 Plugin URI: http://www.samuelaguilera.com
 Description: A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
 Author: Samuel Aguilera
-Version: 1.2
+Version: 1.2.3
 Author URI: http://www.samuelaguilera.com
 Text Domain: sar-friendly-smtp
 Domain Path: /languages
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Current plugin version, for now only used for XMailer setting
-define('SAR_FSMTP_VER', '1.2');
+define('SAR_FSMTP_VER', '1.2.3');
 
 // Add/Remove custom capability for settings access upon activation/deactivation
 register_activation_hook( __FILE__, 'sar_friendly_smtp_add_cap' );
@@ -138,7 +138,7 @@ add_action( 'admin_init', 'sarfsmtp_settings_init' );
 
 function sarfsmtp_add_admin_menu(  ) { 
 
-	add_menu_page( 'SAR Friendly SMTP', 'SAR Friendly SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
+	add_menu_page( 'SAR Friendly SMTP', 'SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
 	add_submenu_page( 'sar_friendly_smtp', __( 'Settings', 'sar-friendly-smtp' ), __( 'Settings', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_friendly_smtp' );
 	add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_fsmtp_email_test', 'sar_friendly_smtp_test_email');
 }
@@ -151,7 +151,7 @@ function sarfsmtp_settings_init(  ) {
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_smtp_server', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_port', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_encryption', 'wp_filter_nohtml_kses' );
-	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_name', 'wp_filter_nohtml_kses' );
+	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_name', 'sar_wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_address', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_misc_page', 'sarfsmtp_debug_mode', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_misc_page', 'sarfsmtp_allow_invalid_ssl', 'wp_filter_nohtml_kses' );
@@ -170,7 +170,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_settings_smtp_page', 
 		'sarfsmtp_sarfsmtp_settings_page_section',
 
-		array( __( 'Most SMTP servers (e.g. Gmail/Google Apps) requires your full email address as username.', 'sar-friendly-smtp' ) ) 	 
+		array( __( 'Most SMTP servers requires your full email address as username (e.g. user@gmail.com ).', 'sar-friendly-smtp' ) ) 	 
 	);
 
 	add_settings_field( 
@@ -197,7 +197,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_port_setting_render', 
 		'sarfsmtp_settings_smtp_page', 
 		'sarfsmtp_sarfsmtp_settings_page_section',
-		array( __('If your server uses encryption, this should be 587 or 465 (e.g. Gmail and Mandrill uses 587). If not, standard non encrypted port is 25.', 'sar-friendly-smtp' ) )		 
+		array( __('If your server uses encryption, this should be 587 or 465 (e.g. Gmail and Mailgun use 587). If not, standard non encrypted port is 25.', 'sar-friendly-smtp' ) )
 	);
 
 	add_settings_field( 
@@ -206,7 +206,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_encryption_setting_render', 
 		'sarfsmtp_settings_smtp_page', 
 		'sarfsmtp_sarfsmtp_settings_page_section',
-		array( __('When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill uses TLS).', 'sar-friendly-smtp' ) )		 
+		array( __('When using ecryption, most common setting is TLS. (e.g. Gmail and Mailgun use TLS).', 'sar-friendly-smtp' ) )		 
 
 	);
 
@@ -282,7 +282,7 @@ function sarfsmtp_from_name_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="text" class="regular-text" name="sarfsmtp_from_name" value="<?php echo $sarfsmtp_from_name; ?>">
+	<input type="text" class="regular-text" name="sarfsmtp_from_name" value="<?php echo $sarfsmtp_from_name; ?>" title="From Name">
 	<p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -303,7 +303,7 @@ function sarfsmtp_from_address_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="email" class="regular-text ltr" name="sarfsmtp_from_address" value="<?php echo $sarfsmtp_from_address; ?>">
+	<input type="email" class="regular-text ltr" name="sarfsmtp_from_address" value="<?php echo $sarfsmtp_from_address; ?>" title="From Address">
     <p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -324,7 +324,7 @@ function sarfsmtp_username_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="text" class="regular-text" name="sarfsmtp_username" value="<?php echo $sarfsmtp_username; ?>">
+	<input type="text" class="regular-text" name="sarfsmtp_username" value="<?php echo $sarfsmtp_username; ?>" title="Username">
     <p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -346,7 +346,7 @@ function sarfsmtp_password_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="password" name="sarfsmtp_password" value="<?php echo $sarfsmtp_password; ?>">
+	<input type="password" name="sarfsmtp_password" value="<?php echo $sarfsmtp_password; ?>" title="Password">
     <p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -367,7 +367,7 @@ function sarfsmtp_smtp_server_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="text" class="regular-text" name="sarfsmtp_smtp_server" value="<?php echo $sarfsmtp_smtp_server; ?>">
+	<input type="text" class="regular-text" name="sarfsmtp_smtp_server" value="<?php echo $sarfsmtp_smtp_server; ?>" title="Server">
     <p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -388,7 +388,7 @@ function sarfsmtp_port_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<input type="text" class="small-text" name="sarfsmtp_port" value="<?php echo $sarfsmtp_port; ?>">
+	<input type="text" class="small-text" name="sarfsmtp_port" value="<?php echo $sarfsmtp_port; ?>" title="Port">
     <p class="description"><?php echo $args[0] ?></p>
 	<?php
 	}
@@ -410,7 +410,7 @@ function sarfsmtp_encryption_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<select name="sarfsmtp_encryption">
+	<select name="sarfsmtp_encryption" title="Encryption">
 		<option value="" <?php selected( $sarfsmtp_encryption,'' ); ?>><?php _e( 'None', 'sar-friendly-smtp' ) ?></option>
 		<option value="tls" <?php selected( $sarfsmtp_encryption, 'tls' ); ?>><?php _e( 'TLS', 'sar-friendly-smtp' ) ?></option>
 		<option value="ssl" <?php selected( $sarfsmtp_encryption, 'ssl' ); ?>><?php _e( 'SSL', 'sar-friendly-smtp' ) ?></option>
@@ -436,7 +436,7 @@ function sarfsmtp_debug_mode_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<select name="sarfsmtp_debug_mode">
+	<select name="sarfsmtp_debug_mode" title="Debug Mode">
 		<option value="off" <?php selected( $sarfsmtp_debug_mode,'off' ); ?>><?php _e( 'Off', 'sar-friendly-smtp' ) ?></option>
 		<option value="error_log" <?php selected( $sarfsmtp_debug_mode, 'error_log' ); ?>><?php _e( 'Error Log', 'sar-friendly-smtp' ) ?></option>
 	</select>
@@ -460,7 +460,7 @@ function sarfsmtp_allow_invalid_ssl_setting_render( $args ) {
 	<?php
 	} else {
 	?>
-	<select name="sarfsmtp_allow_invalid_ssl">
+	<select name="sarfsmtp_allow_invalid_ssl" title="Allow Invalid SSL">
 		<option value="off" <?php selected( $sarfsmtp_allow_invalid_ssl,'off' ); ?>><?php _e( 'Off', 'sar-friendly-smtp' ) ?></option>
 		<option value="on" <?php selected( $sarfsmtp_allow_invalid_ssl, 'on' ); ?>><?php _e( 'On', 'sar-friendly-smtp' ) ?></option>
 	</select>
@@ -520,6 +520,7 @@ function sar_friendly_smtp_options_page(  ) {
 		submit_button();
 		?>	
 	</form>
+	</div>
 	<?php
 }
 
@@ -551,3 +552,8 @@ function sarfsmtp_maybe_upgrade_settings(){
 
 }
 add_action( 'admin_init', 'sarfsmtp_maybe_upgrade_settings' );
+
+function sar_wp_filter_nohtml_kses( $data ) {
+	// modified wp_filter_nohtml_kses to allow the use of single quotes https://core.trac.wordpress.org/ticket/40606
+	return wp_kses( stripslashes( $data ), 'strip' ); // In theory 'strip' should not be a valid parameter, but I'm just doing the same that wp_filter_nohtml_kses() core function does
+}
