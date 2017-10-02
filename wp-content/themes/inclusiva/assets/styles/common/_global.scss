@@ -432,6 +432,32 @@ article, figure{
     }
   }
 }
+
+/* SLider */
+.slider-carousel{
+  width: 1140px;
+  margin: 0 auto;
+  .owl-stage-outer{
+    overflow: visible;
+    .owl-stage{
+      background-color: $brown--light;
+      .owl-item{
+        width: 1140px;
+        position: relative;
+        opacity: .15;
+        z-index: 0;
+        img{
+          @include fadeInDown();
+        }
+        &.active{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
 /* Navegación Secundaria*/
 
 main{

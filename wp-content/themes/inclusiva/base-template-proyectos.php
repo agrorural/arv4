@@ -21,23 +21,36 @@ use Roots\Sage\Wrapper;
     ?>
     <?php  
 		global $post; 
-		$pry__logo = get_field('pry__logo');
+    $pry__logo = get_field('pry__logo');
 		$pry__tag = get_field('pry__tag'); 
 		$tag_by_ID = get_term_by('id', $pry__tag, 'post_tag');
     $tag__slug = $tag_by_ID->slug;
+
+    //Slide images
+    $pry__slide_1 = get_field('pry__slide_1');
+    $pry__slide_2 = get_field('pry__slide_2');
+    $pry__slide_3 = get_field('pry__slide_3');
+
     // echo '<pre>';
-    // var_dump($tag__slug);
+    // var_dump($pry__slide_1['url']);
     // echo '</pre>';
     ?>
 
-    <?php if (has_post_thumbnail( $post->ID ) ){ ?>
+    <div class="owl-carousel slider-carousel sl__proyecto">
+      <div class="item"><img src="<?php echo $pry__slide_1['url']; ?>"></div>
+      <div class="item"><img src="<?php echo $pry__slide_2['url']; ?>"></div>
+      <div class="item"><img src="<?php echo $pry__slide_3['url']; ?>"></div>
+    </div>
+
+    <?php /*if (has_post_thumbnail( $post->ID ) ){ ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); ?>
       	<div class="masshead" style="background: url('<?php echo $image[0]; ?>')  no-repeat top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
     <?php } else { ?>
       	<div class="masshead">
-    <?php } ?>
-			  <?php get_template_part('templates/page', 'header-proyectos'); ?>
-		  </div>
+    <?php } */?>
+<!--       <div class="masshead">
+			  <?php /* get_template_part('templates/page', 'header-proyectos'); */?>
+		  </div> -->
     <?php if ($tag__slug && has_nav_menu('pry_'.$tag__slug.'_navigation')){ ?>
           <?php get_template_part('templates/nav', 'proyectos' ); ?>
     <?php } ?>

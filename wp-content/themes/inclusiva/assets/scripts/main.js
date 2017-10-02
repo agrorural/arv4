@@ -186,6 +186,19 @@
             }
         });
       }
+    },
+    'aliados_ii': {
+      init: function() {
+        $('.sl__proyecto').owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 0,
+          autoplay: true,
+          autoplayTimeout: 30000,
+          autoplayHoverPause:true,
+          center: true
+        });
+      }
     }
   };
 
