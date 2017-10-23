@@ -111,7 +111,9 @@
                         objectToSend.response[i].html += '<div class="post-comments">';
 
                           termPath = objectToSend.postTerm === 'directivas' ? 'rde' :
+                                     objectToSend.postTerm === 'ado' ? 'rde' :
                                      objectToSend.postTerm === 'pac' ? 'rda' :
+                                     objectToSend.postTerm === 'cds' ? 'rda' :
                                      objectToSend.postTerm;
                           
 
