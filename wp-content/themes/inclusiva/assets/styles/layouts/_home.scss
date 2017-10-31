@@ -106,6 +106,10 @@
 						&.tribe-events-list-widget{
 							position: relative;
 							overflow: hidden;
+							p{
+								position: relative;
+								padding: 7px 15px;
+							}
 							&:before{
 								@include fa-icon();
 								content: "\f073";
