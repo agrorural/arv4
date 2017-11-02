@@ -137,3 +137,27 @@ function insta_search(){
 }
 
 add_shortcode('instasearch', __NAMESPACE__ . '\\insta_search');
+
+// Quita el menu de comentarios al rol Contributor
+function comments_menu_removing() {
+  if( !current_user_can( 'edit_others_pages' ) ){
+        remove_menu_page( 'edit-comments.php' );          //Comments
+    }
+}
+
+// Imposibilita la lectura de posts que no son suyos al rol Contributor
+add_action( 'admin_menu', __NAMESPACE__ . '\\comments_menu_removing' );
+
+function posts_for_current_contributor() {
+    global $user_ID;
+
+    if ( current_user_can( 'contributor' ) ) {
+       if ( ! isset( $_GET['author'] ) ) {
+          wp_redirect( add_query_arg( 'author', $user_ID ) );
+          exit;
+       }
+   }
+
+}
+
+add_action( 'load-edit.php', __NAMESPACE__ . '\\posts_for_current_contributor' );
