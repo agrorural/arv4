@@ -2,43 +2,6 @@
   // This file assumes that you have included the nav walker from https://github.com/twittem/wp-bootstrap-navwalker
   // somewhere in your theme.
 ?>
-<?php
-$args = array(
-  'post_type' => 'post',
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'post_format',
-      'field'    => 'slug',
-      'terms'    => array( 'post-format-aside' ),
-    )
-  ),
-  'posts_per_page' => -1
-); 
-// the query
-$alert_query = new WP_Query( $args ); ?>
-
-<?php if ( is_home() && $alert_query->have_posts() ) : ?>
-  <header class="alerts hidden">
-    <div class="container">
-    <!-- pagination here -->
-      <div class="row">
-        <div class="alerts__header">
-          <a href="<?php echo get_tag_link(462); ?>">Alerta <img src="<?php echo bloginfo('template_url'); ?>/dist/images/senamhi__logo.png" /></a>
-        </div>
-        <div class="owl-carousel sl__alerts">
-          <!-- the loop -->
-            <?php while ( $alert_query->have_posts() ) : $alert_query->the_post(); ?>
-              <?php get_template_part('templates/content', 'aside'); ?>
-            <?php endwhile; ?>
-          <!-- end of the loop -->
-        </div>
-      </div>
-    <!-- pagination here -->
-    </div>
-  </header>
-  <?php wp_reset_postdata(); ?>
-
-<?php endif; ?>
 
 <header class="super-header">
   <div class="container">
