@@ -222,7 +222,7 @@
           dots: true,
           responsive: {
             480: {
-              items: 2
+              items: 1
             },
             600: {
               items: 3
@@ -235,7 +235,15 @@
           margin: 30,
           items: 5,
           lazyLoad: true,
-          dots: true
+          dots: true,
+          responsive: {
+            480: {
+              items: 1
+            },
+            600: {
+              items: 3
+            }
+          }
         });
       },
       finalize: function () {
