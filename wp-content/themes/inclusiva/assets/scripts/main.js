@@ -199,6 +199,47 @@
           center: true
         });
       }
+    },
+    'reconstruccion_con_cambios': {
+      init: function () {
+        $('#sl__comunicados').owlCarousel({
+          loop: true,
+          margin: 0,
+          items: 1,
+          dots: false
+        });
+
+        $('#sl__reconstruccion').owlCarousel({
+          items: 4,
+          loop: false,
+          margin: 30,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          video: true,
+          lazyLoad: true,
+          dots: true,
+          responsive: {
+            480: {
+              items: 2
+            },
+            600: {
+              items: 3
+            }
+          }
+        });
+
+        $('#sl__banners').owlCarousel({
+          loop: true,
+          margin: 30,
+          items: 5,
+          lazyLoad: true,
+          dots: false
+        });
+      },
+      finalize: function () {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+      }
     }
   };
 

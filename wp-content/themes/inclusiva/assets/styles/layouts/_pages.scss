@@ -444,9 +444,99 @@
 			}
 		}
 	}
+
+	&.reconstruccion-con-cambios{
+		.masshead{
+			height: 500px;
+			.container{
+				height: 500px;
+				.page-header{
+					text-align: center;
+					h1{
+						@include font-size(60);
+					}
+					p.lead{
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+		section{
+			margin-bottom: 60px;
+			.page-header{
+				position: relative;
+				margin: 0 0 30px;
+				border-bottom: 0px solid transparent;
+				h3{
+					a{
+						color: #333;
+						&:hover{
+							color: tomato;
+						}
+					}
+				}
+				.line {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 3px;
+					background-color: tomato;
+					width: 40px;
+				}
+			}
+			&.comunicados{
+				text-align: center;
+				margin-bottom: 0;
+				background-color: lighten(skyblue, 15%);
+				i{
+					color: tomato;
+				}
+				a{
+					//@include font-family('opensans','light');
+					@include font-size(16);
+					color: #333;
+					&:hover{
+						color: tomato;
+					}
+				}
+			}
+			&.noticias{
+				@extend .col-sm-4;
+				article{
+					min-height: 50px;
+					margin-bottom: 15px;
+					h4{
+					@include font-size(14);
+					}
+					time{
+						@include font-size(10);
+					}
+				}
+				
+			}
+			&.facebook{
+				@extend .col-sm-4;	
+			}
+			&.twitter{
+				@extend .col-sm-4;
+			}
+			&.banners{
+				@extend .col-sm-12;
+				background: #f1f1f1;
+				padding: 3rem 0 7rem;
+			}
+			&.videos{
+				background-color: gray;
+				padding: 3rem 0 7rem;
+				.page-header{
+					h3{
+						color: white;
+					}
+				}
+			}
+		}
+	}
 }
-
-
 
 @media(max-width: $screen-xs-max){
 	.page-template-template-proyectos,.page-template-template-media, .page-template-template-proyectos-subpage{
@@ -477,4 +567,24 @@
 			}
 		}
 	}
+}
+.owl-carousel .owl-video-play-icon {
+    background: url(../images/owl.video.play.png) no-repeat !important;
+}
+
+.owl-carousel .item-video {
+	height: 200px;
+}
+
+	.owl-video-tn{
+		-webkit-background-size: cover !important;
+		-moz-background-size: cover !important;
+		-o-background-size: cover !important;
+		background-size: cover !important;
+	}
+
+.icon-format {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
 }

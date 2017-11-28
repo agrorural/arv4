@@ -55,7 +55,7 @@ function display_sidebar() {
         'is_404',
         'is_front_page',
         ['is_archive', ['tax-post_format']],
-        ['is_page', ['sala-de-prensa', 'redes-sociales', 'servicios-en-linea', 'gobierno-abierto', 'portal-de-transparencia-estandar', 'consulta-de-documentos', 'acceso-a-la-informacion','codigo-de-etica-de-la-funcion-publica', 'quejas-denuncias-y-reclamos','biblioteca-virtual', 'pack-anticorrupcion', 'practicas-profesionales']],
+        ['is_page', ['sala-de-prensa', 'redes-sociales', 'servicios-en-linea', 'gobierno-abierto', 'portal-de-transparencia-estandar', 'consulta-de-documentos', 'acceso-a-la-informacion','codigo-de-etica-de-la-funcion-publica', 'quejas-denuncias-y-reclamos','biblioteca-virtual', 'pack-anticorrupcion', 'practicas-profesionales', 'reconstruccion-con-cambios']],
         ['is_page_template', ['template-custom.php', 'template-page-list.php']],
         ['is_post_type_archive', ['tribe_events', 'servicios']],
         ['is_tax', ['tribe_events_cat']]
