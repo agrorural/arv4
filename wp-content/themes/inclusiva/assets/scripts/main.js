@@ -230,11 +230,11 @@
         });
 
         $('#sl__banners').owlCarousel({
-          loop: true,
+          loop: false,
           margin: 30,
           items: 5,
           lazyLoad: true,
-          dots: false
+          dots: true
         });
       },
       finalize: function () {

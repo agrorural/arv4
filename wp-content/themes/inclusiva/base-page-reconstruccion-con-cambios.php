@@ -22,10 +22,41 @@ use Roots\Sage\Wrapper;
     <?php get_template_part('templates/masshead', 'page-reconstruccion'); ?>
     <section class="comunicados">
          <div class="container">
-            <div id="sl__comunicados" class="owl-carousel owl-theme">
-                <div class="item"><h4><i class="fa fa-bullhorn" aria-hidden="true"></i> <a href="#">En respuesta a la publicación de El Comercio el 21/11/2017</a></h4></div>
-                <div class="item"><h4><i class="fa fa-bullhorn" aria-hidden="true"></i> <a href="#">Comunicado sobre la nota de prensa publicada en el diario Correo</a></h4></div>
-            </div>
+             <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'tag' => 'reconstruccion',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'post_format',
+                            'field'    => 'slug',
+                            'terms'    => array( 'post-format-aside' ),
+                        )
+                    ),
+                    'posts_per_page' => -1
+                );
+            ?>
+
+            <?php 
+            // the query
+            $the_query = new WP_Query( $args ); ?>
+
+            <?php if ( $the_query->have_posts() ) : ?>
+                <!-- pagination here -->
+                <div id="sl__comunicados" class="owl-carousel owl-theme">
+                    <!-- the loop -->
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="item"><h4><i class="fa fa-bullhorn" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4></div>
+                    <?php endwhile; ?>
+                    <!-- end of the loop -->
+                </div>
+                <!-- pagination here -->
+
+                <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+                <div class="item"><h4><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></h4></div>
+            <?php endif; ?>
         </div>
     </section>
     <div class="wrap container" role="document">
@@ -79,17 +110,60 @@ use Roots\Sage\Wrapper;
     </div><!-- /.wrap -->
     <section class="banners">
         <div class="container">
-            <div class="page-header">
+            <?php
+                $args = array(
+                    'post_type' => 'banners',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'posiciones',
+                            'field'    => 'slug',
+                            'terms'    => array( 'reconstruccion' ),
+                        )
+                    ),
+                    'posts_per_page' => -1
+                );
+            ?>
+
+            <?php 
+            // the query
+            $the_query = new WP_Query( $args ); ?>
+
+            <?php if ( $the_query->have_posts() ) : ?>
+                <div class="page-header">
                 <h3>Links de interés</h3>
-                <span class="line"></span>
-            </div>
-             <div id="sl__banners" class="owl-carousel owl-theme">
-                <div class="item"><img class="owl-lazy" data-src="https://placehold.it/200x115&text=1"></div>
-                <div class="item"><img class="owl-lazy" data-src="https://placehold.it/200x115&text=2"></div>
-                <div class="item"><img class="owl-lazy" data-src="https://placehold.it/200x115&text=3"></div>
-                <div class="item"><img class="owl-lazy" data-src="https://placehold.it/200x115&text=4"></div>
-                <div class="item"><img class="owl-lazy" data-src="https://placehold.it/200x115&text=5"></div>
-            </div>
+                    <span class="line"></span>
+                </div>
+                <!-- pagination here -->
+                <div id="sl__banners" class="owl-carousel owl-theme">
+                    <!-- the loop -->
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <?php // ACF 
+                            $banner__url = get_field('banner__url');
+                            $banner__pop = get_field('banner__pop');
+                            //var_dump($banner__pop);
+                            $hoy = date( 'Ymd', current_time( 'timestamp', 1 ));
+                            $banner__vig = get_field('banner__vig');
+                            $content = esc_attr(get_the_content());
+
+                            if ( $banner__vig && (intval ( $banner__vig ) < intval( $hoy )) ){
+                                change_post_status( $post->ID, 'draft' ); 
+                            } 
+                        ?>
+                        <div class="item">
+                            <a href="<?php if ($banner__url) { echo $banner__url; } else { echo bloginfo( 'url' ); } ?>">
+                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('thumb-category-bn', array ( 'class' => 'img-responsive' ) ); } ?>
+                            </a>
+                        </div>
+                    <?php endwhile; ?>
+                    <!-- end of the loop -->
+                </div>
+                <!-- pagination here -->
+
+                <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+            <?php endif; ?>
         </div>
     </section>
     <section class="videos">
