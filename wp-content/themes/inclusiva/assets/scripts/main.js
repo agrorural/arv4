@@ -158,11 +158,12 @@
             $('.sl__home figure .spinner').remove();
 
             //Si hay Modal, lo muestra
-            if(findModal.length > 0 && $.cookie('msg') == null){
+            // if(findModal.length > 0 && $.cookie('msg') == null){
+          if (findModal.length > 0 ) {
               $('#fontPageModal').modal('show');
-              $('#fontPageModal .ctaNotShowAgain').click(function(){
-                $.cookie('msg', '1');
-              });
+              // $('#fontPageModal .ctaNotShowAgain').click(function(){
+              //   $.cookie('msg', '1');
+              // });
             }
         });
       },
