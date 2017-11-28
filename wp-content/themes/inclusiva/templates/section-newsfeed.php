@@ -63,7 +63,8 @@
 						
 				<?php else : ?>
 					<?php /* Silence is Golden */  ?>
-				<?php endif; ?>	
+				<?php endif; ?>
+				<p><a href="<?php echo bloginfo('url'); ?>/reconstruccion-con-cambios/"><img src="<?php echo  get_template_directory_uri(); ?>/dist/images/banner__reconstruccion_3.jpg" alt="" class="img-responsive"></a></p>
 			</aside>
 			<aside class="sidebar banner">
 				<?php 
