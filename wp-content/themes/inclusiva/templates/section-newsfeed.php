@@ -10,6 +10,8 @@
 				</div>
 			</main>
 			<aside class="sidebar eventos">
+				<p><a href="<?php echo bloginfo('url'); ?>/reconstruccion-con-cambios/"><img src="<?php echo  get_template_directory_uri(); ?>/dist/images/banner__reconstruccion_3.jpg" alt="" class="img-responsive"></a></p>
+				
 				<div class="page-header">	
 					<h3>Eventos <small><a href="<?php echo bloginfo( 'url' ); ?>/eventos" class="">Ver todos <span class="icon long-arrow-right"></span></a></small></h3>
 				</div>
@@ -64,7 +66,6 @@
 				<?php else : ?>
 					<?php /* Silence is Golden */  ?>
 				<?php endif; ?>
-				<p><a href="<?php echo bloginfo('url'); ?>/reconstruccion-con-cambios/"><img src="<?php echo  get_template_directory_uri(); ?>/dist/images/banner__reconstruccion_3.jpg" alt="" class="img-responsive"></a></p>
 			</aside>
 			<aside class="sidebar banner">
 				<?php 
