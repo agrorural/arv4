@@ -211,7 +211,6 @@
         });
 
         $('#sl__reconstruccion').owlCarousel({
-          items: 4,
           loop: false,
           margin: 30,
           autoplay: true,
@@ -221,10 +220,16 @@
           lazyLoad: true,
           dots: true,
           responsive: {
-            480: {
+            0: {
               items: 1
             },
-            600: {
+            480: {
+              items: 2
+            },
+            768: {
+              items: 3
+            },
+            1000: {
               items: 3
             }
           }
@@ -237,11 +242,17 @@
           lazyLoad: true,
           dots: true,
           responsive: {
-            480: {
-              items: 1
+            0: {
+              items: 2
             },
-            600: {
+            480: {
               items: 3
+            },
+            768: {
+              items: 4
+            },
+            1000: {
+              items: 4
             }
           }
         });

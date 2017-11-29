@@ -447,13 +447,20 @@
 
 	&.reconstruccion-con-cambios{
 		.masshead{
-			height: 500px;
-			.container{
+			@media(min-width: $screen-sm-min){
 				height: 500px;
+			}
+			.container{
+				@media(min-width: $screen-sm-min){
+					height: 500px;
+				}
 				.page-header{
 					text-align: center;
 					h1{
 						@include font-size(60);
+						@media(max-width: $screen-xs-max){
+							@include font-size(36);
+						}
 					}
 					p.lead{
 						margin-top: 20px;
