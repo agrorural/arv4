@@ -1,43 +1,43 @@
 {
-  "dependencies": {
-    "main.js": {
-      "files": [
-        "scripts/main.js"
-      ],
-      "vendor":[
-        ""
-      ],
-      "main": true
+    "dependencies": {
+        "main.js": {
+            "files": [
+                "scripts/main.js"
+            ],
+            "vendor": [
+                ""
+            ],
+            "main": true
+        },
+        "main.css": {
+            "files": [
+                "styles/main.scss"
+            ],
+            "vendor": [
+                "../../plugins/buddypress/bp-templates/bp-legacy/css/buddypress.min.css"
+            ],
+            "main": true
+        },
+        "editor-style.css": {
+            "files": [
+                "styles/editor-style.scss"
+            ]
+        },
+        "directory-map.js": {
+            "files": [
+                "scripts/directory-map.js"
+            ]
+        },
+        "is.js": {
+            "files": [
+                "scripts/is.js"
+            ]
+        },
+        "jquery.js": {
+            "bower": ["jquery"]
+        }
     },
-    "main.css": {
-      "files": [
-        "styles/main.scss"
-      ],
-      "vendor":[
-        "../../plugins/buddypress/bp-templates/bp-legacy/css/buddypress.min.css"
-      ],
-      "main": true
-    },
-    "editor-style.css": {
-      "files": [
-        "styles/editor-style.scss"
-      ]
-    },
-    "directory-map.js": {
-      "files": [
-        "scripts/directory-map.js"
-      ]
-    },
-    "is.js": {
-      "files": [
-        "scripts/is.js"
-      ]
-    },
-    "jquery.js": {
-      "bower": ["jquery"]
+    "config": {
+        "devUrl": "agrorural.local"
     }
-  },
-  "config": {
-    "devUrl": "agrorural.dev"
-  }
 }
