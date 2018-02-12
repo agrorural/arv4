@@ -38,6 +38,6 @@
         }
     },
     "config": {
-        "devUrl": "agrorural.local"
+        "devUrl": "agrorural.test"
     }
 }
