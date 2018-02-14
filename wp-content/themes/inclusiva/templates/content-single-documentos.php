@@ -69,7 +69,7 @@
     <footer>
       <?php if($rde_link == 'Publicado') {?>
         <?php if ( $count > 1 ) { ?>
-        	<?php if ( $term_list[0]->slug == 'pac' || $term_list[0]->slug == 'pac' ) { ?>
+        	<?php if ( $term_list[0]->slug == 'pac' || $term_list[0]->slug == 'cds' ) { ?>
           		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rda/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
           	<?php }else{?>
           		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
