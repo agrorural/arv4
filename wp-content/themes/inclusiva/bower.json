@@ -11,7 +11,8 @@
     "font-awesome": "~4.4.0",
     "owl-carousel2": "~2.0.0-beta.3",
     "geoffgraham.animate.scss": "~3.2.2",
-    "lightbox2": "^2.9.0"
+    "lightbox2": "^2.9.0",
+    "swiper": "^4.1.6"
   },
   "overrides": {
     "jquery-colorbox": {
@@ -78,5 +79,6 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     }
-  }
+  },
+  "devDependencies": {}
 }

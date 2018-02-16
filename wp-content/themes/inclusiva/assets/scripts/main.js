@@ -21,7 +21,7 @@
         // JavaScript to be fired on all pages
         $('.tip').tooltip();
         $('[data-toggle="popover"]').popover({html: true});
-
+        
         //Footer carousel
         $('.sl__footer').owlCarousel({
         loop: true,
@@ -255,6 +255,56 @@
               items: 5
             }
           }
+        });
+      },
+      finalize: function () {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+      }
+    },
+    'mi_papa_peruana': {
+      init: function () {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+        var massheadSlider = new Swiper('.masshead-slider', {
+          effect: 'fade',
+          grabCursor: true,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+        });
+        var videoSlider = new Swiper('.video-slider', {
+          effect: 'coverflow',
+          // grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          freeMode: true,
+          loop: true,
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true,
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+        var linkSlider = new Swiper('.link-slider', {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          slidesPerGroup: 4,
+          loopFillGroupWithBlank: true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         });
       },
       finalize: function () {

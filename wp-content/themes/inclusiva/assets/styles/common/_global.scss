@@ -369,12 +369,6 @@ article, figure{
     }
   }
 
-/* Páginas Especiales */
-
-.search-form{
-  .form-control{
-  }
-}
 
 /* Navegación Secundaria*/
 .navbar-sub{
@@ -1031,6 +1025,103 @@ figure{
     &:hover{
       .sharing-list, .panel-heading .label{
         display: block;
+      }
+    }
+  }
+}
+/* Páginas Especiales */
+
+.page-template-template-landing{
+	.masshead{
+		height: 500px; 
+		.container{
+			height: 500px; 
+			.page-header{
+				text-align: center;
+				.share{
+					margin-top: 3rem;
+				}
+			}
+		}
+	}
+	section{
+    padding: 3rem 0 7rem;
+		.page-header{
+			position: relative;
+			margin: 0 0 30px !important;
+      border-bottom: 0 solid transparent;
+      a{
+        color: #333;
+      }
+      .line{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background-color: tomato;
+        width: 40px;
+      }
+    }
+    &.noticias{
+      article{
+        min-height: 50px;
+        margin-bottom: 15px;
+      }
+    }
+    &.videos{
+      background-color: $gray-light;
+      .page-header{
+        h3{
+          color: $white;
+        }
+      }
+      .swiper-container{
+        .swiper-wrapper{
+          .swiper-slide{
+            text-align: center;
+            font-size: 18px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            a{
+              font-size: 300%;
+              color: $white;
+            }
+          }
+        }
+        .swiper-pagination{
+          .swiper-pagination-bullet{
+            background: $white;
+            opacity: .5;
+            &.swiper-pagination-bullet-active{
+              opacity: 1;
+              background: lighten(#690a55, 20%);
+            }
+          }
+        }
+      }
+    }
+  }
+  &.mi-papa-peruana{
+    .line{
+      background-color: #690a55 !important;
+    }
+    article {
+      a{
+        color: #690a55 !important;
+        &:hover{
+          color: lighten(#690a55, 15%) !important;
+        }
       }
     }
   }
