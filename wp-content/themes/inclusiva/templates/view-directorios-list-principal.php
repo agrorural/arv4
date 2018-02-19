@@ -17,20 +17,28 @@
 
 	<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-		<?php
+		<?php 
 			$terms = wp_get_object_terms($post->ID, 'grupos');
-			if(!empty($terms)){
-				$loopTerm = $terms[0]->name;
+			$tempTerm = $terms[0]->name;
+			$loopTerm = $terms[0]->name;
+			$loopSlug = $terms[0]->slug;
 
+			if( $tempTerm!== $group && $group !== ""){
+				echo '</div>';
+			}
 			if( $group !== $loopTerm ){
-				echo '<h3 class="ap__list__title">'. $loopTerm .'</h3>';
-			
+				echo '<h3 class="ap__list__title">';
+				echo '<a role="button" data-toggle="collapse" data-parent="#accordion" href="#'.$loopSlug.'" aria-expanded="true" aria-controls="' .$loopSlug. '">';
+				echo $loopTerm;
+				echo '</a>';
+				echo '</h3>';
+				echo '<div id="'.$loopSlug.'" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="'.$loopSlug.'">';
 				$group = $loopTerm;
 			}
-			}
+			
+			get_template_part('templates/content', 'directorios-list'); 
+			
 		?>
-
-		<?php get_template_part('templates/content', 'directorios-list'); ?>
 
 	<?php endwhile; ?>
 

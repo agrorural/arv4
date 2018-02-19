@@ -29,48 +29,18 @@
   <header class="panel-heading">
 	 <?php the_title(); ?>
   </header>
-      <!-- Table -->
 
-		<?php /*
-			<td>
-				<?php echo get_avatar($dir_correo, 64); ?><?php if ( $dir_responsable ) echo $dir_responsable; ?>
-				<ul class="list-inline">
-					<?php if ( $dir_cv ) echo '<li><a href="'.$dir_cv.'"><small>Curriculum vitae</small></a></li>'; ?>
-					<?php if ( $dir_dji ) echo '<li><a href="'.$dir_dji.'"><small>DD. JJ. de Incompatibilidades</small></a></li>'; ?>
-				</ul>
-			</td>
-			<td>
-				<?php if ( $dir_cargo ) echo $dir_cargo; ?>
-				<ul class="list-inline">
-					<?php if ( $dir_resolucion ) echo '<li><a href="'.$dir_resolucion.'"><small>Resolución</small></a></li>'; ?>
-				</ul>
-			</td>
-			<td>
-				<p>
-					<?php if ( $dir_telefono ) echo $dir_telefono; ?><br />
-				</p>
-			</td>
-			<td>
-				<p>
-					<a href="mailto:<?php if ( $dir_correo ) echo $dir_correo; ?>"><?php if ( $dir_correo ) echo $dir_correo; ?></a><br /><br />
-					<?php if ( $dir_direccion ) echo '<i class="fa fa-map-marker"></i> '.$dir_direccion; ?>
-				</p>
-			</td>
-			*/ ?>
-			
 				<div class="media">
 				<div class="media-left">
-				<?php if ( $dir_correo ) { ?>
 					<?php if($dir_imagen){ ?>
 						<img src="<?php echo $dir_imagen['sizes']['thumb-72']; ?>" alt="" width="72" height="80" />
 					<?php }else{ ?>
 						<img src="<?php echo get_stylesheet_directory_uri() . '/dist/images/default__avatar.jpg'; ?>" width="72" height="80" />
 					<?php } ?>
-				<?php } ?>
 				</div>
 				<div class="media-body">
 					<section class="media-intro">
-						<?php if ( $dir_cargo ) echo '<small>' . $dir_cargo . '</small>'; ?> <?php if ( $dir_situacion && $dir_situacion != 'Designado' ) echo '<small><span class="tip" title="Encargado">(E)</span></small>'; ?>
+						<?php if ( $dir_cargo ) echo '<small>' . $dir_cargo . '</small>'; ?> <?php if ( $dir_situacion && $dir_situacion != 'Designado' ) echo '<small class="tip" title="Encargado">(E)</small>'; ?>
 						<?php if ( $dir_responsable ) echo '<h4 class="media-heading">' . $dir_responsable . '</h4>'; ?>
 						<ul class="list-inline">
 							<?php if ( $dir_resolucion ) echo '<li><a href="'.$dir_resolucion.'"><small>Resolución</small></a></li>'; ?>

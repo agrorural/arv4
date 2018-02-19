@@ -85,6 +85,33 @@
 				margin-bottom: 0;
 				padding: 10px 15px;
 				font-size: 18px;
+				transition: all ease;
+				&:hover{
+					background-color: darken($green--light, 5%);
+				}
+
+				a{
+					display: block;
+					color: $white;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+				a[aria-expanded="true"], a[aria-expanded="false"]{
+					&::after{
+						content: '\f347';
+						display: block;
+						font-family: dashicons;
+						transition: transform .3s ease, -webkit-transform .3s ease;
+						color: inherit;
+						float: right;
+					}
+				}
+				a[aria-expanded="true"]{
+					&::after{
+						transform: rotate(180deg);
+					}
+				}
 			}
 			.panel{
 				margin-bottom: 0;
@@ -93,6 +120,9 @@
 					padding: 5px 15px;
 					@include border-radius(0);
 					font-size: 14px;
+					color: #3c763d;
+					background-color: #dff0d8;
+					border-color: #d6e9c6;
 				}
 				.table{
 					tbody{
