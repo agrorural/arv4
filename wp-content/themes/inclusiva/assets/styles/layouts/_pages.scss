@@ -144,6 +144,11 @@
 						}
 					}
 				}
+				&.child{
+					.panel-heading{
+						background-color: #f8fbf6;
+					}
+				}
 			}
 		}
 	}

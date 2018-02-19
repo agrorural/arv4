@@ -16,9 +16,16 @@
 	$term_list = wp_get_post_terms($post->ID, 'tipos', array("fields" => "all")); 
   	$post__slug = $post->post_name;
   	$post__slug__up = strtoupper($post__slug);
-  	//var_dump($post);
+	  //var_dump($post);
+	  
+
+	if ($post->post_parent == 0){
+		$parentClass = 'father';
+	}else{
+		$parentClass = 'child';
+	}
 ?>
-<article <?php post_class('panel panel-default panel-success'); ?>>
+<article <?php post_class('panel panel-default panel-success '.$parentClass); ?>>
   <header class="panel-heading">
 	 <?php the_title(); ?>
   </header>
