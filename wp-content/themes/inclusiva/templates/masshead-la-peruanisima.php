@@ -16,7 +16,7 @@
                         echo $valor->guid;
                     echo ') no-repeat top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">';
                         echo '<div class="container">';
-                            get_template_part('templates/page','header-mi-papa-peruana');
+                            get_template_part('templates/page','header-la-peruanisima');
                         echo '</div>';                        
                     echo '</div>';
                     
@@ -24,9 +24,4 @@
             }
         ?>
     </div>
-    <!-- Add Arrows -->
-    <!-- <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div> -->
-     <!-- Add Pagination -->
-     <!-- <div class="swiper-pagination"></div> -->
 </div>

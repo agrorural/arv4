@@ -261,7 +261,7 @@
         // JavaScript to be fired on all pages, after page specific JS is fired
       }
     },
-    'mi_papa_peruana': {
+    'la_peruanisima': {
       init: function () {
         // JavaScript to be fired on all pages, after page specific JS is fired
         var massheadSlider = new Swiper('.masshead-slider', {

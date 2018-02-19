@@ -13,25 +13,26 @@
 	);
 	$wp_query->query($args);
 	$group = "";
-	while ($wp_query->have_posts()) : $wp_query->the_post();
-?>
+	?>
 
-<?php
-	$terms = wp_get_object_terms($post->ID, 'grupos');
-	if(!empty($terms)){
-		$loopTerm = $terms[0]->name;
+	<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-	  if( $group !== $loopTerm ){
-		echo '<h3 class="ap__list__title">'. $loopTerm .'</h3>';
-	
-		$group = $loopTerm;
-	  }
-	}
-?>
+		<?php
+			$terms = wp_get_object_terms($post->ID, 'grupos');
+			if(!empty($terms)){
+				$loopTerm = $terms[0]->name;
 
-<?php get_template_part('templates/content', 'directorios-list'); ?>
+			if( $group !== $loopTerm ){
+				echo '<h3 class="ap__list__title">'. $loopTerm .'</h3>';
+			
+				$group = $loopTerm;
+			}
+			}
+		?>
 
-<?php endwhile; ?>
+		<?php get_template_part('templates/content', 'directorios-list'); ?>
+
+	<?php endwhile; ?>
 
 <?php 
   $wp_query = null; 
