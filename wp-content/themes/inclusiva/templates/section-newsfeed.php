@@ -10,6 +10,7 @@
 				</div>
 			</main>
 			<aside class="sidebar eventos">
+				<p><a href="<?php echo bloginfo('url'); ?>/la-peruanisima/"><img src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2018/02/la_peruanisima__banner-2.jpg" alt="" class="img-responsive"></a></p>
 				<p><a href="<?php echo bloginfo('url'); ?>/reconstruccion-con-cambios/"><img src="<?php echo  get_template_directory_uri(); ?>/dist/images/banner__reconstruccion_3.jpg" alt="" class="img-responsive"></a></p>
 				
 				<div class="page-header">	
