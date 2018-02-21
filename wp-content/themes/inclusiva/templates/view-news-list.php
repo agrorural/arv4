@@ -2,7 +2,7 @@
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 4,
-	'tag__not_in'=>array('47', '196', '150') //Oculta las entradas del AIAF, CSST, Aliados II
+	'tag__not_in'=>array('47', '196', '150', '486') //Oculta las entradas del AIAF, CSST, Aliados II, La Peruanísima
 	);
 // the query
 $the_query = new WP_Query( $args ); ?>

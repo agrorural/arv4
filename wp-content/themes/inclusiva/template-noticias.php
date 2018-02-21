@@ -4,7 +4,16 @@
  */
 ?>
 
-<?php query_posts('post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
+<?php 
+  $args = array( 
+		'post_type' => 'post',
+	'posts_per_page' => 4,
+	'tag__not_in'=>array('47', '196', '150', '486'), //Oculta las entradas del AIAF, CSST, Aliados II, La Peruanísima
+		'paged' => get_query_var('paged')
+	);
+?>
+
+<?php query_posts($args); ?>
 
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
