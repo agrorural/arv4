@@ -8,7 +8,7 @@
   $args = array( 
 		'post_type' => 'post',
 	'posts_per_page' => 4,
-	'tag__not_in'=>array('47', '196', '150', '486'), //Oculta las entradas del AIAF, CSST, Aliados II, La Peruanísima
+	'tag__not_in'=>array('47', '196', '150'), //Oculta las entradas del AIAF, CSST, Aliados II
 		'paged' => get_query_var('paged')
 	);
 ?>
