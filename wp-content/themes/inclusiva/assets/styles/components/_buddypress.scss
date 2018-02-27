@@ -11,7 +11,9 @@
 		}
 		main{
 			.page-header{
-				margin-top: 0;
+				background-color: $white;
+				margin: 0;
+				padding: 15px;
 			}
 			.alert{
 				margin-top: 20px;
@@ -23,6 +25,7 @@
 				}
 
 				#item-header{
+					background-color: $white;
 					#item-header-cover-image{
 						#item-actions, #item-meta{
 							span{
@@ -114,6 +117,8 @@
 				#item-body{
 					padding-bottom: 30px;
 					.post{
+						background-color: $white;
+						padding: 15px;
 						.author-box{
 							clear: both;
 							img{
@@ -130,6 +135,7 @@
 						}
 						.post-content{
 							.post-featured-image{
+								margin: 0 -15px;;
 								img{
 									@extend .img-responsive;
 								}
