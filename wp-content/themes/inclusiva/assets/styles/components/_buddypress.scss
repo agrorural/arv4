@@ -119,15 +119,14 @@
 					.post{
 						background-color: $white;
 						padding: 15px;
-						clear: both;
 						.author-box{
 							img{
 								float: left;
 								width: 24px;
 								height: 24px;
+								margin-right: 5px;
 							}
 							p{
-								float: left;
 								font-size: 10px;
 								line-height: 24px;
 								
