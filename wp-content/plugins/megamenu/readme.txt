@@ -2,8 +2,8 @@
 Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
 Requires at least: 3.8
-Tested up to: 4.8
-Stable tag: 2.3.8
+Tested up to: 4.9
+Stable tag: 2.4.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,53 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.4.1.4 =
+
+* Fix: Issue with "Reset Widget Styling" option not working correctly. Thanks to fsminoz for reporting this!
+
+= 2.4.1.3 =
+
+* Fix: Revert/Back out CSS which changed how menu item descriptions and top aligned icons. Restore related CSS to how it was in v2.4.
+* Fix: Mobile Toggle Blocks wrapping onto 2 lines
+* Fix: Mobile Toggle Icon Position before/after setting
+* Fix: Grid sub menu styling in Twenty Sixteen
+* Change: Fallback to using Flex Layout (rather than backwards compatible layout) if the css_version transient is missing
+
+= 2.4.1.2 [20/02/18] =
+
+* Fix: Centrally aligned mobile toggle blocks
+* Fix: Logo width in mobile toggle blocks
+
+= 2.4.1.1 [20/02/18] =
+
+* Fix: Impossible to save theme if the mobile toggle block Text Size option is deleted, then the theme saved, then the Text Size option is reinstated.
+* Fix: Width of menu item descriptions within sub menus
+
+= 2.4.1 [19/02/18] =
+
+* Change: WCAG accessibility fix (do not use "content" CSS for mobile menu toggle block text). Important: If you have applied custom styling to the menu toggle block you may need to update it.
+* Change: To avoid CSS conflicts, when a menu item has a custom icon, use "mega-custom-icon" class instead of "custom"
+* New: Slide animation option for mobile menu
+* Improvement: Add font size and icon size options to mobile menu toggle block
+* Improvement: Use Flexbox to accurately align centrally aligned menu toggle blocks
+* Improvement: Use Flexbox to properly format flyout menu items with sub menus, icons and descriptions
+* Improvement: Experimental: Allow flyout menus to have dynamic widths
+* Improvement: Option to set the total number of columns per row in the grid layout
+* Improvement: Show warning if CSS "Save to filesystem" failed to write CSS due to folder permissions
+* Fix: Tabs now respect 'second click behaviour' option
+* Fix: Admin styling not loading correctly on Russian sites (and possible other languages)
+* Fix: List (incorrectly) created PolyLang menu locations so that they can be deleted/renamed
+* Fix: Menu Item Titles with <br> tags break mega menu settings panel
+* Fix: "Save" button not accessible in menu item settings on smaller resolutions
+* Fix: PHP Warnings
+* Fix: Flyout menu border radius when shadow is applied
+* Fix: Menu locations incorrectly listed as active in theme selector dropdown
+* Fix: Mobile sub menu clicks not working in GeneratePress
+* Fix: Compatibility fix for WP Disquz media uploader
+* Fix: Items output incorrectly when using Grid Layout within tabbed sub menus
+* Fix: Only apply dynamic sub menu widths to top level mega menus
+
 
 = 2.4 [17/10/17] =
 
