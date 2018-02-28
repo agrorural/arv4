@@ -261,7 +261,7 @@
         // JavaScript to be fired on all pages, after page specific JS is fired
       }
     },
-    'la_peruanisima': {
+    'decreto_de_urgencia_002_2018': {
       init: function () {
         // JavaScript to be fired on all pages, after page specific JS is fired
         var massheadSlider = new Swiper('.masshead-slider', {

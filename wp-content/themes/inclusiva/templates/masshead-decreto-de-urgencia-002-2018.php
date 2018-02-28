@@ -16,7 +16,7 @@
                         echo $valor->guid;
                     echo ') no-repeat top left; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">';
                         echo '<div class="container">';
-                            get_template_part('templates/page','header-la-peruanisima');
+                            get_template_part('templates/page','header-decreto-de-urgencia-002-2018');
                         echo '</div>';                        
                     echo '</div>';
                     

@@ -10,7 +10,7 @@
         <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
     </div>
     <?php 
-        $page = get_page_by_path( 'la-peruanisima' );
+        $page = get_page_by_path( 'decreto-de-urgencia-002-2018' );
     ?>
     <p class="lead"><?php echo $page->post_content; ?></p>
 </div>

@@ -65,7 +65,7 @@ use Roots\Sage\Wrapper;
 
                         <!-- pagination here -->
                         <div class="page-header">
-                            <h3><a href="<?php echo bloginfo('url'); ?>/etiqueta/reconstruccion/">Noticias</a></h3>
+                            <h3><a href="<?php echo bloginfo('url'); ?>/etiqueta/<?php echo $tag__slug; ?>/">Noticias</a></h3>
                             <span class="line"></span>
                         </div>
                         <!-- the loop -->
