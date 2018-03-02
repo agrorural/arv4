@@ -14,6 +14,9 @@
 				background-color: $white;
 				margin: 0;
 				padding: 15px;
+				#breadcrumb{
+					display: none;
+				}
 			}
 			.alert{
 				margin-top: 20px;
