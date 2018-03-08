@@ -248,7 +248,7 @@ header{
   		background-color: $green;
   		border-color: $green;
   		margin-bottom: 0;
-  		z-index: 1001;
+  		z-index: 1000;
   		.container{
   			.navbar-header, .navbar-form{
   				@include make-sm-column(4,0);
