@@ -70,13 +70,13 @@ header{
 		}
 	}
 	&.super-header, &.banner{
-		background-color: $green--dark;
+		background-color: $white;
 	}
 
 	&.super-header{
 		position: relative;
 		//z-index: 1002;
-		border-bottom: 0px solid transparent;
+		border-bottom: 1px solid #eee;
 		.collapse{
 			@include make-row();
 			display: block;
@@ -115,7 +115,6 @@ header{
 					li{
 						a{
 	  						font-size: 11px;
-	  						color: $white;
 	  						padding-top: 4px;
 							padding-bottom: 4px;
 						}
@@ -167,9 +166,6 @@ header{
 						li{
 							a{
 								background-color: transparent;
-								&:hover{
-									color: $yellow;
-								}
 							}
 						}
 					}
@@ -204,8 +200,8 @@ header{
 	}
 
 	&.navbar-main{
-		background-color: $green;
-		border-color: $green;
+		background-color: #3c960a;
+		border-color: #3c960a;
 		margin-bottom: 0;
 		z-index: 100;
 		.navbar-header{
@@ -245,15 +241,18 @@ header{
 	}
 
 	&.navbar-branding {
-  		background-color: $green;
-  		border-color: $green;
+  		background-color: $white;
+  		border-color: $white;
   		margin-bottom: 0;
-  		z-index: 1000;
+      z-index: 1000;
+      padding: 3rem 0 2.5rem;
   		.container{
-  			.navbar-header, .navbar-form{
-  				@include make-sm-column(4,0);
-  				float: none;
-  			}
+  			.navbar-branding-content {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
 
   			.navbar-form{
   				float: none;
@@ -287,29 +286,7 @@ header{
   					}
   				}
   			}
-  			.navbar-header{
-  				&.agrorural{
-					.navbar-brand{
-						padding-top: 15px;
-    					padding-bottom: 15px;
-					}
-					.ht__brand{
-						position: relative;
-						display: block;
-						text-align: center;
-						clear: both;
-					}
-  				}
-  				&.minagri{
-					.navbar-brand{
-						padding-top: 15px;
-    					padding-bottom: 15px;
-					}
-  				}
-  			}
-  			.navbar-header{
-
-  			}
+  			
   			.navbar-form{
 				border-color: transparent !important;
 				box-shadow: none;
@@ -472,9 +449,6 @@ h1{
 							img{}
 							figcaption{
   								padding-top: 30px !important;
-  								.sl__home__hashtag, .sl__home__title, .sl__home__content, .sl__home__link{
-
-  								}
   								.sl__home__hashtag{
   									a{
   										color: $white;
@@ -543,97 +517,6 @@ h1{
 				}
 			}
 		}
-		&.navbar-branding{
-			z-index: 1000;
-			.navbar-header{
-				&.agrorural{
-				position: absolute;
-			    top: -30px;
-			    left: 0;
-			    right: 0;
-			    width: 180px;
-			    text-align: center;
-			    margin: auto;
-					.wrapper{
-						width: 180px;
-						height: 180px;
-					    margin: 0 auto;
-					    background: $white;
-						float: none;
-						-webkit-border-bottom-right-radius: 180px;
-						-webkit-border-bottom-left-radius: 180px;
-						-moz-border-radius-bottomright: 180px;
-						-moz-border-radius-bottomleft: 180px;
-						border-bottom-right-radius: 180px;
-						border-bottom-left-radius: 180px;
-					    transition: height 0.15s ease-out;
-						.navbar-brand{
-							padding-bottom: 0;
-	  						a{
-	  							margin: 0 auto 15px;
-	  						}
-  						}
-  						.ht__brand{
-  							height: 0;
-							@include keyframes(fadeOutDown) {
-							  0% {
-							    opacity: .35;
-							    @include transform(translateY(0));
-							  }
-							  100% {
-							    opacity: 0;
-							    @include transform(translateY(20px));
-							  }
-							}
-  							@include fadeOutDown();
-  						}
-  							&:hover{
-							height: 215px;
-							transition: height 0.25s ease-in;
-							.ht__brand{
-								 @include fadeInUp();
-							}
-
-						}
-					}
-  				}
-			}
-			.navbar-form{
-				float: right !important;
-  				form{
-  					float: right !important;
-  					.input-group{
-						.search-field{}
-	  					.input-group-btn{}
-  					}
-  				}
-  			}
-		}
-		&.navbar-main{
-			nav{
-				.mega-menu-wrap{
-
-				}
-				#mega-menu-wrap-primary_nav_left{
-					@include make-sm-column(5,0);
-					clear: left;
-				}
-				#mega-menu-wrap-primary_nav_right{
-					@include make-sm-column(5,0);
-					@include make-sm-column-offset(2);
-					clear: right;
-				}
-			}
-		}
-	}
-
-	.navbar-main{
-		#mega-menu-wrap-primary_navigation{
-			display: none;
-		}
-		#mega-menu-wrap-primary_nav_left, #mega-menu-wrap-primary_nav_right{
-				display: block !important;
-		}
 	}
 }
 
@@ -657,3 +540,71 @@ h1{
 		}
 	}
 }
+
+.main-navigation {
+position: relative;
+  @media (min-width: $screen-md-min) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between; 
+    flex-direction: row;
+  }
+}
+
+.navbar-form {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  padding: 2rem 0 1.5rem;
+  width: 100%;
+  z-index: 10;
+
+  .with-searchform & {
+    display: block;
+  }
+}
+
+#showForm{
+  position: absolute;
+  top: 7px;
+  left: 0;
+  color: $white;
+
+  @media (min-width: $screen-md-min) {
+    position: static;
+  }
+
+  &:hover {
+    color: #f1cf00;
+  }
+
+  .with-searchform & {
+    color: #f1cf00;
+  }
+}
+
+.mega-menu-item {
+  padding: 0 !important;
+
+  a.mega-menu-link {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+
+    &[title="dropdown-header"] {
+      text-transform: uppercase !important;
+      // margin-top: 1rem !important;
+      font-weight: bold;
+    }
+  }
+}
+
+.mega-menu-row:not(:last-child) {
+  margin-bottom: 2rem !important;
+}
+
+.mega-menu-item .textwidget {
+  float: right !important;
+}
+

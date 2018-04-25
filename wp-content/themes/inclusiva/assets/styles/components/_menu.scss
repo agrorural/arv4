@@ -200,7 +200,7 @@ ul#menu-navegacion-primaria{
 					padding-right: 10px;
 					span{
 						@include font-family(opensans, bold);
-						color: $white;
+						color: #7C2202;
 						font-size: 11px;
 						padding-left: 5px;
 					}
@@ -279,14 +279,6 @@ ul#menu-social-navegacion{
 	}
 }
 
-.mega-menu{
-	.mega-sub-menu{
-		#mega-menu-item-text-3, #mega-menu-item-text-4, #mega-menu-item-text-5, #mega-menu-item-text-6{
-			padding: 0 !important;
-		}
-	}
-}
-
 @media (max-width: $screen-xs-max) {
 	.navbar-branding{
 		.navbar-brand{
@@ -314,18 +306,15 @@ ul#menu-social-navegacion{
 	}
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-sm-min) {
-	ul#menu-navegacion-primaria, ul#menu-super-navegacion-izquierda{
-		li.dropdown{
-			&:hover{
-				ul.dropdown-menu{
-					width: auto;
-				}
-			}
-		}
-	}
-	ul#menu-social-navegacion{
-		padding: 0;
-	}
+.mega-menu-item-type-widget {
+  display: none !important;
+}
+
+.mega-sub-menu {
+  @media (min-width: $screen-md-min) {
+
+    .mega-menu-item-type-widget {
+      display: block !important;
+    }
+  }
 }

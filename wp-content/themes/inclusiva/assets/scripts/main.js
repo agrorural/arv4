@@ -64,7 +64,7 @@
               $('input[id="'+ inputID +'"]').prop('placeholder', 'Ingrese su búsqueda');
             }
 
-            console.log(arr);
+            // console.log(arr);
 
           };
 
@@ -78,15 +78,28 @@
           $('.share-header button').toggleClass( "active" );
         });
 
-        // Focus the searchform
-        $('#s').focusin(function(){
-          $('#searchform').addClass('focused');
-          console.log("Esta seleccionado el input");
+        var $inputSearch = $('#s');
+        
+        $('#showForm').on('mousedown', function () {
+            $(this).data('inputFocused', $inputSearch.is(":focus"));
+        }).click(function () {
+          $('body').toggleClass('with-searchform');
+          $(this).find("i").toggleClass('fa-search fa-times');
+            if ($(this).data('inputFocused')) {
+                $inputSearch.blur();
+            } else {
+                $inputSearch.focus();
+            }
         });
 
-        $('.close-searchform').click(function(event){
-          event.preventDefault();
-          $('#searchform').removeClass('focused');
+        $('body').keyup(function(e){
+          if($('body').hasClass('with-searchform')){
+            if(e.which === 27){
+              $('body').removeClass('with-searchform');
+              $('#showForm').find("i").removeClass('fa-times');
+              $('#showForm').find("i").addClass('fa-search');
+            }
+          }
         });
 
         //Mobile menu button

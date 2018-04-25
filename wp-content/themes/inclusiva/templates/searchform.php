@@ -18,26 +18,24 @@
 
 
 <form role="search" method="get" class="searchform_for_<?php echo $query_types_value; ?>" id="searchform" action="<?php echo home_url( '/' ); ?>">
-	<div class="input-group">
+<div class="container">
+<div class="input-group"  style="width:100%">
 		<label class="sr-only"><?php _e('Search for:', 'sage'); ?></label>
-		<input type="text" name="s" id="s" value="<?= get_search_query(); ?>" class="search-field form-control" placeholder="Ingrese su búsqueda" />			
-		<span class="input-group-btn">
-			<input type="submit" class="" id="searchsubmit" value="Buscar" />
+		<input type="text" name="s" id="s" value="<?= get_search_query(); ?>" class="search-field form-control" placeholder="Ingrese su búsqueda" autofocus />			
+		<span class="input-group-btn" style="width:1%">
+			<input type="submit" class="btn btn-default" id="searchsubmit" value="Buscar" />
 		</span>
 	</div>
 	<div class="checkbox-container">
-		<div class="page-header">
-			<h4>Filtrar por: <small class="pull-right"><button type="button" class="close close-searchform"><span aria-hidden="true">&times;</span></button></small></h4>
-		</div>
 		<div class="checkbox">
 			<label class="cb__post" for="cb__post"><input id="cb__post" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types, false) || is_page_template('template-noticias.php') || is_singular( 'post' )) { echo 'checked'; } ?> /> Noticias</label>
 		</div>
 		<div class="checkbox">
 			<label class="cb__documentos" for="cb__documentos"><input id="cb__documentos" type="checkbox" name="post_type[]" value="documentos" <?php if (in_array('documentos', $query_types, false) ||  is_page_template('template-documentos.php') ) { echo 'checked'; } ?> /> Documentos</label>
 		</div>
-		<div class="checkbox">
+		<!-- <div class="checkbox">
 			<label class="cb__convocatorias" for="cb__convocatorias"><input id="cb__convocatorias" type="checkbox" name="post_type[]" value="convocatorias" <?php if (in_array('convocatorias', $query_types, false) || is_page_template('template-convocatorias-cas.php') || is_page_template('template-convocatorias-cap.php') || is_page_template('template-convocatorias-practicas.php') ) { echo 'checked'; } ?> /> Convocatorias</label>  
-		</div>
+		</div> -->
 		<div class="checkbox">
 			<label class="cb__servicios" for="cb__servicios"><input id="cb__servicios" type="checkbox" name="post_type[]" value="servicios" <?php if (in_array('servicios', $query_types, false) || is_page_template('template-servicios.php')) { echo 'checked'; } ?> /> Servicios</label>
 		</div>
@@ -48,4 +46,6 @@
 			<label class="cb__tribe_events" for="cb__tribe_events"><input id="cb__tribe_events" type="checkbox" name="post_type[]" value="tribe_events" <?php if (in_array('tribe_events', $query_types, false) ) { echo 'checked'; } ?> /> Eventos</label>  
 		</div>
 	</div>
+</div>
+	
 </form>
