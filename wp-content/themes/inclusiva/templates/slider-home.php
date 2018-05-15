@@ -4,7 +4,7 @@
 $args  = array(
 	'post_type' => 'Banners', 
 	'posiciones' => 'Slider Home',
-	'posts_per_page' => 5
+	'posts_per_page' => 10
 );
 // the query
 $the_query = new WP_Query( $args ); ?>
