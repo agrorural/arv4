@@ -37,7 +37,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  */
 function my_acf_google_map_api( $api ){
 	
-	$api['key'] = 'AIzaSyCWYY_BMBEQfCqxGBWGupcZz6Er8c6ogUk';
+	$api['key'] = 'AIzaSyALOhAzXRKVL5iZBDyhue__8cH8DzWU6N8';
 	
 	return $api;
 	
