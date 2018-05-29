@@ -33,6 +33,18 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 /**
+ * Agrega API de Google Maps en ACF
+ */
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'AIzaSyCWYY_BMBEQfCqxGBWGupcZz6Er8c6ogUk';
+	
+	return $api;
+	
+}
+add_filter('acf/fields/google_map/api', __NAMESPACE__ . '\\my_acf_google_map_api');
+
+/**
  * Removiendo Emojis
  */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
