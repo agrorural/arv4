@@ -5,4 +5,5 @@
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri (); ?>/favicon.ico" />
   <link rel="apple-touch-icon image_src" href="<?php echo get_template_directory_uri (); ?>/favicon.png" /> 
   <?php wp_head(); ?>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
