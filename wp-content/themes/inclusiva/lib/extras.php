@@ -124,3 +124,14 @@ function posts_for_current_contributor() {
 }
 
 add_action( 'load-edit.php', __NAMESPACE__ . '\\posts_for_current_contributor' );
+
+// Soluciona el problema de exposición de usuarios
+add_filter( 'rest_endpoints', function( $endpoints ){
+  if ( isset( $endpoints['/wp/v2/users'] ) ) {
+      unset( $endpoints['/wp/v2/users'] );
+  }
+  if ( isset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] ) ) {
+      unset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+  }
+  return $endpoints;
+});
