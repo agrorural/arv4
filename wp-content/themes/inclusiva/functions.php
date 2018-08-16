@@ -48,7 +48,7 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 add_filter( 'bp_login_redirect', 'bpdev_redirect_to_profile', 11, 3 );
- 
+
 function bpdev_redirect_to_profile( $redirect_to_calculated, $redirect_url_specified, $user ){
  
     if( empty( $redirect_to_calculated ) )
@@ -402,3 +402,22 @@ function custom_breadcrumbs() {
         //var_dump($the_query);
         wp_die();
     }
+
+
+//
+// JS para admin
+//
+add_action( 'admin_enqueue_scripts', 'enqueue_my_admin_scripts' );
+
+function enqueue_my_admin_scripts(){
+    //enqueing my script on gravity form pages
+    wp_enqueue_script('admin_js', get_template_directory_uri() . '/dist/scripts/admin-script.js', false, '1.0.0' );
+}
+
+add_filter('gform_noconflict_scripts', 'register_safe_script' );
+
+function register_safe_script( $scripts ){
+    //registering my script with Gravity Forms so that it gets enqueued when running on no-conflict mode
+    $scripts[] = "admin_js";
+    return $scripts;
+}

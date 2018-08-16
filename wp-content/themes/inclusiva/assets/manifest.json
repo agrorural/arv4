@@ -23,6 +23,11 @@
                 "styles/editor-style.scss"
             ]
         },
+        "admin-script.js": {
+          "files": [
+              "scripts/admin-script.js"
+          ]
+        },
         "directory-map.js": {
             "files": [
                 "scripts/directory-map.js"

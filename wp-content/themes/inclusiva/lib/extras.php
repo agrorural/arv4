@@ -136,36 +136,6 @@ add_filter( 'rest_endpoints', function( $endpoints ){
   return $endpoints;
 });
 
-add_action('admin_init', __NAMESPACE__ . '\\removeGFEditButton', 1);
-function removeGFEditButton() {
-?>
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  var unregisteredBanner = document.querySelector('img[src="https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg"]');
-  if(unregisteredBanner){
-    unregisteredBanner.parentNode.parentNode.remove();
-  }
-  
-  var formId = document.getElementsByClassName("gf_admin_page_formid")[0];
-  //console.log(formId[0] == null);
-  if(formId != null){
-    var formContent = formId.textContent;
-
-    //if(formContent === "ID: 12") {
-      var mayorActions = document.querySelector('.formularios_page_gf_entries #major-publishing-actions');
-      mayorActions.remove();
-    //}
-
-    //console.log(formContent);
-  }
-});
-
-
-</script>
-<?php
-}
-
 add_filter( 'gform_addnote_button', __NAMESPACE__ . '\\change_button', 10, 1 );
 function change_button( $note_button ){
     $note_button = '<input type="submit" name="add_note" value="' . esc_attr__( 'Reportar estado', 'gravityforms' ) . '" class="button" onclick="jQuery(\'#action\').val(\'add_note\');"/>';
