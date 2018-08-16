@@ -86,3 +86,30 @@ function assets() {
     }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+
+//
+// JS para admin
+//
+
+function admin_assets() {
+  wp_enqueue_script('admin_scripts_js', asset_path('scripts/admin-script.js'), ['jquery'], null, true);
+}
+
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_assets', 100);
+
+
+// add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\enqueue_my_admin_scripts', 100 );
+
+// function enqueue_my_admin_scripts(){
+//     //enqueing my script on gravity form pages
+//     wp_enqueue_script('admin_js', get_template_directory_uri() . '/dist/scripts/admin-script.js', false, '1.0.0' );
+// }
+
+add_filter('gform_noconflict_scripts', __NAMESPACE__ . '\\register_safe_script' );
+
+function register_safe_script( $scripts ){
+    //registering my script with Gravity Forms so that it gets enqueued when running on no-conflict mode
+    $scripts[] = "admin_scripts_js";
+    return $scripts;
+}
