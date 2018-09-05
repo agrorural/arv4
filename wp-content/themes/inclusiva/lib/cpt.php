@@ -224,7 +224,7 @@ function create_my_post_types() {
 		'rewrite'            => array( 'slug' => 'servicios' ),
 		'menu_position'      => 5,
 		'menu_icon'			 => 'dashicons-businessman',
-		'supports'           => array( 'title', 'editor', 'author', 'revisions', 'thumbnail' )
+		'supports'           => array( 'title', 'editor', 'author', 'revisions', 'thumbnail', 'page-attributes' )
 	);
 
 	$labels_directorios = array(
