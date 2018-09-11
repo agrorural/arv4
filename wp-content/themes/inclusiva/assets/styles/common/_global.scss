@@ -118,6 +118,16 @@ body{
   }
 }
 
+#fontPageModal {
+  .modal-body {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
 a, button.btn-link{
   color: $red;
   &:hover, &:active{
