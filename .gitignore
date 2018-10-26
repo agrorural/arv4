@@ -48,3 +48,10 @@ wp-content/themes/inclusiva/bower_components
 wp-content/uploads
 
 *.sql
+
+#Directory for documents
+
+mapas/
+tmp/
+dgiar/
+dmdocuments/

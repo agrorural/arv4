@@ -43,7 +43,7 @@ use Roots\Sage\Wrapper;
 
     <!-- pagination here -->
     <div class="modal fade" id="fontPageModal" tabindex="-1" role="dialog" aria-labelledby="fontPageModalLabel">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="owl-carousel sl__modal-home">
           <!-- the loop -->
           <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

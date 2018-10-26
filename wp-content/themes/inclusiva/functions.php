@@ -377,6 +377,7 @@ function custom_breadcrumbs() {
                     "doc_link"        => get_field('rde_link'),
                     "doc_ane__nom"    => get_field('doc_ane__nom'),
                     "doc_ane__desc"   => get_field('doc_ane__desc'),
+                    "agregar_documentos"   => get_field('agregar_documentos'),
                     "html"            => ''
                 );
 

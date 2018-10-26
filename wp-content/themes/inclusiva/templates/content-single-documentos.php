@@ -72,14 +72,44 @@
         	<?php if ( $term_list[0]->slug == 'pac' || $term_list[0]->slug == 'cds' ) { ?>
           		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rda/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
           	<?php }else{?>
-          		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
+          		<a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/rde/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo 
+							<?php if( have_rows('agregar_documentos') ): ?>
+							(Resolución)
+							<?php endif; ?>
+							</a>
           	<?php } ?>
         <?php }else{ ?>
           <a class="cta__link" href="<?php echo $dir.'/transparencia/documentos/'.$term_list[0]->slug.'/'.$post__slug__up.'.PDF'; ?>"><i class="fa fa-file-o"></i> Descargar archivo</a>
         <?php } ?>
+
+						<?php if( have_rows('agregar_documentos') ): ?>
+
+
+							<?php while( have_rows('agregar_documentos') ): the_row(); 
+
+								// vars
+								$link = get_sub_field('url_doc_extra');
+								$title = get_sub_field('name_doc_extra');
+
+								?>
+
+								<div class="slide">
+										<a class="cta__link" href="<?php echo $link; ?>"><i class="fa fa-file-o"></i> Descargar archivo (<?php echo $title; ?> )</a>
+								</div>
+
+							<?php endwhile; ?>
+
+
+
+						<?php endif; ?>
+
+
       <?php }else{ ?>
         <p>No Disponible</p>
       <?php } ?>
+
+
+
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>

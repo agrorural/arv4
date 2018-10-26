@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector('img[src="https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg"]');e&&e.parentNode.parentNode.remove();var r=document.getElementsByClassName("gf_admin_page_formid")[0];if(null!=r){document.querySelector(".formularios_page_gf_entries #major-publishing-actions")}});
+//# sourceMappingURL=admin-script.js.map
