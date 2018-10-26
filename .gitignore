@@ -39,7 +39,7 @@ Thumbs.db
 .idea
 
 # WordPress One!
-.htaccess*
+.htaccess
 .maintenance*
 wp-config.php
 wp-content/themes/inclusiva/bower_components
