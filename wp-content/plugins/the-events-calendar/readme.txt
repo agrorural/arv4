@@ -4,8 +4,8 @@ Contributors: ModernTribe, borkweb, barry.hughes, bordoni, brianjessee, aguseo, 
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, modern tribe, tribe, widget
 Donate link: http://m.tri.be/29
 Requires at least: 4.5
-Stable tag: 4.6.21
-Tested up to: 4.9.7
+Stable tag: 4.6.25
+Tested up to: 4.9.8
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ Looking for additional functionality including recurring events, ticket sales, p
 <strong>Check out [Events Calendar PRO](http://m.tri.be/mj) and [other add-ons](http://m.tri.be/2a)</strong>
 
 ><strong>New Import Tool!</strong>
->We’ve made bulk event imports easier to manage than ever. This add-on service for The Events Calendar allows you to import events from your favorite sources, including Meetup, Google Calendar, iCalendar, CSV, and ICS.
+>We’ve made bulk event imports easier to manage than ever. This add-on service for The Events Calendar allows you to import events from your favorite sources, including Meetup, Google Calendar, iCalendar, CSV, ICS and Other URLs (beta).
 >[Check out Event Aggregator now](http://m.tri.be/197u).
 
 = Built solid & supported =
@@ -214,6 +214,103 @@ Some things to consider before posting on the forum:
 Still not happy? Shoot us an email to support@theeventscalendar.com or tweet to [@TheEventsCal](https://twitter.com/TheEventsCal) and tell us why. We'll do what we can to make it right.
 
 == Changelog ==
+
+= [4.6.25] 2018-10-22 =
+
+* Fix - List only enabled views on the "Default View" option. Thanks to wescole, John Meuse and others for reporting! [114807]
+* Fix - Handle left-over Facebook scheduled imports and notices [114831]
+* Fix - Fixed event navigation when the mini calendar widget was on the event page. Props to Matt and wescole for flagging this [114359]
+* Fix - Ensure columns without headers are handled in CSV imports [114199]
+* Tweak - Added notice for the Events Gutenberg extension and eBook download [115543]
+* Tweak - Avoid unnecessary HTTP calls in the Settings screens [114013]
+* Tweak - Show only applicable refinements for the Eventbrite source types in Event Aggregator imports [107009]
+* Tweak - Added `tribe_aggregator_resolve_geolocation` filter to allow for disabling of Geocoding using the EA service [114171]
+* Tweak - Added `tribe_aggregator_clean_unsupported` filter to specify whether unsupported origin records should be removed or not
+
+= [4.6.24.1] 2018-10-08 =
+
+* Fix - Fixed an issue where a fatal error could be generated when trying to save a new Event Aggregator scheduled import [115339]
+* Fix - Handle left-over Facebook scheduled imports and notices [114831]
+* Tweak - Added the `tribe_aggregator_import_setting_origins` filter to the origins available for default import settings [115704]
+
+= [4.6.24] 2018-10-03 =
+
+* Fix - Prevent broken and low-resolution Google Maps if user has not provided a Google Maps API key of their own by providing our own fallback API key [114442]
+* Fix - Only load widget assets when widget is active on the page [113141]
+* Fix - Ensure that venue, organizer, and meta information doesn't show on password-protected events [102643]
+* Fix - Correct the Google Maps API link in the Settings help text to point to the correct API page [112322]
+* Fix - Restores the event categories and tags creation summary in CSV imports [105888]
+* Fix - Updated the Events Gutenberg extension install check to show only when the extension is not active [114577]
+* Fix - Stop potential fatal errors from debug logging when running EA import actions from command line [114555]
+* Fix - Fixed a bug where it was often not possible to un-check the "Enable JSON-LD" option in the Events List Widget (thanks to @myrunningresource and @craigwilcox for reporting this!) [113541]
+* Fix - Ensure that the `tribe-events-bar-should-show` filter functions as aspected; if `__return_false` is passed, the Tribe Bar will be totally hidden (thanks @debranettles for reporting this!) [112260]
+* Fix - Added checks to prevent JS Type Error in mobile view. Thanks szenenight, agrilife and others for flagging this! [113524]
+* Tweak - Added the `tribe_events_month_daily_events` filter to the Month view [114041]
+* Tweak - Move Google Maps API loading to tribe_assets and only load once on single views when PRO is active, thanks to info2grow first reporting [112221]
+* Tweak - Accept 0 as an argument in tribe_get_events() so that `'post_parent' => 0` works, thanks Cy for the detailed report [111518]
+* Fix - handle left-over Facebook scheduled imports and notices [114831]
+* Tweak - Added new filters for customizing the fallback Google Maps embeds: `tribe_is_using_basic_gmaps_api`, `tribe_get_basic_gmap_embed_url`, and `tribe_get_basic_gmap_embed_url_args` [114442]
+* Tweak - Fixed the handling of the global $post variable in some Month View templates to make it easier for themers to customize those templates [113283]
+* Tweak - Ensure linked posts are listed alphabetically in metabox dropdowns, as they are in all other admin locations [108120]
+* Tweak - Added the `tribe_events_month_daily_events` filter to the Month view [114041]
+* Tweak - Move Google Maps API loading to tribe_assets and only load once on single views when PRO is active, thanks to info2grow first reporting [112221]
+* Tweak - Accept 0 as an argument in tribe_get_events() so that `'post_parent' => 0` works, thanks Cy for the detailed report [111518]
+* Tweak - Added the `tribe_aggregator_record_by_origin` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_aggregator_service_post_import_args` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_aggregator_import_validate_meta_by_origin` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_events_aggregator_refine_keyword_exclusions` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_events_aggregator_refine_location_exclusions` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_aggregator_event_translate_service_data_field_map` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_aggregator_event_translate_service_data_venue_field_map` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_aggregator_event_translate_service_data_organizer_field_map` filter to allow new EA origins [114652]
+* Tweak - Added the `tribe_events_status_third_party` action to allow new EA origins [114652]
+* Tweak - Added the `tribe_events_aggregator_import_form` action to allow new EA origins [114652]
+* Tweak - Added `$origin_show_map_options` parameter to the `tribe_aggregator_fields` filter to allow new EA origins to make use of them [114652]
+* Fix - Fixed an issue where a fatal error could be generated when trying to save a new Event Aggregator scheduled import [115339]
+
+= [4.6.23] 2018-09-12 =
+
+* Fix - Fixed the "Full Styles" mobile view. Thanks Matthew, Laura and others for flagging this! [112301]
+* Fix - Modify resource url function to work in mu-plugin directory, thanks to Doug for reporting it  [86104]
+* Fix - Remove references to and settings for Facebook importing in Event Aggregator [112432]
+* Fix - Ensure Event Aggregator allows for importing events from Eventbrite sites other than eventbrite.com, including but not limited to eventbrite.ca, .co.uk, and .co.nz [107821]
+* Fix - Allow venue location fields to be intentionally empty on Venue Singular REST API calls [108834]
+* Tweak - Add the WordPress Custom Fields Metabox show|hide settings from the Events Calendar Pro [109815]
+* Tweak - Allow changing Event Aggregator import process system between the asynchronous and the cron-based one; previously only available as a filter [113418, 113475]
+* Tweak - Allow stopping and clearing asynchronous queue processes from the admin UI [113418, 113475]
+* Deprecated - `Tribe__Events__Aggregator__Record__Facebook`
+
+= [4.6.22.1] 2018-08-27 =
+
+* Fix - Allow user to choose venues not created by them. Props to @integrity, @nomadadmin, and many others for reporting this! [113147]
+
+= [4.6.22] 2018-08-22 =
+
+* Add - Allow filtering events, in REST API requests, by their post ID with `include` [94326]
+* Add - Enable future event display to get all events in the future that have not started [70769]
+* Add - Allow filtering events, in REST API requests, by their post ID with `include` [94326]
+* Add - Enable future event display to get all events in the future that have not started [70769]
+* Fix - Prevent subsequent CSV imports from duplicating events in some instances [102745]
+* Fix - The "Import events but preserve local changes to event fields" Event Aggregator change authority setting will now behave as expected [87443]
+* Fix - Multiple fixes regarding linked post types (e.g. Organizers and custom post types) - props to @natureslens and others for reporting these [105116]:
+  * Now correctly saves in their drag-and-drop order
+  * Deprecated the functions added in version 4.6.13 that previously attempted to fix ordering logic but was not done in a backwards-compatible way: `get_order_meta_key()` and `tribe_sanitize_organizers()`
+  * We no longer rely on a separate postmeta value dedicated to ordering linked posts (e.g. `_EventOrganizerID_Order`), and you may want to remove all such values from your database after re-saving any events that have linked posts and their ordering is important
+  * `tribe_get_linked_posts_by_post_type()` now works as expected, no longer returning zero results in error, nor returning all of the post type's posts if there are none linked. The `tribe_events_return_all_linked_posts_if_none` filter was added, as it is necessary for this fix.
+  * Editing an existing event no longer loses the linked posts just because they were not part of the submission. Example of the bug in prior versions: If organizers are editable in the wp-admin event edit screen but not on the Community Events "event edit" form (via template override or other custom code), all pre-existing organizers were removed in error.
+* Fix - Handle the case where Event Aggregator import queues might get stuck when deleting import records [111856]
+* Fix - Only show admin notice when it is a top-level page with the event slug, thanks to MikeNGarrett for the code fix! [111186]
+* Fix - Change template_redirect to an action for some legacy view redirects, thanks barryceelen! [110463]
+* Fix - Correctly import and set Organizers for iCal and ICS files Event Aggregator imports [96059]
+* Fix - Retain category title in month view and month view shortcode, thanks corthoover for the first report [108258]
+* Fix - The "Import events but preserve local changes to event fields" Event Aggregator change authority setting will now behave as expected [87443]
+* Fix - Handle the case where Event Aggregator import queues might get stuck when deleting import records [111856]
+* Fix - Prevent subsequent CSV imports from duplicating events in some instances [102745]
+* Fix - Fix the classic header option not working. Thanks @hanemac, David Luyendyk and others for flagging this! [111672]
+* Tweak - Namespace javascript debug function to prevent conflicts causing a function found, thanks to Tom-Mulvey for the fix [110462]
+* Tweak - Add venue name to address string for iCal and gCal export, thanks for the coding from sylviavanos [110464]
+* Tweak -  Drop the order from the query WPML linked query as it is set later in the method, thanks to dgwatkins for the PR [110459]
+* Tweak - Display JS debug messages only if setting is set or through the `tribe_events_js_debug` filter. Thanks to Rob, @aand and others for flagging this! [82781]
 
 = [4.6.21] 2018-08-01 =
 

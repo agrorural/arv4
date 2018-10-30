@@ -14,6 +14,8 @@ use WeDevs\PM\Common\Traits\Resource_Editors;
 use WeDevs\PM\Task\Models\Task;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Pagination\Paginator;
+use League\Fractal\Resource\Collection as Collection;
+
 
 class Task_List_Transformer extends TransformerAbstract {
 
@@ -38,11 +40,22 @@ class Task_List_Transformer extends TransformerAbstract {
             'title'       => $item->title,
             'description' => pm_filter_content_url( $item->description ),
             'order'       => (int) $item->order,
+            'status'      => $item->status,
             'created_at'  => format_date( $item->created_at ),
             'meta'        => $this->meta( $item ),
         ];
 
         return apply_filters( 'pm_task_list_transform', $data, $item );
+    }
+
+        /**
+     * Getter for defaultIncludes.
+     *
+     * @return array
+     */
+    public function getDefaultIncludes()
+    {
+        return apply_filters( "pm_task_list_transformer_default_includes", $this->defaultIncludes );
     }
 
     public function meta( Task_List $item ) {
@@ -74,7 +87,7 @@ class Task_List_Transformer extends TransformerAbstract {
 
         $comments = $item->comments()
             ->orderBy( 'created_at', 'ASC' )
-            ->paginate( 10 );
+            ->paginate( pm_config('app.comment_per_page') );
 
         $comment_collection = $comments->getCollection();
         $resource = $this->collection( $comment_collection, new Comment_Transformer );
@@ -112,14 +125,8 @@ class Task_List_Transformer extends TransformerAbstract {
     }
 
     public function includeTasks( Task_List $item ) {
-        $page = isset( $_GET['task_page'] ) ? $_GET['task_page'] : 1;
-
-        $tasks = $item->tasks();
-        $tasks = apply_filters( 'pm_task_query', $tasks,  $item->project_id, $item );
-        $tasks =  $tasks->orderBy( pm_tb_prefix() . 'pm_boardables.order', 'ASC' )
-            ->paginate( 15, ['*'], 'page', $page );
-
-        return $this->make_paginated_tasks( $tasks );
+        $tasks = $item->tasks;
+        return $this->collection( $tasks, new Task_Transformer );
     }
 
 

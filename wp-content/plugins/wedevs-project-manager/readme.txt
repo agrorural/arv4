@@ -1,10 +1,11 @@
 === WP Project Manager ===
-Contributors: tareq1988, wedevs, asaquzzaman, mshossain110
+Contributors: tareq1988, wedevs, asaquzzaman, mshossain110, mdmamun-1
 Donate Link: https://tareq.co/donate/
 Tags: project, manager, project manager, project management, todo, todo list, task, basecamp, milestone, message, file, comment, client, team, tracking, planning, lists, reporting, project management plugin for wordpress, project manager, project manager plugin for wordpress, wordpress project management
 Requires at least: 4.4
-Tested up to: 4.9.7
-Stable tag: 2.0.4
+Tested up to: 4.9.8
+Requires PHP: 5.6
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +122,35 @@ A. Found any bugs? Please create an [issue](https://github.com/tareq1988/wp-proj
 13. Project Settings -> Email Settings Tab
 
 == Changelog ==
+
+= v2.0.6 - Oct 02, 2018 =
+
+* **New** Set permission setting for user mail notification.
+* **New** Task single page redesign.
+* **New** Show activity in single task page.
+* **New** Projects can mark as favourite by users.
+* **New** Added completed_by and completed_at fields in pm_tasks database table.
+* **New** Added status field in pm_broad database table.
+* **New** Support for video file upload.
+* **New** New user notification.
+* **New** Advanced task filter from task list page.
+* **New** Set deleted activity log in activity section.
+* **Fix** Invalid time issue in activity page.
+* **Fix** Overview graph for last 3o days activity
+* **Fix** Get email notification when update discussion
+
+= v2.0.5 - August 16, 2018 =
+
+* **New** Added filters for getting custom query in all transformers.
+* **New** Project description in html format.
+* **Fix** Undefined task title from activity.
+* **Fix** Single task popup close automatically.
+* **Fix** Activity count when delete an element.
+* **Fix** Manage capability return false, when user role is not found.
+* **Fix** Some translation issues.
+* **Fix** Some compatibility issue on internet explorer.
+* **Fix** Task assignee input field is not updating when assignee user field is Empty
+* **Fix** Task list milestone input field is not updating when milestone is Empty
 
 = v2.0.4 - July 27, 2018 =
 

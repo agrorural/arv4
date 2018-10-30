@@ -12,6 +12,7 @@ use WeDevs\PM\File\Transformers\File_Transformer;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use WeDevs\PM\User\Models\User;
 use WeDevs\PM\User\Transformers\User_Transformer;
+use WeDevs\PM\Activity\Transformers\Activity_Transformer;
 use WeDevs\PM\Common\Traits\Resource_Editors;
 use Illuminate\Pagination\Paginator;
 use WeDevs\PM\Common\Models\Boardable;
@@ -36,7 +37,7 @@ class Task_Transformer extends TransformerAbstract {
      * @var array
      */
     protected $availableIncludes = [
-        'boards', 'comments', 'files'
+        'boards', 'comments', 'files', 'completer', 'activities'
     ];
 
     /**
@@ -75,8 +76,9 @@ class Task_Transformer extends TransformerAbstract {
                 'project_id'  => $item->project_id,
                 'category_id' => $item->category_id,
                 'created_at'  => format_date( $item->created_at ),
-                'created_by'  => $item->created_by,
+                'completed_at' => format_date( $item->completed_at ),
                 'updated_at'  => format_date( $item->updated_at ),
+                'task_list_id' => $item->task_list,
                 'meta'        => $this->meta( $item ),
             ], 
             $item
@@ -94,6 +96,16 @@ class Task_Transformer extends TransformerAbstract {
             'total_assignee' => $item->assignees->count(),
             'can_complete_task' => pm_user_can_complete_task( $item ),
         ] );
+    }
+
+    /**
+     * Getter for defaultIncludes.
+     *
+     * @return array
+     */
+    public function getDefaultIncludes()
+    {
+        return apply_filters( "pm_task_transformer_default_includes", $this->defaultIncludes );
     }
     /**
      * Include task list
@@ -145,7 +157,7 @@ class Task_Transformer extends TransformerAbstract {
 
         $comments = $item->comments()
             ->orderBy( 'created_at', 'ASC' )
-            ->paginate( 10 );
+            ->paginate( pm_config('app.comment_per_page') );
 
         $comment_collection = $comments->getCollection();
         $resource = $this->collection( $comment_collection, new Comment_Transformer );
@@ -159,6 +171,17 @@ class Task_Transformer extends TransformerAbstract {
         $users = $item->user;
 
         return $this->collection( $users, new User_Transformer );
+    }
+
+    public function includeActivities( Task $item ) {
+        $page = isset( $_GET['activitie_page'] ) ? $_GET['activitie_page'] : 1;
+
+        Paginator::currentPageResolver(function () use ($page) {
+            return $page;
+        }); 
+
+        $activities = $item->activities()->paginate( 10 );
+        return $this->collection( $activities, new Activity_Transformer );
     }
 
     public function includeFiles( Task $item ) {
@@ -176,5 +199,10 @@ class Task_Transformer extends TransformerAbstract {
         $resource->setPaginator( new IlluminatePaginatorAdapter( $files ) );
 
         return $resource;
+    }
+
+    public function includeCompleter( $item ) {
+        $completer = $item->completer;
+        return $this->item( $completer, new User_Transformer );
     }
 }
